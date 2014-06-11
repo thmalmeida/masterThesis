@@ -1,0 +1,163 @@
+% \chapter*[Conclusão]{Conclusões e Trabalhos Futuros}
+\chapter{Conclusões e Trabalhos Futuros}
+Neste trabalho foi desenvolvido uma plataforma experimental de testes para
+transmissão de informações através de sinais modulados pela técnica de
+multiplexação por divisão de frequências OFDM (\textit{Orthogonal Frequency
+Division Multiplexing}) em sistemas ópticos com modulação de intensidade e
+detecção direta IMDD (\textit{Intensity-modulation and Direct Detection}) em
+enlaces de curto alcance. Uma configuração experimental foi implementada
+utilizando um conjunto de dispositivos elétricos e ópticos e equipamentos de
+conversão digital para analógico D/A (um gerador de onda arbitrário de 24 GS/s
+AWG7122C) e analógico para digital A/D (um osciloscópio digital de 100 GS/s
+DPO71604C).
+
+Dispositivos tais como, o \textit{laser} de sinal CW (\textit{Continuous Wave}),
+o modulador óptico Mach-Zehnder (MZM), a fibra monomodo padrão SSMF
+(\textit{standard single-mode fiber}) e o fotodetector, necessários à
+comunicação em sistemas DDO-OFDM (\textit{Direct-Detection Optical}-OFDM) foram
+caracterizados de forma a facilitar processos de máxima transferência de
+potência, através da escolha do melhor ponto de polarização dos mesmos.
+
+Foram desenvolvidos dois modelos de arquitetura de transmissão e recepção, sendo
+que no primeiro, denominado de sistema DDO-OFDM, utiliza-se a simetria
+hermitiana para gerar sinais com coeficientes reais uma vez que o MZM utilizado
+nos experimentos é equipado apenas com uma entrada de sinal modulante (ou RF).
+O segundo modelo implementado e denominado DDO-OFDM II, gera sinais OFDM com
+coeficientes complexos, porém com deslocamento de frequência realizado via
+\textit{software} para conceber sinais RF de coeficientes reais na entrada do
+modulador MZM.
+
+Transmissões experimentais realizadas com o modelo DDO-OFDM I no enlace óptico
+de aproximadamente 40 km de fibra SSMF com uma frequência máxima do sinal 2.0
+GHz, largura de banda de 500 MHz, modulação 16 QAM nas subportadoras e taxa de
+transmissão de 1.9 Gbps, tiveram o desempenho medido em -17.18 dB de EVM
+(\textit{error vector magnitude}) e taxa de erro de bits BER (\textit{bit error
+rate}) igual a $23.8 \times 10^{-3}$. Já na transmissão de 90 símbolos OFDM a
+arquitetura DDO-OFDM II com uma frequência máxima do sinal OFDM na saída do
+conversor D/A igual a 1.91 GHz, largura de banda de 1.0 GHz, modulação 4 QAM
+nas subportadoras, e taxa de transmissão de 1.83 Gbps o desempenho obtido foi
+para uma EVM de -17.18 dB em constelação livre de erros (BER=0).
+
+Porém, a grande quantidade de parâmetros envolvida nas transmissões acima
+referidas, fez com que fosse necessário um processo de otimização de parâmetros
+que envolvesse algum tipo de algoritmo de otimização, devido a relação não
+linear que existe entre alguns destes parâmetros. Aliás, durante a execução dos
+experimentos, foi possível notar que ao variar alguns parâmetros alterava-se
+consideravelmente a qualidade dos sistemas. Percebeu-se também que parâmetros
+como tais como a banda de guarda e o intervalo de guarda ofereceram graus de
+liberdade maiores do que aqueles ditados pela literatura, o que incentivou uma
+busca por parâmetros otimizados em função de obter melhores qualidade de
+transmissão, eficiência espectral e taxa de transmissão.
+
+Uma heurística específica para o problema em questão que utiliza um algoritmo
+genético mono-objetivo para otimizar o desempenho de tais sistemas foi proposto.
+Resultados da otimização dos diversos parâmetros envolvidos nas transmissões
+experimentais revelaram uma economia de aproximadamente 30\% na eficiência
+espectral no sistema DDO-OFDM II. A banda de guarda reduzida para a baixo de
+70\% da banda passante, sem que as interferências por batimento no fotoreceptor
+fossem significativas. Reduções significativas no intervalo de guarda são
+possíveis sem que haja degradação do desempenho do sistema por efeitos da
+dispersão cromática.
+
+A partir da plataforma de testes desenvolvida e a estrutura de códigos para
+interação com equipamentos e processamento \textit{offline} apresenta-se
+portanto como um importante ferramental para futuras provas de conceitos
+oriundas de inúmeras ideias e possibilidades no que tange à comunicação de
+modernos sistemas de telecomunicação em comunicações via fibra óptica e não só.
+Alguns trabalhos relativos a redes ópticas passiva com sinais OFDM para explorar
+escalabilidade de distribuição de banda para diversos usuários, relativos à
+transmissão de sinais multiportadoras com envelope constante, e também
+relacionados à transmissão de sinais de Rádio LTE (\textit{Long-term Evolution})
+vêm aproveitando-se desta plataforma de experimentos.
+
+Como trabalho futuro, sugere-se aqui experimentos que consistem em variar a
+potência do sinal do laser CW de forma averiguar o seu efeito no estímulo de não
+linearidades da fibra, nos sinais multiportadoras OFDM com e sem envoltória
+constante, bem como nas distorções provocadas por produtos de intermodulação IMD
+(\textit{Intermodulation Distortions}). Consegue-se observar rapidamente que em
+enlaces de curto alcance, a largura de banda causada pela interferência do
+batimento do laser no receptor é severamente influenciada pela potência óptica
+da fonte óptica.
+
+
+
+
+
+
+
+
+
+
+
+% Neste trabalho foi desenvolvido uma plataforma experimental de testes para
+% transmissão de informações através de sinais OFDM óptico com detecção direta
+% para enlaces de curto alcances. Uma configuração experimental foi implementada
+% utilizando um conjunto de dispositivos ópticos/elétricos e equipamentos de
+% conversões D/A (AWG7122C) e A/D (DPO71604C) de altas taxas de amostragem.
+% Junto à isso, foram realizadas as caracterizações de todos os dispositivos
+% envolvidos no sistema elétrico/óptico/elétrico, tais como laser, MZM, fibra
+% SSMF e fotoreceptor, para obter sucesso na transferência de potência de
+% um dispositivo a outro.
+% 
+% Foram desenvolvidos dois modelos de arquiteturas de transmissão e recepção, um
+% que utiliza a simetria hermitiana para gerar coeficientes reais (DDO-OFDM I) e
+% outro que gera sinais com coeficientes complexos (DDO-OFDM II), porém com
+% deslocamento de frequência realizado por \textit{software}. Ao ser testada a
+% arquitetura modelada por DDO-OFDM I no enlace elétrico/óptico/elétrico com uma
+% frequência máxima do sinal $B_c = 2.0$ GHz, largura de banda $B_W = 500$ MHz e
+% nível de modulação $M = 16$ QAM, foram transmitidos dados a uma taxa de $R_b =
+% 1.9$ Gbps obtendo uma $EVM = -17.18$ dB a uma taxa de erro de \textit{bit} $BER
+% = 23.8 \times 10^{-3}$. Já no teste da arquitetura DDO-OFDM II com uma
+% frequência máxima do sinal OFDM na saída do conversor D/A $B_c = 1.91$ GHz,
+% largura de banda $B_W = 1.0$ GHz e nível de modulação $M = 4$ QAM, foram
+% transmitidos 90 símbolos OFDM a uma taxa de transmissão de $R_b = 1.83$ Gbps
+% obtendo uma $EVM = -17.18$ dB com uma taxa de erro de bit nula, $BER = 0$.
+% 
+% A partir desses modelos de transmissão, foi gerado um extenso número de
+% parâmetros de projeto que modelam os sinais transmitidos. Após o sucesso na
+% recuperação dos sinais foi observado que com a variação de alguns parâmetros  
+% 
+% Foi possível notar que ao variar alguns parâmetros alterava a qualidade do
+% sistema. Muitos parâmetros ofereceram um grau de liberdade maiores do que a
+% literatura ditava tais como a banda de guarda $B_G$ e intervalo de guarda $I_G$.
+% Fato que, incentivou uma busca por parâmetros otimizados em função de obter
+% melhores qualidade de transmissão, eficiência espectral e taxa de bit por
+% segundo a partir de uma heurística de iterações que utiliza um algoritmo
+% genético mono-objetivo. Resultados otimizados de banda de guarda $B_G$ reduzida
+% para a baixo de 70\% da banda passante $B_W$ foi alcançado sem que as
+% interferências por batimento no fotoreceptor fossem significativas assim como um
+% intervalo de guarda $I_G$ foi reduzido sem que houvesse degradação por efeitos
+% da dispersão cromática.
+% 
+% % Trabalhos Futuros
+% A partir da plataforma de testes desenvolvida e a estrutura de códigos para
+% interação com equipamentos e processamento \textit{offline} surge um campo de
+% possibilidades para inúmeras ideias e possibilidades. Alguns trabalhos relativos
+% a redes ópticas passiva, OFDM com envelope constante, implementação do
+% \textit{downstream/upstream} do LTE, sistemas RoF dentre outros tipos de
+% modulação já estão sendo conduzidos a partir da plataforma de trabalho
+% implementada.
+% 
+% Neste trabalho, parâmetros otimizados foram encontrados por meio de simulações,
+% utilizados nas configurações experimentais e validados. O que ocorre na verdade
+% é o fato de não existir um pleno alinhamento dos modelos matemáticos de todos os
+% dispositivos com os dispositivos reais, além de efeitos não modelados
+% matematicamente, que existem no sistema. Um próximo passo seria alinhar
+% perfeitamente os modelos teóricos com os dispositivos reais para obter melhores
+% resultados provenientes das otimizações. Entretanto, a simulação poderia ainda
+% gerar uma população de parâmetros iniciais que convergiriam para uma plena
+% validação no sistema experimental, e com isso para um trabalho de continuidade,
+% é possível implementar uma heurística de otimização que opere diretamente com o
+% sistema experimental surgindo um processo adaptativo ao realizar iterações e
+% analisar resultados da transmissão para a busca de parâmetros com melhores
+% características. Consiste de um processo adaptativo em tempo real com
+% processamento \textit{offline} porém, desconsiderando tempo de resposta do
+% sistema. Além disso, foi observado que a largura de banda causada pela
+% interferência do batimento do \textit{laser} no receptor é influenciado pela
+% quantidade de potência óptica inserida. Portanto, junto à um sistema adaptativo
+% ligado ao sistema experimental, seria interessante adicionar a potência óptica
+% como parâmetro de otimização, parâmetro no qual influência a largura da banda de
+% guarda $B_G$ necessária. Isso faria com que encontrasse o equilíbrio entre
+% potência óptica do \textit{laser} $P_0$ e banda de guarda $B_G$ a fim de obter
+% melhor eficiência espectral aumentando a taxa de transmissão para determinado
+% comprimento de fibra com uma taxa de erro de bit BER aceitável.

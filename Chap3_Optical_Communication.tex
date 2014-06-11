@@ -1,0 +1,633 @@
+%
+% ****************************************************************************
+% ############################################################################
+%
+%
+%             ....................             Capítulo 3         ............
+%
+%                                         OFDM em Sistemas Ópticos
+%
+% ############################################################################
+% ****************************************************************************
+%
+%
+
+%\chapter{OFDM em Sistemas ópticos}
+\chapter{Transmissão OFDM em Sistemas Ópticos IMDD}
+
+{\huge\huge{A}} aplicação da técnica OFDM em sistemas de
+comunicação ópticas aumentou consideravelmente nos últimos anos,
+principalmente pela capacidade da técnica em compensar eletronica\-mente a
+dispersão total em longos enlaces (\emph{long-haul}) de fibra 
+\cite{OOFDM_Book}. O crescente desenvolvimento das tecnologias de processamento
+digital de sinais a altas taxas de transferências também contribuiu para o
+despertar de interesses pela transmissão line\-ar de sinais OFDM que modulam
+um \emph{laser} diretamente ou modulam a intensidade deste através de um
+modulador externo. Além disso, a crescente demanda das redes ópticas pelo
+aumento das taxas de transferência conduziu os pesquisadores a ensaios
+laboratoriais como prova de viabili\-dade da referida técnica nos mais
+variados tipos de redes \cite{LoweryJLT08}, \cite{JansenJLT08},
+\cite{WilnnerJLT09_01}, \cite{JairPNC09}.
+
+%
+% *******************************************************************************
+%
+%
+%             ....................             DDO-OFDM & CO-OFDM         .......
+%
+%
+% *******************************************************************************
+%
+
+\section{Sistemas Ópticos DDO-OFDM}
+Existem hoje duas grandes linhas de pesquisas em sistemas multiportadoras
+ópticas OOFDM (\emph{Optical} OFDM ou OFDM \emph{Optics}), que diferenciam-se
+essencialmente pela recepção do campo óptico representante do sinal
+OOFDM.
+Se o componente de frequência óptica do receptor, ao qual o sinal OOFDM é
+misturado,  for um oscilador local, então, o sistema é denominado sistema
+CO-OFDM (\emph{Coherent Optical }OFDM) \cite{JansenJLT09}. Se este for
+transmitido juntamente com o sinal OOFDM, ao sistema dá-se o nome de sistema
+óptico OFDM com detecção direta DDO-OFDM (\emph{Direct Detection}
+\emph{Optical} OFDM) \cite{LoweryOFC09}, \cite{Rosenkranz09}. O diagrama
+ilustrado na Figura \ref{transmissao_DDO_OFDM} apresenta detalhes de sistemas da
+transmissão de sinais multiportadoras OFDM em sistemas ópticos com detecção
+direta normalmente encontrado na literatura. Os sinais oriundos do transmissor
+OFDM (OFDM Tx) modulam a intensidade (potência instantânea) de um laser CW
+(\emph{Continuous Wave}) através de um modulador óptico externo MZM
+(\emph{Mack-Zehnder Modulator}) de um braço. Na saída do MZM com apenas um braço
+utiliza-se um filtro óptico SSB (\emph{Single-Side Band}) de forma a inserir na
+fibra um sinal OOFDM de banda lateral única. A transmissão de sinais OFDM em
+longos enlaces  de fibra SMF (\emph{Single-Mode Fiber}) sem fibras compensadoras
+de dispersão DCF (\emph{Dispersion Compensating Fiber})  é facilitado perante
+a deteção de campos ópticos de banda  lateral única SSB, uma vez que
+os desvios de fase dependentes da frequência causados pela  dispersão
+cromática no sinal óptico, traduzidos para o domínio elétrico  nas
+subportadoras do sinal OFDM, são corrigidos por um banco de multiplicadores
+complexos  nas subportadoras normalmente denomi\-nado equalizador de um atraso
+(\emph{one tap equalizer}). Um filtro de redução da banda do ruído ASE
+(\emph{Amplified Spontaneous Emission}) se faz necessário após amplificação
+óptica realizada no final de cada \emph{span} de fibra SMF.
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.63]{Figuras_TESE/DDO_OFDM.eps}
+\caption{Transmissão multiportadora OFDM em sistemas ópticos com modulação de
+intensidade e detecção direta DDO-OFDM típico. CW - \emph{Continuous Wave}, MZM
+- \emph{Mach-Zehnder Modulator}, FO - Filtro Óptico, SSB - \emph{Single-Side
+Band}, AO - Amplificador Óptico, ASE - \emph{Amplified Spontaneous Emission}, PD
+- \emph{Photodetector}.}
+\label{transmissao_DDO_OFDM}
+\end{center}
+\end{figure}
+
+Observa-se na Figura \ref{transmissao_DDO_OFDM} a inexistência de fibras
+compensadoras de dispersão, presença obrigatória nos longos enlaces ópticos
+atualmente implantados.
+
+% \begin{figure}[htbp]
+% \begin{center}
+% \includegraphics[scale=0.76]{Figuras_TESE/CO_OFDM.eps}
+% \caption{Transmissão multiportadora OFDM em sistemas ópticos com modulação de
+% intensidade e detecção coerente CO-OFDM típico. a) Receptor Heteródino. b)
+% Receptor Homódino. CW - \emph{Continuous Wave}, MZM - \emph{Mach-Zehnder
+% Modulator}, FO - Filtro Óptico, SSB - \emph{Single-Side Band}, AO -
+% Amplificador Óptico, ASE - \emph{Amplified Spontaneous Emission}, LO -
+% \emph{Local Oscillator}.}
+% \label{transmissao_CO_OFDM}
+% \end{center}
+% \end{figure}
+
+Embora seja mais sensível a ruídos de fase provocados por desvios entre os
+osciladores locais do transceptor óptico, as pesquisas apontam para a
+adoção da deteção coerente CO-OFDM em sistemas ópticos de longas
+distâncias (\emph{long-haul}), por melhorar considera\-velmente a
+sensitividade\footnote{A sensitividade do receptor é a potência de entrada no
+receptor que garante uma taxa de erro de bits prefixada (normalmente,
+$BER=10^{-9}$ em sistemas ópticos).} do receptor. Esta indicação baseia-se
+também no fato da deteção direta desperdi\c{c}ar boa parte da potência
+na transmissão da portadora óptica \footnote{Ao atribuir à portadora óptica
+metade da potência do sinal inserido na fibra registra-se uma inerente perda 3
+dB na relação sinal ruído óptica OSNR (\emph{Optical Signal-to-Noise Ratio}).},
+além de reservar uma banda de guarda entre a portadora óptica e o sinal OFDM
+para combater produtos de intermodulação IMD (\emph{Intermodulation
+Distortion}) gerados pelo fotodiodo na recepção \cite{ASE_Lowery}. A Figura
+\ref{Bandas_Opticas_DDO_CO_OFDM} ilustra bem o melhor aproveitamento da potência
+e do espectro dos sistemas CO-OFDM. Entretanto, o custo beneficio que advém do
+reduzido número de componentes empregados na recepção em sistemas DDO-OFDM vem
+motivando os interessados em sua aplicação também nas comunicações em
+longas distâncias. As investigações realizadas nesta Tese enquadram-se nesta
+linha de pesquisa, mais especificamente na transmissão em fibras monomodais
+SMF de sinais OFDM que linearmente modu\-lam em intensidade o campo óptico de
+um laser CW, através de moduladores externos MZM, sendo os sinais OFDM ópticos
+de banda lateral única detectados por um único fotodetetor.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.76]{Figuras_TESE/Bandas_Opticas_DDO_CO_OFDM.eps}
+\end{center}
+\caption{Espectros óptico e elétrico de sinais OFDM nas detecções direta e
+coerente Homódino. Recomenda-se reservar uma banda de guarda $B_G$ no mínimo
+igual a largura de banda do sinal $B_w=B$. SSB - \emph{Single-Side Band}, LO -
+\emph{Local Oscillator}, PD - \emph{Photodetector}}
+\label{Bandas_Opticas_DDO_CO_OFDM}
+\end{figure}
+
+Assim sendo, considerando apenas o efeito linear da dispersão, após propagação
+em fibras SMF com resposta em frequência
+\begin{equation}
+H_f(w) = e^{j w^2 (\frac{\beta_2}{2})L_f},
+\label{eq_Resp_Freq_Fibra}
+\end{equation}
+para $j=\sqrt{-1}$, $w=2\pi f$, sendo $f$ a frequência do sinal elétrico,
+$\beta_2$ o parâmetro GVD (\emph{Group Velocity Dispersion}) e $L_f$ o
+comprimento da fibra; e posterior filtragem pelo filtro ASE de resposta em
+frequência $H_{FO}$, o sinal detectado pode ser escrito como
+\begin{eqnarray}
+y_{det}(t) & = & |E(t)|^2 = |(A + s(t)e^{j2\pi f_b t}) \otimes h(t)|^2 \\
+           & = & [(A + s(t)e^{j2\pi f_b t}) \otimes h(t)]\cdot [(A + s(t)e^{j2\pi f_b t}) \otimes h(t)]^\ast\\
+           & = & |A|^2 + A s(t)e^{j2\pi f_b t} \otimes h(t) + A s^\ast(t)e^{-j2\pi f_b t} \otimes h^\ast(t) + |s(t) \otimes h(t)|^2,
+\label{eq_DDO_OFDM_rx}
+\end{eqnarray}
+onde $E(t)$ representa o campo elétrico do sinal óptico na entrada do
+fotodetector composto pelo sinal OOFDM SSB centrado em $f_b$ e matematicamente
+representado por $s(t)e^{j2\pi f_b t}$, e pela componente DC  $A$ que
+caracteriza a portadora óptica \cite{BarrosJLT10}. A resposta impulsiva de todo
+o canal óptico $h(t)$ é dada pela transforma inversa de Fourier de $H(w)=H_f(w)
+\cdot H_{FO}(w)$. Conclui-se a partir da expansão realizada que os efeitos dos
+produtos de intermodulação $|s(t) \otimes h(t)|^2$ gerados na detecção direta
+são eliminados mediante a concepção de uma banda de guarda com largura mínima
+igual à largura de banda do sinal OFDM óptico SSB conforme ilustrado na Figura
+\ref{Bandas_Opticas_DDO_CO_OFDM}.
+
+
+%
+% ***********************************************************************************************************************
+%
+%
+%             ....................             Sistemas DDO-OFDM         ............................
+%
+%
+% ***********************************************************************************************************************
+%
+
+\section{Implementação de Sistemas DDO-OFDM}
+\label{sistemasDDO-OFDM}
+Existem na literatura diversas e variadas implementações de transmissores e
+receptores OFDM utilizadas em simulações computacionais e em experimentos em
+laboratórios de sistemas OFDM óptico com deteção direta IMDD (DDO-OFDM)
+\cite{LoweryOFC07}, \cite{LoweryJLT08}, \cite{JansenJLT09},
+\cite{WilnnerJLT09_01}. Os diagramas de blocos de três das principais e mais
+empregadas nesta linha de estudos são apresentados e explanados nesta seção. Em
+ambos os sistemas DDO-OFDM apresentados nas Figuras \ref{Fig:sistema_DDO_OFDM_I}
+e \ref{Fig:sistema_DDO_OFDM_II} é disponibilizado na entrada do enlace óptico um
+sinal OFDM analógico com banda lateral dupla DSB (\emph{Double-Side Band}) com
+coeficientes reais por apenas um conversor digital-analógico DAC
+(\emph{Digital-to-Analogue Converter}) no sistema DDO-OFDM I e por um par destes
+no DDO-OFDM II. Isso demanda um filtro óptico passa bandas na saída do MZM de
+único um bra\c{c}o para a concepção de um sinal OFDM SSB óptico.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.59]{Figuras_TESE/sistema_DDO_OFDM_I.eps}
+\end{center}
+\caption{Diagrama de blocos do sistema DDO-OFDM I. A geração de sinais OFDM com
+coeficientes reais utiliza a simetria Hermitiana e a banda guarda é implementada
+mediante o \emph{Zero Padding}. $IFFT$ - \emph{Inverse Fast Fourier Transform},
+$CP$ - \emph{Cyclic Prefix}, $P/S$ - Conversão Paralelo para Serial, DAC -
+\emph{Digital-to-Analog Converter}, ADC - \emph{Analog-to-Digital Converter},
+$S/P$ - Conversão Serial para Paralelo, $FFT$ - \emph{Fast Fourier Transform},
+$CP^{-1}$ - Remoção do CP.}
+\label{Fig:sistema_DDO_OFDM_I}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.58]{Figuras_TESE/sistema_DDO_OFDM_II_f.eps}
+\end{center}
+\caption{Diagrama de blocos do sistema DDO-OFDM II. A geração dos sinais OFDM
+com coeficientes reais e da banda guarda é realizada com a modulação analógica
+adicional. OL - Oscilador Local, $Re$ - parte Real, $Im$ - parte Imaginária, $I$
+- \emph{In-phase}, $Q$ - \emph{Quadrature}.}
+\label{Fig:sistema_DDO_OFDM_II}
+\end{figure}
+
+A principal diferença entre estes dois transceptores está na geração
+dos sinais OFDM com coeficientes reais. Enquanto o primeiro emprega a simetria
+Hermitiana na entrada do modulador IFFT, o segundo utiliza "misturadores"
+analógicos (\emph{Electrical IQ mixer}) para modular em amplitude uma
+portadora de rádio frequência RF (\emph{Radio Frequency}) com as partes real
+e imaginária dos sinais OFDM de coeficientes complexos obtidos na saída do
+modulador IFFT. Ou seja, a ineficiência espectral de um é
+contrabalan\c{c}ada pela modulação adicional do outro. Conforme ilustram
+as Figuras \ref{Fig:sistema_DDO_OFDM_I} e \ref{Fig:sistema_DDO_OFDM_II},
+a banda de guarda que separa a portadora óptica do sinal OOFDM é obtida no sistema
+DDO-OFDM I após zerarem-se (\emph{Zero Padding}) algumas subportadoras na
+entrada do modulador elétrico IFFT, enquanto que na implementação
+DDO-OFDM II esta tarefa é reservada à modu\-lação analógica adicional.
+
+Uma alternativa de implementação que elimina o filtro óptico SSB usado nas duas
+primeiras é ilustrada no diagrama de blocos da Figura
+\ref{Fig:sistema_DDO_OFDM_III}. Denominado DDO-OFDM III este sistema usa um
+modulador óptico externo Mach-Zehnder em quadratura e portanto de dois braços
+para fazer a conversão eletro-óptico dos sinais OFDM analíticos de coeficientes
+complexos e de banda lateral única concebidos pela transformada de Hilbert.
+Portanto, assim como no sistema DDO-OFDM II, este utiliza um par de DAC´s na
+saída do bloco transmissor, embora usa apenas um na recepção.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.62]{Figuras_TESE/sistema_DDO_OFDM_III.eps}
+\caption{Diagrama de blocos do sistema DDO-OFDM III. Neste são gerados sinais
+OFDM com coeficientes complexos e a banda de guarda implementada pelo \emph{zero
+padding}.}
+\label{Fig:sistema_DDO_OFDM_III}
+\end{center}
+\end{figure}
+
+O sinal SSB é concebido pela transformada de Hilbert aplicada aos $N_{FFT}$
+coeficientes de entrada do modulador/multiplexador IFFT que consiste em zerar
+metade das suportadoras na entrada do modulador. Assim, o vetor $X$ na de
+entrada do IFFT pode ser descrito como
+\begin{eqnarray}
+X & = & [X_1 \cdots X_{N_{FFT}}]\\ \label{eq_hilbert_1}
+  & = &  [X_1 \cdots X_{N_{FFT}}/2, 0 \cdots 0]\\ \label{eq_hilbert_2}
+  & = &  [0 \cdots 0, I_1 \cdots I_{N_s}, 0 \cdots 0], \label{eq_hilbert_3}
+\end{eqnarray}
+para $N_s = N_{FFT}/4$. O \emph{zero padding} é aplicado na primeira quarta
+parte dos coeficientes para prover a banda de guarda. Portanto, enquanto o
+sistema DDO-OFDM II utiliza todos os coeficientes de um modulador IFFT de
+$N_{FFT} = 1024$ pontos como subportadoras de informação, os sistemas DDO-OFDM I
+e DDO-OFDM III usam apenas $N_s = N_{FFT}/4 = 256$ para tal.
+
+% ##########################################################################################################################
+%
+%
+%             ....................        PROJETO PARAM. OOFDM           ............................
+%
+% ##########################################################################################################################
+%
+
+\section{Projeto de parâmetros OOFDM}
+Sabe-se que a inserção do prefixo cíclico CP virtualmente elimina a
+interferência intersimbólica ISI em sistemas de transmissão OFDM, além de
+auxiliar no sincronismo de símbolos. Também conhecido como extensão
+cíclica ou como intervalo de guarda, consiste em copiar as últimas $N_{g}$
+amostras do símbolo OFDM para o início do mesmo. Por isso, tal artifício
+introduz redundâncias no sistema que aumentam a largura de banda do sinal a
+ser transmitido, fazendo com que o menor CP seja desejável ao mesmo tempo em
+que previne a ISI. Em sistemas de comunicações ópticas que transmitem
+sinais OFDM, este compromisso torna-se latente em minimizar-se tanto os efeitos
+de ISI provocados por dispersão cromática, quanto a redundância oriunda do
+uso do CP. Desprezando-se os efeitos da dipersão por polarização de modo
+PMD (\emph{Polarization Mode Dispersion}), uma boa estimativa de duração
+do intervalo de guarda, $T_{g}$ é dada por \cite{JansenJLT08}
+
+\begin{equation}
+T_{g} \geq D\cdot B_W \cdot \frac{c}{f^2},
+\label{eq_Tcp}
+\end{equation}
+onde $D$ representa a dispersão cromática total em $[ps/(nm \cdot km)]$,
+$B_W=R_{Nominal}/\log_2(M)$ a largura de banda do sinal OOFDM em Hz; para
+$R_{Nominal}$ a taxa de transmissão nominal do sistema em b/s e $M$ o nível
+de modulação por subportadora; $c$ a velocidade da luz em m/s e $f =
+\frac{c}{\lambda}$ a frequência da portadora óptica em Hz; para $\lambda$ o
+comprimento de onda do sinal óptico \cite{JansenOFT09}. A taxa de
+transmissão $R_b$ é dada por
+
+\begin{equation}
+R_b = \frac{B_w}{N_{FFT}} \cdot \frac {N_s \log_2 (m)}{1 + G}
+\label{eq:Rb}
+\end{equation}
+
+em outras palavras, cada subportadora $N_s$ que transporta dados da banda
+efetiva $\frac{B_w}{N_{FFT}}$ transporta $\log_2 (m)$ bits de dados. E um
+cabeçalho adicional como penalidade de $(1+G)$ deve ser perdido pelo prefíxo
+cíclico, desde que isto consiste de uma informação redundante e sacrifica a
+transmissão do símbolos de dados atuais. 
+E assim, entenda-se por taxa de transmissão nominal aquela medida antes da
+codificação, relacionada com a taxa de transmissão usual $R_b$ conforme
+
+\begin{equation}
+R_{Nominal} = R_b \cdot (1+\varepsilon_{FEC}) \cdot (1+\varepsilon_{TS}) \cdot (1+\varepsilon_{g}),
+\label{eq_R_Nominal}
+\end{equation}
+onde $\varepsilon_{FEC}$ ($\approx7\%$), $\varepsilon_{TS}$  ($\approx4\%$) e
+$\varepsilon_{g}$ ($\approx4\%$) são as redundâncias inseridas por
+codi\-ficação, símbolos de treinamento e prefixo cíclico
+respectivamente. A partir das equações (\ref{eq_Tcp}) e
+(\ref{eq_R_Nominal}) e, sabendo que $\varepsilon_{g} = \frac {T_{g}}{T_s -
+T_{g}}$, onde $T_s$ é a duração total do símbolo OFDM, obtêm-se a
+relação
+
+\begin{equation}
+ D = \frac{f^2}{c} \frac{\log_2(M)}{R_b \cdot (1+\varepsilon_{FEC}) \cdot (1+\varepsilon_{TS})} \cdot \frac{T_{g}T_s - T_{g}^2}{T_s},
+\label{eq_projeto_DL}
+\end{equation}
+que determina o comprimento de um enlace de fibra SMF em sistemas OOFDM sem
+compensação óptica de dispersão. Parâmetros de um sinal OFDM podem
+então ser facilmente determinados com a ajuda das curvas da Figura
+\ref{projeto_param_OOFDM}, as quais ilustram esta tolerância \`a dispersão
+cromática em quilômetros de fibra SMF em sistemas OOFDM que compensam
+eletronicamente a dispersão via equalização. Observa-se nestas curvas
+que, conforme apontado pela equação (\ref{eq_projeto_DL}), para um mesmo
+valor de $T_{g}$, o alcance de tais sistemas aumenta com $T_s$ para uma
+determinada taxa de transferência e nível de modulação nas
+subportadoras. Observa-se também que a citada tolerância diminui
+drasticamente com a taxa de transmissão de tal forma que de $4000$ km em $10$
+Gb/s caiu para aproximadamente $1000$ km em $40$ Gb/s para valores de $T_s$ e
+$T_{g}$ iguais a $40$ e $1.6$ ns respectivamente.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.85]{Figuras_TESE/Tolerancia_Dispersao_OOFDM.eps}
+\caption{Curvas de tolerância \`a dispersâo em km de fibra SMF ($D = 16$
+ps/nm/km) para projeto de $T_{g}$ e $T_s$ em sistemas OOFDM para as taxas de
+transmissão (a) $R_b = 10$ Gb/s e (b) $40$ Gb/s, com $M=16$ e
+$\varepsilon_{TS} +  \varepsilon_{g} = 8\%$.}
+\label{projeto_param_OOFDM}
+\end{center}
+\end{figure}
+
+Como exemplo de ilustração de projeto de parâmetros, considere a
+transmissão DDO-OFDM a $10$ Gb/s em um enlace de $1000$ km de fibra SMF com $D
+= 16$ ps/nm/km. Com a conveniente escolha de $\varepsilon_{TS} + \varepsilon_{g}
+= 8\%$, estabelece-se $R_{Nominal}$ e $B_W$ em aproximadamente $11.57$ Gb/s e
+$5.79$ GHz para $M=4$-QAM. Calcula-se a partir de (\ref{eq_Tcp}) a duração
+mínima do intervalo de guarda $T_{g} \approx 0.74$ ns em $\lambda = 1550$ nm.
+Com o auxílio da curva de $1000$ km da Figura \ref{sinais_DDO_OFDM}.a)
+determina-se $T_s \approx 19.3$ ns. Com $T_u \approx T_s - T_{g} = 18.6$ ns
+obtêm-se as $N_s = 107$ subportadoras de informação necessárias para a
+transmissão fazendo $N_s = T_u \cdot R_{Nominal}/\log_2(M)$, espa\c{c}adas em
+$\Delta_f = T_u^{-1} \approx 54$ MHz.
+Conclui-se portanto que, uma IFFT de $N_{FFT} = 512$ pontos é necessária
+para gerar o sinal OFDM com simetria hermitiana e banda de guarda proveniente do
+preenchimento com zeros de $N_z = N - N_s = 148$ subportadoras "inativas", para
+$N = (N_{FFT}/2) - 1 = 255$. A largura de banda total e a taxa de amostragem do
+sistema são respectivamente $B_{Wt} = B_G + B_W \approx 11.6$ GHz e $f_s
+\approx 23$ GS/s.
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.94]{Figuras_TESE/Projeto_sistema_DDO_OFDM_f.eps}
+\caption{Transmissão de sinais OFDM em $L=1000$ km de fibra com $D=16$
+ps/nm.km e atenuação $\alpha=0.2$ dB/km, de um sistema DDO-OFDM. (a)
+Curvas para projeto dos parâmetros $T_{g}$ e $T_s$ para um determinado
+comprimento de fibra. (b) Diagramas de constelação antes e depois da equalização
+em $1000$ km de fibra SMF. (c) Diagramas de constelação depois da equalização
+para $T_{g} = 0.74$ e $1.6$ ns em $2000$ km de fibra SMF padrão. (d) Espectro
+óptico de potência do sinal DDO-OFDM SSB na entrada da fibra. (e) Espectro
+elétrico de potência do sinal na saída do Fotodetector.}
+\label{sinais_DDO_OFDM}
+\end{center}
+\end{figure}
+O efeito dos desvios de fase nos $107$ subsímbolos QAM dos $100$ sinais OFDM
+transmitidos, provocados pela dispersão cromática dos $1000$ km de fibra,
+é mostrado no diagrama de constelação da Figura
+\ref{sinais_DDO_OFDM}.b). Este diagrama também ilustra a compensação
+eletr\^onica de dispersão realizada nos subsímbolos por um simples
+equalizador de um atraso com coeficientes de equalização concebidos pelos
+símbolos de treinamento conhecidos no receptor. A degradação no
+desempenho do sistema parametrizado, denunciada pelo diagrama da Figura
+\ref{sinais_DDO_OFDM}.c), deve-se \`a duplicação do comprimento do enlace.
+Para $2000$ km de fibra, a duração do prefixo cíclico $T_g$ deve ser no
+mínimo igual a $1.6$ ns, conforme ilustram os pontos (cor verde) da
+constelação rotulados por $T_g = 1.6$ ns. A banda de guarda $B_G$,
+característica de sistemas DDO-OFDM e destacada na Figura de espectro de
+potência \ref{sinais_DDO_OFDM}.d), é justificada pelos produtos de
+intermodulação IMD (\emph{Intermodulation Distortion}) mostrados na Figura
+\ref{sinais_DDO_OFDM}.e) gerados pelo "batimento" entre as subportadoras.
+
+% ##########################################################################################################################
+%   ....................    Polarização do Modulador Óptico Externo MZM   
+% ............................
+% 
+% ##########################################################################################################################
+%  distorções não
+\section{Polarização Elétrica do Modulador Óptico}
+A polarização do Mach-Zehnder é de fundamental importância no compromisso que
+envolve as distorções não lineares do MZM e a sensitividade do receptor em
+sistemas DDO-OFDM \cite{Rosenkranz09}, \cite{BarrosJLT08}. As distorções não
+lineares predominam se o MZM for polarizado no ponto de máxima transferência de
+potência, ou seja, próximo da saturação, devido aos altos valores de PAPR dos
+sinais OFDM. Se este for polarizado na região de máxima linearidade, ou seja, em
+quadratura, reduzem-se os níveis de potência de sinal inserido na fibra e
+consequentemente a sensitividade do receptor. Considera-se neste trabalho que a
+polarização, que define a potência da portadora óptica necessária nas
+transmissões com detecção direta, pode ser classificada em polarização elétrica
+e polarização óptica. Na elétrica escolhe-se um ponto na curva característica do
+MZM que provê a portadora na sua saída, enquanto que na óptica o MZM é
+polarizado no ponto de intensidade nula e a portadora é inserida no domínio
+óptico.
+
+% \subsection{Polarização Elétrica}
+Os sistemas de comunicações ópticas necessitam de moduladores de intensidade
+externos, uma vez que a modulação direta de um laser implicitamente modula a
+frequência instantânea da portadora óptica. Este fenômeno é denominado
+\emph{chirp} que limita o desempenho do sistema. A estrutura dos moduladores
+externos electro$-$ópticos, normalmente baseados em interferômetros de
+Mach-Zehnder, consistem de um divisor de potência óptica (\emph{splitter}) de
+$3$ dB na entrada de dois braços (\emph{dual-drive}), munidos de moduladores de fase
+que através de eletrodos independentes inserem uma diferença na fase dos sinais
+elétricos moduladores de radio frequência nos guias de onda e de um acoplador de
+potência óptica de $3$ dB na saída. A potência óptica é transmitida mediante a
+interferência construtiva entre os sinais na junção de saída sendo que o campo
+elétrico $E_0(t)$ do sinal óptico na saída do MZM relaciona-se com o do sinal
+óptico de entrada $E_i(t)$ conforme
+
+\begin{eqnarray}
+E_0(t)& = & \frac{E_i(t)}{2}\left(e^{j\pi \frac{V_1(t)}{V_{\pi}}} + e^{j\pi \frac{V_2(t)}{V_{\pi}}} \right) \nonumber\\
+       & = & \frac{E_i(t)}{2} \cdot e^{j\frac{\pi}{V_{\pi}} \left(\frac{V_1(t) + V_2(t)}{2}\right)} \cdot \left[e^{j\frac{\pi}{V_{\pi}} \left(\frac{V_1(t) - V_2(t)}{2}\right)} + e^{-j\frac{\pi}{V_{\pi}} \left(\frac{V_1(t) - V_2(t)}{2}\right)} \right] \nonumber \\
+       & = & E_i(t) \cdot e^{j\frac{\pi}{V_{\pi}} \left(\frac{V_1(t) + V_2(t)}{2}\right)} \cdot \left[
+\frac{e^{j\frac{\pi}{V_{\pi}} \left(\frac{V_1(t) - V_2(t)}{2}\right)} + e^{-j\frac{\pi}{V_{\pi}} \left(\frac{V_1(t) - V_2(t)}{2}\right)}}{2} \right] \nonumber \\
+      & = & E_i(t) \cdot \cos \left[\frac{\pi}{2V_{\pi}}(V_1(t) - V_2(t))\right] \cdot e^{j\frac{\pi}{V_{\pi}} \left(\frac{V_1(t) + V_2(t)}{2}\right)},
+\label{eq_MZM}
+\end{eqnarray}
+
+onde $V_1(t)$ e $V_2(t)$ são os sinais elétricos moduladores e $V_{\pi}$ a
+tensão aplicada aos eletrodos para induzir um desvio de fase a $\pi$ radianos
+entre os sinais nos guias de onda dos dois braços do modulador externo
+\cite{Kaminow_Book}, \cite{OOFDM_Book}. Se forem utilizados sinais RF
+complementares nos braços do modulador (configuração \emph{push-pull}), ou seja,
+considerando-se as relações
+
+$V_1(t) = V(t) + V_{\pi}/2$, $V_1(t) = - V(t) + V_{\pi}/2$ e $V(t) = s(t) +
+V_{bias}$
+
+para $s(t)$ o sinal OFDM e $V_{bias}$ a tensão de polarização do MZM, a equação
+(\ref{eq_MZM}) reduz-se para
+
+\begin{eqnarray}
+E_0(t) & = & E_i(t) \cdot \cos \left[\frac{\pi}{2V_{\pi}}(s(t) + V_{bias})\right],
+\label{eq_MZM_1b}
+\end{eqnarray}
+
+equação esta que governa a função de transferência de um modulador externo MZM
+de um único braço \cite{Modulacao_Fase_Optica_Book}. Ressalta-se que dois destes
+moduladores podem ser associados de modo a conceber o denominado modulador em
+quadratura\footnote{Os campos ópticos na saída dos dois MZM's de um braço são
+adicionados em quadratura.} utilizado no transceptor DDO-OFDM III ilustrado na
+Figura \ref{Fig:sistema_DDO_OFDM_III} e muito útil na conversão direta para o
+domínio óptico de sinais em banda base com coeficientes complexos, portanto, sem
+deslocamento para um frequência intermediária. Em termos de intensidade óptica,
+a relação de potência entre a entrada e saída do MZM é dada por
+
+\begin{eqnarray}
+\frac{|E_0(t)|^2}{|E_i(t)|^2} & = \cos^2\left[\frac{\pi (s(t) + V_{bias})}{2V_{\pi}}\right].
+\label{eq_MZM_pot}
+\end{eqnarray}
+
+A curva característica referente a função de transferência de potência de um
+modulador óptico de um "braço" para diferentes pontos de polarização é mostrada
+na Figura \ref{Funcao_tranf_MZM}. A região central de polarização do MZM
+compreende os pontos da função característica no intervalo $V_{\pi}/2 \leq
+V_{bias} \leq V_{\pi}$.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.8]{Figuras_TESE/Funcao_tranf_MZM2.eps}
+\caption{Função característica do modulador óptico Mach-Zehnder.}
+\label{Funcao_tranf_MZM}
+\end{center}
+\end{figure}
+
+Percebe-se pela Figura \ref{Funcao_tranf_MZM} que a polarização no ponto de
+quadratura $V_{bias} = V_\pi/2$, para $V_\pi$ a tensão de chaveamento do MZM,
+explora a máxima linearidade do modulador sob o desperdício de potência em uma
+portadora óptica. Reduz-se a potência da portadora\footnote{Embora não
+carregue informação, a portadora óptica é indispensável em sistemas
+IMDD.} polarizando o MZM em $V_{bias} > V_\pi/2$, com a adversidade das
+inserções de não linearidades no sinal óptico pelo próprio MZM. A Figura
+\ref{espectros_saida_MZM} mostra o espectro de frequências de sinais OFDM
+ópticos na saída do modulador para diferentes valores de polarização. Nota-se
+que a diferença entre as potências instantâneas da portadora óptica e do sinal
+de dados DSB diminui a medida que o valor de $V_{bias}$ aproxima-se de
+$V_{\pi}$, até a ausência da portadora óptica em $V_{bias} = V_{\pi}$.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.73]{Figuras_TESE/espectros_saida_MZM.eps}
+\caption{Espectros de potência de sinais OOFDM na saída do modulador óptico MZM
+para diferentes pontos de polarização do mesmo.}
+\label{espectros_saida_MZM}
+\end{center}
+\end{figure}
+
+% 
+% Aliada à polarização está a amplitude do sinal OFDM na entrada do MZM,
+% normalmente parametrizado pelo índice OMI (\emph{Optical Modulation Index})
+% dado por $OMI = (V_{in})_{RMS}/V_\pi$, onde $(V_{in})_{RMS}$ define o valor
+% quadrático médio RMS (\emph{root-mean-square}) do próprio sinal
+% elétrico. Quanto maior, maiores serão a sensitividade do receptor e as
+% distorções não lineares inseridos pelo modulador óptico. Em
+% contrapartida, o predomínio da portadora no sinal óptico na saída do MZM
+% (baixa sensitividade do receptor) faz-se presente em baixos valores de OMI. A
+% otimização deste compromisso torna-se então necessária,
+% otimização esta que deve também levar em consideração os altos
+% valores de PAPR dos sinais OFDM convencionais. A Figura
+% \ref{EVM_BER_BIAS_OMI_DDOOFDM} mostra resultados de simulação numérica
+% do desempenho EVM e BER do sistema DDO-OFDM convencional acima parametrizado,
+% para diversos pontos de polarização e de índice OMI. Ruído Gaussiano
+% branco foi empregado para simular ruído ASE de amplificadores ópticos para
+% relação sinal-ruído óptico $OSNR = 15$ dB. A largura de banda
+% utilizada nos filtros ópticos SSB e ASE foi $B_{SSB}=B_{ASE}=12.5$ GHz.
+% 
+% \begin{figure}[htbp]
+% \begin{center}
+% \includegraphics[scale=0.85]{Figuras_TESE/EVM_BER_IMDD_OOFDM_15dB.eps}
+% \caption{Desempenho EVM e BER do sistema DDO-OFDM para diferentes valores de OMI e polarização do MZM.}
+% \label{EVM_BER_BIAS_OMI_DDOOFDM}
+% \end{center}
+% \end{figure}
+% 
+% Nota-se pelas curvas da Figura \ref{EVM_BER_BIAS_OMI_DDOOFDM} que, conforme
+% esperado, o ponto ótimo de funcionamento do modulador óptico externo depende
+% tanto do seu ponto de polarização quanto do índice de modulação do
+% sinal RF na sua entrada. Quando polarizado em $V_{bias} = 0.8V_\pi$, o melhor
+% desempenho corresponde ao OMI$=0.15$, sendo que isto ocorre em OMI$=0.2$ quando
+% o MZM é polarizado em $V_{bias} = 0.5V_\pi$. Deve-se no entanto observar que a
+% redução no nível de potência da portadora óptica ($V_{bias} =
+% 0.8V_\pi$) é contrabalan\c{c}ada pela ineficiência espectral do sistema.
+% Reduzir os efeitos não lineares inseridos pelo MZM significa polarizá-lo em
+% $V_{bias} = 0.5V_\pi$. Entretanto, conforme Figura
+% \ref{EVM_BER_BIAS_OMI_DDOOFDM}, isto tem como consequência a perda de
+% desempenho.
+
+
+
+
+
+
+
+
+
+
+
+%é neste contexto que levantam-se as seguintes quest\~oes: O que fazer para
+% melhorar a eficiência espectral de sistemas DDO-OFDM? Que artifício usar para explorar a região de polarização linear do modulador óptico de tais sistemas? Até que ponto mecanismos de redução de PAPR ajudam no combate a não linearidades do MZM?  Será que o emprego de sinais OFDM com envelope constante melhoram o compromisso acima levantado?
+
+
+% \subsection{Polarização Óptica}
+% \label{pol_optica}
+% Para que o espectro do sinal OOFDM na saída do MZM não contenha a componente que representa a portadora óptica é necessário que o modulador seja polarizado no ponto de intensidade nula, $\frac{V_{bias}}{V_{\pi}} = 1$, conforme ilustrado nas Figuras \ref{Funcao_tranf_MZM} e \ref{espectros_saida_MZM} \cite{POL_OPTICA_Rosenkranz10}. A partir disso insere-se a portadora no domínio óptico com o auxílio de um separador ou \emph{splitter} e um acoplador óptico. O \emph{splitter} separa o sinal do laser CW em duas partes sendo uma utilizada na modulação realizada pelo MZM e a outra combinada, após compensação de atraso, ao sinal de saída do MZM através do acoplador. A grande vantagem da polarização óptica está em minimizar as distorções introduzidas pela característica não linear do próprio Mach-Zehnder.
+% 
+% A razão entre as potências da portadora e do sinal OOFDM de banda lateral única \footnote{Obtida na saída do filtro óptico SSB} representado pelo parâmetro CSPR (\emph{Carrier-to-Signal Power Ratio}) é de extrema importância nos sistemas aqui estudados. Matematicamente, este parâmetro pode ser des\-crito como,
+% \begin{equation}
+% CSPR = \frac{P_c}{P_{in}},
+% \label{eq_CSPR}
+% \end{equation}
+% para $P_c$ a potência da portadora óptica e $P_{in}$ a potência do sinal SSB na entrada da fibra. A polarização óptica permite atribuir à portadora a potência desejada a partir de um determinado valor de CSPR e mediante a medição do sinal SSB. Experimentalmente, um atenuador óptico pode ser usado para ajustar este importante parâmetro. A transmissão de sinais a $10$, $40$ e $100$ Gb/s de sistemas DDO-OFDM em configuração \emph{back-to-back} (b2b) foi simulada para variados valores de CSPR com os parâmetros da Tabela \ref{Parametros_OFDM_Pol_Optica}. Os valores da OSNR necessários para alcançar uma taxa de erro de bits $BER=1\times10^{-3}$ para modulações por subportadora 4-QAM e 16-QAM em cada CSPR considerado são apresentados na Figura \ref{CSPR_OSNR_BER001}. Observa-se pela Figura que o ótimo ocorre quando CSPR$=0$ dB, o que significa atribuir à portadora óptica a mesma potência do sinal OOFDM de banda lateral única. Constata-se ainda que o desempenho do sistema a $100$ Gb/s e modulação 4-QAM iguala-se ao caso da transmissão a $40$ Gb/s e mapeamento 16-QAM.
+% 
+% 
+% \begin{table}[h]
+% \begin{center}
+% \begin{tabular}{c|c|c|c|c|c|c}
+%   \hline
+%   \hline
+%   % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+%   \multicolumn{7}{c} {\bf Parâmetros OFDM} \\
+%   \hline
+%   \hline
+%   & \multicolumn{3}{c}{\bf 4-QAM} \vline & \multicolumn{3}{c}{\bf 16-QAM}\\
+%   \hline
+%   \textbf{Taxa de Transmissão} $R_b$ [Gb/s] & \textbf{10} & \textbf{40} & \textbf{100} & \textbf{10} & \textbf{40} & \textbf{100} \\
+%   \hline
+%   Largura de Banda $B_w$ [GHz] & $10.6$ & $42.5$ & $106.4$ & $5.3$ & $21.3$ & $53.2$ \\
+%   \hline
+%   Tamanho IFFT/FFT $N_{FFT}$ & $2048$ & $2048$ & $2048$ & $2048$ & $2048$ & $2048$ \\
+%   \hline
+%   Subportadoras de Informação $N_s$ & $511$ & $511$ & $511$ & $511$ & $511$ & $511$ \\
+%   \hline
+%   Espaçamento entre Subportadoras $\Delta_f$ [MHz]. & $10.4$ & $41.6$ & $104$ & $5.2$ & $20.8$ & $52$ \\
+%   \hline
+%   Fração do IG & $1/16$ & $1/16$ & $1/16$ & $1/16$ & $1/16$ & $1/16$ \\
+%   \hline
+%   Duração do símbolo [ns] & $96.2$ & $24$ & $9.6$ & $192.4$ & $48.1$ & $19.2$ \\
+%   \hline
+%   \hline
+% \end{tabular}
+% \caption{Sumário dos parâmetros básicos OFDM empregados nas simulações dos sistemas DDO-OFDM com polarização Óptica. Os valores são aproximados.}
+% \label{Parametros_OFDM_Pol_Optica}
+% \end{center}
+% \end{table}
+% 
+% 
+% \begin{figure}[htbp]
+% \begin{center}
+% \includegraphics[scale=0.82]{Figuras_TESE/CSPR_OSNR_BER001.eps}
+% \caption{Relação potência de sinal e potência de ruído ópticas OSNR para $BER=1\times10^{-3}$ em diversos diversos valores de CSPR.}
+% \label{CSPR_OSNR_BER001}
+% \end{center}
+% \end{figure}
+
+
+%é neste contexto que levantam-se as seguintes quest\~oes: O que fazer fazer melhorar a eficiência espectral de sistemas DDO-OFDM? Que artifício usar para explorar a região de polarização linear do modulador óptico de tais sistemas? Até que ponto mecanismos de redução de PAPR ajudam no combate \`a não linearidades do MZM?  Será que o emprego de sinais OFDM com envelope constante melhoram o compromisso acima levantado?
+
+
+
+
+
+
+
+
+
+
+

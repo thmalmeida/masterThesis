@@ -1,0 +1,1145 @@
+\chapter{Demonstração Experimental do Sistema DDO-OFDM}
+
+O sucesso da transferência de informação na forma de propagação de luz em uma
+fibra óptica requer uma plena interação nas junções entre os dispositivos de um
+sistema óptico. Este capítulo descreve as características dos
+dispositivos, pontos de operação, configurações implementadas e modelos de
+algoritmos de transmissão e recepção que se adaptam ao sistema de transmissão de
+sinais OFDM com modulação de intensidade e detecção direta (DDO-OFDM).
+
+\section{Sistema Modulação por Intensidade/Detecção Direta (IM/DD)}
+
+O sistema elétrico/óptico/elétrico de transmissão de informação implementado
+neste trabalho possui como modelo de recepção a detecção direta que utiliza
+apenas um fotodetector por ser de menor complexidade e possuir um menor custo
+quando comparado com a detecção coerente. Embora tenha adotado o modelo de
+detecção direta, o modelo de transmissão é feito utilizando um modulador externo
+ao \textit{laser} do tipo MZM. Como canal de transmissão são utilizadas
+separadamente, duas fibras monomodo padrão (\textit{Standard Single Mode Fiber}
+- SSMF) de 20 e 40 km. Com isso, o sistema de comunicação é dividido em duas
+partes: a parte física composta pelos dispositivos elétricos e ópticos que
+possui pouca ou nenhuma flexibilidade em relação à variação de seus parâmetros
+característicos e a parte que é composta pelo transmissor e receptor, no que se
+refere ao processamento das formas de onda em intensidade e tempo discretos
+definidos por algoritmos implementados e configurados \textit{offline} via
+\textit{software} de computação MATLAB\textsuperscript{\textregistered}. A
+Figura \ref{Fig:DDO-OFDM} ilustra a divisão das partes mostrando a configuração
+implementada.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=\textwidth]{Figures/DDO-OFDM_blockDiagram_en.pdf}
+		\caption{Sistema DDO-OFDM implementado}
+		\label{Fig:DDO-OFDM}
+\end{figure}
+
+Os sinais OFDM preparados pelo algoritmo de geração implementado no
+MATLAB\textsuperscript{\textregistered} são transmitidos por um protocolo de
+instrumentação que trabalha sobre o \textit{Ethernet} e que se comunica com o
+conversor digital para analógico (\textit{Ditigal-to-Analogue Converter} - DAC)
+do AWG7122C da Tektronix de 24 GS/s. O sinal de RF na saída do AWG é amplificada
+e filtrada por um filtro de 3 GHz até chegar ao modulador óptico MZM. Este, por
+sua vez, modula um sinal óptico CW proveniente de um laser centrado em
+$\lambda_c = 1545,3$ nm. Após propagação em enlaces de 20 e 40 km de fibra,
+monomodo padrão, os sinais ópticos são convertidos para o domínio elétrico por
+um único fotodetector PIN de 10 GHz, com pré-amplificação. Um osciloscópio
+digital de 100 GS/s (DPO71604C) captura e digitaliza os sinais de corrente
+realizando a conversão anaógica para digital (\textit{Analog-to-Digital} - A/D)
+e os envia ao bloco OFDM Rx do computador pessoal (\textit{Personal Computer} -
+PC) via protocolo de instrumentação sobre ethernet. As análises de desempenho
+BER e EVM são realizadas \textit{offline} no PC com uma rotina computacional
+desenvolvida em MATLAB\textsuperscript{\textregistered}.
+
+%  portando o bloco transmissor OFDM ligado a um
+% conversor digital para analógico (\textit{Digital-to-Analogue Converter} - DAC)
+% passando por um amplificador eletrico com funcionalidade de amplificação e
+% filtro elétrico e inserindo o sinal em um modulador externo MZM.
+% O sinal é modulado de uma fonte óptica e propagado por um canal óptico SMF e
+% recebido em um fotodetector convertendo o sinal novamente para elétrico,
+% amplificado e assim, realiza a conversão da forma de onda analógica para digital
+% (\textit{Analogue-to-Digital Converter} - ADC) e finalmente processado pelo
+% bloco receptor \textbf{OFDM Rx} que possui um algoritmo de recepção que recupera
+% a informação transmitida.
+
+No entanto, para o sistema alcançar uma confiabilidade e segurança no transporte
+das informações é essencial que todos componentes do sistema sejam compatíveis
+entre si e com seus respectivos desempenhos individuais. Antes de introduzir
+todo o sistema elétrico e óptico implementado torna-se necessário levantar as
+principais características de cada dispositivo inserido no sistema óptico
+elétrico que formam a parte física do experimento.
+
+\section{Caracterização dos Dispositivos}
+
+Cada dispositivo possui seus pontos e limites de operação. O levantamento das
+características dos dispositivos torna-se necessário uma vez que o ajuste de
+seus parâmetros físicos são causas de um melhor desempenho do sistema de
+transmissão e recepção. %\ref{Binh_FiberBook}. 
+
+\subsection{Equipamentos Conversores A/D e D/A}
+
+Os equipamentos que realizam as conversões D/A e A/D são respectivamente o
+gerador forma de onda arbitrária (\textit{Arbitrary Waveform Generator} - AWG)
+AWG7122C e o osciloscópio DPO71604C ambos da
+Tectronix\textsuperscript{\textregistered}. O osciloscópio possui taxa de
+amostragem máxima de $100$ GS/s e largura de banda de recepção de $16$ GHz
+enquanto o AWG tem $24$ GS/s. O limite da frequência dos sinais gerados está na
+conversão realizada pelo DAC. O teorema da amostragem de
+\textit{Nyquist-Shannon} diz que para recuperar um sinal de largura de banda de
+$B$ Hz é necessário ter uma taxa amostragem de no mínimo $F_S \le
+2B$.
+Como a recíproca é verdadeira, o D/A é limitado em gerar sinais de largura de
+banda de até $B = 12$ GHz. Entretando, o número de amostras que compõem os
+sinais vão diminuindo nas componentes de maior frequência até chegar em duas
+amostras por ciclo no limite em $B = 12$  GHz. A Figura \ref{Fig:equipments}
+ilustra os equipamentos utilizados nas configurações para realização das
+conversões A/D e D/A.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=\textwidth]{Figures/DDO-OFDM_DAC_ADC_Equipments.pdf}
+		\caption{Equipamentos AWG e DPO utilizados respectivamente, para conversões
+		A/D e D/A.}
+		\label{Fig:equipments}
+\end{figure}
+
+É importante notar que, mesmo existindo um filtro passa-baixas RC analógico, não
+ajustável para variação de frequência, na saída do conversor D/A para
+transformar as amostras do sinal discreto em analógico, não é possível obter um
+sinal com uma curva suave existindo pontos de descontinuidade no sinal analógico
+convertido que inserem diversas componentes de frequência no sistema.
+No entanto, o ideal é sempre reamostrar o sinal transmitido à taxa de amostragen
+máxima do AWG fazendo com que o sinal fique mais fiel possível possuindo sempre
+o máximo número de pontos por ciclo, evitando que as distorções harmônicas
+conhecidas como \textit{aliasing} fiquem o mais distânte possível do sinal
+transmitido em relação ao eixo das frequências.
+
+\subsection{Laser DFB (\textit{Distributed-Feedback Laser} - DFB)}
+
+Por ser um componente óptico muito utilizado, e estar disponível no laboratório
+de pesquisa, o laser DFB semicondutor foi utilizado como fonte óptica operando
+no modo CW e centrado em $\lambda_c = 1545,3$. Lasers semicondutores são
+classificados principalmente por suas estruturas. A fim de conseguir a
+transmissão de elevada taxa de bits, é necessário limitar-se à largura espectral
+do laser e minimizar a constante do tempo de subida \ref{Binh_FiberBook}.
+%\ref{Binh_FiberBook}
+
+O laser DFB é utilizado neste trabalho como fonte óptica contínua e modulado por
+um modulador óptico externo. O circuito de controle das variáveis físicas do
+laser foi desenvolvido no próprio laboratório de Telecomunicações da UFES
+(LabTel). Consiste em injetar potência na forma de corrente elétrica
+verificando a potência óptica gerada a partir do fotodiodo interno. Ao mesmo
+tempo verifica e controla a temperatura interna do laser através de um termistor
+e uma pastilha peltier, respectivamente. Isso, para que a resposta da potência
+óptica relativa à corrente elétrica possua uma curva quase linear mantendo seu
+ponto de operação e comprimento de onda durante a transmissão. A Figura
+\ref{Fig:powerLaser} foi gerada experimentalmente levantando a resposta da
+potência do laser DFB em relação a corrente dada uma temperatura constante
+controlada. Os detalhes dos circuitos de controle do \textit{laser} DFB
+encontram-se no apêndice \ref{AppendixA}.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=0.7\textwidth]{Figures/laserPowerResponse.eps}
+		\caption{Resposta em potência do laser por corrente em uma temperatura
+		constante.}
+		\label{Fig:powerLaser}
+\end{figure}
+
+Utilizado no modo CW, o \textit{laser} DBF com a temperatura interna
+controlada, apresentou potência óptica $Po = 3,05$ dBm com a corrente de $I_L =
+77,5$ mA e o comprimento de onda estabilizou-se em $\lambda_c = 1545,3$ nm.
+
+% Maiores detalhes da variação
+% do comprimento de onda $\lambda$ com a corrente e construção do controlador de
+% corrente e temperatura do laser estão descritas no apêndice A.
+
+\subsection{Modulador Óptico \textit{Mach-Zehnder} (MZM)}
+Embora seja possível modular a fonte óptica do \textit{laser} DFB diretamente
+variando a corrente do mesmo com um circuito elétrico, nos experimentos
+realizados foi utilizado o modulador óptico externo do tipo MZM que modula a
+onda de luz externamente ao laser, o que evitou o fenômeno de
+\textit{chirp}\footnote{Variação da frequência de um pulso óptico proporcional
+ao aumento tempo.} característico da modulação direta.
+
+Internamente, o MZM divide o feixe coerente de luz provinda do laser em um
+divisor de 3 dB em dois braços conforme Figura \ref{Fig:mzmBeam}.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=\textwidth]{Figures/mzmBeam.pdf}
+		\caption{Estrutura física do modulador óptico MZM e propagação do
+		feixe de luz.}
+		\label{Fig:mzmBeam}
+\end{figure}
+
+Neste trecho do feixe dividido, na presença de sinal na entrada de RF o índice
+de refração de um dos braços é alterado proporcionamente à amplitude do sinal
+RF. Mudando o índice de refração do meio, o sinal é propagado alterando então, a
+velocidade de propagação da onda em um dos ramos. Logo o sinal é recombinado em
+um combinador de 3 dB onde ocorre interferência destrutiva do sinal dado por
+diferença de fase da sua fontes de luz. Para que isso ocorra, é necessário que a
+onda de luz esteja polarizada com o campo elétrico E paralelo na entrada do MZM.
+Os dois pontos de polarização do MZM mais utilizados são o de máxima linearidade
+ou ponto de quadratura e o de máxima transferência de potência elétrica para
+óptica que consiste no ponto de máxima não linearidade \cite{Binh_DigCommBook}.
+
+A equação analítica que descreve matematicamente a curva de transferência de
+potência do MZM é dada por
+
+\begin{equation}
+P_{out}=\sqrt{P_{0}}\cdot \cos^2 \left [ \frac{\pi}{2V_\pi} \left (-V_{bias}
++ 2V(t)+\Delta V_1 \right)  \right]
+\label{mzmEquation}
+\end{equation}
+
+onde $P_0$ é a máxima potência óptica na saida do modulador, ou potência de
+saída do \textit{laser}, $V_{bias}$ é o ponto de polarização do modulador,
+$V_{\pi}$ é a tensão drenada resultando numa diferença de deslocamento de fase
+de $\pi$ entre os dois guias de onda do modulador, $V(t)$ é a tensão ou sinal RF
+aplicado no braço do modulador e $\Delta V_{1}$ é a tensão de \textit{offset}
+usada para ajustar a fase da curva.
+
+Entretanto, cada MZM possui valores de parâmetros físicos diferentes que devem
+ser levantados para obter sucesso no processo de transmissão. A curva característica
+do modulador é levantada utilizando o diagrama de blocos da Figura
+\ref{Fig:mzmCharacterization} que mostra a configuração experimental do procedimento.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=0.7\textwidth]{Figures/mzmPowerMeter.pdf}
+		\caption{Aparato experimental para levantamento da curva
+		do MZM}
+		\label{Fig:mzmCharacterization}
+\end{figure}
+
+Com o sistema de caracterização implementado, a tensão de polarização $V_{Bias}$
+é variada e é observada a potência óptica média de saída através do medidor de
+potência óptica ou \textit{power meter}. Assim, é obtida a curva de forma
+experimental. Com isso, pontos de máximo e mínimo são obtidos e encontradas a
+tensão $V_{\pi}$, responsável por um desvio de fase de $\pi$ radianos entre os
+braços do guia de onda MZM e a de tensão de polarização $V_{bias}$.
+Esses valores são substituidos nos parâmetros da equação analítica
+(\ref{mzmEquation}) para gerar a curva teórica do dispositivo. A Figura
+\ref{Fig:mzmCurve} ilustra a sobreposição das curvas teóricas e experimentais do
+MZM obtidas.
+
+\begin{figure}[t]
+	\centering
+		\includegraphics[width=\textwidth]{Figures/mzmCurve.eps}
+		\caption{Curva característica de transferência de potência do MZM}
+		\label{Fig:mzmCurve}
+\end{figure}
+
+Ressalta-se que esta função característica foi gerada ajustando-se os valores de
+$V_{bias}=4.7 V$ e $\Delta V_1= -2.5 V$, fazendo $V(t)=0$ para $\lambda_c =
+1545,3$.
+
+\subsection{Fibra Óptica}
+O canal óptico de propagação da luz utilizado é uma fibra monomodo padrão
+(\textit{Standard Single Mode Fiber} - SSMF) do padrão $G.652$ da ITU-T
+possuindo valores típicos de atenuações de 0.5 dB/km a 1310 nm e 0.2 dB/km a
+1550 nm. Embora a fibra SSMF tenha baixa perda para propagações na janela de
+comprimento de onda de 1550 nm, o que torna-a adequada para comunicações ópticas
+de longa distância, ela mostra valores relativamente elevados de dispersão
+cromática nesta janela de comprimento de onda. Em sistemas ópticos de alta taxa
+de transmissão, dispersão cromática introduz uma significante distorção na forma
+de onda do sinal, pela qual ocorre degradação significativa no desempenho do
+sistema.
+A fibra SSMF-28 utilizada possui valores de dispersão zero para comprimentos de
+onda de $1304 \: nm \le \lambda_0 \le 1324 \: nm$ e $ D \le 18.0 \:
+[ps/(nm.km)]$ para a janela de transmissão utilizada em $\lambda =  1550$ nm.
+As Figuras (\ref{Fig:OTDR_20km}) e (\ref{Fig:OTDR_40km}) ilustram as
+características físicas das fibras de 20 e 40 km que retratam os aspectos de
+emendas por fusão, atenuação e tamanho físico extraídas de um OTDR,
+(\textit{Optical Time Domain Reflectometer}) com comprimento de onda em $\lambda
+= 1550$ nm.
+
+\begin{figure}[h]
+        \centering
+        \begin{subfigure}{1.0\textwidth}
+                \includegraphics[width=\textwidth]{Figures/OTDR_20km_2.png}
+                \caption{Fibra de 20 km;}
+                \label{Fig:OTDR_20km}
+        \end{subfigure}
+		~
+        \begin{subfigure}{1.0\textwidth}
+                \includegraphics[width=\textwidth]{Figures/OTDR_40km_2.png}
+                \caption{Fibra de 40 km.}
+                \label{Fig:OTDR_40km}
+        \end{subfigure}
+        \caption{Característica físicas das
+        fibras SSMF obtidas a partir do
+        OTDR.}\label{Fig:OTDR}
+\end{figure}
+
+\subsection{Detector Óptico}
+O fotodetector é um componente essencial num sistema de comunicação via fibra
+óptica, pois é um dos elementos fundamentais que determinam o desempenho global
+do sistema. Isso por si só, justifica o levantamento de algumas informações do
+dispositivo tais como velocidade de resposta e eficiência quântica.
+
+% Esses parâmetros dependem de ALGUMAS COISAS QUE FALTAM COLOCAR!
+
+A eficiência quântica $\eta$, é dada pela relação entre o número de pares de
+elétrons gerados, pela energia incidente no fóton $E_i = h \cdot \nu$ conforme,
+\begin{equation}
+\eta = \frac{\frac{I_p}{q}}{\frac{P_o}{h \nu}} = \frac{I_ph \nu}{P_oq}
+\end{equation} em que $I_p$ é a fotocorrente, $P_o$ é a potência óptica
+incidente, $h$ é constante de Planck, $\nu$ é a frequência de radiação e $q$ é a carga de um
+elétron.
+
+% \begin{equation}
+% \eta = \frac{número \: de \: pares \: de \: elétrons \: gerados}{número \: de
+% fótons \: incidentes} = \frac{\frac{I_p}{q}}{\frac{P_o}{hv}}
+% = \frac{I_phv}{P_oq}
+% \end{equation}
+
+% E como o
+% desempenho de um fotodiodo é geralmente caracterizado pela sua velocidade de
+% resposta, $\Re$, no qual é relacionado pela eficiência quântica por
+% 
+% \begin{equation}
+% \Re = \frac{I_p}{P_0}\cdot G = 
+% \end{equation}
+
+%Como o fotoreceptor utilizado é do tipo PIN, temos as seguinte equação de
+% ganho.
+
+%EQUATION!!!!!
+
+Para o diodo PIN utilizado, a faixa de sensibilidade para os comprimentos de
+onda vão de $1280 \: nm \le \lambda \leq 1580 \: nm$, com sensibilidade de
+detecção até $-20 dBm$ e potência máxima de recepção de 2 dBm. Possui
+frequências de corte $f_1 = 30$ kHz e $f_2 = 9$ GHz e responsividade $\Re = 0,8
+A/W$. O fotoreceptor já possui um circuito interno que pré amplifica o sinal
+recebido e sua curva característica de resposta em tensão de pico pela entrada
+óptica de um sinal NRZ (\textit{Non-Return-to-Zero}) é mostrado na Figura
+\ref{Fig:pdCurve}.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=0.85\textwidth]{Figures/receiverResponse.pdf}
+		\caption{Curva característica de resposta do fotoreceptor.}
+		\label{Fig:pdCurve}
+\end{figure}
+
+%Falar da polarização eletrica? PIN
+
+\section{Configurações DDO-OFDM}
+
+Embora tenha sido mencionado três diferentes formas de transmissão de sinais
+OFDM em sistemas de detecção direta na seção \ref{sistemasDDO-OFDM}, somente as
+duas primeiras configurações são implementadas neste trabalho devido a
+inexistência de um o dipositivo MZM de dois ``braços'' no laboratório.
+Os sistemas de transmissão implementados podem ser separados em duas partes:
+uma parte física e uma parte de processamento de sinais desenvolvida por um
+algoritmo que trabalha \textit{offline}. Para as duas configurações, o sistema
+elétrico/óptico/elétrico não é alterado. A diferença nas implementações está
+nos algorítmos de geração dos sinais que são modificados. A Figura
+\ref{Fig:physicalPart} representa o canal elétrico/óptico/elétrico de
+transmissão representado pelo filtro passa baixas (\textit{Low Pass Filter} -
+LPF), pelo modulador óptico MZM, pelo canal de fibra SSMF com 40 km de
+comprimento, pelo fotoreceptor e pelos equipamentos que realizam as
+conversões D/A e A/D.
+
+% Embora tenha sido mencionado três diferentes formas de transmissão de sinais
+% OFDM em sistemas de detecção direta na seção \ref{sistemasDDO-OFDM}, somente
+% as duas primeiras configurações são implementadas neste trabalho devido a
+% inexistência de um o dipositivo MZM de dois ``braços'' no laboratório.
+% Os sistemas de transmissão implementados podem ser separados em duas partes: na
+% parte física que possui pouca ou nenhuma flexibilidade na variação dos parâmetros físicos e a
+% parte de processamento de sinais que é desenvolvida a partir de algorítmos
+% podendo ser remodelada para se adaptar ao meio físico para obter um melhor
+% desempenho na propagação dos sinais. Para as duas configurações, o sistema
+% óptico/elétrico não é alterado. A diferença nas implementações são os algorítmos
+% de geração dos sinais que são modificados. A Figura \ref{Fig:physicalPart}
+% representa o canal óptico/elétrico de transmissãorepresentando o filtro passa
+% baixas (\textit{Low Pass Filter} - LPF), o modulador óptico MZM, o canal de fibra
+% SSMF com 40 km de comprimento, o fotoreceptor junto aos equipamentos que
+% realizam as conversões DAC e ADC que foram utilizados nos experimentos.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=\textwidth]{Figures/DDO-OFDM_physicalPart.pdf}
+		\caption{Estrutura elétrica/óptica/elétrica utilizada nas transmissões dos
+		sinais.}
+		\label{Fig:physicalPart}
+\end{figure}
+
+\subsection{DDO-OFDM I}
+\label{Sec:DDO-OFDM_I}
+Esta primeira configuração implementa um sistema de transmissão de sinais OFDM
+utilizando simetria hermitiana para prover somente coeficientes reais na saída
+da IFFT. A Figura \ref{Fig:DDO-OFDM_I_Tx} descreve de forma genérica, por meio
+de blocos, o funcionamento do algoritmo que implementa a modulação OFDM no
+processo \textit{offline} do lado do transmissor. Os bits gerados aletóriamente
+são agrupados em grupos de $n = log_2 (M)$ \textit{bits} e mapeados em símbolos
+elétricos com nível de modulação $M$-QAM. Para garantir que não haja produtos de
+intermodulação IMD provindas do processo de fotodetecção, é adicionada uma banda
+de guarda (\textit{Guard Band} - $B_G$) com preenchimento com zeros ou
+\textit{zero padding} com espaçamento do mesmo tamanho da banda de informação
+$B_W$. O bloco de simetria hermitiana realiza a função de duplicar o vetor de
+símbolos de dados com uma sequência invertida dos símbolos com complexo
+conjugado. É importante notar para que neste caso, com uma IFFT de $N_{IFFT}$
+pontos, o número máximo de pontos possíveis de se utilizar para as subportadoras
+que transportam a informação é de $N_S = \frac{N_{IFFT}}{4}$ o que reduz a
+eficiência na taxa de transmissão. O fator $\frac{1}{4}$ leva em consideração
+tembém a inserção da banda de guarda.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=\textwidth]{Figures/DDO-OFDM_I_Tx_pt-br.pdf}
+		\caption{Arquitetura do transmissor de sinais OFDM com simetria hermitiana.}
+		\label{Fig:DDO-OFDM_I_Tx}
+\end{figure}
+
+É possível observar de forma mais clara a partir da Figura
+\ref{Fig:DDO-OFDM_I_Tx_IFFT} a estrutura espectral dos símbolos elétricos que
+formam a simetria hermitiana na entrada da IFFT. Cada ponto representa uma
+subportadora variando de 0 Hz até a frequência máxima de transmissão $B_c$
+contendo $\frac{N_{IFFT}}{2}$ pontos, sendo metade destes pontos distribuídos
+para o \textit{zero padding} e a outra metade, $N_S$, para as subportadoras de
+informação, obtendo então, um espaçamento entre subportadoras de $\Delta f =
+\frac{B_W}{N_S}$. O espectro conjugado invertido é inserido na outra metade dos
+pontos da IFFT e assim, obtém-se na saída um vetor de pontos no domínio do tempo
+com apenas coeficientes reais com um total de $N_{IFFT}$ pontos igual ao vetor
+frequência.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=0.6\textwidth]{Figures/DDO-OFDM_I_Tx_IFFT_pt-br.pdf}
+		\caption{Estrutura de dados de entrada na IFFT com simetria hermitiana.}
+		\label{Fig:DDO-OFDM_I_Tx_IFFT}
+\end{figure}
+
+Ocorre que a estrutura de entrada dos dados nos blocos IFFT e FFT é de uma forma
+contrária o que ocorre na realidade devido às construções matemáticas ditadas
+pelo \textit{software} Matlab. Para visualizar corretamente o espectro de
+frequências é necessário realizar a operação de deslocamento como mostrado na
+Figura \ref{Fig:DDO-OFDM_I_Tx_IFFT_shift} onde as frequências negativas são
+projetadas para a esquerda e as positivas para a direita onde se encontram as
+subportadoras úteis de informações.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=\textwidth]{Figures/DDO-OFDM_I_Tx_IFFT_shift.pdf}
+		\caption{Operação de deslocamento de espectro pela FFT/IFFT.}
+		\label{Fig:DDO-OFDM_I_Tx_IFFT_shift}
+\end{figure}
+
+Durante o processamento \textit{offline} na transmissão é interessante armazenar
+os símbolos OFDM no domínio do tempo em uma matriz e assim buscar as últimas
+amostras definidas pelo tamanho do intervalo de guarda e copiar para o início do
+símbolo criando o prefíxo cíclico ou intervalo de guarda $I_g$ a fim de evitar
+interferência intersimbólica (ISI) e intercanal (ICI). O tempo do intervalo de
+guarda é definido pelo canal quando há multipercurso em transmissões sem fio ou
+dispersão cromática em transmissões ópticas, definido pela equação
+ 
+% neste trabalho por ser fibra SSMF e
+% de um tamanho muito curto de no máximo 40 km o intervalo de guarda pode ser bem
+% pequeno por não surgir efeitos de dispersão cromática significativos durante a
+% transmissão.
+
+\begin{equation}
+T_g \geq D \cdot B_w \cdot \frac{c}{f_0^2}
+\label{Eq:dispersao01}
+\end{equation}
+
+onde $D$ é a quantidade total de dispersão cromática, $c$ é a velocidade da luz
+e $f_0$ a frequência da portadora óptica que será melhor abordada no Capítulo
+\ref{Chap5:Optimization}
+
+A Figura \ref{Fig:DDO-OFDM_I_Tx_IG_PS} mostra o processo de acúmulo dos símbolos
+OFDM no domínio do tempo provenientes da IFFT junto ao processo de inserção do
+CP e concatenação dos símbolos seguido de conversão de paralelo para serial. A
+concatenação de todos símbolos OFDM no domínio do tempo cria um quadro OFDM
+contendo $n_s = 10$ símbolos agrupados para o experimento com simetria
+hermitiana.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=0.9\textwidth]{Figures/DDO-OFDM_I_Tx_Ig.pdf}
+		\caption{Processo de adição do intervalo de guarda e conversão
+		paralelo para serial.}
+		\label{Fig:DDO-OFDM_I_Tx_IG_PS}
+\end{figure}
+
+O sinal OFDM no domínio do tempo e parâmetros de controle do equipamento são
+enviados para o AWG por um protocolo de comunicação de instrumentação via rede
+e por fim é realizada a conversão digital para analógico. Já no AWG, o sinal é
+reproduzido a uma taxa de amostragem de $F_s = 2 \cdot B_c$ e o quadro OFDM vira
+um tipo de sinal periódico devido ao \textit{loop} de reprodução do AWG e o que
+viabiliza a captura pelo osciloscópio. Depois do AWG o sinal guiado por um cabo
+coaxial passa pelo amplificador e filtro passa-baixas chegando ao modulador MZM,
+polarizado elétricamente com $V_{bias} = 4,7$ Volts que modula o feixe coerente
+de luz emitido pelo laser CW que por fim é propagado através da fibra
+óptica SSMF.
+
+Entretanto, o filtro analógico acoplado à saída do convesor D/A do AWG não é
+ajustável para qualquer frequência ocasionando em distorções no sinal conhecidas
+como \textit{aliasing} que possuem componentes harmônicas múltiplas da taxa de
+amostragem do sinal enviado. Essas componentes também são inseridas no sistema
+de transmissão fazendo com que na recepção ocorra interferência do sinal de
+interesse com as distorções causando deterioração na qualidade da transmissão.
+Portanto, na construção da estrutura dos dados de entrada da IFFT são anuladas
+$N_z$ portadoras de maior frequência para que sirva como filtro, criando um
+espaçamento entre sinal de interesse e as distorções de alta frequência. A
+Figura \ref{Fig:DDO-OFDM_I_Aliasing} mostra o sinal gerado no domínio da
+frequência com taxa de amostragem $F_S = 4$ GS/s e o mesmo superamostrado três
+vezes a uma taxa de amostragem de $F_{Sa} = 12$ GS/s o que torna possível a
+visualização das componentes de distoção harmônica que se repetem periodicamente
+no espectro de frequências.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=\textwidth]{Figures/DDO-OFDM_I_Tx_Aliasing.pdf}
+		\caption{Distorções harmônicas causadas por \textit{aliasing} e filtro
+		para evitar interferências.}
+		\label{Fig:DDO-OFDM_I_Aliasing}
+\end{figure}
+
+O sinal preparado para ser transmitido nesse meio é mostrado nas Figuras
+\ref{Fig:ofdm_I_tx_time} e \ref{Fig:ofdm_I_tx_freq} que representam
+respectivamente, o domínio do tempo e o domínio da frequência.
+
+\begin{figure}
+        \centering
+        \begin{subfigure}[b]{0.9\textwidth}
+                \includegraphics[width=\textwidth]{Figures/DDO-OFDM_I_sig_ofdm_dom_tempo.eps}
+                \caption{Domínio do tempo;}
+                \label{Fig:ofdm_I_tx_time}
+        \end{subfigure}
+		~	
+        \begin{subfigure}[b]{0.9\textwidth}
+                \includegraphics[width=\textwidth]{Figures/DDO-OFDM_I_sig_ofdm_dom_frequencia.eps}
+                \caption{Domínio da frequência.}
+                \label{Fig:ofdm_I_tx_freq}
+        \end{subfigure}
+
+        \caption{Sinais OFDM transmitidos.}\label{Fig:sinais_ofdm_transmitidos}
+\end{figure}
+
+
+% ---------------------------------------------------------------------------- %
+% --------------------------- RECEPÇÂO DDO-OFDM_I ---------------------------- %
+% ---------------------------------------------------------------------------- %
+
+Na recepção o sinal óptico propagado pela fibra é convertido para um sinal
+elétrico analógico no fotodiodo e então, convertido para um sinal discreto
+através do osciloscopio (ADC) à uma taxa de amostragem $F_{S-dpo} \geq 2 \cdot
+B_c$ que busca um número de pontos definido como sendo maior ou igual ao número
+de pontos total do quadro OFDM enviado para o AWG. As amostras recebidas são
+recolhidas novamente via rede com o protocolo de comunicação do equipamento e
+processado \textit{offline} no PC.
+
+O modelo da arquitetura de recepção é descrito pela Figura
+\ref{Fig:DDO-OFDM_I_Rx} onde os parâmetros de sincronismo, taxa de amostragem
+$F_S$, número de símbolos no quadro OFDM, tamanho do prefíxo cíclico (CP),
+número de pontos da FFT, estrutura das subportadoras que incluem a banda de
+guarda $B_G$, localização da posição das subportadoras que transportam os dados
+e nível de modulação (M) são os mesmos configurados no transmissor. O quadro
+OFDM recebido é filtrado digitalmente, reamostrado, sincronizado e após remoção
+do CP de cada símbolo realiza-se o processo inverso relativo à Figura
+\ref{Fig:DDO-OFDM_I_Tx_IG_PS}. Posteriormente, cada símbolo OFDM no domínio do
+tempo contendo exatamente $N_{FFT}$ pontos é processado pela FFT e assim
+obtido os símbolos elétricos no domínio da frequência com efeitos de fase e
+módulo distorcidos pelos efeitos inerentes do canal de transmissão. O
+\textit{zero padding} e a simetria hermitiana são então removidos e recupera-se
+as $N_S$ subportadoras de dados da faixa de pontos da FFT de $\frac{N_{FFT}}{4}+1$
+até $\frac{N_{FFT}}{2}$. O demapeamento dos símbolos é realizado após
+equalização no domínio da frequência por um equalizador de um atraso da
+sequência de treinamento composta pelos $n_t$ primeiros símbolos OFDM
+transmitidos.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=\textwidth]{Figures/DDO-OFDM_I_Rx.pdf}
+		\caption{Arquitetura do receptor de sinais OFDM com simetria hermitiana.}
+		\label{Fig:DDO-OFDM_I_Rx}
+\end{figure}
+
+O AWG envia cada amostra do quadro OFDM armazenada em sua memória da primeira à
+última amostra na taxa de amostragem de $F_s$. Na última amostra o AWG zera seu
+contador e volta a restransmitir novamente o quadro OFDM partindo da primeira
+amostra criando um sinal periódico do transitório OFDM. Isso possibilita que o
+osciloscópio capture o quadro OFDM por existir esta periodicidade
+característica. Então, para recuperar o sinal transmitido a taxa de amostragem
+do DPO é configurada para $F_{S-dpo} = \alpha \cdot F_S$, sendo $\alpha$ um
+número inteiro positivo. Com isso, o número de amostras capturadas $n_d$ se
+elevam para $n_d = \alpha \cdot n_s$ em relação às amostras geradas pelo AWG e
+após a captura o sinal é reamostrado para a taxa de amostragem $F_S$ do AWG para
+se enquadrar nos parâmetros de processamento da arquitetura do receptor.
+
+Além disso, o quadro OFDM transmitido, por possuir uma característica periódica
+nesse sistema de transmissão experimental, tem um intervalo de duração de
+$\Delta t = \frac{1}{F_s} \cdot n_s$ que corresponde a base do período de
+captura para o DPO. No entando, ocorre que na captura o osciloscópio não
+consegue identificar quais são as primeiras e últimas amostras do quadro,
+podendo elas estarem no meio do quadro capturado. Com isso, é necessário
+encontrar esses pontos para remontar o quadro para iniciar o processamento.
+Neste trabalho, para o processo de sincronismo de quadro OFDM, foram adotados
+dois modelos. Um modelo que realiza a correlação entre o sinais gerado
+e recebido e outro que consiste na inserção de zeros entre quadros OFDM.
+
+\subsubsection{\textit{Correlação dos Sinais Transmitido e Recebido}}
+\label{Sec:DDO-OFDM_I_sync}
+
+O processo de sincronismo por correlação consiste em realizar a correlação
+cruzada entre os sinais recebido e transmitido a fim de encontrar o primeiro
+ponto ou \textit{start point} do quadro OFDM do sinal recebido. A correlação
+cruzada é realizada entre os sinais $s_{Rx}(t)$ e $s_{Tx}(t)$ e é definida
+como a integral do produto da função conjugada $s_{Rx}^\ast(t)$ com $s_{Tx}(t)$,
+com o último deslocado de uma distância $\Delta$t, conforme
+
+\begin{equation}
+s_{Rx}(t) \star s_{Tx}(t) = \int_{-\infty}^{+\infty}
+s_{Rx}^\ast(t) s_{Tx}(t+\Delta t) dt.
+\end{equation}
+
+Empregando a transformada de fourier temos a seguinte relação para a correlação
+cruzada dos sinais
+
+% %\mathcal{R} 
+\begin{equation}
+\mathcal{R}_{s_{Rx} s_{Tx}} = \mathcal{F}^{-1}
+[\hat{S}_{Rx}^{\ast}(f)\hat{S}_{Tx}(f)]
+\end{equation}
+
+o que mostra que no domínio da frequência a correlação é a multiplicação dos
+sinais e o ponto de maior amplitude absoluta indica onde se encontra a amostra
+de maior coincidência que corresponde ao ponto de início do quadro OFDM.
+
+
+% Esse algoritmo de sincronismo pode ser interpretado pela Tabela \ref{Tab:syncCode}.
+% 
+% \begin{center}
+% 	\begin{tabular}{ l l }
+% 		\hline
+% 		\multicolumn{2}{ c }{\textbf{Algoritmo de sincronização de quadro por
+% 		correlação. Genético para Sistemas DDO-OFDM}}
+% 		\\
+% 		\hline
+% 		1:	& $\hat{S}_{Tx} = fft(s_{Tx})$; \\
+% 		2:	& $\hat{S}_{Rx} = conj(fft(s_{Rx}))$; \\
+% 		3:	& $\mathcal{R}_{s_{Rx} s_{Tx}} = ifft(\hat{S}_{Rx}^{\ast} \cdot
+% 		\hat{S}_{Tx});
+% 		\label{Tab:syncCode}
+% 	\end{tabular}
+% \end{center}
+
+\subsubsection{\textit{Inserção de Zeros no Domínio do Tempo}}
+
+O outro método de sincronismo utilizado é a inserção de zeros no domínio do
+tempo que separa quadros OFDM para identificar o ínicio e fim da transmissão.
+Assim, é possível identificar o ponto de ínicio quando há presença de sinal a
+partir de um algorítmo de reconhecimento de padrão que encontra a primeira e
+útima amostras. A importância deste procedimento é que o mesmo enquadra-se no
+processo de sincronismo real devido a não necessidade de possuir uma cópia do
+sinal gerado no receptor como na sincronização por correlação.
+
+O sinal recebido do osciloscópio, representado pela Figura
+\ref{Fig:ofdm_I_tx_time_rec_dpo} é um sinal discreto, não sincronizado, com
+modulações de baixa frequência, ruídos e efeitos provindos do sistema.
+Após realizar um processamento digital no sinal, passando um filtro digital
+passa baixa e reamostrando obtemos no domínio do tempo o sinal ilustrado na
+Figura \ref{Fig:ofdm_I_tx_time_rec_trat} e na Figura
+\ref{Fig:ofdm_I_tx_freq_rec} no domínio da frequência.
+
+\begin{figure}
+        \centering
+        \begin{subfigure}[b]{0.9\textwidth}
+                \includegraphics[width=\textwidth]{Figures/DDO-OFDM_I_sig_ofdm_dom_tempo_recebido_dpo.eps}
+                \caption{Sinal OFDM no domínio do tempo recebido do osciloscópio;}
+                \label{Fig:ofdm_I_tx_time_rec_dpo}
+        \end{subfigure}
+		~	
+        \begin{subfigure}[b]{0.9\textwidth}
+                \includegraphics[width=\textwidth]{Figures/DDO-OFDM_I_sig_ofdm_dom_tempo_recebido_trat.eps}
+                \caption{Sinal OFDM no domínio do tempo recebido do osciloscópio
+                tratado;}
+                \label{Fig:ofdm_I_tx_time_rec_trat}
+        \end{subfigure}
+		~
+        \begin{subfigure}[b]{0.9\textwidth}
+                \includegraphics[width=\textwidth]{Figures/DDO-OFDM_I_sig_ofdm_dom_frequencia_recebido.eps}
+                \caption{Sinal OFDM no domínio da frequência recebido.}
+                \label{Fig:ofdm_I_tx_freq_rec}
+        \end{subfigure}
+        \caption{Sinais OFDM recebidos.}\label{Fig:sinais_ofdm_I_recebidos}
+\end{figure}
+
+\subsubsection{Métodos de Análise de Desempenho}
+
+O desempenho dos sistemas implementados são analisados a partir da taxa de erro
+de bits (\textit{Bit Error Rate} ou \textit{Bit Error Ratio} - BER), e pelo
+vetor de erro de magnitude (\textit{Error Vector Magnitude} - EVM) que indica a
+relação de amplitude e de fase entre cada símbolo OFDM recebido e
+transmitido.
+
+% \subsubsection{\textit{Vetor de Erro de Magnitude} - (EVM)}
+A taxa de erro BER é medida mediante a contagem direta de erro entre os bits
+transmitidos e recebidos, uma vez que os bits transmitidos são armazenados
+durante a transmissão. Para um melhor entendimento do valor EVM utilizado para
+análise de desempenho do sistema, considere um quadrante do diagrama de
+constelação da Figura \ref{constel}, onde são apresentados o vetor de referência
+$X_k$ relativo a um dos possíveis símbolos transmitidos (sinal ideal) de
+coordenadas $X_I = 1$ e $X_Q = j$, para $j = \sqrt{-1}$, o vetor medido $Y_k$
+que ilustra a trajetória de um símbolo recebido (sinal medido) de coordenadas
+$(Y_I,Y_Q)$, e o vetor de erro $D_k = Y_k - X_k$, o qual representa a distancia
+Euclidiana entre tais sinais. Sendo cada ponto do plano I (\emph{In phase})
+versus Q (\emph{Quadrature}) a especificação de um dos $2^m$ possíveis símbolos
+gerados pela combinação de $m$ bits, qualquer desvio neste provocado por ruído
+ou distorção, linear ou não, inerentes aos sistemas de telecomunicações, cria
+uma distancia escalar entre os referidos fasores cuja magnitude de erro $E_k =
+|Y_k| - |X_k|$ e o erro de fase $\phi_k = \angle(Y_k) - \angle(X_k)$ são
+perfeitamente mensuráveis pela métrica EVM \cite{jair_SBRT09}.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{Figures/constel.eps}
+\caption{Diagrama de constelacao ilustrativo.} \label{constel}
+\end{center}
+\end{figure}
+
+Portanto, como distância escalar - magnitude do vetor diferença - entre dois
+fasores, a EVM pode ser definida como o valor RMS (\emph{root-mean-square}) da
+diferença entre um conjunto de símbolos medidos e um conjunto de símbolos
+transmitidos, matematicamente expresso pela relação,
+\begin{equation}
+EVM = \left[\frac{\frac{1}{N}\sum_{k=0}^{N-1} |Y_k - X_k|^2}{\frac{1}{N}\sum_{i=0}^{N-1} |X_k|^2}\right]^{\frac{1}{2}}
+ \label{eq_evm_1}
+\end{equation}
+onde $N$ representa a quantidade de símbolos transmitidos/recebidos, $X_k = X_I
++ jX_Q$ e $Y_k = Y_I + jY_Q$ os símbolos complexos ideais e medidos
+respectivamente \cite{art:EVM_BER_SNR}, \cite{art:EVM_Calc_Broadband}.
+
+% Relação EVM/SNR/BER
+Para análise de desempenho nos termos de taxa de
+erro de bits BER, relação potência de sinal e potência de ruído SNR e da métrica
+EVM partindo-se te um canal com ruído gaussiano podemos relacioná-as
+matematicamente de forma que
+
+\begin{equation}
+BER = \frac{2\cdot\left(1 - \frac{1}{\sqrt{M}} \right)}{log_2(M)} \cdot
+\textit{erfc}\left(\sqrt{\frac{3}{EVM^2 \cdot (2M-2) }}\right)
+\end{equation}
+e a EVM é dada pelo inverso da raiz quadrada da SNR dada por
+\begin{equation}
+EVM \approx \left[\frac{1}{SNR}\right]^{\frac{1}{2}}
+\approx \left[\frac{N_0}{E_s}\right]^{\frac{1}{2}},
+\end{equation}
+onde $N_0$ é a potência de ruído e $E_s$ é a energia do símbolo
+\cite{jair_SBRT09}.
+
+% onde $N_0$ é a potência espectral do ruído e $E_s$ a energia do \textit{bit}
+
+% Entretanto, é comum encontrar na literatura a definição matemática da EVM
+% conforme
+% 
+% \begin{equation}
+% EVM  = \sqrt{\frac{\frac{1}{N}\sum_{k=0}^{N-1} |D_k|^2}{X_{max}^2}},
+%  \label{eq_evm_2}
+% \end{equation}
+% 
+% para $|D_k|^2 = |Y_k - X_k|^2$ o vetor erro de sinal e $X_{max}$ o ponto da
+% constelação da maior amplitude. Esta designação detém a vantagem de facilitar
+% e/ou diminuir a implementação computacional da citada métrica \cite{OFDM_EVM_1}.
+
+% COLOCAR RELAÇÃO EVM/SNR/BER
+
+\subsubsection{Estimação de Canal}
+A estimação do canal é realizada com símbolos de treinamento que são
+padronizados e conhecidos pelas arquiteturas de transmissão e recepção.
+Conhecendo os símbolos de treinamento (primeiros 4 símbolos OFDM transmitidos) o
+receptor verifica a variação do módulo e fase equaliza todas as portadoras
+recebidas através de um equalizador de um atraso (\textit{one tap equalizer}).
+Portanto, seja o sinal, $s_{Tx}(t)$ o sinal transmitido, $H(f)$ a resposta em
+frequência do canal de comunicação, $N(f)$ o ruído do sistema, $S_{Rx}(f)$ o
+sinal recebido no receptor e $Eq(f)$ o canal estimado através dos símbolos de
+treinamento temos que,
+
+\begin{eqnarray}
+S_{Tx}(f)	&=& \mathcal{F} \left\{ s_{Tx}(t) \right\} ; \nonumber \\
+S_{Rx}(f) &=& H(f) \cdot S_{Tx}(f) + N(f); \nonumber \\
+Eq(f)			&=& \frac{1}{H(f)}; \nonumber \\
+S_{Rx}(f)	&=& Eq(f) \cdot \left\{ H(f) \cdot S_{Tx}(f) + N(f)\right\}; \nonumber
+\\
+S_{Rx}(f)	&=& S_{Tx}(f) + Eq(f) \cdot N(f).
+\label{Eq:channelEstimation}
+\end{eqnarray}
+
+Conforme a equação \ref{Eq:channelEstimation} é possível notar a desvantagem da
+amplificação do ruído que é multiplicado pela equalização do canal e somado ao
+sinal recebido.
+
+\subsubsection{Resultados da Transmissão pelo sistema DDO-OFDM I}
+
+A uma taxa de transmissão de $Rb = 1.9$ Gbps em 40 km de fibra SSMF e índice de
+modulação 16-QAM foram obtidos no sistema DDO-OFDM I valores de $EVM = -17.28$
+dB e $BER = 23.8 \times 10^{-3}$. Os parâmetros de projeto para o experimento
+DDO-OFDM I são descritos na Tabela \ref{Tab:DDO-OFDM_I_Params}.
+
+\begin{center}
+\begin{table}
+\centering
+\caption{Parâmetros OFDM - DDO-OFDM I}
+	\begin{tabular}{l l}
+		\hline
+		\multicolumn{2}{ c }{\textbf{Parâmetros OFDM - DDO-OFDM I}} \\
+		\hline
+		
+		Nível de Modulação $M = 2^n$								& 16 QAM \\
+		Frequência máxima de transmissão $B_c$						& 2.0 GHz \\
+		Taxa de amostragem $F_S = 2 \cdot F_S$						& 4 GS/s \\
+		Banda de Guarda $B_G$										& 1.0 GHz \\
+		Largura de Banda do sinal $B_w$ 							& 500 MHz \\
+		Espaçamento das subportadoras $\Delta_f	= \frac{B_W}{N_s}$	& 1.95 MHz \\
+		Número pontos $N_{FFT}$ 									& 4096 \\
+		Número de subportadoras $N_s$ 								& 512 \\
+		Tempo de símbolo $T_u$ sem $I_g$ 							& 1.024 $\mu$s \\
+		Intervalo de guarda $T_g = \frac{1}{64} \cdot T_u$			& 0.016 $\mu$s \\
+		Tempo total do símbolo OFDM $T_s = T_u + I_g$ 				& 1.040 $\mu$s \\
+		Taxa de bit por segundo $R_b = \frac{B_w}{N_{FFT}} \cdot \frac {N_s \log_2
+		(m)}{1 + G}$	& 1.9 Gbps\\
+		\hline
+		\label{Tab:DDO-OFDM_I_Params}
+	\end{tabular}
+	\end{table}
+\end{center}
+
+A Figura \ref{Fig:DDO-OFDM_I_constelacao} representa a constelação dos
+símbolos enviados e recebidos.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=0.6\textwidth]{Figures/DDO-OFDM_I_constelacao.eps}
+		\caption{Constelação mostrando os símbolos transmitidos e recebidos.}
+		\label{Fig:DDO-OFDM_I_constelacao}
+\end{figure}
+
+
+
+% ---------------------------------------------------------------------------- %
+% ---------------------------------------------------------------------------- %
+% ----------------------------- DDO-OFDM II ---------------------------------- %
+% ---------------------------------------------------------------------------- %
+% ---------------------------------------------------------------------------- %
+\subsection{DDO-OFDM II}
+\label{Sec:DDO-OFDM_II}
+Nesta segunda configuração, a estrutura dos símbolos na entrada no bloco IFFT
+não obedece uma regra específica, como a simetria hermitiana utilizada no
+primeiro experimento, aproveitando-se de quase todos os pontos dos blocos IFFT e
+FFT. A consequência disto é a geração de coeficientes reais e complexos no
+domínio do tempo na saída do IFFT. Os dois sinais gerados fazem com que seja
+necessário o uso de um MZM de dois braços que dividiria internamente o feixe de
+luz coerente em dois polarizando em 90 graus opticamente um deles somando-os
+posteriormente. Além disso, seria necessário uma detecção coerente para
+recuperar os sinais ópticos por dispositivos que não estão disponíveis no
+laboratório. No entanto, com um sinal complexo na saída da IFFT é possível
+realizar uma modulação adicional que realiza a multiplicação dos sinais por uma
+portadora elétrica, sendo um defasado de 90 graus, e a posterior soma, para
+realizar o deslocamento do sinal em frequência da banda base para a banda
+passante centrada na frequência da portadora elétrica. Dois métodos de
+deslocamento em frequência são mostrados na Figura \ref{Fig:freqShiftMethod}. Na
+primeira (Figura \ref{Fig:freqShiftMethod_I}) utilizam-se os dois canais do AWG
+sendo cada um de 12 GS/s e um módulo físico que realiza analógicamente o
+deslocamento em frequência. Na Figura \ref{Fig:freqShiftMethod_II} é necessário
+apenas um canal e utilizando o canal de \textit{interleave} do AWG que comuta
+internamente os dois canais fazendo com que o gerador de forma de onda
+arbitrário produza um sinal com até o dobro da capacidade de cada canal chegando
+assim à uma taxa de amostragem de 24 GS/s. Logo, por não existir o modulador
+analógico, a segunda opção tornou-se viável visto que, com uma taxa de
+amostragem alta do AWG é possível realizar este tipo de modulação adicional matematicamente
+por \textit{software} aumentando-se o número de amostras do sinal e
+consequentemente sua taxa de amostragem.
+
+\begin{figure}
+        \centering
+        \begin{subfigure}[b]{0.43\textwidth}
+                \includegraphics[width=\textwidth]{Figures/DDO-OFDM_II_DAC_analog.pdf}
+                \caption{Analógico por hardware;}
+                \label{Fig:freqShiftMethod_I}
+        \end{subfigure}
+		~	
+        \begin{subfigure}[b]{0.49\textwidth}
+                \includegraphics[width=\textwidth]{Figures/DDO-OFDM_II_DAC_digital.pdf}
+                \caption{Digital por software.}
+                \label{Fig:freqShiftMethod_II}
+        \end{subfigure}
+
+        \caption{Métodos de deslocamento em
+        frequência.}\label{Fig:freqShiftMethod}
+\end{figure}
+
+A arquitetura de transmissão representada pela Figura \ref{Fig:DDO-OFDM_II_Tx}
+mostra o processamento dos sinais com modulação adicional realizada por
+\textit{software}. Os \textit{bits} são agrupados e mapeados em grupos de $n =
+log_2 (M)$ \textit{bits} até preencher um vetor de $N_s$ símbolos elétricos de
+informação.
+Esse vetor é reestruturado antes de ser aplicado à entrada da IFFT de forma a
+gerar na saída do bloco da transformada um sinal cujo espectro elétrico é
+centralizado na frequência zero com largura de banda de transmissão $B_W$ e com
+frequência máxima $B_{ca}$. O posterior deslocamento em frequência é realizado
+com o auxílio de uma ``portadora digital'' (\textit{Direct Digital Synthesis} -
+DDS) conforme ilustra a Figura \ref{Fig:freqShiftMethod_II}.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=\textwidth]{Figures/DDO-OFDM_II_Tx.pdf}
+		\caption{Arquitetura do transmissor de sinais OFDM com modulação adicional.}
+		\label{Fig:DDO-OFDM_II_Tx}
+\end{figure}
+
+Os dados a serem enviados representados por símbolos são trocados de posição
+devido a operação de deslocamento da IFFT conforme mostrado na Figura
+\ref{Fig:DDO-OFDM_I_Tx_IFFT_shift}. Além disso, alguns símbolos que deveriam ser
+transportados por subportadoras de maior frequências são anulados a fim de não
+serem atenuados pelo filtro de interpolação digital passa-baixas necessário para
+a modulação adicional e evitando também a interferência do sinal com as
+distorções harmônicas de \textit{aliasing}.
+Assim é realizado a transformada inversa e após a aplicação da modulação
+adicional o espectro elétrico é deslocado.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=\textwidth]{Figures/DDO-OFDM_II_Tx_IFFT_Shift_pt-br.pdf}
+		\caption{Estrutura dos dados junto à IFFT.}
+		\label{Fig:DDO-OFDM_II_Tx_IFFT_Shift}
+\end{figure}
+
+A modulação adicional realizada de forma digital requer uma interpolação dos
+vetor de amostras do sinal no domínio do tempo. Isso porque o sinal gerado com
+frequência máxima na banda base de por exemplo $B_c = 250$ MHz terá seu espectro
+elétrico deslocado para a frequência central de $F_c = 1.25$ GHz e sua nova
+frequência máxima com espectro elétrico deslocado será de $B_{ca} = F_c + B_c =
+1.5$ GHz. Entretanto, como a frequência máxima do sinal está multiplicada por
+$n_{samp} = 6$ a sua taxa de amostragem altera para $F_{sa} = n_{samp} \cdot F_s
+= 3$ GS/s. A interpolação do sinal na banda base é fundamental para que seja
+possível a multiplicação do sinal pela portadora de forma digital. O sinal
+gerado e transmitido é mostrado nas Figuras \ref{Fig:ofdm_II_tx_time} e
+\ref{Fig:ofdm_II_tx_freq} que representam respectivamente, os sinais no domínio
+do tempo e no domínio da frequência.
+
+\begin{figure}
+        \centering
+        \begin{subfigure}[b]{0.9\textwidth}
+                \includegraphics[width=\textwidth]{Figures/DDO-OFDM_II_sig_ofdm_dom_tempo.eps}
+                \caption{Domínio do tempo;}
+                \label{Fig:ofdm_II_tx_time}
+        \end{subfigure}
+		~	
+        \begin{subfigure}[b]{0.9\textwidth}
+                \includegraphics[width=\textwidth]{Figures/DDO-OFDM_II_sig_ofdm_dom_frequencia.eps}
+                \caption{Domínio da frequência.}
+                \label{Fig:ofdm_II_tx_freq}
+        \end{subfigure}
+
+        \caption{Sinais OFDM transmitidos
+        com modulação adicional.}
+        \label{Fig:DDO-OFDM_II_sinais_transmitidos}
+\end{figure}
+
+Então, o quadro do sinal OFDM é propagado pelo mesmo sistema físico utilizado
+anteriormente. O modulador óptico MZM modula o feixe de luz CW com o sinal de RF
+recebido pelo AWG que é propagado pela fibra óptica SSMF com $L = 40$ km. O
+sinal é convertido de elétrico para óptico pelo foto receptor com
+pré-amplificador interno e capturado pelo osciloscópio que realiza a conversão
+A/D. As amostras colhidas pelo osciloscópio são enviadas para o computador a
+partir de um protocolo de instrumentação do equipamento e processadas de forma
+\textit{offline}.
+
+% ---------------------------------------------------------------------------- %
+% -------------------------- RECEPÇÂO DDO-OFDM_II ---------------------------- %
+% ---------------------------------------------------------------------------- %
+
+O sinal capturado é apresentado na Figura \ref{Fig:sinais_ofdm_recebidos} que
+mostra o sinal recebido no domínio do tempo e no domínio da frequência nas
+Figuras \ref{Fig:ofdm_II_rx_time_rec} e \ref{Fig:ofdm_II_rx_freq_rec}
+respectivamente.
+
+\begin{figure}
+        \centering
+%         \begin{subfigure}[b]{0.9\textwidth}
+%                 \includegraphics[width=\textwidth]{Figures/DDO-OFDM_II_sig_ofdm_dom_tempo_recebido_dpo.eps}
+%                 \caption{Sinal OFDM no domínio do tempo recebido do osciloscópio;}
+%                 \label{Fig:ofdm_II_rx_time_rec_dpo}
+%         \end{subfigure}
+% 		~
+        \begin{subfigure}[b]{0.9\textwidth}
+                \includegraphics[width=\textwidth]{Figures/DDO-OFDM_II_sig_ofdm_dom_tempo_recebido_trat.eps}
+                \caption{Domínio do tempo;}
+                \label{Fig:ofdm_II_rx_time_rec}
+        \end{subfigure}
+        ~	%add desired spacing between images, e. g. ~, \quad, \qquad etc.
+			%(or a blank line to force the subfigure onto a new line)
+        \begin{subfigure}[b]{0.5\textwidth}
+                \includegraphics[width=\textwidth]{Figures/DDO-OFDM_II_signals.pdf}
+                \caption{Domínio da frequência.}
+                \label{Fig:ofdm_II_rx_freq_rec}
+        \end{subfigure}
+        \caption{Sinais OFDM recebidos.}
+        \label{Fig:sinais_ofdm_recebidos}
+\end{figure}
+
+O modelo da arquitetura de recepção é representado na Figura
+\ref{Fig:DDO-OFDM_II_Rx} onde o sinal recebido é reamostrado e as regras de
+sincronismo são as mesmas descritas no experimento da seção
+\ref{Sec:DDO-OFDM_I_sync}. O sinal é então deslocado para a banda base e os
+símbolos do quadro OFDM são identificados e convertidos de série para paralelo
+preenchendo uma matriz de vetores para facilitar a remoção do prefixo cíclico.
+Após aplicação da FFT nos símbolos OFDM no domínio do tempo sem intervalo de
+guarda são recuperados os dados e realizada a operação de deslocamento para
+reorganizar os dados. É realizada a equalização do sinal a partir do símbolos de
+treinamento, seguida pelo demapeamento e a recuperação do \textit{bits} de
+informação.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=\textwidth]{Figures/DDO-OFDM_II_Rx.pdf}
+		\caption{Arquitetura do receptor de sinais OFDM com modulação
+		adicional.}
+		\label{Fig:DDO-OFDM_II_Rx}
+\end{figure}
+
+
+\subsubsection{Resultados de Transmissão pelo Sitema DDO-OFDM II}
+A Tabela \ref{Tab:DDO-OFDM_II_Params} mostra os parâmetros de projeto
+utilizados para o experimento DDO-OFDM II.
+
+\begin{center}
+\begin{table}
+\centering
+\caption{Parâmetros OFDM - DDO-OFDM II}
+	\begin{tabular}{l l}
+		\hline
+		\multicolumn{2}{c}{Parâmetros OFDM - DDO-OFDM II} \\
+		\hline
+		
+		Nível de Modulação $M = 2^n$								& 4 QAM \\
+		Banda de Guarda $B_G$ 										& 910 MHz \\
+		Largura de Banda do sinal $B_w$ 							& 1.0 GHz \\
+		Frequência central $F_c = B_G + \frac{pe.B_W}{2}$			& 1.41 GHz \\
+		Frequência máxima do sinal $B_c = B_G + B_W$				& 1.91 GHz \\
+		Taxa de amostragem $F_S$									& 11.17 GS/s \\
+		Espaçamento das subportadoras $\Delta_f	= \frac{B_W}{N_s}$	& 1.95 MHz \\
+		Número pontos $N_{FFT}$										& 1024 \\
+		Número de subportadoras $N_s$								& 512 \\
+		Tempo de símbolo $T_u$ sem $I_g$							& 512.0 $n$s \\
+		Intervalo de guarda $T_g = \frac{1}{64} \cdot T_u$			&   8.0 $n$s \\
+		Tempo total do símbolo OFDM $T_s = T_u + I_g$				& 520.0 $n$s \\
+		Taxa de bit por segundo $R_b = \frac{B_w}{N_{FFT}} \cdot \frac {N_s
+		\log_2(m)}{1 + G}$	& 1.83 Gbps\\
+		
+		\hline
+		\label{Tab:DDO-OFDM_II_Params}
+	\end{tabular}
+	\end{table}
+\end{center}
+
+Para o nível de modulação utilizado nesse experimento de 4-QAM a taxa de erro de
+\textit{bit} (BER) foi a zero com uma $EVM = -17.18$ dB. A constelação dos
+símbolos transmitidos e recuperados são mostrados na Figura
+\ref{Fig:DDO-OFDM_II_constelação}.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=0.6\textwidth]{Figures/DDO-OFDM_II_constelacao.eps}
+		\caption{Constelação mostrando os simbolos transmitidos e recebidos com $EVM =
+		-17.18$ dB e BER = 0.}
+		\label{Fig:DDO-OFDM_II_constelação}
+\end{figure}
+
+% --------------------------------------------------------------------------- %
+% ------------------------------- Conclusoes -------------------------------- %
+% --------------------------------------------------------------------------- %
+
+\subsection{Considerações Finais}
+
+Apesar da técnica descrita na seção \ref{Sec:DDO-OFDM_II} ser mais eficiente no
+uso dos pontos dos blocos FFT/IFFT torna-se necessário a utilização da modulação
+adicional para misturar os sinais real e complexo junto a uma portadora digital.
+Entretanto, ao realizar a modulação adicional a taxa de amostragem do sistema
+aumenta significativamente sendo necessários dispositivos A/D e D/A mais
+aperfeiçoados, o que limita o sistema de transmissão. Ou seja, existe um
+compromisso aumentado entre número de pontos usados e a diminuição da banda
+efetiva de transmissão, enquanto que o uso da simetria hermitiana permite
+utilizar uma maior banda efetiva de transmissão para uma menor taxa de
+amostragem.
+
+É fato que quanto maior a taxa de amostragem de um dispositivo, maior é a
+capacidade de transmissão de informação em determinado intervalo de tempo.
+
+
+
+
+A taxa mínima de amostragem para a recuperação de uma portadora deve buscar no
+mínimo duas amostras por ciclo, ou seja, $F_S \geq 2 \cdot B_c$ segundo teorema
+de Nyquist. Isto implica em obter na recepção uma forma de onda triangular com a
+mesma frequência da portadora, porém, com adição de descontinuidades. Essas
+descontinuidades inserem diversas componentes harmônicas no sinal, acarretando
+em um espalhamento da potência no espectro de frequências fazendo com que a
+potência da portadora recuperada seja atenuada degradando a qualidade da
+transmissão. Portanto, apesar do AWG possuir uma taxa de amostragem de 24 GS/s,
+construir um sinal com frequência máxima de 12 GHz não é interessante visto que,
+teríamos duas amostras por ciclo e descontinuidades no sinal longe de ser uma
+componente senoidal de frequência única. Quanto mais pontos são inseridos no
+ciclo da onda mais fiel é o sinal, menor é a frequência máxima e menor a máxima
+da taxa de amostragem do equipamento. Isto melhora a qualidade do sinal a ser
+transmistido e consequentemente o desempenho do sistema com a desvantagem da
+diminuição da largura de banda e a redução da taxa de transmissão.
+
+Por fim, observou-se durante os experimentos descritos neste capítulo que
+encontrar o melhor valor para cada parâmetro envolvido no desempenho de ambos os
+sistemas é extremamente difícil devido à relação não linear entre os mesmos.
+Além disso, a grande quantidade de parâmetros de tais sistemas dificulta a
+otimização dos mesmos no quesito, eficiência espectral. Assim, a aplicação de
+algoritmos de otimização se faz presente na elaboração de um projeto de sistema
+que designa um melhor valor de intervalo de guarda, quantidade de subportadoras,
+potência de sinal OFDM óptico, banda de guarda, ponto de polarização do MZM,
+entre outros.
+% --------------------------------------------------------------------------- %
+% --------------------------------------------------------------------------- %%
+% --------------------------------------------------------------------------- %
+
+% Parâmetros elétricos do sinal OFDM são difíceis de serem estipulados para obter
+% uma melhor qualidade do sinal recebido entretanto, o próximo capítulo de
+% otimização utilizará métodos de busca para encontrar o possíveis melhores
+% parâmetros para sistema óptico em estudo.
+
+% \section{Observações - Não fazem parte da escrita!}
+% 
+% Intensity
+% Modulation/direct detection setup
+% 
+% Descrição de montagem do setup
+% 
+% Figura4.2 - Inserir diferentes sinais e fazer comparações?
+% 
+% 	OFDM x NZ ou NRZ
+% 
+% Comparação experimental com simulado. Optisystem
+% 
+% Gráficos
+% 1- BER x SNR (curvas de nível 16qam, 64qam)
+% 2- Realizar experimentos variando a potência do laser. Diferentes SNR.
+% 3- Medir EVM
+% 4- BER x OSNR:
+% 	a) B2B
+% 	b) 20km
+% 	c) 40km
+% 5-
+% a) Vbias x EVM
+% b)
+% 
+% falar do software, tipos de implementações, montagens de blocos de software.
+% Modularizações de funções.
+% 
+% Demonstrar experimentos e resultados.
+% 
+% Conclusão
+% 
+% Contar uma historia do que foi feito. Fazer um marketing.
+% 
+% Referenciar bastante o texto. Estado da arte? Onde queria chegar?
+% Parte 2 (Diferentes sinais, comparações, graficos, resultados)
+

@@ -1,0 +1,261 @@
+% \chapter*[Introdução]{Introdução}
+\chapter{Introdução}
+% \addcontentsline{toc}{chapter}{Introdução}
+
+% Introdução filosófica.
+Ao longo do eixo de frequências do espectro eletromagnético existem apenas dois
+intervalos que têm sido amplamente utilizados para a transmissão em banda larga
+pelos modernos sistemas de comunicação. O primeiro se estende de 100 kHz a 300
+GHz representando as rádio frequências e é utilizado diariamente em aplicações
+tais como, redes local sem fio, redes de acesso, radiodifusão, telefonia móvel,
+entre outras. Já o segundo intervalo encontra-se na região de onda de luz
+infravermelha, ou seja, de 30 a 300 THz, possuindo assim uma janela de
+transmissão com enorme largura de banda. Os vários terahertz de banda mostram
+que os sistemas de ondas luminosas podem fornecer uma capacidade impressionante,
+que pode alcançar centenas de terabits por segundo na transmissão. É por isto
+que os sistemas de redes de comunicações ópticas formam os chamados
+\textit{backbones} de comunicação, principalmente quando se fala em rede de
+transporte de longo alcance \cite{OOFDM_Book}.
+
+Recentemente, as comunicações via fibras ópticas alcançaram as redes de acesso
+denominadas \textit{Fiber-to-the-home}, \textit{Fiber-to-the-curb} ou
+\textit{Fiber-to-the cabinet} através das técnicas de multiplexação em redes
+ópticas passivas (\textit{Pasive Optical Network} - PON) \cite{art:jmo_OFDMA_6}.
+
+% INSERIR REFERENCIAS
+
+%, onde os sinais
+%são modelados por software e propagados por um canal óptico.
+
+% Onda quadrada, múltiplas frequências, distorções.
+% Supondo uma forma de onda quadrada com nível de quantização binário para
+% transmissão de informação onde na presença de amplitude se traduz como nível
+% alta e na ausência de amplitude representada por nível baixo. Essa onda quadrada
+% seria interessante para a transmissão de informação digital visto que dois
+% níveis de quantização são interessantes para recuperação levando em consideração
+% a facilidade de eliminar o ruído no canal. O problema é que as quinas da forma
+% de onda quadrada são geradas por uma série de componentes harmônicas possuindo
+% diversas frequências que giram em torno da frequência da portadora no que se diz
+% no tempo de bit. Fato que, em qualquer canal, cada componente de frequência
+% possui uma velocidade de propagação diferente.para cada componente de
+% frequência em qualquer canal, existe uma velocidade de propagação diferente
+
+% Levando em consideração a fibra óptica como meio de propagação da onda
+% eletromagnética na faixa de frequências da ordem de tera hertz enquadra em um
+% meio físico de propagação possuindo características intrínsicas.
+% Isso requer técnicas para gerar formas de onda em formatos que se adaptam às
+% propriedades do canal de transmissão.
+
+% Propagação de frequências em canais específicos.
+Cada sinal utilizado para transmitir informação se propaga em um meio
+característico cujas propriedades intrínsecas causam distorções e atenuações no
+formato da onda eletromagnética transmitida. Além disso, para cada meio físico,
+são necessárias diferentes técnicas de codificação/modulação específicas a fim
+de obter sucesso na transmissão. Um sinal que transporta informação possui uma
+determinada largura de banda composta por diversas componentes de frequência que
+viajam no meio em velocidades diferentes, ocasionando assim defasagens que
+distorcem o sinal propagado. Nos meios de comunicações sem fio, além do
+multipercurso\footnote{Multipercurso: propagação de um mesmo sinal por diversos
+caminhos} do sinal transmitido por reflexões ocorre o atraso de fase de cada
+componente de frequência distorcendo o sinal recuperado. Na fibra, este tipo de
+distorção é conhecido como dispersão cromática (\textit{Chromatic Dispersion} -
+CD) provocada pela variação do índice de refração para cada componente de
+frequência, dadas as diferentes velocidades de propagação das mesmas.
+
+A modulação/multiplexação por divisão de frequências ortogonais
+(\textit{Orthogonal Frequency Division Multiplexing} - OFDM) é atrativa para as
+comunicações ópticas, principalmente devido a sua resistência à dispersão
+cromática da fibra, ou seja, pelo mesmo motivo em que é largamente utilizada em
+sistemas de transmissão sem fio. Além disso, transmissão de sinais OFDM em
+sistemas óptico com detecção direta (\textit{Direct Detection Optical - OFDM} -
+DDO-OFDM) é um forte candidato para enlaces de curto alcance, tais como, redes
+de acesso PON e \textit{data centers} devido a sua simplicidade na arquitetura
+do receptor, quando comparado com o modelo de detecção coerente (\textit{Coherent
+Optical OFDM} - CO-OFDM). Entretanto, as desvantagens provenientes da inserção
+de uma banda de guarda igual a banda de sinal que ocasiona numa ineficiência
+espectral e da transmissão da portadora óptica restringem a ampla aplicação
+dos sistemas DDO-OFDM em enlaces de médio e longo alcances
+\cite{art:jmo_OFDMA_6}. Portanto, pesquisas que visam reduzir essa
+largura de banda de guarda bem como as que retratam aspéctos que retratam a
+redução da potência da portadora óptica são de extrema valia no que tange a
+adoção do sistema DDO-OFDM nos diversos tipos de enlaces ópticos.
+% na qual requer metade da potência transmitida para a portadora óptica.
+
+A Figura \ref{Fig:main_Comp} ilustra um modelo básico de sistemas de comunicação
+em fibra óptica explorado ao longo desta dissertação. Neste, sinais de luz com
+intensidade contínua (\textit{Continuous Wave} - CW) são codificados/modulados
+por sinais elétricos multiportadoras OFDM através de um modulador
+óptico Mach-Zehnder (Mach-Zehnder \textit{Modulator} - MZM) e propagados em
+enlace de fibra. Um detector óptico como conversor óptico elétrico dos sinais
+recebidos. Após a amplificação os sinais elétricos são demodulados conforme um
+detector OFDM convencional \cite{Senior_Book}.
+
+Os sistemas ópticos de comunicação se resumem, de forma geral, em um mesmo
+diagrama de blocos no qual é ilustrado na Figura \ref{Fig:main_Comp}. Uma fonte
+de informação é então codificada criando um sinal em uma forma de onda
+arbitrária que é inserido em um circuito modulador. Este, modula a fonte de luz
+que se propaga pelo canal óptico até ser recebido por um detector óptico. O
+sinal é convertido para elétrico, amplificado, demodulado, decodificado e
+recupera-se a informação transmitida \cite{Senior_Book}.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=\textwidth]{Figures/genericBlockDiagramCommunications.pdf}
+		\caption{Componentes principais de um sistema óptico de comunicação}
+		\label{Fig:main_Comp}
+\end{figure}
+
+Pretende-se com essa dissertação analisar o comportamento de um aparato
+experimental de transmissão de sinais OFDM em sistemas ópticos de modulação de
+intensidade e detecção direta (\textit{Intensity Modulation Direct Detection} -
+IMDD) em enlaces de curto alcance.
+
+% Falar do trabalho. Trecho candidato ao resumo/abstract
+\section{Objetivo Geral}
+Este trabalho tem como principal finalidade desenvolver uma plataforma de testes
+que consiste na transmissão de sinais OFDM em sistemas ópticos IMDD de curto
+alcance. Além disso, analisa-se a aplicabilidade de algoritmos de otimização dos
+diversos parâmetros envolvidos no desempenho de sistemas DDO-OFDM visando
+aumentar a sua eficiência espectral.
+
+% A otimização via algoritmo genético de parâmetros para obter um melhor
+% desempenho na qualidade da transmissão é também objeto de estudo.
+
+%   (\textit{Orthogonal Frequency Division Multiplexing} -
+% OFDM) na qual foi adotada como técnica de modulação digital de tecnologicas com
+% e sem fio devido à sua capacidade em transmitir dados a altas taxas de
+% transferência em canais \textit{fading} multipercurso severo.
+% O objetivo geral desta Dissertação consiste em realizar a transmissão de sinais
+% OFDM experimentalmente em um sistema de comunicação de detecção
+
+\section{Objetivos Específicos}
+
+De forma mais específica, o estudo apresentado neste texto consiste na
+construção de sinais OFDM por meio de algoritmos de processamento de sinais e de
+conversores A/D (\textit{Analog-to-Digital Converter}) e D/A
+(\textit{Digital-to-Analog Converter}) para altas taxas de transmissão em um
+meio óptico com modulação por intensidade e detecção direta (IMDD). Além disso,
+alguns parâmetros mais relevantes tais como a banda de guarda $B_G$, intervalo
+de guarda $I_G$, amplitude do sinal OFDM na entrada do modulador óptico MZM
+assim como o seu ponto de operação, são variados segundo uma heurística modelada
+por um algoritmo de otimização a fim de obter uma transmissão com melhor
+eficiência espectral.
+
+Entretanto, por se tratar de um trabalho com forte apelo experimental, são
+caracterizados todos os dispositivos contidos nos experimentos, sendo levantados
+seus limites e curvas de operação. Além disso, para realizar os experimentos são
+utilizados equipamentos de alto desempenho quais sejam, um gerador de forma de
+onda arbitrário (\textit{Arbitrary Waveform Generator} - AWG) modelo AWG7122C e
+um osciloscópio digital (\textit{Digital Phosfor Oscilloscope- DPO}) modelo
+DPO71604C cujo correto funcionamento acarretou no desenvolvimento de códigos de
+interação com/entre os mesmos.
+
+% Com isso, entram
+% como objetivos específicos levantar limites dos equipamentos, funcionalidades e
+% códigos de comunicação para configuração, transmissão e recepção de dados com os
+% dispositivos para viabilizar os testes experimentais propostos.
+
+% A estrutura de chamada dos códigos de interface com equipamentos AWG e DPO junto
+% à uma estrutura genérica de códigos com característica modular.
+
+\section{Metodologia}
+Este trabalho possui como proposta desenvolver uma plataforma para realizar
+experimentos elétrico/ópticos junto à equipamentos de alto desempenho tais como
+um gerador de forma de onda arbitrário do modelo AWG7122C e um osciloscópioq do
+modelo DPO71604C, com capacidades de conversões D/A e A/D respecitivamente, 24
+GS/s e 100 GS/s. Esses equipamentos, interagem em tempo real via MATLAB por meio
+de códigos de acesso desenvolvidos neste trabalho e que são integrados junto à
+um código com modelo padrão para chamada de funções e parâmetros.
+
+Este arquivo principal permite a integração de rotinas que modelam
+matemáticamente modelos de transmissores, canais ópticos e elétricos, receptores
+e dispositivos ópticos que foram herdados de trabalhos anteriores desenvolvidos
+no Labtel e são facilmente chamados de forma a propiciar a interação entre a
+simulação e os experimentos. Entretanto, devido à facilidade de manipular os
+parâmetros que modelam os sinais transmitidos percebeu-se a necessidade de
+encontrar um conjunto de valores dentro da faixa aceitável de cada parâmetro que
+pudesse melhorar a qualidade da transmissão do sistema. Como diversos parâmetros
+relacionam-se de forma não linear é proposto um método de busca de valores
+otimizados por meio de uma heurística utilizando algoritmo genético
+mono-objetivo que levou a avaliar a OSNR para taxa de erro de bit $BER = 1\times
+10^{-3}$.
+
+% \section{Resultados Esperados}
+
+\section{Principais Contribuições}
+As contribuições deste trabalho são dadas pela plataforma de testes implementada
+para realizar experimentos elétrico/óptico com grande facilidade através da
+plataforma MATLAB\textsuperscript{\textregistered} e códigos que interagem
+diretamente, via rede \textit{ethernet}, com os equipamentos AWG (conversor D/A)
+e DPO (Osciloscópio conversor A/D) e a caracterização dos dispositivos ópticos
+elétricos disponíveis no labtel 2 que abre um leque para pesquisa com diversas
+configurações experimentais. Além disso, é produzida uma heuristica de
+otimização de parâmetros para sistemas DDO-OFDM por algoritmo genético
+mono-objetivo.
+
+\section{Organização do Texto}
+
+O restante desta dissertação está  organizado da seguinte maneira: os conceitos
+básicos sobre os quais sustentam a teoria de modulação/multiplexação OFDM são
+apresentados no capítulo 2. A descrição e formulação matemática dos sinais OFDM
+transmistidos no meio óptico são introduzidos no capítulo 3. Já o capítulo 4
+descreve a principal contribuição da dissertação nomeadamente na caracterização
+dos componentes utilizados na transmissão, nos procedimentos de construção dos
+sinais e na metodologia de testes. O capítulo 5 mostra a necessidade da obtenção
+de parâmetros otimizados via algoritmo genético visando um melhor desempenho na
+qualidade e eficiência da transmissão. As conclusões e os trabalhos futuros são
+expostos no capítulo 6.
+
+\section{Lista de Publicações}
+
+\begin{itemize}
+
+	\item Helder R. de O. Rocha, Thiago M. de Almeida, Marcelo E. V. Segatto and
+	Jair A. L. Silva, ``\textbf{Mono-Objective Optimization for Direct Detection
+	Optical OFDM Transmissions in Short-Range Links}'', \textit{Journal of
+	Microwaves, Optoelectronics and Electromagnetic Applications, July 2013 SI-2,
+	Vol. 12, p113} \href{http://www.jmoe.org/site-number?id=38}{http://www.jmoe.org}
+	
+	\item Thiago M. de Almeida, Reginaldo B. Nunes, Helder R. de O. Rocha, Marcelo
+	E. V. Segatto, and Jair A. L. Silva ``\textbf{Performance Optimization of
+	DDO-OFDM Systems Through Genetic Algorithms}'', \textit{BRICS-CCI and CBIC
+	2013}.
+
+	\item Thiago M. de Almeida, Helder R. de O. Rocha, Maria J. Pontes, Moisés R.
+	N. Ribeiro, Marcelo E. V. Segatto, Jair A. L. Silva, \textbf{``Performance
+	Optimization of DDO-OFDM Transmissions in Short-Haul Links Through Genetic
+	Algorithms''}, \textit{Workinnova 2012, Denmark-South America Workshop on
+	Photonics Technologies}.
+
+\end{itemize}
+
+% \section{NÃO FAZ PARTE!}
+% 
+%  de chamada de funções que possibilita a inserção de diferentes Códigos
+% gerados interagem com equipamentos realizando experimentos \textit{offline}
+% utilizando os conversores As principais contribuições deste trabalho são: 
+% estudos  plataforma de testes.
+% \subsection{Organização da Dissertação}
+% \subsection{Lista de Publicações}
+% The continuously grooming of the demand for traffic\ldots 
+% 
+% \begin{incisos}
+% 	\item Contextualização do Problema/Trabalho 
+% 	\item Motivação do Trabalho
+% 	\item Justificativa do Trabalho
+% 	\item Objetivos Gerais (normalmente	intangíveis)
+% 	\item Objetivos Específicos (normalmente tangíveis)
+% 	\item Metodologia de Desenvolvimento do Trabalho
+% 	\item Resultados Esperados
+% 	\item Principais Contribuições
+% 	\item Vinculação do trabalho com o curso (principalmente destacando o esforço
+% 	de busca de novos conhecimentos não presentes na matriz curricular do curso)
+% 	\item Organização do texto (Estrutura da Monografia)
+% \end{incisos}
+% 
+% \section{Justificativas}
+% 
+% \subsection{Vantagens} The main
+% advantage of OFDM is that it can cope with virtually unlimited amount of inter
+% symbol interference (ISI), caused for instance by chromatic dipersion and PMD.
+%  \subsection{Desvantagens}

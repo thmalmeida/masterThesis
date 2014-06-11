@@ -1,0 +1,882 @@
+% $Id: cap4.tex,v 1.1 2005/10/15
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Quarto capitulo:
+%% OFDM
+%% Copyright 2006 Jair Adriano Lima Silva.
+%% Este documento é distribuído nos termos da licença
+%% descrita no arquivo LICENCA que o acompanha.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Modulação Multiportadora OFDM}
+
+%\noindent \line(1,0){455}
+%
+%\vspace*{1cm}
+%
+%{\raggedleft
+%
+%\textit{`` Um frase.''}
+%
+%(\textit{Norada})
+%
+%}
+%
+%\vspace*{1cm}
+
+
+{\huge\huge{A}} recepção de diversas réplicas de um sinal com amplitudes e atrasos
+diferentes carac\-teriza o fenômeno denominado multipercurso, precursor de interferência intersimbólica, ISI
+(\emph{Intersymbol-Interference}). O espalhamento multipercurso do
+canal excede o período do símbolo transmitido quando a comunicação
+se realiza a taxas superiores a aquelas relacionadas aos diferentes atrasos introduzidos
+pelo canal, o que significa que mecanismos que amenizam a distorção de sinal decorrente da ISI devem ser usados.
+
+Técnicas de equalização são utilizadas em sistemas de
+transmissão com uma portadora visando a redução dos efeitos
+degradantes que a seletividade em frequência do canal provoca no
+sinal transmitido. Ao dividir o espectro disponível em vários
+subcanais ortogo\-nais, a transmissão com múltiplas portadoras
+torna-se uma alternativa mais atraente, uma vez que reduz
+drasticamente a complexidade da equali\-zação em portadora única,
+haja vista a consequente resposta em frequência quase plana de cada
+subcanal.
+
+
+% \section{Histórico}
+% 
+% Sistemas multiportadoras tiveram sua origem nos anos 50 com a
+% introdução da multiplexação por divisão de frequência, FDM
+% (\emph{Frequency Division Multiplexing}) \cite{Kineplex}. Porém, a
+% complexidade relacionada a sincronismo das portadoras, que envolvia
+% sua implementação, levou ao abandono do sistema em 1957, embora fora
+% muito usado para a comunicação em altas frequências por militares.
+% 
+% Em 1966, Chang patenteou o princípio e a estrutura de multiplexação
+% ortogonal, OFDM (\emph{Orthogonal Frequency Division Multiplexing})
+% através da publicação de um artigo onde sintetizava a transmissão
+% multicanal de sinais limitados em banda, conceituando a sobreposição
+% espectral ortogonal de sinais multifrequências na comunicação de
+% dados \cite{Chang_1966}. Aproveitando-se das descrições de Chang,
+% Saltzberg elaborou um estudo onde empregava uma modulação O-QAM
+% (\emph{Offset QAM}) nas subportadoras, que consistia em atrasar a
+% componente em quadratura em meio período de símbolo, reduzindo a
+% flutuação do envelope do sinal e mantendo a linearidade nos
+% amplificadores ao longo de uma larga faixa de amplitude, facilitando
+% o projeto dos filtros de transmissão e recepção
+% \cite{Saltzberg_1967}, \cite{Chang_1968}.
+% 
+% Mas a maior contribuição atribuída a esta modulação foi a
+% compartilhada por Weins\-tein e Ebert, em 1971
+% \cite{Weinstein_Ebert_1971}, cuja proposta se baseou na idéia de se
+% usar a transformada discreta de fourier, DFT (\emph{Discrete Fourier
+% Transform}) para a geração e recepção de sinais OFDM, o que reduziu
+% significativamente a complexidade de implementação dos
+% \emph{modems}, visto que eliminava a necessidade da utilização de
+% bancos de osciladores analógicos na transmissão e recepção. Para
+% combater as interferências intersimbólica e intercanal, ICI
+% (\emph{Interchannel-Inteference}), eles utilizaram intervalos de
+% guarda entre os símbolos e funções janelas do tipo cosseno levantado
+% na filtragem do sinal.
+% 
+% O problema da manutenção da ortogonalidade nas portadoras foi
+% resolvido em 1980, com Peled e Ruiz \cite{Peled_Ruiz_1980}, quando
+% da introdução do ciclo prefixo, CP (\emph{Cyclic Prefix}) ou
+% extensão cíclica. Em vez de se utilizar intervalos de guarda vazios,
+% ou seja, sem sinal, se estende o símbolo OFDM ciclicamente ao longo
+% do intervalo de guarda com um CP maior que a resposta ao impulso do
+% canal, acarretando uma perda de potência compensada pelo fato de não
+% mais se ter ICI. Ainda em 1981 e seguindo a linha de estudo
+% introduzida por Saltzberg, Hirosaki implementou um \emph{modem} OFDM
+% usando DFT, modulação QAM nas subportadoras e um algoritmo de
+% equalização para eliminação das ISI e ICI \cite{Hirosaki_1980},
+% \cite{Hirosaki_1981}.
+% 
+% A técnica OFDM só foi considerada em sistemas de comunicação móveis
+% em 1985, por Cimini \cite{Cimini_1985}, para nos anos 90 se tornar
+% padrão em vários sistemas de comunicação, tais como radiodifusão de
+% áudio digital, DAB (\emph{Digital Audio Broadcasting}), radiodifusão
+% de vídeo digital, DVB (\emph{Digital Video Broadcasting}), redes
+% locais sem fio, W-LAN \emph{(Wireless Local Area Network)}, também
+% conhecido como padrão IEEE 802.11a. Ela é o padrão dos \emph{modems}
+% de comunicação nas linhas de assinante digital, ADSL
+% (\emph{Asymmetric Digital Subscriber Line}) e HDSL (\emph{High Rate
+% Digital Subscriber Line}) e é forte candidata para os padrões de
+% comunicação móvel da $4^a$ geração, serviços de redes em banda larga
+% sem fio, entre outros \cite{Multicarrier_4G}.
+
+
+\section{Concepção Básica}
+
+A modulação multiportadora divide a sequência de dados a serem
+transmitidos em várias subsequências, que paralelamente moduladas em
+igual número de portadoras \footnote{Denominadas subportadoras} são
+transmitidas simultaneamente em subcanais idealmente ortogonais. A
+quantidade $N$ de subcanais ou de subsequências é escolhida de tal
+forma que o tempo do símbolo em cada subsequência, $NT_s$, seja
+maior que o espalhamento multipercurso, $\tau_{max}$, do canal
+$h(t)$, isto é, de forma que a largura de banda de cada subcanal seja menor
+que a largura de banda de coerência do canal de comunicação,
+conforme ilustra a Figura \ref{fig:uniportadora_multiportadora}.
+Isso garante maior robustez à ISI quando comparada com a comunicação
+uniportadora, - cuja duração do símbolo é $T_s$ - já que com
+resposta em frequência quase plana, os subcanais apenas sofrem
+influências de \textit{fading} multipercurso relativamente plano \footnote{Salienta-se que, em sua plenitude, a modulação multiportadora OFDM (\emph{Orthogonal Frequency Division Multiplexing}) emprega uma extensão cíclica que devidamente estimado, permite considerar plana a resposta em frequência de cada subcanal. A análise deste artifício, assim como a plena descrição da modulação OFDM são realizadas em seções posteriores.}
+\cite{Multicarrier_4G}, \cite{Single_Multicarrier_QAM},
+\cite{John_Bingham_1990}.
+
+\begin{figure}[htbp]
+\begin{center}
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.6] {figura/fig4_1.eps}
+  \caption{Resolução tempo frequência dos sistemas uniportadora e multiportadora.}
+  \label{fig:uniportadora_multiportadora}
+\end{center}
+\end{figure}
+
+Considere um sistema de modulação linear (uniportadora) que
+transmite símbolos QPSK à taxa $R_s = 0.5$ $Msps$, correspondente a
+largura de banda passante $B = 0.5$ $MHz$, em um canal com
+atraso máximo  $\tau_{max} = 6$ $\mu s$. Com a duração de um símbolo
+$T_s = \frac{1}{R_s} = 2$  $\mu s$ menor que o atraso máximo do
+canal, este sistema sofre severos efeitos de multipercurso. No
+domínio da frequência diz-se que o sinal é distorcido pela
+seletividade em frequência, uma vez que a largura de banda de
+coerência do canal $B_c \approx \frac{1}{\tau_{max}} \approx 167$
+kHz é menor que $B$, o que induz equalização complexa, pois os
+efeitos dos "nulos" da resposta em frequência somente são amenizados
+com estimativas precisas do canal em questão. Tais efeitos são
+drasticamente minimizados se a idéia de dividir a banda larga em $N$
+subcanais que linearmente modulados constituem $N$ subsistemas
+paralelos com $B_N = \frac{B}{N}$ e $R_N \approx \frac {R_s}{N}$ for
+posta em prática. Com $N = 10$ no sistema exemplificado, um novo
+símbolo de duração $T_N \approx \frac{1}{B_N} = 20$ $\mu s$ maior
+que $\tau_{max}$  se faz presente, diminuindo assim a ISI. Fazendo
+$N$ suficientemente grande - a ponto de tornar $B_N$ muito menor que
+$B_c$ - reduz-se muito a influência da seletividade em frequência do
+canal, além de diminuir a taxa de símbolos na mesma proporção.
+Portanto, se muito menor quer dizer pelo menos dez vezes menos,
+significa que para $B_N = \frac {B}{N} = 0.1\times B_c$ pode-se no
+exemplo acima escolher um valor para $N$ igual a $N =
+\frac{B}{0.1\times B_c} =  \frac{0.5 \times 10^{6}}{0.1\times 167
+\times 10^{3}} \approx 30$ subportadoras, valor este que minimiza a
+seletividade em frequência ao fazer a largura de banda de cada
+subportadora estreita o suficiente para tornar o \textit{fading}
+multipercurso quase plano, conforme mostra a Figura
+\ref{fig:divisao_espectro}.
+
+
+\begin{figure}[htbp]
+\begin{center}
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.85] {figura/fig4_2.eps}
+  \caption{Divisão do espectro de frequências em $N$ subcanais}
+  \label{fig:divisao_espectro}
+\end{center}
+\end{figure}
+
+
+Entretanto, um sério compromisso deve ser considerado quando o
+assunto é o número de subportadoras, já que aumentá-las significa
+aumentar a interferência entre subcanais adjacentes, a ICI e
+conseqüentemente a complexidade do sistema \cite{Citenel_2003},
+\cite{Tadeu}.
+
+
+\section{Configuração do Sistema Multiportadora}
+
+A concepção acima descrita permite afirmar que um sistema
+multiportadora constitui-se de $N$ sistemas convencionais cujas
+taxas de transmissão são $N$ vezes menor. Os modelos de transmissão
+e recepção são discutidos nas seções seguintes.
+
+\subsection {Modelo de Transmissão}
+A Figura \ref{fig:Transmissor_Multiportadora} mostra o processo
+básico de transmissão multiportadora em banda base. A sequência de
+\textit{bits} de entrada, ou o \textit{bitstream}, gerada à taxa
+$R_b$ é dividida em $N$ subsequências através do bloco conversor
+serial para paralelo (S/P). Contendo $m$ \textit{bits}, cada
+subsequência é mapeada em um símbolo complexo $s_i = a_i + jb_i$,
+conforme constelação desejada (bloco Map), onde $M = 2^{m}$ é a
+quantidade de pontos da constelação. Após conversão tempo discreto
+para tempo contínuo por um filtro de transmissão $g_{Tx} (t)$, cada
+símbolo \footnote{Cada símbolo paralelo é também chamado de
+subsímbolo} $s_i (t)$ é modulado por uma subportadora de frequência
+$f_i$ ocupando uma largura de banda $B_N$. Somados, tais subsímbolos
+formam o sinal multiportadora a ser transmitido no canal após
+conversão paralelo para serial (bloco P/S)
+\cite{Single_Multicarrier_QAM}, \cite{Cioffi_notas_aula}.
+
+\begin{figure}[htbp]
+\begin{center}
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.75] {figura/fig4_3.eps}
+  \caption{Configuração de um transmissor multiportadora.}
+  \label{fig:Transmissor_Multiportadora}
+\end{center}
+\end{figure}
+
+Observe pela Figura \ref{fig:Transmissor_Multiportadora} que a taxa
+de transmissão em cada subsequência, $R_N = \frac{R_b}{N}$ é
+inversamente proporcional ao número de subportadoras, a duração de
+cada subsímbolo é $T_N = N\times T_s$ e a largura de banda de cada
+subcanal é $B_N = \frac{B}{N}$ onde $B$ é a largura de banda
+necessária à transmissão da sequência de bits (\textit{bitstream})
+original.
+
+Matematicamente, o sinal na saída do transmissor é dado por
+\cite{Klenner_notas_aula_Bremen},
+\begin{equation}
+ s(t) = \sum_{i=0}^{N-1} s_i \cdot g_{Tx}(t) e^{j2\pi f_i t}
+ \label{eq_4_1}
+\end{equation}
+onde $s_i$ é o símbolo associado à subportadora $i$ do subcanal $i$
+centrado na frequência $f_i = f_0 + i(B_N)$ para subportadoras não
+sobrepostas, $i = 1,...,N-1$, $f_i = \frac {W_i}{2\pi}$ e
+$j=\sqrt{-1}$.
+
+Se o "janelamento" realizado pelo filtro de transmissão $g_{Tx}(t)$
+for feito por um pulso do tipo \textit{cosseno} levantado com um
+fator de \textit {rooloff} $\beta$ ($0< \beta < 1$), o tempo de cada
+subsímbolo é $T_N = \frac{1+\beta}{B_N}$. Na prática, a limitação na
+duração de tais pulsos (prevenção contra ISI) provoca um adicional
+na largura de banda de cada subcanal de $\frac{\epsilon}{T_N}$,
+separando os subcanais em $\frac{1+\beta + \epsilon}{T_N}$ e
+tornando a largura de banda total $B$ igual a
+\begin{equation}
+B = \frac{N(1+\beta + \epsilon)}{T_N}.
+\end{equation}
+
+A implementação da Figura \ref{fig:Transmissor_Multiportadora} usa o
+espectro de frequências de forma ineficiente. A ineficiência
+espectral pode ser eliminada se uma particular sobreposição
+espectral for realizada. O apêndice C mostra que se consegue
+preservar a ortogonalidade das subportadoras, espaçando-as em
+$\frac{1}{T_N}$ na frequência de maneira a centralizar a
+subportadora $i$ na frequência $f_i = f_0 + \frac{i}{T_N}$ e a
+reduzir a faixa de frequências total necessária a
+\begin{equation}
+B = \frac{N+\beta + \epsilon}{T_N} \approx \frac {N}{T_N},
+\end{equation}
+onde a aproximação se dá ao fato de $N$ ser suficientemente grande,
+enquanto que $\beta$ e $\epsilon$ não afetam a banda do sistema como
+um todo.
+
+Para ilustrar a eficiência espectral conseguida, considere o exemplo
+analisado na seção anterior, onde os valores de $N$, $B_N$ e $T_N$
+são 30 subportadoras, $16.7$ $KHz$ e $60$ $\mu s$ respectivamente.
+Supondo que o filtro de transmissão é do tipo \textit{cosseno}
+levantado com $\beta = 1$, e excesso de largura de banda provocado
+pelo limitação temporal do subsímbolo, $\frac{\epsilon}{T_N} = 0.1$,
+a largura de banda total quando os subcanaias são sobrepostos é
+%\begin{equation}
+\[ B = \frac{N+\beta + \epsilon}{T_N} \approx \frac {N}{T_N} =
+\frac{30+1+0.1}{0.00006} = 0.518 MHz \approx 0.5 MHz,\]
+%\end{equation}
+o que é metade da largura de banda necessária quando os mesmos
+subcanais não são sobrepostos,
+%\begin{equation}
+\[ B = \frac{N(1+\beta + \epsilon)}{T_N} =
+\frac{30(1+1+0.1)}{0.00006} = 1.05 MHz.\]
+%\end{equation}
+
+A particular sobreposição de espectros acima referida é possível
+fazendo com que a frequência central de uma subportadora se localize
+no cruzamento por zero das demais. Se o sinal na recepção for
+amostrado na frequência da subportadora, mantém-se a ortogonalidade
+e conseqüentemente não ocorrerá ICI \cite{Single_Multicarrier_QAM}.
+Um outro benefício advindo desta tarefa é o de não mais se utilizar
+possíveis filtros analógicos precisos (complexos) na recepção do
+sinal. A divisão das subportadoras sobrepostas - cujos espectros não
+têm mais a banda limitada - é agora realizada via processamento
+digital \footnote{Consulte a seção 3.4 para maiores detalhes.}
+\cite{John_Bingham_1990}.
+
+\subsection {Modelo de Recepção} \label{seccao_recepcao_multiport}
+A separação das subportadoras sobrepostas requer a estrutura de
+recepção mostrada na Figura \ref{fig:Receptor_Multiportadora}, que
+depois de separá-las, as demodula e filtra usando um banco de
+filtros de recepção $g_{Rx}(t)$ idêntico \footnote{Para maximizar a
+SNR, os filtros de transmissão e recepção devem ser casados.} ao do
+transmissor $g_{Tx}(t)$. O demapeamento (bloco Demap) é realizado
+nos símbolos estimados e a conseguinte conversão paralelo para
+serial fornece a seqüencia de bits de saída.
+
+\begin{figure}[htbp]
+\begin{center}
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.75] {figura/fig4_4.eps}
+  \caption{Configuração de um receptor multiportadora.}
+  \label{fig:Receptor_Multiportadora}
+\end{center}
+\end{figure}
+
+Desprezando os efeitos do canal $h(t)$ e do ruído $n(t)$, e
+considerando como filtro de recepção um pulso ideal no intervalo
+$[0,T_N]$, cada símbolo na entrada do bloco demapeador é estimado
+como \cite{Klenner_notas_aula_Bremen}, \cite{Ernesto_Pinto},
+
+\begin{eqnarray}
+\hat{s_i} & = & \frac{1}{T_N}\cdot \int_{0}^{T_N} e^{-j2\pi f_i t}
+\times s_j(t)\cdot dt \\
+          & = & \frac{1}{T_N}\cdot\int_{0}^{T_N} e^{-j2\pi f_i t} \times
+\left(\sum_{j=0}^{N-1} s_j\cdot e^{j2\pi f_j t}\right) \cdot dt
+\nonumber\\
+          & = & \frac{1}{T_N}\cdot \sum_{j=0}^{N-1} s_j \int_{0}^{T_N}
+e^{-j2\pi f_i t} \times  e^{j2\pi f_j t} \cdot dt \nonumber\\
+          & = & \frac{1}{T_N}\cdot \sum_{j=0}^{N-1} s_j \int_{0}^{T_N} e^{-j2\pi
+(f_i - f_j) t}\cdot dt \nonumber\\
+          & = & \frac{1}{T_N}\cdot s_i
+\int_{0}^{T_N} 1 \cdot dt \nonumber\\
+          & = & \frac{1}{T_N}\cdot T_N \cdot s_i
+          \nonumber\\
+          & = & s_i \label{eq_subsimb}
+\end{eqnarray}
+
+Embora sejam robustos e eficientes, os modelos de transmissão e
+recepção utilizam $N$ moduladores e demoduladores respectivamente.
+Isso torna a implementação de um sistema multiportadora
+completamente inviável em termos de custo, tamanho e consumo de
+potência. A próxima seção descreve em linhas gerais, a solução
+desse problema.
+
+\section {A Multiplexação OFDM}
+A técnica OFDM (\textit{Orthogonal Frequency Division Multiplexing})
+é uma forma de implementação digital do sistema multiportadora, onde
+a modulação e a demodulação são realizadas via transformada discreta
+de Fourier inversa e direta respectivamente. Ou seja, é a técnica de
+multiplexação por divisão de frequências, onde as subportadoras são
+ortogo\-nais entre si e a modulação/demodulação é feita usando a
+IDFT/DFT (\textit{Inverse Discrete Fourier Transform/ Direct
+Discrete Fourier Transform}) \cite{Cioffi_notas_aula}. Para isso e
+para combater distorções relacionados à ISI e à ICI, o OFDM usa como
+filtros de transmissão e recepção nas Figuras
+\ref{fig:Transmissor_Multiportadora} e
+\ref{fig:Receptor_Multiportadora} respectivamente, o pulso
+retangular
+\begin{equation}
+g_{Tx}(t)=g_{Rx}(t)=rect\left(\frac{t}{T_N}\right) \label{eq_4_2},
+\end{equation}
+cujos espectros são dados por
+\begin{equation}
+G_{Tx}(f)=G_{Rx}(f)=T_N \cdot sinc(\pi f T_N).
+\end{equation}
+
+Observe pela Figura \ref{fig:sinc_portadoras} que os zeros da função
+$sinc$ são posicionados nas frequências $f_i = \frac{i}{T_N}$ com $i
+= 1,..., N-1$, e que para transmissão sem interferência intercanal,
+ou seja, para obtenção de ortogonalidade entre as subportadoras, o
+espectro de cada subcanal é localizado nos zeros dos vizinhos
+escolhendo como distância entre subcanais, $\Delta_f =
+\frac{1}{T_N}$ de maneira que ao subcanal $i$ é associado a
+frequência $f_i = i\cdot\Delta_f$.
+
+\begin{figure}[!ht]
+\begin{center}
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.6] {figura/fig_sinc1.eps}
+  \caption{Espectro de um sinal OFDM contendo apenas três subportadoras.}
+  \label{fig:sinc_portadoras}
+\end{center}
+\end{figure}
+Analogamente, no domínio do tempo a ortogonalidade é mantida se as
+subportadoras tiverem um número de ciclos inteiro e múltiplo um do
+outro em um intervalo de símbolo.
+
+\subsection {Transmissor OFDM}
+Para demonstrar a substituição do bloco de moduladores da Figura
+\ref{fig:Transmissor_Multiportadora} por uma IDFT, considere a
+equação (\ref{eq_4_1}). Substituindo $g_{Tx}(t)$ pelo impulso
+retangular da equação (\ref{eq_4_2}), tem-se que
+\cite{Ernesto_Pinto}, \cite{Klenner_notas_aula_Bremen},
+
+\begin{equation}
+s(t) = \sum_{i=0}^{N-1} s_i \cdot
+rect\left(\frac{t}{T_N}\right)\cdot e^{j2\pi f_i t}.
+\end{equation}
+Com um símbolo de duração $T_N$ amostrado $N$ vezes, $t =
+n\frac{T_N}{N}$ ($0<t<T_N$) e sabendo que, $f_i = i\cdot\Delta_f =
+\frac{i}{T_N}$, $rect(\frac{t}{T_N}) = 1$ (caso ideal), o símbolo de
+tempo discreto na saída do transmissor é
+
+%\begin{equation}
+\[ s[n] = \sum_{i=0}^{N-1} s_i \cdot e^{j2\pi \frac{i}{T_N} n
+\frac{T_N}{N}}
+\]
+%\end{equation}
+
+\begin{equation}
+s[n] = \sum_{i=0}^{N-1} s_i \cdot e^{j2\pi \frac{n \cdot i}{N}},
+\label{eq_4_3}
+\end{equation}
+para $0\leq n \leq T_N$. Observa-se que a equação (\ref{eq_4_3}) nada mais é que a equação da
+transformada discreta inversa de Fourier (IDFT). Empregando o
+algoritmo rápido IFFT (\textit{Inverse Fast Fourier Transform}),
+pode-se portanto escrever que
+\begin{equation}
+s[n] = IFFT \{s_i\}. \label{eq_4_4}
+\end{equation}
+A transformada discreta de fourier traz consigo as vantagens das
+propriedades inerentes, nomeadamente, a linearidade, simetria,
+convolução circular, deslocamento, ortonormali\-dade dos autovetores
+da matriz de transformação, entre outras
+\cite{Processamento_sinais_Diniz}.
+
+Para transmissão em canais com fio em banda base, necessita-se de um sinal
+real\footnote{Para o presente trabalho, usam-se sequências reais na
+entrada do canal (canais \textit{wireline} ou \textit{wired}).} na
+saída do bloco IDFT. Para isso, aproveita-se da propriedade de
+simetria da transformada para aplicar a simetria Hermitiana na
+sequencia de entrada do mesmo bloco \cite{Proakis_terceira_edicao},
+\cite{Cioffi_artigo}. Assim, para $N$ par \footnote{Assume-se também
+que toda sequencia na entrada da IFFT é par e potência de dois. Se
+não o for o mesmo bloco funcional a completará com zeros.} e $L =
+2N+2$, faz-se,
+\begin{equation}
+s_i =
+[0,s_0,s_1,...,s_{N-2},s_{N-1},0,s_{N-1}^\ast,s_{N-2}^\ast...,s_0^\ast],
+\end{equation}
+onde $s_i^\ast$ é o complexo conjugado do subsímbolo $s_i$.
+Portanto, a simetria Hermitiana resulta no conjunto de subsímbolos,
+\begin{equation}
+s_i = [s_0,s_1,..., s_{\frac{L}{2}},...,s_{L-1}],
+\end{equation}
+para $0\leq i \leq L-1$ e $s_0$ e $s_\frac{L}{2}$ (nível DC e
+frequência de \textit{Nyquist}) zerados por conveniência. Vale
+lembrar que na recepção interessam apenas os $\frac{L}{2}-1$
+primeiros símbolos:
+
+\[ s_0, s_1, ..., s_{\frac{L}{2} - 1}.\]
+
+
+A Figura \ref{fig:Transmissor_OFDM} ilustra a nova configuração para
+o transmissor da Figura \ref{fig:Transmissor_Multiportadora}, onde o
+bloco \textit{Hermit} faz a simetria Hermitiana para que a operação
+IFFT gere coeficientes reais na sua saída.
+
+\begin{figure}[htbp]
+\begin{center}
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.8] {figura/fig4_5.eps}
+  \caption{Configuração básica de um transmissor OFDM. O sinal OFDM na saída é
+  composto de coeficientes reais devido à simetria Hermitiana aplicada aos subsímbolos mapeados
+  conforme modulação por subportadora desejada.}
+  \label{fig:Transmissor_OFDM}
+\end{center}
+\end{figure}
+
+
+Empregando a transformada discreta inversa de Fourier na sequência
+simétrica, a saída pode ser alternativamente expressa como
+\cite{Cioffi_artigo}, \footnote{Consulte o apêndice D para a
+demonstração.}
+\begin{equation}
+s[n] = \sum_{i=0}^{L-1} \left(a_i^2 + b_i^2\right)^{\frac{1}{2}
+}\cdot \cos\left[\frac{2\pi n i}{L} +
+tan^{-1}\left(\frac{b_i}{a_i}\right)\right] \label{eq_4_5},
+\end{equation}
+onde $a_i$ e $b_i$ são os componentes real e imaginário do
+subsímbolo complexo $s_i = a_i + jb_i$.
+
+A Figura \ref{fig:Espectro_OFDM} mostra parte de uma sequencia dada
+pela equação \ref{eq_4_5}, bem como o seu espectro de potência.
+\footnote{Note que para se transmitir uma sequencia de dados com coeficientes reais e de
+tamanho $N$, necessita-se de uma operação IDFT com $L = 2N$ pontos.}
+
+\begin{figure}[!ht]
+\begin{center}
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.65] {figura/espectro_sinal.eps}
+  \caption{Densidade Espectral de potência de um sinal OFDM gerado pela Figura \ref{fig:Transmissor_OFDM} para 512 subportadoras e mapeamento QPSK nos subsímbolos.
+  Depois da IDFT, o sinal passa por um filtro de transmissão $g_{Tx}(t)$ retangular e depois por
+  um conversor D/A simulado por um filtro \textit{Butterworth} de ordem 13. O sinal é deslocado para
+  a frequência central $f_c \approx 91$ MHz.}
+  \label{fig:Espectro_OFDM}
+\end{center}
+\end{figure}
+
+
+\subsection {Receptor OFDM}
+Pela Figura \ref{fig:Receptor_Multiportadora}, fica claro que
+\begin{equation}
+\hat{s}_i(t) = \left[r(t) \cdot e^{-j2\pi f_i t}\right]\ast
+g_{Rx}(t),
+\end{equation}
+onde $w_i = 2\pi f_i$. Sabendo-se que $f_i = i\cdot\Delta_f =
+\frac{i}{T_N}$, $g_{Rx} = rect(\frac{t}{T_N})$, tem-se que,
+\[\hat{s}_i(t) = \left[r(t) \cdot e^{-j2\pi i \frac{t}{T_N}}\right]\ast
+rect\left(\frac{t}{T_N}\right).
+\]
+Com o auxílio da propriedade da integral da convolução
+\footnote{$g(t)\ast h(t) = \int_{-\infty}^{+\infty} g(\tau)h(t -
+\tau) d\tau$} obtém-se
+\[\hat{s}_i(t) =\frac{1}{T_N} \cdot \int_{-\infty}^{\infty} r(\tau) \cdot e^{-j2\pi i \frac{t}{T_N}}
+\cdot rect\left(\frac{t-\tau}{T_N}\right)d\tau,
+\]
+que amostrado em $t = 0$ fornece
+\begin{equation}
+\hat{s}_i(t)|_{t=0} =\frac{1}{T_N} \cdot \int_{0}^{T_N} r(\tau)
+\cdot e^{-j2\pi i \frac{\tau}{T_N}} d\tau. \label{eq_4_6}
+\end{equation}
+
+A equação (\ref{eq_4_6}) representa uma série de \textit{Fourier},
+uma vez que o espectro de $r(t)$ é amostrado em frequências $f_n =
+\frac{n}{T_a}$ \cite{Klenner_notas_aula_Bremen}. Aproximando a mesma
+equação por um somatório, e fazendo a substituição de variáveis,
+$\tau = n T_{a}$, $d\tau = dn \cdot T_a$, a equação (\ref{eq_4_6})
+se transforma em
+\begin{equation}
+\hat{s}_i(t)|_{t=0} \approx \frac{1}{T_N} \cdot \sum_{n = 0}^{N-1}
+r(nT_a) \cdot e^{-j2\pi i \frac{nT_a}{T_N}}. \label{eq_4_7}
+\end{equation}
+
+Com o período  de amostragem $T_a$ dado por $T_a = \frac{T_N}{N}$, o
+sinal de recebido $r(t)$ é amostrado como $r[i] = r(iT_a)$. Ou seja,
+o sinal recebido é periódico em $T_N$ sendo cada período amostrado
+em $T_a$. Reescrevendo a equação (\ref{eq_4_7}) como
+
+\begin{equation}
+\hat{s}[i] =  \frac{1}{N} \cdot \sum_{n = 0}^{N-1} r[n] \cdot
+e^{-j2\pi \frac{i \cdot n}{N}}, \label{eq_4_8}
+\end{equation}
+obtém-se a equação da transformada discreta de Fourier, a DFT
+\cite{Processamento_sinais_Diniz}, onde $0\leq i\leq N-1$.
+Conclui-se, de forma similar à transmissão que,
+
+\begin{equation}
+\hat{s}[i] =  \frac{1}{N} \cdot FFT \{r[n]\}, \label{eq_4_9}
+\end{equation}
+e que a configuração do receptor OFDM pode ser a mostrada na Figura
+\ref{fig:Receptor_OFDM}.
+
+Depois da operação FFT, considera-se apenas a primeira metade dos
+subsímbolos na entrada do demapeador.
+
+\begin{figure}[htbp]
+\begin{center}
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.8] {figura/fig4_6.eps}
+  \caption{Configuração básica de um receptor OFDM. Omite-se o bloco que remove a simetria Hermitiana
+  pois se considerou $N = \frac{L}{2}$ subsímbolos OFDM na entrada do bloco \textit{Demap}.}
+  \label{fig:Receptor_OFDM}
+\end{center}
+\end{figure}
+
+Elimina-se com isso, a necessidade dos $N$ osciladores ou
+demoduladores inerentes à recepção multiportadora proposta na secção
+\ref{seccao_recepcao_multiport}, reduzindo a complexidade de
+implementação. Usando os algoritmos rápidos da transformada de
+discreta Fourier aliado ao avanço das técnicas de processamento de
+sinais, um sistema de transmissão e recepção OFDM é perfeitamente
+possível de ser implementado.
+
+\subsection {Extensão Cíclica}
+A interferência intersimbólica oriunda do espalhamento
+multipercurso, por sua vez provocado por transmissões em canais
+seletivos em frequência, é totalmente eliminada em um sistema de
+comunicação multiportadora se um intervalo de guarda entre símbolos
+subsequentes for usado. Comprova-se que se tal intervalo de guarda
+for ciclicamente estendido, ao invés de ausência de sinal (silêncio
+na transmissão) no intervalo, o desempenho do sistema melhora
+consideravelmente, pois elimina-se também a ICI mantendo a
+ortogonalidade das subportadoras \cite{Ernesto_Pinto},
+\cite{Klenner_notas_aula_Bremen}, \cite{Proakis_terceira_edicao}. A
+Figura \ref{fig:CP} ilustra a utilidade da extensão, também
+denominada prefixo cíclico, CP (\textit{cyclic Prefix}).
+
+\begin{figure}[htbp]
+\begin{center}
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.6727] {figura/fig4_7.eps}
+  \caption{Comparação entre as transmissões sem e com extensão cíclica. A inserção do CP
+  faz com que a ISI caia dentro do próprio intervalo de guarda, que ao ser removida na recepção elimina a ICI.}
+  \label{fig:CP}
+\end{center}
+\end{figure}
+
+Note-se na Figura \ref{fig:CP} que a duração do intervalo de guarda
+$T_g$ tem que ser no mínimo igual ao máximo atraso do canal
+$\tau_{max}$. Isso impede que parte da energia de um símbolo OFDM
+precedente seja "captada" pelo símbolo OFDM corrente.
+
+Observe-se também que a inserção do CP aumenta o tempo do símbolo
+para $T = T_N + T_g$ e altera a resposta impulsiva do filtro de
+transmissão usado em cada subportadora do transmissor multiportadora
+para $g_{Tx} = rect (\frac{t}{T_N + T_g})$. O ultimo efeito tem como
+consequência perda na SNR pelo descasamento dos filtros de
+transmissão e recepção, enquanto que o primeiro reduz a eficiência
+espectral para
+\[ \mu = \frac{T_N}{T_N + Tg} = \frac{T_N}{T_N + Tg} \cdot log_2(M) \quad bit/s/Hz,
+\label{eq_4_10} \] uma vez que o conteúdo do CP é uma repetição do
+final do símbolo para o início do mesmo, por isso não contém
+informação útil e é removido na recepção.
+
+Convém ressaltar que a inserção do intervalo de guarda transforma a
+convolução linear do sinal de saída do transmissor $s[n]$ com a
+resposta impulsiva do canal $h[n]$ em uma convolução circular
+\cite{Proakis_terceira_edicao}, \cite{Single_Multicarrier_QAM},
+\cite{Multicarrier_4G}, ou seja,
+\begin{equation}
+r[n] = s[n] \otimes h[n] = h[n]\otimes s[n] = \sum_k h[k]s[n-k]_N,
+\end{equation}
+onde $s[n-k]_N$ ($[n-k]_N$ significa $[n-k] modulo N$) é uma versão
+periódica de $s[n-k]$ com período $N$ e o operador $\otimes$ designa
+a operação convolução circular. Conhecendo-se $h[n]$ no receptor, o
+sinal transmitido $s[n]$ pode ser recuperado a partir de
+\begin{equation}
+\hat{s}[n] = IDFT \{S[i]\} = IDFT \left\{ \frac{R[i]}{H[i]} \right\},
+\end{equation}
+já que pela definição de DFT, a convolução circular no tempo
+corresponde à multiplicação em frequência:
+\begin{equation}
+DFT\{r[n]\} = DFT\{s[n]\otimes h[n]\} \Rightarrow R[i] = S[i]\cdot
+H[i],
+\end{equation}
+para $0\leq i \leq N - 1$.
+
+Sob a denominação multiplexação por divisão de frequências
+ortogonais, sugere-se então um sistema básico de comunicação OFDM
+conforme mostrado na Figura \ref{fig:sistema OFDM basico}
+\cite{Klenner_notas_aula_Bremen}, \cite{Proakis_terceira_edicao}.
+
+Observe que as informações redundantes inerentes à simetria
+Hermitiana e ao intervalo de guarda são extraídas na recepção. Vale
+informar que o bloco \textit{hermit} se torna desnecessário se a
+intenção for obter na saída do transmissor subsímbolos OFDM
+complexos.
+\begin{figure}[htbp]
+\begin{center}
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.75] {figura/fig4_8.eps}
+  \caption{Sistema OFDM básico.}
+  \label{fig:sistema OFDM basico}
+\end{center}
+\end{figure}
+
+\section {Desafios da Modulação Multiportadora}
+Assim como todo o sistema de comunicação, a multiplexação OFDM tem
+suas defi\-ciências ou então seus desafios. A quantidade de
+subportadoras, por exemplo, é um argumento que deve ser
+cuidadosamente determinado, pois dele depende o correto
+funcionamento do sistema em termos de taxa de erro de bits, relação
+potência do sinal e potência do ruído, sincronismo, entre outros.
+Para não fugir ao escopo deste trabalho, descreve-se nesta secção,
+de forma bem sucinta, os dois principais desencorajadores da escolha
+da modulação multiportadora.
+
+\subsection {Razão Potência de Pico e Potência Média do Sinal}
+A qualidade de qualquer sistema de comunicação também se relaciona
+com a razão entre a potência de pico e potência média, PAR
+(\textit{Peak to Average power Ratio}) do sinal transmitido, que nos
+tempos contínuo e discretos é definido por
+\cite{Single_Multicarrier_QAM},
+\begin{equation}
+PAR = \frac{max|s(t)|^2}{E[|s(t)|^2]}, \label{eq_PAR}
+\end{equation}
+\begin{equation}
+PAR = \frac{max|s[n]|^2}{E[|s[n]|^2]}.
+\end{equation}
+
+Além de aumentar a complexidade do conversor A/D, um valor alto de
+PAR obriga o amplificador de potência da transmissão a trabalhar na
+região não linear (valor médio e valor de pico muito distantes)
+provocando distorção no sinal a ser transmitido.
+
+Mostra-se que em um sistema OFDM de $N$ subportadoras, o valor
+máximo do PAR é $N$ (veja apêndice E)\footnote{Na prática o valor
+típico de PAR é bem menor que o valor máximo. No entanto, PAR varia
+linearmente com $N$.}. Portanto, aumentar $N$, no intuito de
+aumentar a robustez contra seletividade em freqüência, também
+significa aumentar a PAR. Observe a ampla variação da amplitude do
+sinal OFDM no tempo para $N = 512$ subportadoras na Figura
+\ref{fig:Espectro_OFDM}.
+
+Existem na literatura inúmeros métodos que visam solucionar este
+inconveniente. Ceifamento (\textit{clipping}) do sinal OFDM em uma
+determinada amplitude, cancelamento de picos do sinal e codificação
+de canal são algumas da várias técnicas pesquisadas
+\cite{Single_Multicarrier_QAM}.
+
+\subsection {Desvio de Freqüência}
+Erros de sincronismo e o Descasamento entre os osciladores (filtros)
+de transmissão e recepção são algumas das causas de perda de
+ortogonalidade das subportadoras, o que na prática significa que a
+separação em freqüência de tais portadoras não é precisamente
+$\Delta_f = \frac{1}{T_N}$. Um deslocamento de freqüência $\delta_f$
+(inteiro não múltiplo de $\Delta_f$) faz com que a amostragem dos
+subsímbolos na recepção seja feita em freqüências $f_n + \delta_f$
+para $0\leq n \leq N-1$, conforme ilustra a Figura
+\ref{fig:sinc_portadoras_desvio_freq}.
+
+\begin{figure}[!ht]
+\begin{center}
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.7] {figura/fig_sinc_ici.eps}
+  \caption{Espectros OFDM com as três subportadoras espaçadas em $\Delta_f$ (sem ICI) e espaçadas em $\Delta_f + \delta_f$ (com
+  ICI). Observe que com ICI o valor máximo de uma subportadora não mais
+  coincide com o cruzamento com zero das demais.}
+  \label{fig:sinc_portadoras_desvio_freq}
+\end{center}
+\end{figure}
+
+A potência total da interferência intercanal no canal $i$ é
+quantizada em \cite{Single_Multicarrier_QAM},
+\cite{Cioffi_notas_aula}, conforme,
+\begin{equation}
+ICI_i = \sum_{m \neq i} |I_m|^2\approx C_0(T_N \cdot \delta_f)^2,
+\label{pot_ICI}
+\end{equation}
+onde $C_0$ é uma constante e $I_m$ a ICI, que, entre duas
+subportadoras $x_i(t)$ e $x_{i+m}(t)$ é o produto interno dado por,
+\begin{equation}
+I_m = \int_{0}^{T_N} x_i(t)\cdot x_{i+m}(t) dt =
+\frac{T_N(1-e^{-j2\pi(\delta_f+m)})}{j2\pi(\delta_f+m)},
+\end{equation}
+para os sinais da subportadora $i$, e da subportadora interferente
+definidos como,\footnote{Desprezando o subsímbolo e a freqüência da
+subportadora.}
+\begin{equation}
+x_i(t) = e^{j\frac{2\pi i t}{T_N}}
+\end{equation}
+e
+\begin{equation}
+x_{i+m}(t) = e^{j\frac{2\pi (i+m) t}{T_N}},
+\end{equation}
+sendo que este último demodulado com desvio de freqüência
+$\delta_f$, podendo ser assim reescrito como
+
+\begin{equation}
+x_i(t) = e^{j\frac{2\pi (i+m+\delta_f) t}{T_N}}.
+\end{equation}
+
+Analisando a equação \ref{pot_ICI} conclui-se primeiramente que
+aumentar $T_N$ (o mesmo que diminuir $\Delta_f$) aumenta a ICI em
+uma relação quadrática. O mesmo se pode dizer acerca do aumento de
+$\delta_f$. Em segunda instância e embora de forma indireta pode-se
+concluir que o aumento da quantidade de subportadoras $N$ aumenta a
+potência da ICI, uma vez que para uma mesma largura de banda,
+aumentar $N$ significa diminuir $\Delta_f$ e portanto aumentar
+$\delta_f$.
+
+Em um canal AWGN, o desvio de freqüência $\delta_f$ provoca uma
+degradação, $\gamma$, na relação potência do sinal e potência do
+ruído, SNR. Para $\delta_f \ll \Delta_f$, $\gamma$ é matematicamente
+escrita como, \cite{Ernesto_Pinto}
+\begin{equation}
+\gamma = \frac{10}{3ln(10)}( \frac{\pi \delta_f}{\Delta_f})^2\cdot
+SNR,
+\end{equation}
+o qual exprime o valor que deve ser adicionado à SNR para manter o
+desempenho da BER do sistema sem ICI. A Figura \ref{fig:degrad_SNR}
+mostra o seu comportamento com a variação de $\delta_f$ para alguns
+valores de SNR e $\Delta_f = 312.5$ KHz. \footnote{Espaçamento em
+freqüência do padrão IEEE 802.11a.}
+\begin{figure}[!ht]
+\begin{center}
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.85] {figura/degrad_SNR.eps}
+  \caption{Degradação na SNR devido ao desvio de freqüência para $\Delta_f = 312.5 KHz$.}
+  \label{fig:degrad_SNR}
+\end{center}
+\end{figure}
+
+% \section {Desafios da Modulação Multiportadora}
+% Assim como todo o sistema de comunicação, a multiplexação OFDM tem suas desvantagens.
+% A quantidade de subportadoras, por exemplo, é um argumento que deve ser
+% cuidadosamente determinado, pois dele depende o correto
+% funcionamento do sistema em termos de potência do sinal, sincronismo, entre outros.
+% Aliás, o sincronismo e os altos valores da razão potência máxima e potência média
+% PAPR (\textit{Peak-to-Average Power Ratio}) de sinais traduzem-se nos principais
+% desafios dos sistemas que aplicam esta técnica de multiplexação.
+% 
+% Erros de sincronismo e o descasamento entre os osciladores (filtros)
+% de transmissão e recepção são algumas das causas de perda de
+% ortogonalidade das subportadoras, o que na prática significa que a
+% separação em frequência de tais portadoras não é precisamente
+% $\Delta_f = \frac{1}{T_N}$. Um deslocamento de frequência $\delta_f$
+% (inteiro não múltiplo de $\Delta_f$) faz com que a amostragem dos
+% subsímbolos na recepção seja feita em frequências $f_n + \delta_f$
+% para $0\leq n \leq N-1$, conforme ilustra a Figura
+% \ref{fig:sinc_portadoras_desvio_freq}.
+% 
+% \begin{figure}[!ht]
+% \begin{center}
+%   % Requires \usepackage{graphicx}
+%   \includegraphics[scale=0.7] {figura/fig_sinc_ici.eps}
+%   \caption{Espectros OFDM com as três subportadoras espaçadas em $\Delta_f$ (sem ICI) e espaçadas em $\Delta_f + \delta_f$ (com
+%   ICI). Observe que com ICI o valor máximo de uma subportadora não mais
+%   coincide com o cruzamento com zero das demais.}
+%   \label{fig:sinc_portadoras_desvio_freq}
+% \end{center}
+% \end{figure}
+% 
+% A potência total da interferência intercanal no canal $i$ é
+% dada em \cite{Single_Multicarrier_QAM},
+% \cite{Cioffi_notas_aula}, por,
+% \begin{equation}
+% ICI_i = \sum_{m \neq i} |I_m|^2\approx C_0(T_N \cdot \delta_f)^2,
+% \label{pot_ICI}
+% \end{equation}
+% onde $C_0$ é uma constante e $I_m$ a ICI, que, entre duas
+% subportadoras $x_i(t)$ e $x_{i+m}(t)$ é o produto interno dado por,
+% \begin{equation}
+% I_m = \int_{0}^{T_N} x_i(t)\cdot x_{i+m}(t) dt =
+% \frac{T_N(1-e^{-j2\pi(\delta_f+m)})}{j2\pi(\delta_f+m)},
+% \end{equation}
+% para os sinais da subportadora $i$, e da subportadora interferente
+% definidos como,\footnote{Desprezando o subsímbolo e a frequência da
+% subportadora.}
+% \begin{equation}
+% x_i(t) = e^{j\frac{2\pi i t}{T_N}}
+% \end{equation}
+% e
+% \begin{equation}
+% x_{i+m}(t) = e^{j\frac{2\pi (i+m) t}{T_N}},
+% \end{equation}
+% sendo este último demodulado com desvio de frequência
+% $\delta_f$, podendo ser assim reescrito como
+% 
+% \begin{equation}
+% x_i(t) = e^{j\frac{2\pi (i+m+\delta_f) t}{T_N}}.
+% \end{equation}
+% 
+% Analisando a equação \ref{pot_ICI} conclui-se primeiramente que
+% aumentar $T_N$ (o mesmo que diminuir $\Delta_f$) aumenta a ICI em
+% uma relação quadrática. O mesmo se pode dizer acerca do aumento de
+% $\delta_f$. Em segunda instância e embora de forma indireta pode-se
+% concluir que o aumento da quantidade de subportadoras $N$ aumenta a
+% potência da ICI, uma vez que para uma mesma largura de banda,
+% aumentar $N$ significa diminuir $\Delta_f$ e portanto aumentar
+% $\delta_f$.
+% 
+% Em um canal AWGN, o desvio de frequência $\delta_f$ provoca uma
+% degradação, $\gamma$, na relação potência do sinal e potência do
+% ruído, SNR. Para $\delta_f \ll \Delta_f$, $\gamma$ é aproximada
+% por, \cite{Ernesto_Pinto}
+% \begin{equation}
+% \gamma = \frac{10}{3ln(10)}( \frac{\pi \delta_f}{\Delta_f})^2\cdot
+% SNR,
+% \end{equation}
+% o qual exprime o valor que deve ser adicionado à SNR para manter o
+% desempenho da BER do sistema sem ICI. A Figura \ref{fig:degrad_SNR}
+% mostra o seu comportamento com a variação de $\delta_f$ para alguns
+% valores de SNR e $\Delta_f = 312.5$ KHz. \footnote{Espaçamento em
+% frequência do padrão IEEE 802.11a.}
+% \begin{figure}[!ht]
+% \begin{center}
+%   % Requires \usepackage{graphicx}
+%   \includegraphics[scale=0.85] {figura/degrad_SNR.eps}
+%   \caption{Degradação na SNR devido ao desvio de frequência para $\Delta_f = 312.5 KHz$.}
+%   \label{fig:degrad_SNR}
+% \end{center}
+% \end{figure}
+% 
+% 
+% O desempenho de sistemas multiportadoras também se relaciona
+% com a razão entre a potência de pico e potência média, PAPR do sinal transmitido. Além
+% de aumentar a complexidade de conversores A/D e D/A, um valor alto de
+% PAPR obriga o amplificador de potência da transmissão a trabalhar na
+% região não linear (valor médio e valor de pico muito distantes)
+% provocando distorção no sinal a ser transmitido. Uma análise estatística,
+% a avaliação dos efeitos e o estudo de algumas técnicas de redução deste parâmetro são
+% realizados no capítulo seguinte.
+

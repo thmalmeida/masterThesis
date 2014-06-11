@@ -1,0 +1,28 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
+A level-1 auxiliary file: folhaAprovacao.aux
+A level-1 auxiliary file: Dedication.aux
+A level-1 auxiliary file: Acknowledgments.aux
+A level-1 auxiliary file: Epigraph.aux
+A level-1 auxiliary file: Resumo.aux
+A level-1 auxiliary file: Abstract.aux
+A level-1 auxiliary file: acronimos.aux
+A level-1 auxiliary file: Chap1_Introduction.aux
+A level-1 auxiliary file: Chap2_Multicarrier_Modulation.aux
+A level-1 auxiliary file: Chap3_Optical_Communication.aux
+A level-1 auxiliary file: Chap4_Experimental_Setup.aux
+A level-1 auxiliary file: Chap5_Optimization.aux
+A level-1 auxiliary file: Chap6_Conclusion.aux
+A level-1 auxiliary file: Appendix_A.aux
+The style file: abntex2-alf.bst
+Database file #1: abntex2-options.bib
+Database file #2: masterThesisBibliography_ALLinclusive.bib
+Repeated entry---line 82 of file masterThesisBibliography_ALLinclusive.bib
+ : @book{book:metaheurisca
+ :                        ,
+I'm skipping whatever remains of this entry
++---------------------------------------------------------+
+| Estilo bibliográfico abntex2-alf.bst versão v-1.8           |
+| Em caso de dúvidas ou problemas com este estilo procure |
+| http://abntex2.googlecode.com                           |
++---------------------------------------------------------+
+(There was 1 error message)

@@ -1,0 +1,228 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.8 }
+
+\bibitem[Barros e Kahn 2008]{BarrosJLT08}
+\abntrefinfo{Barros e Kahn}{BARROS; KAHN}{2008}
+{BARROS, D. J.~F.; KAHN, J.~M. Optimized dispersion compensation using
+  orthogonal frequency-division multiplexing.
+\emph{IEEE Journal of Lightwave Technology}, v.~26, n.~16, 2008.}
+
+\bibitem[Barros e Kahn 2010]{BarrosJLT10}
+\abntrefinfo{Barros e Kahn}{BARROS; KAHN}{2010}
+{BARROS, D. J.~F.; KAHN, J.~M. Comparision of orthogonal frequency-division
+  multiplexing and on-off keying in amplified direct-detection single-mode
+  fiber systems.
+\emph{IEEE Journal of Lightwave Technology}, v.~28, n.~12, 2010.}
+
+\bibitem[Bingham 1990]{John_Bingham_1990}
+\abntrefinfo{Bingham}{BINGHAM}{1990}
+{BINGHAM, J. A.~C. Multicarrier modulation for data transmission: an idea whose
+  time has come.
+\emph{IEEE Commun. Mag.}, v.~28, n.~5, p. 5--14, Maio 1990.}
+
+\bibitem[Binh 2009]{Binh_DigCommBook}
+\abntrefinfo{Binh}{BINH}{2009}
+{BINH, L.~N. \emph{Digital Optical Communications}. [S.l.]: CRC Press, 2009.
+ISBN 978-1-4200-8205-0.}
+
+\bibitem[Cioffi 2003]{Cioffi_notas_aula}
+\abntrefinfo{Cioffi}{CIOFFI}{2003}
+{CIOFFI, J.~M. Digital communications, chapter 4: Multichannel modulation.
+  Notas de aula não publicadas. Disponível em
+  http://www.stanford.edu/class/ee379c/, Acesso em 08/08/2006. 2003.}
+
+\bibitem[Coura, Silva e Segatto 2009]{JairPNC09}
+\abntrefinfo{Coura, Silva e Segatto}{COURA; SILVA; SEGATTO}{2009}
+{COURA, D. J.~C.; SILVA, J. A.~L.; SEGATTO, M. E.~V. A bandwidth scalabel
+  {OFDM} passive optical network for future access network.
+\emph{Photon Netw Commun}, 2009.}
+
+\bibitem[Dezan 2004]{Tadeu}
+\abntrefinfo{Dezan}{DEZAN}{2004}
+{DEZAN, T.~L.
+\emph{Comparação das Técnicas de Modulação Multiportadoras aplicadas às
+  Comunicações via Rede Elétrica}.
+Disserta\c{c}\~{a}o (Dissertação (Mestrado)) --- Universidade Federal do
+  Espírito Santo, Vitória, ES, Brasil, Março 2004.}
+
+\bibitem[Diniz, Silva e Netto 2004]{Processamento_sinais_Diniz}
+\abntrefinfo{Diniz, Silva e Netto}{DINIZ; SILVA; NETTO}{2004}
+{DINIZ, P. S.~R.; SILVA, E. A.~B.; NETTO, S.~L. \emph{Processamento Digital de
+  Sinais}. Porto Alegre, Brasil: Bookman, 2004.
+ISBN 8536304189.}
+
+\bibitem[Dreo, Petrowski e Taillard 2003]{book:metaheurisca}
+\abntrefinfo{Dreo, Petrowski e Taillard}{DREO; PETROWSKI; TAILLARD}{2003}
+{DREO, J.; PETROWSKI, A.; TAILLARD, E. \emph{Metaheuristics for Hard
+  Optimization: methods and Case Studies}. [S.l.]: Springer, 2003.
+ISBN 13 978-3-540-23022-9.}
+
+\bibitem[Hanzo, Webb e Keller 2000]{Single_Multicarrier_QAM}
+\abntrefinfo{Hanzo, Webb e Keller}{HANZO; WEBB; KELLER}{2000}
+{HANZO, L.; WEBB, W.; KELLER, T. \emph{Single- and Multi-carrier Quadrature
+  Amplitude Modulation : Principles and Applications for Personal
+  Communications, WLANs and Broadcasting}. Baffins Lane, England: John Wiley
+  and Sons, 2000.
+ISBN 0471492396.}
+
+\bibitem[Hara e Prasad 2003]{Multicarrier_4G}
+\abntrefinfo{Hara e Prasad}{HARA; PRASAD}{2003}
+{HARA, S.; PRASAD, R. \emph{Multicarrier Techniques for 4G Mobile
+  Communications}. Norwood, MA, USA: Artech House, Inc., 2003.
+ISBN 1580534821.}
+
+\bibitem[Ho 2005]{Modulacao_Fase_Optica_Book}
+\abntrefinfo{Ho}{HO}{2005}
+{HO, K.-P. \emph{Phase-Modulated Optical Communication Systems}. [S.l.]:
+  Springer, 2005.
+ISBN 978-0387-24392-4.}
+
+\bibitem[Jansen et al. 2009]{JansenJLT09}
+\abntrefinfo{Jansen et al.}{JANSEN et al.}{2009}
+{JANSEN, S.~L. et al. {121.9-Gb/s} {PDM-OFDM} transmission with {2-b/s/Hz}
+  spectral efficiency over {1000-km} of {SSMF}.
+\emph{IEEE Journal of Lightwave Technology}, v.~27, n.~3, 2009.}
+
+\bibitem[Jansen et al. 2008]{JansenJLT08}
+\abntrefinfo{Jansen et al.}{JANSEN et al.}{2008}
+{JANSEN, S.~L. et al. Coherent optical {25.8-Gb/s} {OFDM} transmission over
+  {4160-km} {SSMF}.
+\emph{IEEE Journal of Lightwave Technology}, v.~26, n.~1, 2008.}
+
+\bibitem[Jansen et al. 2009]{JansenOFT09}
+\abntrefinfo{Jansen et al.}{JANSEN et al.}{2009}
+{JANSEN, S.~L. et al. {100GBE:} {QPSK} versus {OFDM}.
+\emph{Optical Fiber Technology}, 2009.}
+
+\bibitem[Kaminow, Li e Willner 2008]{Kaminow_Book}
+\abntrefinfo{Kaminow, Li e Willner}{KAMINOW; LI; WILLNER}{2008}
+{KAMINOW, I.~P.; LI, T.; WILLNER, A.~E. \emph{Optical Fiber Telecommunications
+  V B: Systems and Networks}. [S.l.]: Elsevier, 2008.
+ISBN 978-0-12-374172-1.}
+
+\bibitem[Kanonakis e Tomkos 2012]{art:jmo_OFDMA_6}
+\abntrefinfo{Kanonakis e Tomkos}{KANONAKIS; TOMKOS}{2012}
+{KANONAKIS, K.; TOMKOS, I. An ofdma-based optical access network architecture
+  exhibiting ultra-high capacity and wireline-wireless convergence.
+\emph{IEEE, Communications Magazine}, 2012.}
+
+\bibitem[Klenner 2004]{Klenner_notas_aula_Bremen}
+\abntrefinfo{Klenner}{KLENNER}{2004}
+{KLENNER, P. Communications technology laboratory, the {OFDM} multi carrier
+  system. Notas de aula não publicadas. Disponível em
+  http://www.ant.uni-bremen.de/whomes/klenner/ Acesso em 08/08/2006. 2004.}
+
+\bibitem[Leibrich et al. 2009]{Rosenkranz09}
+\abntrefinfo{Leibrich et al.}{LEIBRICH et al.}{2009}
+{LEIBRICH, J. et al. Impact of modulator bias on the {OSNR} requirement of
+  direct-detection optical {OFDM}.
+\emph{IEEE Photonics Technology Letters}, v.~21, n.~15, 2009.}
+
+\bibitem[Lowery 2008]{ASE_Lowery}
+\abntrefinfo{Lowery}{LOWERY}{2008}
+{LOWERY, A.~J. Amplified-spontaneous noise limit of optical {OFDM} ligtwave
+  systems.
+\emph{Optics Express}, v.~16, 2008.}
+
+\bibitem[Lowery e Armstrong 2007]{LoweryOFC07}
+\abntrefinfo{Lowery e Armstrong}{LOWERY; ARMSTRONG}{2007}
+{LOWERY, A.~J.; ARMSTRONG, J. Orthogonal-frequency-division multiplexing for
+  optical dispersion compensation.
+\emph{Proceedings of Opt. Fiber Commun. Conf.}, 2007.}
+
+\bibitem[McKinley1 et al. 2004]{art:EVM_Calc_Broadband}
+\abntrefinfo{McKinley1 et al.}{MCKINLEY1 et al.}{2004}
+{MCKINLEY1, M.~D. et al. Evm calculation for broadband modulated signals.
+\emph{64th ARFTG Conf. Dig., Orlando, FL}, p. 45--52, 2004.}
+
+\bibitem[Michalewicz e Schoenauery 1996]{art:zbigniew_15}
+\abntrefinfo{Michalewicz e Schoenauery}{MICHALEWICZ; SCHOENAUERY}{1996}
+{MICHALEWICZ, Z.; SCHOENAUERY, M. Evolutionary algorithms for constrained
+  parameter optimization problems.
+\emph{Evolutionary Computation}, p. 1--32, 1996.}
+
+\bibitem[Peng et al. 2009]{WilnnerJLT09_01}
+\abntrefinfo{Peng et al.}{PENG et al.}{2009a}
+{PENG, W. et al. Theoretical and experimental investigations of direct-detected
+  {RF}-tone-assisted optical {OFDM} systems.
+\emph{IEEE Journal of Lightwave Technology}, v.~27, n.~10, 2009.}
+
+\bibitem[Peng et al. 2009]{art:peng}
+\abntrefinfo{Peng et al.}{PENG et al.}{2009b}
+{PENG, W.-R. et al. Spectrally efficient direct-detected ofdm transmission
+  incorporating a tunable frequency gap and an iterative detection techniques.
+\emph{LIGHTWAVE TECHNOLOGY}, p. 5723--5735, 2009.}
+
+\bibitem[Pinto e Albuquerque 2002]{Ernesto_Pinto}
+\abntrefinfo{Pinto e Albuquerque}{PINTO; ALBUQUERQUE}{2002}
+{PINTO, E.~L.; ALBUQUERQUE, C.~P. A técnica de transmissão {OFDM}.
+\emph{Revista Científica Periódica - Telecomunicações}, v.~5, n.~1, Junho
+  2002.}
+
+\bibitem[Proakis 1995]{Proakis_terceira_edicao}
+\abntrefinfo{Proakis}{PROAKIS}{1995}
+{PROAKIS, J.~G. \emph{Digital Communication}. Singapore: McGraw-Hill, Inc.,
+  1995.
+ISBN 0070517266.}
+
+\bibitem[Ruiz, Cioffi e Kasturia 1992]{Cioffi_artigo}
+\abntrefinfo{Ruiz, Cioffi e Kasturia}{RUIZ; CIOFFI; KASTURIA}{1992}
+{RUIZ, A.; CIOFFI, J.~M.; KASTURIA, S. Discrete multiple tone modulation with
+  coset coding for the spectrally shaped channel.
+\emph{IEEE Trans. Commun.}, v.~40, n.~6, p. 1012--1029, Junho 1992.}
+
+\bibitem[Schmidt, Lowery e Armstrong 2008]{LoweryJLT08}
+\abntrefinfo{Schmidt, Lowery e Armstrong}{SCHMIDT; LOWERY; ARMSTRONG}{2008}
+{SCHMIDT, B. J.~C.; LOWERY, A.~J.; ARMSTRONG, J. Experimental demonstrations of
+  electronic dispersion compensation for long-haul transmission using
+  direct-detection optical {OFDM}.
+\emph{IEEE Journal of Lightwave Technology}, v.~26, n.~1, 2008.}
+
+\bibitem[Schmidt et al. 2009]{LoweryOFC09}
+\abntrefinfo{Schmidt et al.}{SCHMIDT et al.}{2009}
+{SCHMIDT, B. J.~C. et al. {100 Gbit/s} transmission using single-band
+  direct-detection optical ofdm.
+\emph{Proceedings of Opt. Fiber Commun. Conf. Paper PDPC3}, 2009.}
+
+\bibitem[Senior 2009]{Senior_Book}
+\abntrefinfo{Senior}{SENIOR}{2009}
+{SENIOR, J.~M. \emph{Optical Fiber Communications Systems : Principles and
+  Practice}. Third edition. [S.l.]: PEARSON Prentice Hall, 2009.
+ISBN 978-0-13-032681-2.}
+
+\bibitem[Shafik, Rahman e Islam 2006]{art:EVM_BER_SNR}
+\abntrefinfo{Shafik, Rahman e Islam}{SHAFIK; RAHMAN; ISLAM}{2006}
+{SHAFIK, R.~A.; RAHMAN, M.~S.; ISLAM, A.~R. On the extended relationships among
+  evm, ber and snr as performance metrics.
+\emph{4th International Conference on Electrical and Computer Engineering}, p.
+  19--21, 2006.}
+
+\bibitem[Shieh e Djordjevic 2010]{OOFDM_Book}
+\abntrefinfo{Shieh e Djordjevic}{SHIEH; DJORDJEVIC}{2010}
+{SHIEH, W.; DJORDJEVIC, I. \emph{Orthogonal Frequency Division Multiplexing for
+  Optical Communications}. [S.l.]: Elsevier, 2010.
+ISBN 978-0-12-374879-9.}
+
+\bibitem[Silva, Valentim e Segatto 2009]{jair_SBRT09}
+\abntrefinfo{Silva, Valentim e Segatto}{SILVA; VALENTIM; SEGATTO}{2009}
+{SILVA, J. A.~L.; VALENTIM, B.~L.; SEGATTO, M. E.~V. Avaliação de efeitos não
+  lineares em sistemas {OFDM} pela figura de mérito {EVM}.
+\emph{XXVII Simpósio Barsileiro de Telecomunicações - SBrT 2009}, Setembro
+  2009.}
+
+\bibitem[Silva et al. 2003]{Citenel_2003}
+\abntrefinfo{Silva et al.}{SILVA et al.}{2003}
+{SILVA, J.~L. et al. Técnica {OFDM} aplicada a power line communications.
+\emph{II Citenel.}, v.~2, p. 1071--1074, Novembro 2003.}
+
+\bibitem[Wei-Ren et al. 2009]{WilnnerJLT09_02}
+\abntrefinfo{Wei-Ren et al.}{WEI-REN et al.}{2009}
+{WEI-REN, P. et al. Theoretical and experimental investigations of
+  direct-detected {RF}-tone-assisted optical {OFDM} systems.
+\emph{Journal of Lightwave Technology}, v.~27, n.~10, p. 1332--1339, 2009.}
+
+\end{thebibliography}

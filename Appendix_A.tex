@@ -1,0 +1,148 @@
+\chapter{\textit{Distributed Feedback Laser}}
+\label{AppendixA}
+
+A fonte de luz óptica utilizada é provinda do dispositivo \textit{laser}-DBF com
+encapsulamento DIP-14 ilustrado na Figura \ref{Fig:DFB-Laser-pkg}.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=0.40\textwidth]{Figures/DFB-Laser-pkg1.jpg}
+		\caption{Imagem do \textit{laser}-DFB utilizado.}
+		\label{Fig:DFB-Laser-pkg}
+\end{figure}
+
+A pinagem do dispositivo é encontrada segundo a Figura
+\ref{Fig:DFB-Laser-pinout}. Além disso, é importante observar que apesar do
+\textit{laser} possuir uma pequena sintonia do seu comprimento de onda quando
+inserido uma diferença de corrente $\Delta i$ entre os terminais anodos traseiro
+e frontal, o circuito construído curto-circuita esses terminais, 6 e 9, para
+diminuir a complexidade do \textit{hardware} de forma que seu funcionamento não
+seja afetado.
+
+\begin{figure}[hb]
+	\centering
+		\includegraphics[width=0.85\textwidth]{Figures/DFB-Laser-pinout.pdf}
+		\caption{Configuração dos pinos do encapsulamento do \textit{laser}.}
+		\label{Fig:DFB-Laser-pinout}
+\end{figure}
+
+\textit{Lasers}-DFB possui sensores óptico e térmico integrados em seu
+encapsulamento sendo respectivamente um fotodiodo e um termistor. Eles servem
+para verificar a potência óptica de saída e a temperatura interna do
+dispositivo. Junto a isso, existem entradas de correntes para alimentação do
+\textit{laser} e de uma pastilha Peltier acoplada ao \text{laser} para prover um
+gradiente de temperatura resfriando o dispositivo de forma a manter as condições
+ideais de temperatura para operação. A variação do comprimento de onda e a
+atenuação da potência óptica média são facilmente notados ao aumentar a potência
+do \textit{laser} sem realizar o controle de temperatura podendo degradar o
+dispositivo. Os periféricos inseridos no encapsulamento são
+apresentados na Figura \ref{Fig:DFB-LaserBD}
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=0.85\textwidth]{Figures/DFB-Laser-BlockDiagram_pt-br.pdf}
+		\caption{Diagrama de blocos das partes funcionais do Laser DFB.}
+		\label{Fig:DFB-LaserBD}
+\end{figure}
+
+
+A placa projetada segundo o esquemático do circuito mostrado na última página é
+ilustrado segundo a Figura \ref{Fig:DFB-LaserBD_brd}.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=0.85\textwidth]{Figures/LaserBack2.png}
+		\caption{Placa de circuito impressa do controlador do Laser DFB.}
+		\label{Fig:DFB-LaserBD_brd}
+\end{figure}
+
+O levantamento da potência espectral a fim de encontrar o comprimento de onda
+central emitido pelo laser é realizado pelo analisador de espectro óptico do
+modelo MS9740A e ilustrado na Figura \ref{Fig:DFB-LaserBD_spectrum} possuindo
+uma potência óptica média de $P_0 = 3.27$ dBm estabilizado como comprimento de
+onda central $\lambda_c = 1545,3$ nm
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=\textwidth]{Figures/DFB-Laser_spectrumAnalizer_inv.png}
+		\caption{Levantamento do feixe de luz do laser no analisador de espéctro
+		óptico.}
+		\label{Fig:DFB-LaserBD_spectrum}
+\end{figure}
+
+O princípio de funcionamento do \textit{driver} que alimenta o \textit{laser}
+consiste em uma fonte de corrente microprocessada que converte sinais PWM em
+sinais de corrente contínua lisa, para que não insira modulações na fonte óptica
+funcionando como CW. O circuito realiza a leitura das variáveis corrente do
+\textit{laser} $I_L$, corrente da pastilha Peltier $I_P$ junto com leituras da
+potência óptica vinda do fotodetector interno $P_0$ e temperatura interna $T_th$
+a partir do termistor. Ao injetar corrente no \textit{laser} sua temperatura
+aumenta rapidamente e um algoritmo realiza um controle PID injetanto uma
+corrente na pastilha Peltier normalizando a temperatura. Foi observado que ao
+aumentar a corrente $I_L$, o comprimento de onda varia de forma não linear,
+porém, estável quando não ná variação de $I_L$. Com isso, experimentos que
+necessitam da variação da potência óptica requerem que o sistema funcione em um
+ponto de operação com uma corrente nominal $I_L \approx 77,5$ mA e um atenuador
+óptico variável para que mantenha sempre o mesmo comprimento de onda $\lambda_c
+= 1545,3$ nm e temperatura controlada via algoritmo de controle integrado ao
+sistema.
+
+As imagens a seguir mostram a variação do comprimento de onda $\lambda_c$ do
+\textit{laser} e da potência $P_0$ com a variação da corrente $I_L$.
+
+
+\begin{figure}
+        \centering
+        \begin{subfigure}[htbp]{0.48\textwidth}
+                \includegraphics[width=\textwidth]{Figures/Copy20131118_006.png}
+                \caption{}
+        \end{subfigure}
+		~	
+        \begin{subfigure}[htbp]{0.48\textwidth}
+                \includegraphics[width=\textwidth]{Figures/Copy20131118_009.png}
+                \caption{}
+        \end{subfigure}
+   		~	
+        \begin{subfigure}[htbp]{0.48\textwidth}
+                \includegraphics[width=\textwidth]{Figures/Copy20131118_012.png}
+                \caption{}
+        \end{subfigure}
+   		~	
+        \begin{subfigure}[htbp]{0.48\textwidth}
+                \includegraphics[width=\textwidth]{Figures/Copy20131118_015.png}
+                \caption{}
+        \end{subfigure}
+        ~
+        \begin{subfigure}[htbp]{0.48\textwidth}
+                \includegraphics[width=\textwidth]{Figures/Copy20131118_018.png}
+                \caption{}
+        \end{subfigure}
+   		~
+        \begin{subfigure}[htbp]{0.48\textwidth}
+                \includegraphics[width=\textwidth]{Figures/Copy20131118_021.png}
+                \caption{}
+        \end{subfigure}        
+        ~	
+        \begin{subfigure}[htbp]{0.48\textwidth}
+                \includegraphics[width=\textwidth]{Figures/Copy20131118_024.png}
+                \caption{}
+        \end{subfigure}
+   		~
+        \begin{subfigure}[htbp]{0.48\textwidth}
+                \includegraphics[width=\textwidth]{Figures/Copy20131118_027.png}
+                \caption{}
+        \end{subfigure}
+   		~
+        \begin{subfigure}[htbp]{0.48\textwidth}
+                \includegraphics[width=\textwidth]{Figures/Copy20131118_030.png}
+                \caption{}
+        \end{subfigure}
+   		~
+        \begin{subfigure}[htbp]{0.48\textwidth}
+                \includegraphics[width=\textwidth]{Figures/Copy20131118_033.png}
+                \caption{}
+        \end{subfigure}
+\end{figure}
+
+
+\includepdf[pages=-,angle=90]{Figures/Laser.pdf}
