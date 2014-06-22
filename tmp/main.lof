@@ -1,7 +1,5 @@
 \select@language {brazil}
-\addvspace {10pt}
 \contentsline {figure}{\numberline {1}{\ignorespaces Componentes principais de um sistema \'optico de comunica\c c\~ao\relax }}{21}{figure.caption.11}
-\addvspace {10pt}
 \contentsline {figure}{\numberline {2}{\ignorespaces Resolu\c c\~ao tempo frequ\^encia dos sistemas uniportadora e multiportadora.\relax }}{25}{figure.caption.12}
 \contentsline {figure}{\numberline {3}{\ignorespaces Divis\~ao do espectro de frequ\^encias em $N$ subcanais\relax }}{26}{figure.caption.13}
 \contentsline {figure}{\numberline {4}{\ignorespaces Configura\c c\~ao de um transmissor multiportadora.\relax }}{27}{figure.caption.14}
@@ -14,7 +12,6 @@
 \contentsline {figure}{\numberline {11}{\ignorespaces Sistema OFDM b\'asico.\relax }}{36}{figure.caption.21}
 \contentsline {figure}{\numberline {12}{\ignorespaces Espectros OFDM com as tr\^es subportadoras espa\c cadas em $\Delta _f$ (sem ICI) e espa\c cadas em $\Delta _f + \delta _f$ (com ICI). Observe que com ICI o valor m\'aximo de uma subportadora n\~ao mais coincide com o cruzamento com zero das demais.\relax }}{38}{figure.caption.22}
 \contentsline {figure}{\numberline {13}{\ignorespaces Degrada\c c\~ao na SNR devido ao desvio de freq\"u\^encia para $\Delta _f = 312.5 KHz$.\relax }}{39}{figure.caption.23}
-\addvspace {10pt}
 \contentsline {figure}{\numberline {14}{\ignorespaces Transmiss\~ao multiportadora OFDM em sistemas \'opticos com modula\c c\~ao de intensidade e detec\c c\~ao direta DDO-OFDM t\IeC {\'\i }pico. CW - \emph {Continuous Wave}, MZM - \emph {Mach-Zehnder Modulator}, FO - Filtro \'Optico, SSB - \emph {Single-Side Band}, AO - Amplificador \'Optico, ASE - \emph {Amplified Spontaneous Emission}, PD - \emph {Photodetector}.\relax }}{41}{figure.caption.24}
 \contentsline {figure}{\numberline {15}{\ignorespaces Espectros \'optico e el\'etrico de sinais OFDM nas detec\c c\~oes direta e coerente Hom\'odino. Recomenda-se reservar uma banda de guarda $B_G$ no m\IeC {\'\i }nimo igual a largura de banda do sinal $B_w=B$. SSB - \emph {Single-Side Band}, LO - \emph {Local Oscillator}, PD - \emph {Photodetector}\relax }}{42}{figure.caption.25}
 \contentsline {figure}{\numberline {16}{\ignorespaces Diagrama de blocos do sistema DDO-OFDM I. A gera\c c\~ao de sinais OFDM com coeficientes reais utiliza a simetria Hermitiana e a banda guarda \'e implementada mediante o \emph {Zero Padding}. $IFFT$ - \emph {Inverse Fast Fourier Transform}, $CP$ - \emph {Cyclic Prefix}, $P/S$ - Convers\~ao Paralelo para Serial, DAC - \emph {Digital-to-Analog Converter}, ADC - \emph {Analog-to-Digital Converter}, $S/P$ - Convers\~ao Serial para Paralelo, $FFT$ - \emph {Fast Fourier Transform}, $CP^{-1}$ - Remo\c c\~ao do CP.\relax }}{44}{figure.caption.26}
@@ -24,7 +21,6 @@
 \contentsline {figure}{\numberline {20}{\ignorespaces Transmiss\~ao de sinais OFDM em $L=1000$ km de fibra com $D=16$ ps/nm.km e atenua\c c\~ao $\alpha =0.2$ dB/km, de um sistema DDO-OFDM. (a) Curvas para projeto dos par\^ametros $T_{g}$ e $T_s$ para um determinado comprimento de fibra. (b) Diagramas de constela\c c\~ao antes e depois da equaliza\c c\~ao em $1000$ km de fibra SMF. (c) Diagramas de constela\c c\~ao depois da equaliza\c c\~ao para $T_{g} = 0.74$ e $1.6$ ns em $2000$ km de fibra SMF padr\~ao. (d) Espectro \'optico de pot\^encia do sinal DDO-OFDM SSB na entrada da fibra. (e) Espectro el\'etrico de pot\^encia do sinal na sa\IeC {\'\i }da do Fotodetector.\relax }}{49}{figure.caption.30}
 \contentsline {figure}{\numberline {21}{\ignorespaces Fun\c c\~ao caracter\IeC {\'\i }stica do modulador \'optico Mach-Zehnder.\relax }}{51}{figure.caption.31}
 \contentsline {figure}{\numberline {22}{\ignorespaces Espectros de pot\^encia de sinais OOFDM na sa\IeC {\'\i }da do modulador \'optico MZM para diferentes pontos de polariza\c c\~ao do mesmo.\relax }}{52}{figure.caption.32}
-\addvspace {10pt}
 \contentsline {figure}{\numberline {23}{\ignorespaces Sistema DDO-OFDM implementado\relax }}{54}{figure.caption.33}
 \contentsline {figure}{\numberline {24}{\ignorespaces Equipamentos AWG e DPO utilizados respectivamente, para convers\~oes A/D e D/A.\relax }}{55}{figure.caption.34}
 \contentsline {figure}{\numberline {25}{\ignorespaces Resposta em pot\^encia do laser por corrente em uma temperatura constante.\relax }}{56}{figure.caption.35}
@@ -51,14 +47,11 @@
 \contentsline {figure}{\numberline {46}{\ignorespaces Sinais OFDM recebidos.\relax }}{75}{figure.caption.57}
 \contentsline {figure}{\numberline {47}{\ignorespaces Arquitetura do receptor de sinais OFDM com modula\c c\~ao adicional.\relax }}{75}{figure.caption.58}
 \contentsline {figure}{\numberline {48}{\ignorespaces Constela\c c\~ao mostrando os simbolos transmitidos e recebidos com $EVM = -17.18$ dB e BER = 0.\relax }}{76}{figure.caption.60}
-\addvspace {10pt}
 \contentsline {figure}{\numberline {49}{\ignorespaces Fun\c c\~ao caracter\IeC {\'\i }stica do modulador \'optico Mach-Zehnder.\relax }}{80}{figure.caption.61}
 \contentsline {figure}{\numberline {50}{\ignorespaces Diagrama de blocos da evolu\c c\~ao do processo do algoritmo gen\'etico implementado.\relax }}{85}{figure.caption.64}
 \contentsline {figure}{\numberline {51}{\ignorespaces Configura\c c\~ao experimental do sistema DDO-OFDM II \`a taxa de $R_b = 1.83$ Gbps.\relax }}{88}{figure.caption.68}
 \contentsline {figure}{\numberline {52}{\ignorespaces Densidade espectral de pot\^encia e constela\c c\~ao dos resultados experimentais do sistema DDO-OFDM II otimizado.\relax }}{89}{figure.caption.69}
 \contentsline {figure}{\numberline {53}{\ignorespaces OSNR @ BER = $10^-3$ versus banda de guarda para sistemas DDO-OFDM convencionais e otimizados em transmiss\~oes B2B, 20 km e 40 km com 4, 8 e 16-QAM.\relax }}{91}{figure.caption.72}
-\addvspace {10pt}
-\addvspace {10pt}
 \contentsline {figure}{\numberline {54}{\ignorespaces Imagem do \textit {laser}-DFB utilizado.\relax }}{99}{figure.caption.76}
 \contentsline {figure}{\numberline {55}{\ignorespaces Configura\c c\~ao dos pinos do encapsulamento do \textit {laser}.\relax }}{99}{figure.caption.77}
 \contentsline {figure}{\numberline {56}{\ignorespaces Diagrama de blocos das partes funcionais do Laser DFB.\relax }}{100}{figure.caption.78}
