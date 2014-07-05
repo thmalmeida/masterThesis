@@ -779,6 +779,88 @@ freqüência do padrão IEEE 802.11a.}
 \end{center}
 \end{figure}
 
+\section{Métricas de Avaliação de Desempenho de Sistemas OFDM}
+
+% Os métodos mais comuns de análise de desempenho a nível de camada física são as 
+
+
+O desempenho dos sistemas implementados são analisados a partir da taxa de erro
+de bits (\textit{Bit Error Rate} ou \textit{Bit Error Ratio} - BER), e pelo
+vetor de erro de magnitude (\textit{Error Vector Magnitude} - EVM) que indica a
+relação de amplitude e de fase entre cada símbolo OFDM recebido e
+transmitido.
+
+% \subsubsection{\textit{Vetor de Erro de Magnitude} - (EVM)}
+A taxa de erro BER é medida mediante a contagem direta de erro entre os bits
+transmitidos e recebidos, uma vez que os bits transmitidos são armazenados
+durante a transmissão. Para um melhor entendimento do valor EVM utilizado para
+análise de desempenho do sistema, considere um quadrante do diagrama de
+constelação da Figura \ref{constel}, onde são apresentados o vetor de referência
+$X_k$ relativo a um dos possíveis símbolos transmitidos (sinal ideal) de
+coordenadas $X_I = 1$ e $X_Q = j$, para $j = \sqrt{-1}$, o vetor medido $Y_k$
+que ilustra a trajetória de um símbolo recebido (sinal medido) de coordenadas
+$(Y_I,Y_Q)$, e o vetor de erro $D_k = Y_k - X_k$, o qual representa a distancia
+Euclidiana entre tais sinais. Sendo cada ponto do plano I (\emph{In phase})
+versus Q (\emph{Quadrature}) a especificação de um dos $2^m$ possíveis símbolos
+gerados pela combinação de $m$ bits, qualquer desvio neste provocado por ruído
+ou distorção, linear ou não, inerentes aos sistemas de telecomunicações, cria
+uma distancia escalar entre os referidos fasores cuja magnitude de erro $E_k =
+|Y_k| - |X_k|$ e o erro de fase $\phi_k = \angle(Y_k) - \angle(X_k)$ são
+perfeitamente mensuráveis pela métrica EVM \cite{jair_SBRT09}.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{Figures/constel.eps}
+\caption{Diagrama de constelacao ilustrativo.} \label{constel}
+\end{center}
+\end{figure}
+
+Portanto, como distância escalar - magnitude do vetor diferença - entre dois
+fasores, a EVM pode ser definida como o valor RMS (\emph{root-mean-square}) da
+diferença entre um conjunto de símbolos medidos e um conjunto de símbolos
+transmitidos, matematicamente expresso pela relação,
+\begin{equation}
+EVM = \left[\frac{\frac{1}{N}\sum_{k=0}^{N-1} |Y_k - X_k|^2}{\frac{1}{N}\sum_{i=0}^{N-1} |X_k|^2}\right]^{\frac{1}{2}}
+ \label{eq_evm_1}
+\end{equation}
+onde $N$ representa a quantidade de símbolos transmitidos/recebidos, $X_k = X_I
++ jX_Q$ e $Y_k = Y_I + jY_Q$ os símbolos complexos ideais e medidos
+respectivamente \cite{art:EVM_BER_SNR}, \cite{art:EVM_Calc_Broadband}.
+
+% Relação EVM/SNR/BER
+Para análise de desempenho nos termos de taxa de
+erro de bits BER, relação potência de sinal e potência de ruído SNR e da métrica
+EVM partindo-se te um canal com ruído gaussiano podemos relacioná-as
+matematicamente de forma que
+
+\begin{equation}
+BER = \frac{2\cdot\left(1 - \frac{1}{\sqrt{M}} \right)}{log_2(M)} \cdot
+\textit{erfc}\left(\sqrt{\frac{3}{EVM^2 \cdot (2M-2) }}\right)
+\end{equation}
+e a EVM é dada pelo inverso da raiz quadrada da SNR dada por
+\begin{equation}
+EVM \approx \left[\frac{1}{SNR}\right]^{\frac{1}{2}}
+\approx \left[\frac{N_0}{E_s}\right]^{\frac{1}{2}},
+\end{equation}
+onde $N_0$ é a potência de ruído e $E_s$ é a energia do símbolo
+\cite{jair_SBRT09}.
+
+% onde $N_0$ é a potência espectral do ruído e $E_s$ a energia do \textit{bit}
+
+% Entretanto, é comum encontrar na literatura a definição matemática da EVM
+% conforme
+% 
+% \begin{equation}
+% EVM  = \sqrt{\frac{\frac{1}{N}\sum_{k=0}^{N-1} |D_k|^2}{X_{max}^2}},
+%  \label{eq_evm_2}
+% \end{equation}
+% 
+% para $|D_k|^2 = |Y_k - X_k|^2$ o vetor erro de sinal e $X_{max}$ o ponto da
+% constelação da maior amplitude. Esta designação detém a vantagem de facilitar
+% e/ou diminuir a implementação computacional da citada métrica \cite{OFDM_EVM_1}.
+
+% COLOCAR RELAÇÃO EVM/SNR/BER
+
 % \section {Desafios da Modulação Multiportadora}
 % Assim como todo o sistema de comunicação, a multiplexação OFDM tem suas desvantagens.
 % A quantidade de subportadoras, por exemplo, é um argumento que deve ser

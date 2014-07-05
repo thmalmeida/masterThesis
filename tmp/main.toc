@@ -6,56 +6,56 @@
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase {Introdu\c c\~ao}}{19}{chapter.1}
-\contentsline {section}{\numberline {1.1}Objetivo Geral}{20}{section.1.1}
-\contentsline {section}{\numberline {1.2}Objetivos Espec\IeC {\'\i }ficos}{21}{section.1.2}
-\contentsline {section}{\numberline {1.3}Metodologia}{21}{section.1.3}
-\contentsline {section}{\numberline {1.4}Principais Contribui\c c\~oes}{22}{section.1.4}
-\contentsline {section}{\numberline {1.5}Organiza\c c\~ao do Texto}{22}{section.1.5}
-\contentsline {section}{\numberline {1.6}Lista de Publica\c c\~oes}{23}{section.1.6}
+\contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase {Introdu\c c\~ao}}{18}{chapter.1}
+\contentsline {section}{\numberline {1.1}Objetivo Geral}{19}{section.1.1}
+\contentsline {section}{\numberline {1.2}Objetivos Espec\IeC {\'\i }ficos}{20}{section.1.2}
+\contentsline {section}{\numberline {1.3}Metodologia}{20}{section.1.3}
+\contentsline {section}{\numberline {1.4}Principais Contribui\c c\~oes}{21}{section.1.4}
+\contentsline {section}{\numberline {1.5}Organiza\c c\~ao do Texto}{21}{section.1.5}
+\contentsline {section}{\numberline {1.6}Lista de Publica\c c\~oes}{22}{section.1.6}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase {Modula\c c\~ao Multiportadora OFDM}}{24}{chapter.2}
-\contentsline {section}{\numberline {2.1}Concep\c c\~ao B\'asica}{24}{section.2.1}
-\contentsline {section}{\numberline {2.2}Configura\c c\~ao do Sistema Multiportadora}{25}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Modelo de Transmiss\~ao}{26}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Modelo de Recep\c c\~ao}{28}{subsection.2.2.2}
-\contentsline {section}{\numberline {2.3}A Multiplexa\c c\~ao OFDM}{29}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Transmissor OFDM}{30}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Receptor OFDM}{32}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}Extens\~ao C\IeC {\'\i }clica}{33}{subsection.2.3.3}
-\contentsline {section}{\numberline {2.4}Desafios da Modula\c c\~ao Multiportadora}{36}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Raz\~ao Pot\^encia de Pico e Pot\^encia M\'edia do Sinal}{37}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}Desvio de Freq\"u\^encia}{37}{subsection.2.4.2}
+\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase {Modula\c c\~ao Multiportadora OFDM}}{23}{chapter.2}
+\contentsline {section}{\numberline {2.1}Concep\c c\~ao B\'asica}{23}{section.2.1}
+\contentsline {section}{\numberline {2.2}Configura\c c\~ao do Sistema Multiportadora}{24}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Modelo de Transmiss\~ao}{25}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Modelo de Recep\c c\~ao}{27}{subsection.2.2.2}
+\contentsline {section}{\numberline {2.3}A Multiplexa\c c\~ao OFDM}{28}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Transmissor OFDM}{29}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Receptor OFDM}{31}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Extens\~ao C\IeC {\'\i }clica}{32}{subsection.2.3.3}
+\contentsline {section}{\numberline {2.4}Desafios da Modula\c c\~ao Multiportadora}{35}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Raz\~ao Pot\^encia de Pico e Pot\^encia M\'edia do Sinal}{36}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Desvio de Freq\"u\^encia}{36}{subsection.2.4.2}
+\contentsline {section}{\numberline {2.5}M\'etricas de Avalia\c c\~ao de Desempenho de Sistemas OFDM}{38}{section.2.5}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase {Transmiss\~ao OFDM em Sistemas \'Opticos IMDD}}{40}{chapter.3}
-\contentsline {section}{\numberline {3.1}Sistemas \'Opticos DDO-OFDM}{40}{section.3.1}
-\contentsline {section}{\numberline {3.2}Implementa\c c\~ao de Sistemas DDO-OFDM}{43}{section.3.2}
-\contentsline {section}{\numberline {3.3}Projeto de par\^ametros OOFDM}{45}{section.3.3}
-\contentsline {section}{\numberline {3.4}Polariza\c c\~ao El\'etrica do Modulador \'Optico}{48}{section.3.4}
+\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase {Transmiss\~ao OFDM em Sistemas \'Opticos IMDD}}{41}{chapter.3}
+\contentsline {section}{\numberline {3.1}Sistemas \'Opticos DDO-OFDM}{41}{section.3.1}
+\contentsline {section}{\numberline {3.2}Implementa\c c\~ao de Sistemas DDO-OFDM}{44}{section.3.2}
+\contentsline {section}{\numberline {3.3}Projeto de par\^ametros OOFDM}{46}{section.3.3}
+\contentsline {section}{\numberline {3.4}Polariza\c c\~ao El\'etrica do Modulador \'Optico}{49}{section.3.4}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase {Demonstra\c c\~ao Experimental do Sistema DDO-OFDM}}{53}{chapter.4}
-\contentsline {section}{\numberline {4.1}Sistema Modula\c c\~ao por Intensidade/Detec\c c\~ao Direta (IM/DD)}{53}{section.4.1}
-\contentsline {section}{\numberline {4.2}Caracteriza\c c\~ao dos Dispositivos}{54}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Equipamentos Conversores A/D e D/A}{54}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Laser DFB (\textit {Distributed-Feedback Laser} - DFB)}{55}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Modulador \'Optico \textit {Mach-Zehnder} (MZM)}{56}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}Fibra \'Optica}{58}{subsection.4.2.4}
-\contentsline {subsection}{\numberline {4.2.5}Detector \'Optico}{59}{subsection.4.2.5}
-\contentsline {section}{\numberline {4.3}Configura\c c\~oes DDO-OFDM}{60}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}DDO-OFDM I}{61}{subsection.4.3.1}
-\contentsline {subsubsection}{\numberline {4.3.1.1}\textit {Correla\c c\~ao dos Sinais Transmitido e Recebido}}{67}{subsubsection.4.3.1.1}
-\contentsline {subsubsection}{\numberline {4.3.1.2}\textit {Inser\c c\~ao de Zeros no Dom\IeC {\'\i }nio do Tempo}}{67}{subsubsection.4.3.1.2}
-\contentsline {subsubsection}{\numberline {4.3.1.3}M\'etodos de An\'alise de Desempenho}{67}{subsubsection.4.3.1.3}
-\contentsline {subsubsection}{\numberline {4.3.1.4}Estima\c c\~ao de Canal}{69}{subsubsection.4.3.1.4}
-\contentsline {subsubsection}{\numberline {4.3.1.5}Resultados da Transmiss\~ao pelo sistema DDO-OFDM I}{70}{subsubsection.4.3.1.5}
-\contentsline {subsection}{\numberline {4.3.2}DDO-OFDM II}{71}{subsection.4.3.2}
-\contentsline {subsubsection}{\numberline {4.3.2.1}Resultados de Transmiss\~ao pelo Sitema DDO-OFDM II}{74}{subsubsection.4.3.2.1}
+\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase {Demonstra\c c\~ao Experimental do Sistema DDO-OFDM}}{54}{chapter.4}
+\contentsline {section}{\numberline {4.1}Sistema Modula\c c\~ao por Intensidade/Detec\c c\~ao Direta (IM/DD)}{54}{section.4.1}
+\contentsline {section}{\numberline {4.2}Caracteriza\c c\~ao dos Dispositivos}{55}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Equipamentos Conversores A/D e D/A}{55}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Laser DFB (\textit {Distributed-Feedback Laser} - DFB)}{56}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Modulador \'Optico \textit {Mach-Zehnder} (MZM)}{57}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}Fibra \'Optica}{59}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.5}Detector \'Optico}{60}{subsection.4.2.5}
+\contentsline {section}{\numberline {4.3}Configura\c c\~oes DDO-OFDM}{61}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}DDO-OFDM I}{62}{subsection.4.3.1}
+\contentsline {subsubsection}{\numberline {4.3.1.1}\textit {Correla\c c\~ao dos Sinais Transmitido e Recebido}}{68}{subsubsection.4.3.1.1}
+\contentsline {subsubsection}{\numberline {4.3.1.2}\textit {Inser\c c\~ao de Zeros no Dom\IeC {\'\i }nio do Tempo}}{68}{subsubsection.4.3.1.2}
+\contentsline {subsubsection}{\numberline {4.3.1.3}Estima\c c\~ao de Canal}{68}{subsubsection.4.3.1.3}
+\contentsline {subsubsection}{\numberline {4.3.1.4}Resultados da Transmiss\~ao pelo sistema DDO-OFDM I}{69}{subsubsection.4.3.1.4}
+\contentsline {subsection}{\numberline {4.3.2}DDO-OFDM II}{70}{subsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.2.1}Resultados de Transmiss\~ao pelo Sitema DDO-OFDM II}{75}{subsubsection.4.3.2.1}
 \contentsline {subsection}{\numberline {4.3.3}Considera\c c\~oes Finais}{76}{subsection.4.3.3}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase {Otimiza\c c\~ao da Banda de Guarda de Sistemas DDO-OFDM}}{78}{chapter.5}
+\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase {Otimiza\c c\~ao do Desempenho de Sistemas DDO-OFDM}}{78}{chapter.5}
 \contentsline {section}{\numberline {5.1}Introdu\c c\~ao}{78}{section.5.1}
 \contentsline {subsection}{\numberline {5.1.1}Declara\c c\~ao do Problema}{79}{subsection.5.1.1}
-\contentsline {section}{\numberline {5.2}Otimiza\c c\~ao Mono-Objetiva via Algoritmo Gen\'etico}{81}{section.5.2}
+\contentsline {section}{\numberline {5.2}Otimiza\c c\~ao Mono-Objetivo via Algoritmo Gen\'etico}{81}{section.5.2}
 \contentsline {subsection}{\numberline {5.2.1}Algoritmos Gen\'eticos}{81}{subsection.5.2.1}
 \contentsline {subsubsection}{\numberline {5.2.1.1}Mecanismos de Sele\c c\~ao}{82}{subsubsection.5.2.1.1}
 \contentsline {subsubsection}{\numberline {5.2.1.2}Operador de Cruzamento}{83}{subsubsection.5.2.1.2}
