@@ -21,7 +21,6 @@
 \backcite {Processamento_sinais_Diniz}{{29}{2.3.1}{equation.2.3.10}}
 \backcite {Proakis_terceira_edicao}{{30}{2.3.1}{equation.2.3.10}}
 \backcite {Cioffi_artigo}{{30}{2.3.1}{equation.2.3.10}}
-\backcite {Cioffi_artigo}{{31}{2.3.1}{figure.caption.17}}
 \backcite {Klenner_notas_aula_Bremen}{{32}{2.3.2}{equation.2.3.15}}
 \backcite {Processamento_sinais_Diniz}{{32}{2.3.2}{equation.2.3.17}}
 \backcite {Ernesto_Pinto}{{33}{2.3.3}{subsection.2.3.3}}
@@ -38,8 +37,8 @@
 \backcite {Cioffi_notas_aula}{{36}{2.4.2}{figure.caption.22}}
 \backcite {Ernesto_Pinto}{{38}{2.4.2}{equation.2.4.28}}
 \backcite {jair_SBRT09}{{39}{2.5}{section.2.5}}
-\backcite {art:EVM_BER_SNR}{{39}{2.5}{equation.2.5.30}}
-\backcite {art:EVM_Calc_Broadband}{{39}{2.5}{equation.2.5.30}}
+\backcite {art:EVM_BER_SNR}{{40}{2.5}{equation.2.5.30}}
+\backcite {art:EVM_Calc_Broadband}{{40}{2.5}{equation.2.5.30}}
 \backcite {jair_SBRT09}{{40}{2.5}{equation.2.5.32}}
 \backcite {OOFDM_Book}{{41}{3}{chapter.3}}
 \backcite {LoweryJLT08}{{41}{3}{chapter.3}}
@@ -62,6 +61,7 @@
 \backcite {Kaminow_Book}{{51}{3.4}{equation.3.4.12}}
 \backcite {OOFDM_Book}{{51}{3.4}{equation.3.4.12}}
 \backcite {Modulacao_Fase_Optica_Book}{{52}{3.4}{equation.3.4.13}}
+\backcite {Binh_FiberBook}{{55}{4.2}{section.4.2}}
 \backcite {Binh_DigCommBook}{{58}{4.2.3}{figure.caption.37}}
 \backcite {Rosenkranz09}{{78}{5.1}{section.5.1}}
 \backcite {WilnnerJLT09_02}{{78}{5.1}{section.5.1}}

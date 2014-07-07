@@ -15,17 +15,16 @@
 %\chapter{OFDM em Sistemas ópticos}
 \chapter{Transmissão OFDM em Sistemas Ópticos IMDD}
 
-{\huge\huge{A}} aplicação da técnica OFDM em sistemas de
-comunicação ópticas aumentou consideravelmente nos últimos anos,
-principalmente pela capacidade da técnica em compensar eletronica\-mente a
-dispersão total em longos enlaces (\emph{long-haul}) de fibra 
-\cite{OOFDM_Book}. O crescente desenvolvimento das tecnologias de processamento
-digital de sinais a altas taxas de transferências também contribuiu para o
-despertar de interesses pela transmissão line\-ar de sinais OFDM que modulam
-um \emph{laser} diretamente ou modulam a intensidade deste através de um
-modulador externo. Além disso, a crescente demanda das redes ópticas pelo
-aumento das taxas de transferência conduziu os pesquisadores a ensaios
-laboratoriais como prova de viabili\-dade da referida técnica nos mais
+A aplicação da técnica OFDM em sistemas de comunicações ópticas aumentou
+consideravelmente nos últimos anos, principalmente pela capacidade da técnica em
+compensar eletronica\-mente a dispersão total em longos enlaces
+(\emph{long-haul}) de fibra \cite{OOFDM_Book}. O crescente desenvolvimento das
+tecnologias de processamento digital de sinais a altas taxas de transferências
+também contribuiu para o despertar de interesses pela transmissão line\-ar de
+sinais OFDM que modulam um \emph{laser} diretamente ou modulam a intensidade
+deste através de um modulador externo. Além disso, a crescente demanda das redes
+ópticas pelo aumento das taxas de transferência conduziu os pesquisadores a
+ensaios laboratoriais como prova de viabili\-dade da referida técnica nos mais
 variados tipos de redes \cite{LoweryJLT08}, \cite{JansenJLT08},
 \cite{WilnnerJLT09_01}, \cite{JairPNC09}.
 
@@ -98,28 +97,28 @@ atualmente implantados.
 % \end{figure}
 
 Embora seja mais sensível a ruídos de fase provocados por desvios entre os
-osciladores locais do transceptor óptico, as pesquisas apontam para a
-adoção da deteção coerente CO-OFDM em sistemas ópticos de longas
-distâncias (\emph{long-haul}), por melhorar considera\-velmente a
-sensitividade\footnote{A sensitividade do receptor é a potência de entrada no
-receptor que garante uma taxa de erro de bits prefixada (normalmente,
-$BER=10^{-9}$ em sistemas ópticos).} do receptor. Esta indicação baseia-se
-também no fato da deteção direta desperdi\c{c}ar boa parte da potência
-na transmissão da portadora óptica \footnote{Ao atribuir à portadora óptica
-metade da potência do sinal inserido na fibra registra-se uma inerente perda 3
-dB na relação sinal ruído óptica OSNR (\emph{Optical Signal-to-Noise Ratio}).},
-além de reservar uma banda de guarda entre a portadora óptica e o sinal OFDM
-para combater produtos de intermodulação IMD (\emph{Intermodulation
-Distortion}) gerados pelo fotodiodo na recepção \cite{ASE_Lowery}. A Figura
-\ref{Bandas_Opticas_DDO_CO_OFDM} ilustra bem o melhor aproveitamento da potência
-e do espectro dos sistemas CO-OFDM. Entretanto, o custo beneficio que advém do
-reduzido número de componentes empregados na recepção em sistemas DDO-OFDM vem
-motivando os interessados em sua aplicação também nas comunicações em
-longas distâncias. As investigações realizadas nesta Tese enquadram-se nesta
-linha de pesquisa, mais especificamente na transmissão em fibras monomodais
-SMF de sinais OFDM que linearmente modu\-lam em intensidade o campo óptico de
-um laser CW, através de moduladores externos MZM, sendo os sinais OFDM ópticos
-de banda lateral única detectados por um único fotodetetor.
+osciladores locais do transceptor óptico, as pesquisas apontam para a adoção da
+deteção coerente CO-OFDM em sistemas ópticos de longas distâncias
+(\emph{long-haul}), por melhorar considera\-velmente a sensitividade\footnote{A
+sensitividade do receptor é a potência de entrada no receptor que garante uma
+taxa de erro de bits prefixada (normalmente, $BER=10^{-9}$ em sistemas
+ópticos).} do receptor. Esta indicação baseia-se também no fato da deteção
+direta desperdi\c{c}ar boa parte da potência na transmissão da portadora óptica
+\footnote{Ao atribuir à portadora óptica metade da potência do sinal inserido na
+fibra registra-se uma inerente perda 3 dB na relação sinal ruído óptica OSNR
+(\emph{Optical Signal-to-Noise Ratio}).}, além de reservar uma banda de guarda
+entre a portadora óptica e o sinal OFDM para combater produtos de intermodulação
+IMD (\emph{Intermodulation Distortion}) gerados pelo fotodiodo na recepção
+\cite{ASE_Lowery}. A Figura \ref{Bandas_Opticas_DDO_CO_OFDM} ilustra bem o
+melhor aproveitamento da potência e do espectro dos sistemas CO-OFDM.
+Entretanto, o custo beneficio que advém do reduzido número de componentes
+empregados na recepção em sistemas DDO-OFDM vem motivando os interessados em sua
+aplicação também nas comunicações em longas distâncias. As investigações
+realizadas nesta Dissertação enquadram-se nesta linha de pesquisa, mais
+especificamente na transmissão em fibras monomodais SMF de sinais OFDM que
+linearmente modu\-lam em intensidade o campo óptico de um laser CW, através de
+moduladores externos MZM, sendo os sinais OFDM ópticos de banda lateral única
+detectados por um único fotodetetor.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -152,8 +151,8 @@ onde $E(t)$ representa o campo elétrico do sinal óptico na entrada do
 fotodetector composto pelo sinal OOFDM SSB centrado em $f_b$ e matematicamente
 representado por $s(t)e^{j2\pi f_b t}$, e pela componente DC  $A$ que
 caracteriza a portadora óptica \cite{BarrosJLT10}. A resposta impulsiva de todo
-o canal óptico $h(t)$ é dada pela transforma inversa de Fourier de $H(w)=H_f(w)
-\cdot H_{FO}(w)$. Conclui-se a partir da expansão realizada que os efeitos dos
+o canal óptico $h(t)$ é dada pela transformada inversa de Fourier de
+$H(w)=H_f(w) \cdot H_{FO}(w)$. Conclui-se a partir da expansão realizada que os efeitos dos
 produtos de intermodulação $|s(t) \otimes h(t)|^2$ gerados na detecção direta
 são eliminados mediante a concepção de uma banda de guarda com largura mínima
 igual à largura de banda do sinal OFDM óptico SSB conforme ilustrado na Figura
@@ -173,7 +172,7 @@ igual à largura de banda do sinal OFDM óptico SSB conforme ilustrado na Figura
 \section{Implementação de Sistemas DDO-OFDM}
 \label{sistemasDDO-OFDM}
 Existem na literatura diversas e variadas implementações de transmissores e
-receptores OFDM utilizadas em simulações computacionais e em experimentos em
+receptores OFDM utilizados em simulações computacionais e em experimentos em
 laboratórios de sistemas OFDM óptico com deteção direta IMDD (DDO-OFDM)
 \cite{LoweryOFC07}, \cite{LoweryJLT08}, \cite{JansenJLT09},
 \cite{WilnnerJLT09_01}. Os diagramas de blocos de três das principais e mais

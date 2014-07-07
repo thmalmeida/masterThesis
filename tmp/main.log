@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.6.27)  3 JUL 2014 17:11
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.6.27)  7 JUL 2014 18:24
 entering extended mode
 **main.tex
 (C:\Users\Thiago\sourceText\MasterThesis\main.tex
@@ -610,23 +610,1905 @@ Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.def"
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
-)
-! I can't write on file `main.pdf'.
-Please type another file name for output
-! Emergency stop.
-reserved@a ...ate pdfobj stream file {reserved@f }
-                                                  expandafter xdef csname cm...
-l.100 \fontencoding\encodingdefault\selectfont
-                                              
-*** (job aborted, file error in nonstop mode)
+)<<t1.cmap>>)
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks24
+\inpenc@posthook=\toks25
 
- 
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\latin1.def"
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\lastpage\lastpage.sty"
+Package: lastpage 2013/01/28 v1.2l Refers to last page's name (HMM; JPG)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\indentfirst.sty"
+Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\color.sty"
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+\Gread@gobject=\count164
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+)
+\Gin@req@height=\dimen155
+\Gin@req@width=\dimen156
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf.sty"
+Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\caption\subcaption.sty"
+Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
+
+
+Class memoir Warning: You are using the caption package with the memoir class. 
+To prepare we will now reset all captioning macros and configurations to kernel
+ defaults, and then let the caption package take over. Please remember to use t
+he caption package interfaces in order to configure your captions. .
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption.sty"
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen157
+\captionmargin@=\dimen158
+\captionwidth=\dimen159
+\caption@tempdima=\dimen160
+\caption@indent=\dimen161
+\caption@parindent=\dimen162
+\caption@hangindent=\dimen163
+)
+\c@ContinuedFloat=\count165
+Package caption Info: hyperref package is loaded.
+)
+\c@subfigure=\count166
+\c@subtable=\count167
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
+\bigstrutjot=\dimen164
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks26
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip196
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks27
+\ex@=\dimen165
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen166
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count168
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count169
+\leftroot@=\count170
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count171
+\DOTSCASE@=\count172
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box30
+\strutbox@=\box31
+\big@size=\dimen167
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count173
+\c@MaxMatrixCols=\count174
+\dotsspace@=\muskip11
+\c@parentequation=\count175
+\dspbrk@lvl=\count176
+\tag@help=\toks28
+\row@=\count177
+\column@=\count178
+\maxfields@=\count179
+\andhelp@=\toks29
+\eqnshift@=\dimen168
+\alignsep@=\dimen169
+\tagshift@=\dimen170
+\tagwidth@=\dimen171
+\totwidth@=\dimen172
+\lineht@=\dimen173
+\@envbody=\toks30
+\multlinegap=\skip197
+\multlinetaggap=\skip198
+\mathdisplay@stack=\toks31
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\pdfpages\pdfpages.sty"
+Package: pdfpages 2013/08/25 v0.4v Insert pages of external PDF documents (AM)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\eso-pic\eso-pic.sty"
+Package: eso-pic 2013/10/06 v2.0d eso-pic (RN)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\pdfpages\pppdftex.def"
+File: pppdftex.def 2013/08/25 v0.4v Pdfpages driver for pdfTeX (AM)
+)
+\AM@pagebox=\box32
+\AM@toc@title=\toks32
+\c@AM@survey=\count180
+\AM@templatesizebox=\box33
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\soul\soul.sty"
+Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
+\SOUL@word=\toks33
+\SOUL@lasttoken=\toks34
+\SOUL@cmds=\toks35
+\SOUL@buffer=\toks36
+\SOUL@token=\toks37
+\SOUL@spaceskip=\skip199
+\SOUL@ttwidth=\dimen174
+\SOUL@uldp=\dimen175
+\SOUL@ulht=\dimen176
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\lipsum\lipsum.sty"
+Package: lipsum 2011/04/14 v1.2 150 paragraphs of Lorem Ipsum dummy text
+\c@lips@count=\count181
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\backref.sty"
+Package: backref 2012/07/25 v1.38 Bibliographical back referencing
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\abntex2\abntex2cite.sty"
+Package: abntex2cite 2014/01/26 v1.9.2 abnTeX2
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\abntex2\abntex2abrev.sty")
+\minimumbiblabelwidth=\skip200
+\ABCIauxlen=\skip201
+\c@ABCIaux=\count182
+\c@ABCImax=\count183
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\ltxmisc\relsize.sty"
+Package: relsize 2003/07/04 ver 3.1
+)
+\biblabelsep=\skip202
+LaTeX Info: Redefining \newblock on input line 675.
+LaTeX Info: Redefining \cite on input line 702.
+\ABCItoken=\toks38
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 167.
+\main@idxfile=\write4
+
+Writing index file main.idx 
+(C:\Users\Thiago\sourceText\MasterThesis\main.aux
+(C:\Users\Thiago\sourceText\MasterThesis\folhaAprovacao.aux)
+(C:\Users\Thiago\sourceText\MasterThesis\Dedication.aux)
+(C:\Users\Thiago\sourceText\MasterThesis\Acknowledgments.aux)
+(C:\Users\Thiago\sourceText\MasterThesis\Epigraph.aux)
+(C:\Users\Thiago\sourceText\MasterThesis\Resumo.aux)
+(C:\Users\Thiago\sourceText\MasterThesis\Abstract.aux)
+(C:\Users\Thiago\sourceText\MasterThesis\acronimos.aux)
+(C:\Users\Thiago\sourceText\MasterThesis\Chap1_Introduction.aux)
+(C:\Users\Thiago\sourceText\MasterThesis\Chap2_Multicarrier_Modulation.aux)
+(C:\Users\Thiago\sourceText\MasterThesis\Chap3_Optical_Communication.aux)
+(C:\Users\Thiago\sourceText\MasterThesis\Chap4_Experimental_Setup.aux)
+(C:\Users\Thiago\sourceText\MasterThesis\Chap5_Optimization.aux
+
+LaTeX Warning: Label `Funcao_tranf_MZM' multiply defined.
+
+) (C:\Users\Thiago\sourceText\MasterThesis\Chap6_Conclusion.aux)
+(C:\Users\Thiago\sourceText\MasterThesis\Appendix_A.aux))
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 193.
+LaTeX Font Info:    ... okay on input line 193.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 193.
+LaTeX Font Info:    ... okay on input line 193.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 193.
+LaTeX Font Info:    ... okay on input line 193.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 193.
+LaTeX Font Info:    ... okay on input line 193.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 193.
+LaTeX Font Info:    ... okay on input line 193.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 193.
+LaTeX Font Info:    ... okay on input line 193.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 193.
+LaTeX Font Info:    ... okay on input line 193.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 193.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
+File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+\AtBeginShipoutBox=\box34
+Package hyperref Info: Link coloring ON on input line 193.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count184
+)
+Redoing nameref's sectioning
+Redoing nameref's label
+LaTeX Info: Redefining \nameref on input line 193.
+LaTeX Info: Redefining \ref on input line 193.
+LaTeX Info: Redefining \pageref on input line 193.
+LaTeX Info: Redefining \nameref on input line 193.
+\myptabbox=\box35
+\myptabboxwidth=\skip203
+Package lastpage Info: Please have a look at the pageslts package at
+(lastpage)             http://www.ctan.org/tex-archive/ 
+(lastpage)             macros/latex/contrib/pageslts/ 
+(lastpage)             or
+(lastpage)             http://www.ctan.org/tex-archive/ 
+(lastpage)             install/macros/latex/contrib/pageslts.tds.zip
+(lastpage)             ! on input line 193.
+("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count185
+\scratchdimen=\dimen177
+\scratchbox=\box36
+\nofMPsegments=\count186
+\nofMParguments=\count187
+\everyMPshowfont=\toks39
+\MPscratchCnt=\count188
+\MPscratchDim=\dimen178
+\MPnumerator=\count189
+\makeMPintoPDFobject=\count190
+\everyMPtoPDFconversion=\toks40
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Try loading font information for T1+lmss on input line 206.
+
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmss.fd"
+File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [1
+
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 215.
+
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)<<ot1.cmap>>
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 215.
+
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)<<oml.cmap>>
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 215
+.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)<<oms.cmap>>
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 215
+.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omxlmex.fd"
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 215.
+<<omx.cmap>>
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 215.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 215.
+LaTeX Font Info:    Try loading font information for U+msa on input line 215.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 215.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.215 
+       [1
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 241--242
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--244
+
+ []
+
+
+Overfull \hbox (16.44858pt too wide) in paragraph at lines 245--248
+[][]  [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--248
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 249--257
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--259
+
+ []
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 260.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 260.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 260.
+[2] (C:\Users\Thiago\sourceText\MasterThesis\folhaAprovacao.tex [3
+
+
+] [4])
+(C:\Users\Thiago\sourceText\MasterThesis\Dedication.tex [5
+
+
+
+])
+(C:\Users\Thiago\sourceText\MasterThesis\Acknowledgments.tex [6
+
+
+
+
+])
+(C:\Users\Thiago\sourceText\MasterThesis\Epigraph.tex [7
+
+
+
+])
+(C:\Users\Thiago\sourceText\MasterThesis\Resumo.tex [8
+
+
+
+])
+(C:\Users\Thiago\sourceText\MasterThesis\Abstract.tex [9
+
+
+
+])
+(C:\Users\Thiago\sourceText\MasterThesis\main.lof
+Overfull \hbox (0.22455pt too wide) in paragraph at lines 14--14
+ [][][] [][][]\T1/lmr/m/n/12 Degradação na SNR de-vido ao des-vio de freqüên-ci
+a para $\OT1/lmr/m/n/12 [] = 312\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 5\OML/lmm/m/
+it/12 KHz$\T1/lmr/m/n/12 .[][] []  
+ []
+
+[10
+
+
+]
+Overfull \hbox (12.61359pt too wide) in paragraph at lines 21--21
+ [][][] [][][]\T1/lmr/m/n/12 Curvas de to-le-rân-cia à dis-per-sâo em km de fi-
+bra SMF ($\OML/lmm/m/it/12 D \OT1/lmr/m/n/12 = 16$ \T1/lmr/m/n/12 ps/nm/km) 
+ []
+
+[11]
+Overfull \hbox (11.8549pt too wide) in paragraph at lines 49--49
+ [][][] [][][]\T1/lmr/m/n/12 Constelação mos-trando os sim-bo-los trans-mi-ti-d
+os e re-ce-bi-dos com $\OML/lmm/m/it/12 EVM \OT1/lmr/m/n/12 =$ 
+ []
+
+) [12] (C:\Users\Thiago\sourceText\MasterThesis\main.lot) [13
+
+]
+(C:\Users\Thiago\sourceText\MasterThesis\acronimos.tex [14
+
+
+
+] [15])
+(C:\Users\Thiago\sourceText\MasterThesis\main.toc
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <12> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 41.
+ [16
+
+
+]
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 47.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.4> on input line 78.
+LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <12> not available
+(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 82.
+) [17]
+(C:\Users\Thiago\sourceText\MasterThesis\Chap1_Introduction.tex [18
+
+
+
+]
+<Figures/genericBlockDiagramCommunications.pdf, id=460, 682.95152pt x 398.32814
+pt>
+File: Figures/genericBlockDiagramCommunications.pdf Graphic file (type pdf)
+ <use Figures/genericBlockDiagramCommunications.pdf>
+Package pdftex.def Info: Figures/genericBlockDiagramCommunications.pdf used on 
+input line 103.
+(pdftex.def)             Requested size: 455.0pt x 265.3772pt.
+ [19] [20 <C:/Users/Thiago/sourceText/MasterThesis/Figures/genericBlockDiagramC
+ommunications.pdf>]
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 188.
+
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
+File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <8> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 188.
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 213.
+
+Overfull \hbox (8.80301pt too wide) in paragraph at lines 213--218
+\T1/lmr/m/it/12 and Elec-tro-mag-ne-tic Ap-pli-ca-ti-ons, July 2013 SI-2, Vol. 
+12, p113 [][]\T1/lmr/m/n/12 http://www.jmoe.org[][] 
+ []
+
+[21]) [22]
+(C:\Users\Thiago\sourceText\MasterThesis\Chap2_Multicarrier_Modulation.tex
+Package epstopdf Info: Source file: <figura/fig4_1.eps>
+(epstopdf)                    date: 2014-06-27 00:34:31
+(epstopdf)                    size: 31501 bytes
+(epstopdf)             Output file: <figura/fig4_1-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-06-27 00:38:06
+(epstopdf)                    size: 4674 bytes
+(epstopdf)             Command: <epstopdf --outfile=figura/fig4_1-eps-converted
+-to.pdf figura/fig4_1.eps>
+(epstopdf)             \includegraphics on input line 53.
+Package epstopdf Info: Output file is already uptodate.
+
+<figura/fig4_1-eps-converted-to.pdf, id=500, 397.485pt x 336.25626pt>
+File: figura/fig4_1-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figura/fig4_1-eps-converted-to.pdf>
+Package pdftex.def Info: figura/fig4_1-eps-converted-to.pdf used on input line 
+53.
+(pdftex.def)             Requested size: 238.49283pt x 201.75531pt.
+ [23
+
+
+
+]
+Package epstopdf Info: Source file: <figura/fig4_2.eps>
+(epstopdf)                    date: 2014-06-27 00:34:22
+(epstopdf)                    size: 54187 bytes
+(epstopdf)             Output file: <figura/fig4_2-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-06-27 00:34:29
+(epstopdf)                    size: 15990 bytes
+(epstopdf)             Command: <epstopdf --outfile=figura/fig4_2-eps-converted
+-to.pdf figura/fig4_2.eps>
+(epstopdf)             \includegraphics on input line 89.
+Package epstopdf Info: Output file is already uptodate.
+
+<figura/fig4_2-eps-converted-to.pdf, id=512, 325.215pt x 189.70876pt>
+File: figura/fig4_2-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figura/fig4_2-eps-converted-to.pdf>
+Package pdftex.def Info: figura/fig4_2-eps-converted-to.pdf used on input line 
+89.
+(pdftex.def)             Requested size: 276.43405pt x 161.25319pt.
+
+Overfull \hbox (13.73045pt too wide) in paragraph at lines 104--108
+[][]\T1/lmr/m/n/12 A con-cep-ção acima des-crita per-mite afir-mar que um sis-t
+ema mul-ti-por-ta-dora constitui-
+ []
+
+[24 <C:/Users/Thiago/sourceText/MasterThesis/figura/fig4_1-eps-converted-to.pdf
+>]
+Package epstopdf Info: Source file: <figura/fig4_3.eps>
+(epstopdf)                    date: 2014-06-27 00:34:31
+(epstopdf)                    size: 67179 bytes
+(epstopdf)             Output file: <figura/fig4_3-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-06-27 00:38:06
+(epstopdf)                    size: 12195 bytes
+(epstopdf)             Command: <epstopdf --outfile=figura/fig4_3-eps-converted
+-to.pdf figura/fig4_3.eps>
+(epstopdf)             \includegraphics on input line 127.
+Package epstopdf Info: Output file is already uptodate.
+ <figura/fig4_3-eps-converted-to.pdf, id=536, 500.87125pt x 287.0725pt>
+File: figura/fig4_3-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figura/fig4_3-eps-converted-to.pdf>
+Package pdftex.def Info: figura/fig4_3-eps-converted-to.pdf used on input line 
+127.
+(pdftex.def)             Requested size: 375.6525pt x 215.30383pt.
+ [25 <C:/Users/Thiago/sourceText/MasterThesis/figura/fig4_2-eps-converted-to.pd
+f>] [26 <C:/Users/Thiago/sourceText/MasterThesis/figura/fig4_3-eps-converted-to
+.pdf>]
+Package epstopdf Info: Source file: <figura/fig4_4.eps>
+(epstopdf)                    date: 2014-06-27 00:34:23
+(epstopdf)                    size: 48917 bytes
+(epstopdf)             Output file: <figura/fig4_4-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-06-27 00:34:28
+(epstopdf)                    size: 9404 bytes
+(epstopdf)             Command: <epstopdf --outfile=figura/fig4_4-eps-converted
+-to.pdf figura/fig4_4.eps>
+(epstopdf)             \includegraphics on input line 215.
+Package epstopdf Info: Output file is already uptodate.
+
+<figura/fig4_4-eps-converted-to.pdf, id=608, 464.73625pt x 282.05376pt>
+File: figura/fig4_4-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figura/fig4_4-eps-converted-to.pdf>
+Package pdftex.def Info: figura/fig4_4-eps-converted-to.pdf used on input line 
+215.
+(pdftex.def)             Requested size: 348.55133pt x 211.53978pt.
+ [27 <C:/Users/Thiago/sourceText/MasterThesis/figura/fig4_4-eps-converted-to.pd
+f>]
+Package epstopdf Info: Source file: <figura/fig_sinc1.eps>
+(epstopdf)                    date: 2014-06-27 00:34:31
+(epstopdf)                    size: 13498 bytes
+(epstopdf)             Output file: <figura/fig_sinc1-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-06-27 00:34:31
+(epstopdf)                    size: 5665 bytes
+(epstopdf)             Command: <epstopdf --outfile=figura/fig_sinc1-eps-conver
+ted-to.pdf figura/fig_sinc1.eps>
+(epstopdf)             \includegraphics on input line 280.
+Package epstopdf Info: Output file is already uptodate.
+
+<figura/fig_sinc1-eps-converted-to.pdf, id=628, 525.965pt x 198.7425pt>
+File: figura/fig_sinc1-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figura/fig_sinc1-eps-converted-to.pdf>
+Package pdftex.def Info: figura/fig_sinc1-eps-converted-to.pdf used on input li
+ne 280.
+(pdftex.def)             Requested size: 315.58142pt x 119.24641pt.
+ [28] [29 <C:/Users/Thiago/sourceText/MasterThesis/figura/fig_sinc1-eps-convert
+ed-to.pdf>]
+Package epstopdf Info: Source file: <figura/fig4_5.eps>
+(epstopdf)                    date: 2014-06-27 00:34:23
+(epstopdf)                    size: 73739 bytes
+(epstopdf)             Output file: <figura/fig4_5-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-06-27 00:34:30
+(epstopdf)                    size: 12635 bytes
+(epstopdf)             Command: <epstopdf --outfile=figura/fig4_5-eps-converted
+-to.pdf figura/fig4_5.eps>
+(epstopdf)             \includegraphics on input line 362.
+Package epstopdf Info: Output file is already uptodate.
+
+<figura/fig4_5-eps-converted-to.pdf, id=668, 523.9575pt x 273.02pt>
+File: figura/fig4_5-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figura/fig4_5-eps-converted-to.pdf>
+Package pdftex.def Info: figura/fig4_5-eps-converted-to.pdf used on input line 
+362.
+(pdftex.def)             Requested size: 419.16656pt x 218.41629pt.
+ [30 <C:/Users/Thiago/sourceText/MasterThesis/figura/fig4_5-eps-converted-to.pd
+f>]
+Package epstopdf Info: Source file: <figura/espectro_sinal.eps>
+(epstopdf)                    date: 2014-06-27 00:34:29
+(epstopdf)                    size: 31224 bytes
+(epstopdf)             Output file: <figura/espectro_sinal-eps-converted-to.pdf
+>
+(epstopdf)                    date: 2014-06-27 00:34:30
+(epstopdf)                    size: 18175 bytes
+(epstopdf)             Command: <epstopdf --outfile=figura/espectro_sinal-eps-c
+onverted-to.pdf figura/espectro_sinal.eps>
+(epstopdf)             \includegraphics on input line 389.
+Package epstopdf Info: Output file is already uptodate.
+
+<figura/espectro_sinal-eps-converted-to.pdf, id=688, 549.05125pt x 421.575pt>
+File: figura/espectro_sinal-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figura/espectro_sinal-eps-converted-to.pdf>
+Package pdftex.def Info: figura/espectro_sinal-eps-converted-to.pdf used on inp
+ut line 389.
+(pdftex.def)             Requested size: 356.87909pt x 274.0205pt.
+ [31 <C:/Users/Thiago/sourceText/MasterThesis/figura/espectro_sinal-eps-convert
+ed-to.pdf>]
+Package epstopdf Info: Source file: <figura/fig4_6.eps>
+(epstopdf)                    date: 2014-06-27 00:34:29
+(epstopdf)                    size: 43104 bytes
+(epstopdf)             Output file: <figura/fig4_6-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-06-27 00:34:29
+(epstopdf)                    size: 7617 bytes
+(epstopdf)             Command: <epstopdf --outfile=figura/fig4_6-eps-converted
+-to.pdf figura/fig4_6.eps>
+(epstopdf)             \includegraphics on input line 457.
+Package epstopdf Info: Output file is already uptodate.
+
+<figura/fig4_6-eps-converted-to.pdf, id=714, 457.71pt x 287.0725pt>
+File: figura/fig4_6-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figura/fig4_6-eps-converted-to.pdf>
+Package pdftex.def Info: figura/fig4_6-eps-converted-to.pdf used on input line 
+457.
+(pdftex.def)             Requested size: 366.1685pt x 229.65831pt.
+ [32]
+Package epstopdf Info: Source file: <figura/fig4_7.eps>
+(epstopdf)                    date: 2014-06-27 00:34:23
+(epstopdf)                    size: 54148 bytes
+(epstopdf)             Output file: <figura/fig4_7-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-06-27 00:34:28
+(epstopdf)                    size: 11177 bytes
+(epstopdf)             Command: <epstopdf --outfile=figura/fig4_7-eps-converted
+-to.pdf figura/fig4_7.eps>
+(epstopdf)             \includegraphics on input line 486.
+Package epstopdf Info: Output file is already uptodate.
+
+<figura/fig4_7-eps-converted-to.pdf, id=734, 590.205pt x 421.575pt>
+File: figura/fig4_7-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figura/fig4_7-eps-converted-to.pdf>
+Package pdftex.def Info: figura/fig4_7-eps-converted-to.pdf used on input line 
+486.
+(pdftex.def)             Requested size: 397.02931pt x 283.59236pt.
+ [33 <C:/Users/Thiago/sourceText/MasterThesis/figura/fig4_6-eps-converted-to.pd
+f>]
+Package epstopdf Info: Source file: <figura/fig4_8.eps>
+(epstopdf)                    date: 2014-06-27 00:34:24
+(epstopdf)                    size: 119088 bytes
+(epstopdf)             Output file: <figura/fig4_8-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-06-27 00:34:28
+(epstopdf)                    size: 23745 bytes
+(epstopdf)             Command: <epstopdf --outfile=figura/fig4_8-eps-converted
+-to.pdf figura/fig4_8.eps>
+(epstopdf)             \includegraphics on input line 542.
+Package epstopdf Info: Output file is already uptodate.
+
+<figura/fig4_8-eps-converted-to.pdf, id=755, 589.20125pt x 558.085pt>
+File: figura/fig4_8-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figura/fig4_8-eps-converted-to.pdf>
+Package pdftex.def Info: figura/fig4_8-eps-converted-to.pdf used on input line 
+542.
+(pdftex.def)             Requested size: 441.89984pt x 418.56273pt.
+ [34 <C:/Users/Thiago/sourceText/MasterThesis/figura/fig4_7-eps-converted-to.pd
+f>] [35 <C:/Users/Thiago/sourceText/MasterThesis/figura/fig4_8-eps-converted-to
+.pdf>]
+Package epstopdf Info: Source file: <figura/fig_sinc_ici.eps>
+(epstopdf)                    date: 2014-06-27 00:34:32
+(epstopdf)                    size: 16787 bytes
+(epstopdf)             Output file: <figura/fig_sinc_ici-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-06-27 00:38:07
+(epstopdf)                    size: 7572 bytes
+(epstopdf)             Command: <epstopdf --outfile=figura/fig_sinc_ici-eps-con
+verted-to.pdf figura/fig_sinc_ici.eps>
+(epstopdf)             \includegraphics on input line 599.
+Package epstopdf Info: Output file is already uptodate.
+
+<figura/fig_sinc_ici-eps-converted-to.pdf, id=785, 551.05875pt x 316.18124pt>
+File: figura/fig_sinc_ici-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figura/fig_sinc_ici-eps-converted-to.pdf>
+Package pdftex.def Info: figura/fig_sinc_ici-eps-converted-to.pdf used on input
+ line 599.
+(pdftex.def)             Requested size: 385.73848pt x 221.32535pt.
+ [36] [37 <C:/Users/Thiago/sourceText/MasterThesis/figura/fig_sinc_ici-eps-conv
+erted-to.pdf>]
+Package epstopdf Info: Source file: <figura/degrad_SNR.eps>
+(epstopdf)                    date: 2014-06-27 00:34:28
+(epstopdf)                    size: 17377 bytes
+(epstopdf)             Output file: <figura/degrad_SNR-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-06-27 00:34:28
+(epstopdf)                    size: 5624 bytes
+(epstopdf)             Command: <epstopdf --outfile=figura/degrad_SNR-eps-conve
+rted-to.pdf figura/degrad_SNR.eps>
+(epstopdf)             \includegraphics on input line 660.
+Package epstopdf Info: Output file is already uptodate.
+
+<figura/degrad_SNR-eps-converted-to.pdf, id=821, 496.85625pt x 177.66376pt>
+File: figura/degrad_SNR-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figura/degrad_SNR-eps-converted-to.pdf>
+Package pdftex.def Info: figura/degrad_SNR-eps-converted-to.pdf used on input l
+ine 660.
+(pdftex.def)             Requested size: 422.3298pt x 151.0149pt.
+ [38 <C:/Users/Thiago/sourceText/MasterThesis/figura/degrad_SNR-eps-converted-t
+o.pdf>]
+Package epstopdf Info: Source file: <Figures/constel.eps>
+(epstopdf)                    date: 2014-06-27 00:34:30
+(epstopdf)                    size: 65668 bytes
+(epstopdf)             Output file: <Figures/constel-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-06-27 00:34:30
+(epstopdf)                    size: 18170 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figures/constel-eps-convert
+ed-to.pdf Figures/constel.eps>
+(epstopdf)             \includegraphics on input line 711.
+Package epstopdf Info: Output file is already uptodate.
+
+<Figures/constel-eps-converted-to.pdf, id=836, 329.23pt x 334.24875pt>
+File: Figures/constel-eps-converted-to.pdf Graphic file (type pdf)
+
+<use Figures/constel-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/constel-eps-converted-to.pdf used on input lin
+e 711.
+(pdftex.def)             Requested size: 227.5pt x 230.97359pt.
+ [39 <C:/Users/Thiago/sourceText/MasterThesis/Figures/constel-eps-converted-to.
+pdf>]) [40]
+(C:\Users\Thiago\sourceText\MasterThesis\Chap3_Optical_Communication.tex
+Package epstopdf Info: Source file: <Figuras_TESE/DDO_OFDM.eps>
+(epstopdf)                    date: 2014-06-27 00:34:28
+(epstopdf)                    size: 208112 bytes
+(epstopdf)             Output file: <Figuras_TESE/DDO_OFDM-eps-converted-to.pdf
+>
+(epstopdf)                    date: 2014-06-27 00:38:08
+(epstopdf)                    size: 75487 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figuras_TESE/DDO_OFDM-eps-c
+onverted-to.pdf Figuras_TESE/DDO_OFDM.eps>
+(epstopdf)             \includegraphics on input line 72.
+Package epstopdf Info: Output file is already uptodate.
+
+<Figuras_TESE/DDO_OFDM-eps-converted-to.pdf, id=904, 716.6775pt x 153.57375pt>
+File: Figuras_TESE/DDO_OFDM-eps-converted-to.pdf Graphic file (type pdf)
+
+<use Figuras_TESE/DDO_OFDM-eps-converted-to.pdf>
+Package pdftex.def Info: Figuras_TESE/DDO_OFDM-eps-converted-to.pdf used on inp
+ut line 72.
+(pdftex.def)             Requested size: 451.50923pt x 96.75197pt.
+ [41
+
+
+
+]
+Package epstopdf Info: Source file: <Figuras_TESE/Bandas_Opticas_DDO_CO_OFDM.ep
+s>
+(epstopdf)                    date: 2014-06-27 00:34:28
+(epstopdf)                    size: 101028 bytes
+(epstopdf)             Output file: <Figuras_TESE/Bandas_Opticas_DDO_CO_OFDM-ep
+s-converted-to.pdf>
+(epstopdf)                    date: 2014-06-27 00:34:31
+(epstopdf)                    size: 20419 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figuras_TESE/Bandas_Opticas
+_DDO_CO_OFDM-eps-converted-to.pdf Figuras_TESE/Bandas_Opticas_DDO_CO_OFDM.eps>
+(epstopdf)             \includegraphics on input line 125.
+Package epstopdf Info: Output file is already uptodate.
+
+<Figuras_TESE/Bandas_Opticas_DDO_CO_OFDM-eps-converted-to.pdf, id=924, 488.8262
+5pt x 450.68375pt>
+File: Figuras_TESE/Bandas_Opticas_DDO_CO_OFDM-eps-converted-to.pdf Graphic file
+ (type pdf)
+
+<use Figuras_TESE/Bandas_Opticas_DDO_CO_OFDM-eps-converted-to.pdf>
+Package pdftex.def Info: Figuras_TESE/Bandas_Opticas_DDO_CO_OFDM-eps-converted-
+to.pdf used on input line 125.
+(pdftex.def)             Requested size: 371.50433pt x 342.51631pt.
+ [42 <C:/Users/Thiago/sourceText/MasterThesis/Figuras_TESE/DDO_OFDM-eps-convert
+ed-to.pdf>]
+[43 <C:/Users/Thiago/sourceText/MasterThesis/Figuras_TESE/Bandas_Opticas_DDO_CO
+_OFDM-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <Figuras_TESE/sistema_DDO_OFDM_I.eps>
+(epstopdf)                    date: 2014-06-27 00:34:24
+(epstopdf)                    size: 757486 bytes
+(epstopdf)             Output file: <Figuras_TESE/sistema_DDO_OFDM_I-eps-conver
+ted-to.pdf>
+(epstopdf)                    date: 2014-06-27 00:34:29
+(epstopdf)                    size: 46888 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figuras_TESE/sistema_DDO_OF
+DM_I-eps-converted-to.pdf Figuras_TESE/sistema_DDO_OFDM_I.eps>
+(epstopdf)             \includegraphics on input line 190.
+Package epstopdf Info: Output file is already uptodate.
+
+<Figuras_TESE/sistema_DDO_OFDM_I-eps-converted-to.pdf, id=976, 762.85pt x 569.1
+2625pt>
+File: Figuras_TESE/sistema_DDO_OFDM_I-eps-converted-to.pdf Graphic file (type p
+df)
+ <use Figuras_TESE/sistema_DDO_OFDM_I-eps-converted-to.pdf>
+Package pdftex.def Info: Figuras_TESE/sistema_DDO_OFDM_I-eps-converted-to.pdf u
+sed on input line 190.
+(pdftex.def)             Requested size: 450.0776pt x 335.78157pt.
+Package epstopdf Info: Source file: <Figuras_TESE/sistema_DDO_OFDM_II_f.eps>
+(epstopdf)                    date: 2014-06-27 00:34:28
+(epstopdf)                    size: 1668050 bytes
+(epstopdf)             Output file: <Figuras_TESE/sistema_DDO_OFDM_II_f-eps-con
+verted-to.pdf>
+(epstopdf)                    date: 2014-06-27 00:34:28
+(epstopdf)                    size: 47376 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figuras_TESE/sistema_DDO_OF
+DM_II_f-eps-converted-to.pdf Figuras_TESE/sistema_DDO_OFDM_II_f.eps>
+(epstopdf)             \includegraphics on input line 204.
+Package epstopdf Info: Output file is already uptodate.
+
+<Figuras_TESE/sistema_DDO_OFDM_II_f-eps-converted-to.pdf, id=977, 763.85374pt x
+ 568.1225pt>
+File: Figuras_TESE/sistema_DDO_OFDM_II_f-eps-converted-to.pdf Graphic file (typ
+e pdf)
+ <use Figuras_TESE/sistema_DDO_OFDM_II_f-eps-converted-to.pdf>
+Package pdftex.def Info: Figuras_TESE/sistema_DDO_OFDM_II_f-eps-converted-to.pd
+f used on input line 204.
+(pdftex.def)             Requested size: 443.03548pt x 329.51126pt.
+Package epstopdf Info: Source file: <Figuras_TESE/sistema_DDO_OFDM_III.eps>
+(epstopdf)                    date: 2014-06-27 00:34:23
+(epstopdf)                    size: 998723 bytes
+(epstopdf)             Output file: <Figuras_TESE/sistema_DDO_OFDM_III-eps-conv
+erted-to.pdf>
+(epstopdf)                    date: 2014-06-27 00:34:23
+(epstopdf)                    size: 41689 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figuras_TESE/sistema_DDO_OF
+DM_III-eps-converted-to.pdf Figuras_TESE/sistema_DDO_OFDM_III.eps>
+(epstopdf)             \includegraphics on input line 238.
+Package epstopdf Info: Output file is already uptodate.
+
+<Figuras_TESE/sistema_DDO_OFDM_III-eps-converted-to.pdf, id=981, 676.5275pt x 5
+83.17876pt>
+File: Figuras_TESE/sistema_DDO_OFDM_III-eps-converted-to.pdf Graphic file (type
+ pdf)
+ <use Figuras_TESE/sistema_DDO_OFDM_III-eps-converted-to.pdf>
+Package pdftex.def Info: Figuras_TESE/sistema_DDO_OFDM_III-eps-converted-to.pdf
+ used on input line 238.
+(pdftex.def)             Requested size: 419.4427pt x 361.5671pt.
+
+[44] [45 <C:/Users/Thiago/sourceText/MasterThesis/Figuras_TESE/sistema_DDO_OFDM
+_I-eps-converted-to.pdf>] [46 <C:/Users/Thiago/sourceText/MasterThesis/Figuras_
+TESE/sistema_DDO_OFDM_II_f-eps-converted-to.pdf>] [47 <C:/Users/Thiago/sourceTe
+xt/MasterThesis/Figuras_TESE/sistema_DDO_OFDM_III-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <Figuras_TESE/Tolerancia_Dispersao_OOFDM.ep
+s>
+(epstopdf)                    date: 2014-06-27 00:34:29
+(epstopdf)                    size: 20183 bytes
+(epstopdf)             Output file: <Figuras_TESE/Tolerancia_Dispersao_OOFDM-ep
+s-converted-to.pdf>
+(epstopdf)                    date: 2014-06-27 00:34:29
+(epstopdf)                    size: 7171 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figuras_TESE/Tolerancia_Dis
+persao_OOFDM-eps-converted-to.pdf Figuras_TESE/Tolerancia_Dispersao_OOFDM.eps>
+(epstopdf)             \includegraphics on input line 341.
+Package epstopdf Info: Output file is already uptodate.
+
+<Figuras_TESE/Tolerancia_Dispersao_OOFDM-eps-converted-to.pdf, id=1167, 517.935
+pt x 480.79625pt>
+File: Figuras_TESE/Tolerancia_Dispersao_OOFDM-eps-converted-to.pdf Graphic file
+ (type pdf)
+
+<use Figuras_TESE/Tolerancia_Dispersao_OOFDM-eps-converted-to.pdf>
+Package pdftex.def Info: Figuras_TESE/Tolerancia_Dispersao_OOFDM-eps-converted-
+to.pdf used on input line 341.
+(pdftex.def)             Requested size: 440.24681pt x 408.67873pt.
+Package epstopdf Info: Source file: <Figuras_TESE/Projeto_sistema_DDO_OFDM_f.ep
+s>
+(epstopdf)                    date: 2014-06-27 00:34:22
+(epstopdf)                    size: 3534628 bytes
+(epstopdf)             Output file: <Figuras_TESE/Projeto_sistema_DDO_OFDM_f-ep
+s-converted-to.pdf>
+(epstopdf)                    date: 2014-06-27 00:34:23
+(epstopdf)                    size: 6127087 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figuras_TESE/Projeto_sistem
+a_DDO_OFDM_f-eps-converted-to.pdf Figuras_TESE/Projeto_sistema_DDO_OFDM_f.eps>
+(epstopdf)             \includegraphics on input line 369.
+Package epstopdf Info: Output file is already uptodate.
+
+<Figuras_TESE/Projeto_sistema_DDO_OFDM_f-eps-converted-to.pdf, id=1170, 529.98p
+t x 469.755pt>
+File: Figuras_TESE/Projeto_sistema_DDO_OFDM_f-eps-converted-to.pdf Graphic file
+ (type pdf)
+
+<use Figuras_TESE/Projeto_sistema_DDO_OFDM_f-eps-converted-to.pdf>
+Package pdftex.def Info: Figuras_TESE/Projeto_sistema_DDO_OFDM_f-eps-converted-
+to.pdf used on input line 369.
+(pdftex.def)             Requested size: 498.18124pt x 441.56976pt.
+
+Overfull \hbox (43.18124pt too wide) in paragraph at lines 369--377
+ [][] 
+ []
+
+[48] [49 <C:/Users/Thiago/sourceText/MasterThesis/Figuras_TESE/Tolerancia_Dispe
+rsao_OOFDM-eps-converted-to.pdf>] [50 <C:/Users/Thiago/sourceText/MasterThesis/
+Figuras_TESE/Projeto_sistema_DDO_OFDM_f-eps-converted-to.pdf>] [51]
+Package epstopdf Info: Source file: <Figuras_TESE/Funcao_tranf_MZM2.eps>
+(epstopdf)                    date: 2014-06-27 00:34:24
+(epstopdf)                    size: 389775 bytes
+(epstopdf)             Output file: <Figuras_TESE/Funcao_tranf_MZM2-eps-convert
+ed-to.pdf>
+(epstopdf)                    date: 2014-06-27 00:34:25
+(epstopdf)                    size: 16719 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figuras_TESE/Funcao_tranf_M
+ZM2-eps-converted-to.pdf Figuras_TESE/Funcao_tranf_MZM2.eps>
+(epstopdf)             \includegraphics on input line 485.
+Package epstopdf Info: Output file is already uptodate.
+
+<Figuras_TESE/Funcao_tranf_MZM2-eps-converted-to.pdf, id=1222, 524.96124pt x 27
+5.0275pt>
+File: Figuras_TESE/Funcao_tranf_MZM2-eps-converted-to.pdf Graphic file (type pd
+f)
+ <use Figuras_TESE/Funcao_tranf_MZM2-eps-converted-to.pdf>
+Package pdftex.def Info: Figuras_TESE/Funcao_tranf_MZM2-eps-converted-to.pdf us
+ed on input line 485.
+(pdftex.def)             Requested size: 419.96956pt x 220.0223pt.
+ [52 <C:/Users/Thiago/sourceText/MasterThesis/Figuras_TESE/Funcao_tranf_MZM2-ep
+s-converted-to.pdf>]
+Package epstopdf Info: Source file: <Figuras_TESE/espectros_saida_MZM.eps>
+(epstopdf)                    date: 2014-06-27 00:34:23
+(epstopdf)                    size: 125968 bytes
+(epstopdf)             Output file: <Figuras_TESE/espectros_saida_MZM-eps-conve
+rted-to.pdf>
+(epstopdf)                    date: 2014-06-27 00:34:30
+(epstopdf)                    size: 74361 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figuras_TESE/espectros_said
+a_MZM-eps-converted-to.pdf Figuras_TESE/espectros_saida_MZM.eps>
+(epstopdf)             \includegraphics on input line 506.
+Package epstopdf Info: Output file is already uptodate.
+
+<Figuras_TESE/espectros_saida_MZM-eps-converted-to.pdf, id=1262, 530.98375pt x 
+461.725pt>
+File: Figuras_TESE/espectros_saida_MZM-eps-converted-to.pdf Graphic file (type 
+pdf)
+ <use Figuras_TESE/espectros_saida_MZM-eps-converted-to.pdf>
+Package pdftex.def Info: Figuras_TESE/espectros_saida_MZM-eps-converted-to.pdf 
+used on input line 506.
+(pdftex.def)             Requested size: 387.6149pt x 337.05644pt.
+)
+[53 <C:/Users/Thiago/sourceText/MasterThesis/Figuras_TESE/espectros_saida_MZM-e
+ps-converted-to.pdf>]
+(C:\Users\Thiago\sourceText\MasterThesis\Chap4_Experimental_Setup.tex
+Overfull \hbox (0.61607pt too wide) in paragraph at lines 10--10
+[]\T1/lmss/m/n/17.28 Sistema Mo-du-la-ção por In-ten-si-dade/Detecção Di-reta (
+IM/DD) 
+ []
+
+<Figures/DDO-OFDM_blockDiagram_en.pdf, id=1274, 722.7pt x 312.92911pt>
+File: Figures/DDO-OFDM_blockDiagram_en.pdf Graphic file (type pdf)
+
+<use Figures/DDO-OFDM_blockDiagram_en.pdf>
+Package pdftex.def Info: Figures/DDO-OFDM_blockDiagram_en.pdf used on input lin
+e 31.
+(pdftex.def)             Requested size: 455.0pt x 197.01744pt.
+
+Overfull \hbox (8.34967pt too wide) in paragraph at lines 36--52
+[][]\T1/lmr/m/n/12 Os si-nais OFDM pre-pa-ra-dos pelo al-go-ritmo de ge-ra-ção 
+im-ple-men-tado no MATLAB$[]$
+ []
+
+[54
+
+
+
+]
+
+LaTeX Warning: Citation `Binh_FiberBook' on page 55 undefined on input line 76.
+
+
+[55 <C:/Users/Thiago/sourceText/MasterThesis/Figures/DDO-OFDM_blockDiagram_en.p
+df>]
+<Figures/DDO-OFDM_DAC_ADC_Equipments.pdf, id=1351, 682.95152pt x 233.4321pt>
+File: Figures/DDO-OFDM_DAC_ADC_Equipments.pdf Graphic file (type pdf)
+
+<use Figures/DDO-OFDM_DAC_ADC_Equipments.pdf>
+Package pdftex.def Info: Figures/DDO-OFDM_DAC_ADC_Equipments.pdf used on input 
+line 99.
+(pdftex.def)             Requested size: 455.0pt x 155.51889pt.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <14.4> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 116.
+ [56 <C:/Users/Thiago/sourceText/MasterThesis/Figures/DDO-OFDM_DAC_ADC_Equipmen
+ts.pdf>]
+Package epstopdf Info: Source file: <Figures/laserPowerResponse.eps>
+(epstopdf)                    date: 2014-06-27 00:34:23
+(epstopdf)                    size: 11543 bytes
+(epstopdf)             Output file: <Figures/laserPowerResponse-eps-converted-t
+o.pdf>
+(epstopdf)                    date: 2014-06-27 00:34:26
+(epstopdf)                    size: 4743 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figures/laserPowerResponse-
+eps-converted-to.pdf Figures/laserPowerResponse.eps>
+(epstopdf)             \includegraphics on input line 141.
+Package epstopdf Info: Output file is already uptodate.
+
+<Figures/laserPowerResponse-eps-converted-to.pdf, id=1369, 420.57124pt x 316.18
+124pt>
+File: Figures/laserPowerResponse-eps-converted-to.pdf Graphic file (type pdf)
+ <use Figures/laserPowerResponse-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/laserPowerResponse-eps-converted-to.pdf used o
+n input line 141.
+(pdftex.def)             Requested size: 318.49861pt x 239.44629pt.
+
+<Figures/mzmBeam.pdf, id=1372, 569.0058pt x 170.79811pt>
+File: Figures/mzmBeam.pdf Graphic file (type pdf)
+
+<use Figures/mzmBeam.pdf>
+Package pdftex.def Info: Figures/mzmBeam.pdf used on input line 168.
+(pdftex.def)             Requested size: 455.0pt x 136.57611pt.
+ [57 <C:/Users/Thiago/sourceText/MasterThesis/Figures/laserPowerResponse-eps-co
+nverted-to.pdf>]
+<Figures/mzmPowerMeter.pdf, id=1385, 963.6pt x 352.79807pt>
+File: Figures/mzmPowerMeter.pdf Graphic file (type pdf)
+
+<use Figures/mzmPowerMeter.pdf>
+Package pdftex.def Info: Figures/mzmPowerMeter.pdf used on input line 208.
+(pdftex.def)             Requested size: 318.49861pt x 116.60675pt.
+ [58 <C:/Users/Thiago/sourceText/MasterThesis/Figures/mzmBeam.pdf> <C:/Users/Th
+iago/sourceText/MasterThesis/Figures/mzmPowerMeter.pdf
+
+pdfTeX warning: pdflatex.exe (file C:/Users/Thiago/sourceText/MasterThesis/Figu
+res/mzmPowerMeter.pdf): PDF inclusion: multiple pdfs with page group included i
+n a single page
+>]
+Package epstopdf Info: Source file: <Figures/mzmCurve.eps>
+(epstopdf)                    date: 2014-06-27 00:34:31
+(epstopdf)                    size: 13532 bytes
+(epstopdf)             Output file: <Figures/mzmCurve-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-06-27 00:38:09
+(epstopdf)                    size: 8058 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figures/mzmCurve-eps-conver
+ted-to.pdf Figures/mzmCurve.eps>
+(epstopdf)             \includegraphics on input line 227.
+Package epstopdf Info: Output file is already uptodate.
+ <Figures/mzmCurve-eps-converted-to.pdf, id=1423, 1027.84pt x 472.76625pt>
+File: Figures/mzmCurve-eps-converted-to.pdf Graphic file (type pdf)
+
+<use Figures/mzmCurve-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/mzmCurve-eps-converted-to.pdf used on input li
+ne 227.
+(pdftex.def)             Requested size: 455.0pt x 209.28021pt.
+
+<Figures/OTDR_20km_2.png, id=1426, 513.41812pt x 142.28156pt>
+File: Figures/OTDR_20km_2.png Graphic file (type png)
+
+<use Figures/OTDR_20km_2.png>
+Package pdftex.def Info: Figures/OTDR_20km_2.png used on input line 259.
+(pdftex.def)             Requested size: 455.0pt x 126.09393pt.
+
+<Figures/OTDR_40km_2.png, id=1428, 514.17094pt x 141.52875pt>
+File: Figures/OTDR_40km_2.png Graphic file (type png)
+
+<use Figures/OTDR_40km_2.png>
+Package pdftex.def Info: Figures/OTDR_40km_2.png used on input line 265.
+(pdftex.def)             Requested size: 455.0pt x 125.24321pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[59 <C:/Users/Thiago/sourceText/MasterThesis/Figures/mzmCurve-eps-converted-to.
+pdf>] <Figures/receiverResponse.pdf, id=1438, 963.6pt x 542.025pt>
+File: Figures/receiverResponse.pdf Graphic file (type pdf)
+
+<use Figures/receiverResponse.pdf>
+Package pdftex.def Info: Figures/receiverResponse.pdf used on input line 320.
+(pdftex.def)             Requested size: 386.75278pt x 217.54224pt.
+ [60 <C:/Users/Thiago/sourceText/MasterThesis/Figures/OTDR_20km_2.png> <C:/User
+s/Thiago/sourceText/MasterThesis/Figures/OTDR_40km_2.png>]
+<Figures/DDO-OFDM_physicalPart.pdf, id=1449, 682.95152pt x 241.8636pt>
+File: Figures/DDO-OFDM_physicalPart.pdf Graphic file (type pdf)
+
+<use Figures/DDO-OFDM_physicalPart.pdf>
+Package pdftex.def Info: Figures/DDO-OFDM_physicalPart.pdf used on input line 3
+62.
+(pdftex.def)             Requested size: 455.0pt x 161.1362pt.
+
+Overfull \hbox (0.77003pt too wide) in paragraph at lines 370--387
+[][]\T1/lmr/m/n/12 Esta pri-meira con-fi-gu-ra-ção im-ple-menta um sis-tema de 
+trans-mis-são de si-nais OFDM
+ []
+
+[61 <C:/Users/Thiago/sourceText/MasterThesis/Figures/receiverResponse.pdf> <C:/
+Users/Thiago/sourceText/MasterThesis/Figures/DDO-OFDM_physicalPart.pdf
+
+pdfTeX warning: pdflatex.exe (file C:/Users/Thiago/sourceText/MasterThesis/Figu
+res/DDO-OFDM_physicalPart.pdf): PDF inclusion: multiple pdfs with page group in
+cluded in a single page
+>] <Figures/DDO-OFDM_I_Tx_pt-br.pdf, id=1497, 870.61258pt x 549.13156pt>
+File: Figures/DDO-OFDM_I_Tx_pt-br.pdf Graphic file (type pdf)
+
+<use Figures/DDO-OFDM_I_Tx_pt-br.pdf>
+Package pdftex.def Info: Figures/DDO-OFDM_I_Tx_pt-br.pdf used on input line 390
+.
+(pdftex.def)             Requested size: 455.0pt x 286.99126pt.
+ [62 <C:/Users/Thiago/sourceText/MasterThesis/Figures/DDO-OFDM_I_Tx_pt-br.pdf>]
+
+<Figures/DDO-OFDM_I_Tx_IFFT_pt-br.pdf, id=1545, 426.8748pt x 597.432pt>
+File: Figures/DDO-OFDM_I_Tx_IFFT_pt-br.pdf Graphic file (type pdf)
+
+<use Figures/DDO-OFDM_I_Tx_IFFT_pt-br.pdf>
+Package pdftex.def Info: Figures/DDO-OFDM_I_Tx_IFFT_pt-br.pdf used on input lin
+e 409.
+(pdftex.def)             Requested size: 273.00278pt x 382.09993pt.
+
+<Figures/DDO-OFDM_I_Tx_IFFT_shift.pdf, id=1547, 910.48157pt x 312.92911pt>
+File: Figures/DDO-OFDM_I_Tx_IFFT_shift.pdf Graphic file (type pdf)
+
+<use Figures/DDO-OFDM_I_Tx_IFFT_shift.pdf>
+Package pdftex.def Info: Figures/DDO-OFDM_I_Tx_IFFT_shift.pdf used on input lin
+e 424.
+(pdftex.def)             Requested size: 455.0pt x 156.38298pt.
+ [63 <C:/Users/Thiago/sourceText/MasterThesis/Figures/DDO-OFDM_I_Tx_IFFT_pt-br.
+pdf>]
+
+pdfTeX warning: pdflatex.exe (file C:/Users/Thiago/sourceText/MasterThesis/Figu
+res/DDO-OFDM_I_Tx_Ig.pdf): PDF inclusion: found PDF version <1.6>, but at most 
+version <1.5> allowed
+<Figures/DDO-OFDM_I_Tx_Ig.pdf, id=1585, 794.97pt x 614.295pt>
+File: Figures/DDO-OFDM_I_Tx_Ig.pdf Graphic file (type pdf)
+
+<use Figures/DDO-OFDM_I_Tx_Ig.pdf>
+Package pdftex.def Info: Figures/DDO-OFDM_I_Tx_Ig.pdf used on input line 460.
+(pdftex.def)             Requested size: 409.49722pt x 316.43575pt.
+ [64 <C:/Users/Thiago/sourceText/MasterThesis/Figures/DDO-OFDM_I_Tx_IFFT_shift.
+pdf>]
+<Figures/DDO-OFDM_I_Tx_Aliasing.pdf, id=1624, 512.1534pt x 170.79811pt>
+File: Figures/DDO-OFDM_I_Tx_Aliasing.pdf Graphic file (type pdf)
+
+<use Figures/DDO-OFDM_I_Tx_Aliasing.pdf>
+Package pdftex.def Info: Figures/DDO-OFDM_I_Tx_Aliasing.pdf used on input line 
+494.
+(pdftex.def)             Requested size: 455.0pt x 151.744pt.
+Package epstopdf Info: Source file: <Figures/DDO-OFDM_I_sig_ofdm_dom_tempo.eps>
+
+(epstopdf)                    date: 2014-06-27 00:34:28
+(epstopdf)                    size: 201824 bytes
+(epstopdf)             Output file: <Figures/DDO-OFDM_I_sig_ofdm_dom_tempo-eps-
+converted-to.pdf>
+(epstopdf)                    date: 2014-06-27 00:34:28
+(epstopdf)                    size: 122104 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figures/DDO-OFDM_I_sig_ofdm
+_dom_tempo-eps-converted-to.pdf Figures/DDO-OFDM_I_sig_ofdm_dom_tempo.eps>
+(epstopdf)             \includegraphics on input line 507.
+Package epstopdf Info: Output file is already uptodate.
+
+<Figures/DDO-OFDM_I_sig_ofdm_dom_tempo-eps-converted-to.pdf, id=1627, 932.48375
+pt x 230.8625pt>
+File: Figures/DDO-OFDM_I_sig_ofdm_dom_tempo-eps-converted-to.pdf Graphic file (
+type pdf)
+
+<use Figures/DDO-OFDM_I_sig_ofdm_dom_tempo-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/DDO-OFDM_I_sig_ofdm_dom_tempo-eps-converted-to
+.pdf used on input line 507.
+(pdftex.def)             Requested size: 409.49722pt x 101.38254pt.
+Package epstopdf Info: Source file: <Figures/DDO-OFDM_I_sig_ofdm_dom_frequencia
+.eps>
+(epstopdf)                    date: 2014-06-27 00:34:28
+(epstopdf)                    size: 191294 bytes
+(epstopdf)             Output file: <Figures/DDO-OFDM_I_sig_ofdm_dom_frequencia
+-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-06-27 00:34:28
+(epstopdf)                    size: 114214 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figures/DDO-OFDM_I_sig_ofdm
+_dom_frequencia-eps-converted-to.pdf Figures/DDO-OFDM_I_sig_ofdm_dom_frequencia
+.eps>
+(epstopdf)             \includegraphics on input line 513.
+Package epstopdf Info: Output file is already uptodate.
+
+<Figures/DDO-OFDM_I_sig_ofdm_dom_frequencia-eps-converted-to.pdf, id=1628, 933.
+4875pt x 231.86626pt>
+File: Figures/DDO-OFDM_I_sig_ofdm_dom_frequencia-eps-converted-to.pdf Graphic f
+ile (type pdf)
+
+<use Figures/DDO-OFDM_I_sig_ofdm_dom_frequencia-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/DDO-OFDM_I_sig_ofdm_dom_frequencia-eps-convert
+ed-to.pdf used on input line 513.
+(pdftex.def)             Requested size: 409.49722pt x 101.71365pt.
+ [65 <C:/Users/Thiago/sourceText/MasterThesis/Figures/DDO-OFDM_I_Tx_Ig.pdf, pag
+e is rotated 270 degrees> <C:/Users/Thiago/sourceText/MasterThesis/Figures/DDO-
+OFDM_I_Tx_Aliasing.pdf>] <Figures/DDO-OFDM_I_Rx.pdf, id=1674, 790.99513pt x 512
+.1534pt>
+File: Figures/DDO-OFDM_I_Rx.pdf Graphic file (type pdf)
+
+<use Figures/DDO-OFDM_I_Rx.pdf>
+Package pdftex.def Info: Figures/DDO-OFDM_I_Rx.pdf used on input line 555.
+(pdftex.def)             Requested size: 455.0pt x 294.61095pt.
+ [66 <C:/Users/Thiago/sourceText/MasterThesis/Figures/DDO-OFDM_I_sig_ofdm_dom_t
+empo-eps-converted-to.pdf> <C:/Users/Thiago/sourceText/MasterThesis/Figures/DDO
+-OFDM_I_sig_ofdm_dom_frequencia-eps-converted-to.pdf>] [67 <C:/Users/Thiago/sou
+rceText/MasterThesis/Figures/DDO-OFDM_I_Rx.pdf>]
+Package epstopdf Info: Source file: <Figures/DDO-OFDM_I_sig_ofdm_dom_tempo_rece
+bido_dpo.eps>
+(epstopdf)                    date: 2014-06-27 00:34:23
+(epstopdf)                    size: 249766 bytes
+(epstopdf)             Output file: <Figures/DDO-OFDM_I_sig_ofdm_dom_tempo_rece
+bido_dpo-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-06-27 00:34:26
+(epstopdf)                    size: 120478 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figures/DDO-OFDM_I_sig_ofdm
+_dom_tempo_recebido_dpo-eps-converted-to.pdf Figures/DDO-OFDM_I_sig_ofdm_dom_te
+mpo_recebido_dpo.eps>
+(epstopdf)             \includegraphics on input line 650.
+Package epstopdf Info: Output file is already uptodate.
+
+<Figures/DDO-OFDM_I_sig_ofdm_dom_tempo_recebido_dpo-eps-converted-to.pdf, id=17
+32, 1021.8175pt x 210.7875pt>
+File: Figures/DDO-OFDM_I_sig_ofdm_dom_tempo_recebido_dpo-eps-converted-to.pdf G
+raphic file (type pdf)
+
+<use Figures/DDO-OFDM_I_sig_ofdm_dom_tempo_recebido_dpo-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/DDO-OFDM_I_sig_ofdm_dom_tempo_recebido_dpo-eps
+-converted-to.pdf used on input line 650.
+(pdftex.def)             Requested size: 409.49722pt x 84.4711pt.
+Package epstopdf Info: Source file: <Figures/DDO-OFDM_I_sig_ofdm_dom_tempo_rece
+bido_trat.eps>
+(epstopdf)                    date: 2014-06-27 00:34:29
+(epstopdf)                    size: 216921 bytes
+(epstopdf)             Output file: <Figures/DDO-OFDM_I_sig_ofdm_dom_tempo_rece
+bido_trat-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-06-27 00:38:10
+(epstopdf)                    size: 131971 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figures/DDO-OFDM_I_sig_ofdm
+_dom_tempo_recebido_trat-eps-converted-to.pdf Figures/DDO-OFDM_I_sig_ofdm_dom_t
+empo_recebido_trat.eps>
+(epstopdf)             \includegraphics on input line 656.
+Package epstopdf Info: Output file is already uptodate.
+
+<Figures/DDO-OFDM_I_sig_ofdm_dom_tempo_recebido_trat-eps-converted-to.pdf, id=1
+733, 1015.795pt x 212.795pt>
+File: Figures/DDO-OFDM_I_sig_ofdm_dom_tempo_recebido_trat-eps-converted-to.pdf 
+Graphic file (type pdf)
+
+<use Figures/DDO-OFDM_I_sig_ofdm_dom_tempo_recebido_trat-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/DDO-OFDM_I_sig_ofdm_dom_tempo_recebido_trat-ep
+s-converted-to.pdf used on input line 656.
+(pdftex.def)             Requested size: 409.49722pt x 85.7821pt.
+Package epstopdf Info: Source file: <Figures/DDO-OFDM_I_sig_ofdm_dom_frequencia
+_recebido.eps>
+(epstopdf)                    date: 2014-06-27 00:34:25
+(epstopdf)                    size: 193407 bytes
+(epstopdf)             Output file: <Figures/DDO-OFDM_I_sig_ofdm_dom_frequencia
+_recebido-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-06-27 00:34:32
+(epstopdf)                    size: 115166 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figures/DDO-OFDM_I_sig_ofdm
+_dom_frequencia_recebido-eps-converted-to.pdf Figures/DDO-OFDM_I_sig_ofdm_dom_f
+requencia_recebido.eps>
+(epstopdf)             \includegraphics on input line 663.
+Package epstopdf Info: Output file is already uptodate.
+
+<Figures/DDO-OFDM_I_sig_ofdm_dom_frequencia_recebido-eps-converted-to.pdf, id=1
+734, 1018.80624pt x 232.87pt>
+File: Figures/DDO-OFDM_I_sig_ofdm_dom_frequencia_recebido-eps-converted-to.pdf 
+Graphic file (type pdf)
+
+<use Figures/DDO-OFDM_I_sig_ofdm_dom_frequencia_recebido-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/DDO-OFDM_I_sig_ofdm_dom_frequencia_recebido-ep
+s-converted-to.pdf used on input line 663.
+(pdftex.def)             Requested size: 409.49722pt x 93.60117pt.
+
+[68] [69 <C:/Users/Thiago/sourceText/MasterThesis/Figures/DDO-OFDM_I_sig_ofdm_d
+om_tempo_recebido_dpo-eps-converted-to.pdf> <C:/Users/Thiago/sourceText/MasterT
+hesis/Figures/DDO-OFDM_I_sig_ofdm_dom_tempo_recebido_trat-eps-converted-to.pdf>
+ <C:/Users/Thiago/sourceText/MasterThesis/Figures/DDO-OFDM_I_sig_ofdm_dom_frequ
+encia_recebido-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <Figures/DDO-OFDM_I_constelacao.eps>
+(epstopdf)                    date: 2014-06-27 00:34:30
+(epstopdf)                    size: 639489 bytes
+(epstopdf)             Output file: <Figures/DDO-OFDM_I_constelacao-eps-convert
+ed-to.pdf>
+(epstopdf)                    date: 2014-06-27 00:38:11
+(epstopdf)                    size: 203026 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figures/DDO-OFDM_I_constela
+cao-eps-converted-to.pdf Figures/DDO-OFDM_I_constelacao.eps>
+(epstopdf)             \includegraphics on input line 814.
+Package epstopdf Info: Output file is already uptodate.
+
+<Figures/DDO-OFDM_I_constelacao-eps-converted-to.pdf, id=1761, 619.31375pt x 43
+1.6125pt>
+File: Figures/DDO-OFDM_I_constelacao-eps-converted-to.pdf Graphic file (type pd
+f)
+ <use Figures/DDO-OFDM_I_constelacao-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/DDO-OFDM_I_constelacao-eps-converted-to.pdf us
+ed on input line 814.
+(pdftex.def)             Requested size: 273.00278pt x 190.26572pt.
+ [70 <C:/Users/Thiago/sourceText/MasterThesis/Figures/DDO-OFDM_I_constelacao-ep
+s-converted-to.pdf>]
+<Figures/DDO-OFDM_II_DAC_analog.pdf, id=1773, 312.92911pt x 284.62335pt>
+File: Figures/DDO-OFDM_II_DAC_analog.pdf Graphic file (type pdf)
+
+<use Figures/DDO-OFDM_II_DAC_analog.pdf>
+Package pdftex.def Info: Figures/DDO-OFDM_II_DAC_analog.pdf used on input line 
+858.
+(pdftex.def)             Requested size: 195.64667pt x 177.94995pt.
+
+<Figures/DDO-OFDM_II_DAC_digital.pdf, id=1774, 369.90193pt x 284.62335pt>
+File: Figures/DDO-OFDM_II_DAC_digital.pdf Graphic file (type pdf)
+
+<use Figures/DDO-OFDM_II_DAC_digital.pdf>
+Package pdftex.def Info: Figures/DDO-OFDM_II_DAC_digital.pdf used on input line
+ 864.
+(pdftex.def)             Requested size: 222.9525pt x 171.55272pt.
+
+<Figures/DDO-OFDM_II_Tx.pdf, id=1777, 870.61258pt x 549.13156pt>
+File: Figures/DDO-OFDM_II_Tx.pdf Graphic file (type pdf)
+
+<use Figures/DDO-OFDM_II_Tx.pdf>
+Package pdftex.def Info: Figures/DDO-OFDM_II_Tx.pdf used on input line 887.
+(pdftex.def)             Requested size: 455.0pt x 286.99126pt.
+ [71 <C:/Users/Thiago/sourceText/MasterThesis/Figures/DDO-OFDM_II_DAC_analog.pd
+f> <C:/Users/Thiago/sourceText/MasterThesis/Figures/DDO-OFDM_II_DAC_digital.pdf
+
+
+pdfTeX warning: pdflatex.exe (file C:/Users/Thiago/sourceText/MasterThesis/Figu
+res/DDO-OFDM_II_DAC_digital.pdf): PDF inclusion: multiple pdfs with page group 
+included in a single page
+>]
+<Figures/DDO-OFDM_II_Tx_IFFT_Shift_pt-br.pdf, id=1831, 910.48157pt x 625.97867p
+t>
+File: Figures/DDO-OFDM_II_Tx_IFFT_Shift_pt-br.pdf Graphic file (type pdf)
+ <use Figures/DDO-OFDM_II_Tx_IFFT_Shift_pt-br.pdf>
+Package pdftex.def Info: Figures/DDO-OFDM_II_Tx_IFFT_Shift_pt-br.pdf used on in
+put line 904.
+(pdftex.def)             Requested size: 455.0pt x 312.82619pt.
+Package epstopdf Info: Source file: <Figures/DDO-OFDM_II_sig_ofdm_dom_tempo.eps
+>
+(epstopdf)                    date: 2014-06-27 00:34:30
+(epstopdf)                    size: 215643 bytes
+(epstopdf)             Output file: <Figures/DDO-OFDM_II_sig_ofdm_dom_tempo-eps
+-converted-to.pdf>
+(epstopdf)                    date: 2014-06-27 00:38:12
+(epstopdf)                    size: 133011 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figures/DDO-OFDM_II_sig_ofd
+m_dom_tempo-eps-converted-to.pdf Figures/DDO-OFDM_II_sig_ofdm_dom_tempo.eps>
+(epstopdf)             \includegraphics on input line 925.
+Package epstopdf Info: Output file is already uptodate.
+
+<Figures/DDO-OFDM_II_sig_ofdm_dom_tempo-eps-converted-to.pdf, id=1834, 1018.806
+24pt x 231.86626pt>
+File: Figures/DDO-OFDM_II_sig_ofdm_dom_tempo-eps-converted-to.pdf Graphic file 
+(type pdf)
+
+<use Figures/DDO-OFDM_II_sig_ofdm_dom_tempo-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/DDO-OFDM_II_sig_ofdm_dom_tempo-eps-converted-t
+o.pdf used on input line 925.
+(pdftex.def)             Requested size: 409.49722pt x 93.19771pt.
+Package epstopdf Info: Source file: <Figures/DDO-OFDM_II_sig_ofdm_dom_frequenci
+a.eps>
+(epstopdf)                    date: 2014-06-27 00:34:29
+(epstopdf)                    size: 235315 bytes
+(epstopdf)             Output file: <Figures/DDO-OFDM_II_sig_ofdm_dom_frequenci
+a-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-06-27 00:34:30
+(epstopdf)                    size: 137523 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figures/DDO-OFDM_II_sig_ofd
+m_dom_frequencia-eps-converted-to.pdf Figures/DDO-OFDM_II_sig_ofdm_dom_frequenc
+ia.eps>
+(epstopdf)             \includegraphics on input line 931.
+Package epstopdf Info: Output file is already uptodate.
+
+<Figures/DDO-OFDM_II_sig_ofdm_dom_frequencia-eps-converted-to.pdf, id=1835, 101
+6.79875pt x 231.86626pt>
+File: Figures/DDO-OFDM_II_sig_ofdm_dom_frequencia-eps-converted-to.pdf Graphic 
+file (type pdf)
+
+<use Figures/DDO-OFDM_II_sig_ofdm_dom_frequencia-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/DDO-OFDM_II_sig_ofdm_dom_frequencia-eps-conver
+ted-to.pdf used on input line 931.
+(pdftex.def)             Requested size: 409.49722pt x 93.37814pt.
+ [72 <C:/Users/Thiago/sourceText/MasterThesis/Figures/DDO-OFDM_II_Tx.pdf>] [73 
+<C:/Users/Thiago/sourceText/MasterThesis/Figures/DDO-OFDM_II_Tx_IFFT_Shift_pt-b
+r.pdf> <C:/Users/Thiago/sourceText/MasterThesis/Figures/DDO-OFDM_II_sig_ofdm_do
+m_tempo-eps-converted-to.pdf> <C:/Users/Thiago/sourceText/MasterThesis/Figures/
+DDO-OFDM_II_sig_ofdm_dom_frequencia-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <Figures/DDO-OFDM_II_sig_ofdm_dom_tempo_rec
+ebido_trat.eps>
+(epstopdf)                    date: 2014-06-27 00:34:29
+(epstopdf)                    size: 264900 bytes
+(epstopdf)             Output file: <Figures/DDO-OFDM_II_sig_ofdm_dom_tempo_rec
+ebido_trat-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-06-27 00:38:13
+(epstopdf)                    size: 160108 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figures/DDO-OFDM_II_sig_ofd
+m_dom_tempo_recebido_trat-eps-converted-to.pdf Figures/DDO-OFDM_II_sig_ofdm_dom
+_tempo_recebido_trat.eps>
+(epstopdf)             \includegraphics on input line 968.
+Package epstopdf Info: Output file is already uptodate.
+
+<Figures/DDO-OFDM_II_sig_ofdm_dom_tempo_recebido_trat-eps-converted-to.pdf, id=
+1930, 1019.81pt x 230.8625pt>
+File: Figures/DDO-OFDM_II_sig_ofdm_dom_tempo_recebido_trat-eps-converted-to.pdf
+ Graphic file (type pdf)
+
+<use Figures/DDO-OFDM_II_sig_ofdm_dom_tempo_recebido_trat-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/DDO-OFDM_II_sig_ofdm_dom_tempo_recebido_trat-e
+ps-converted-to.pdf used on input line 968.
+(pdftex.def)             Requested size: 409.49722pt x 92.70267pt.
+<Figures/DDO-OFDM_II_signals.pdf, id=1931, 181.99995pt x 170.79811pt>
+File: Figures/DDO-OFDM_II_signals.pdf Graphic file (type pdf)
+
+<use Figures/DDO-OFDM_II_signals.pdf>
+Package pdftex.def Info: Figures/DDO-OFDM_II_signals.pdf used on input line 975
+.
+(pdftex.def)             Requested size: 227.5pt x 213.51534pt.
+
+<Figures/DDO-OFDM_II_Rx.pdf, id=1934, 790.99513pt x 512.1534pt>
+File: Figures/DDO-OFDM_II_Rx.pdf Graphic file (type pdf)
+
+<use Figures/DDO-OFDM_II_Rx.pdf>
+Package pdftex.def Info: Figures/DDO-OFDM_II_Rx.pdf used on input line 997.
+(pdftex.def)             Requested size: 455.0pt x 294.61095pt.
+ [74 <C:/Users/Thiago/sourceText/MasterThesis/Figures/DDO-OFDM_II_sig_ofdm_dom_
+tempo_recebido_trat-eps-converted-to.pdf> <C:/Users/Thiago/sourceText/MasterThe
+sis/Figures/DDO-OFDM_II_signals.pdf>] [75 <C:/Users/Thiago/sourceText/MasterThe
+sis/Figures/DDO-OFDM_II_Rx.pdf>]
+Package epstopdf Info: Source file: <Figures/DDO-OFDM_II_constelacao.eps>
+(epstopdf)                    date: 2014-06-27 00:34:27
+(epstopdf)                    size: 5498697 bytes
+(epstopdf)             Output file: <Figures/DDO-OFDM_II_constelacao-eps-conver
+ted-to.pdf>
+(epstopdf)                    date: 2014-06-27 00:38:21
+(epstopdf)                    size: 1668730 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figures/DDO-OFDM_II_constel
+acao-eps-converted-to.pdf Figures/DDO-OFDM_II_constelacao.eps>
+(epstopdf)             \includegraphics on input line 1045.
+Package epstopdf Info: Output file is already uptodate.
+
+<Figures/DDO-OFDM_II_constelacao-eps-converted-to.pdf, id=2011, 420.57124pt x 3
+16.18124pt>
+File: Figures/DDO-OFDM_II_constelacao-eps-converted-to.pdf Graphic file (type p
+df)
+ <use Figures/DDO-OFDM_II_constelacao-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/DDO-OFDM_II_constelacao-eps-converted-to.pdf u
+sed on input line 1045.
+(pdftex.def)             Requested size: 273.00278pt x 205.24037pt.
+ [76 <C:/Users/Thiago/sourceText/MasterThesis/Figures/DDO-OFDM_II_constelacao-e
+ps-converted-to.pdf>]) [77]
+(C:\Users\Thiago\sourceText\MasterThesis\Chap5_Optimization.tex [78
+
+
+
+]
+LaTeX Font Info:    Try loading font information for U+euf on input line 69.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\ueuf.fd"
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)
+Package epstopdf Info: Source file: <Figuras_TESE/Funcao_tranf_MZM2.eps>
+(epstopdf)                    date: 2014-06-27 00:34:24
+(epstopdf)                    size: 389775 bytes
+(epstopdf)             Output file: <Figuras_TESE/Funcao_tranf_MZM2-eps-convert
+ed-to.pdf>
+(epstopdf)                    date: 2014-06-27 00:34:25
+(epstopdf)                    size: 16719 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figuras_TESE/Funcao_tranf_M
+ZM2-eps-converted-to.pdf Figuras_TESE/Funcao_tranf_MZM2.eps>
+(epstopdf)             \includegraphics on input line 109.
+Package epstopdf Info: Output file is already uptodate.
+File: Figuras_TESE/Funcao_tranf_MZM2-eps-converted-to.pdf Graphic file (type pd
+f)
+
+<use Figuras_TESE/Funcao_tranf_MZM2-eps-converted-to.pdf>
+Package pdftex.def Info: Figuras_TESE/Funcao_tranf_MZM2-eps-converted-to.pdf us
+ed on input line 109.
+(pdftex.def)             Requested size: 419.96956pt x 220.0223pt.
+ [79] [80] [81]
+[82] [83]
+
+LaTeX Warning: Command \' invalid in math mode on input line 370.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 371.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 373.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 373.
+
+<Figures/GA_Table_info.pdf, id=2091, 963.6pt x 483.72722pt>
+File: Figures/GA_Table_info.pdf Graphic file (type pdf)
+
+<use Figures/GA_Table_info.pdf>
+Package pdftex.def Info: Figures/GA_Table_info.pdf used on input line 410.
+(pdftex.def)             Requested size: 455.0pt x 228.4073pt.
+ [84]pdfTeX warning (ext4): destination with the same identifier (name{equation
+.5.4.7}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.424 \begin{equation}
+                       [85 <C:/Users/Thiago/sourceText/MasterThesis/Figures/GA_
+Table_info.pdf>] [86]
+Package epstopdf Info: Source file: <Figures/DDO-OFDM_Experimento_Labtel_out201
+2_JMOe.eps>
+(epstopdf)                    date: 2014-06-27 00:34:32
+(epstopdf)                    size: 2140990 bytes
+(epstopdf)             Output file: <Figures/DDO-OFDM_Experimento_Labtel_out201
+2_JMOe-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-06-27 00:38:24
+(epstopdf)                    size: 315723 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figures/DDO-OFDM_Experiment
+o_Labtel_out2012_JMOe-eps-converted-to.pdf Figures/DDO-OFDM_Experimento_Labtel_
+out2012_JMOe.eps>
+(epstopdf)             \includegraphics on input line 571.
+Package epstopdf Info: Output file is already uptodate.
+
+<Figures/DDO-OFDM_Experimento_Labtel_out2012_JMOe-eps-converted-to.pdf, id=2144
+, 553.06625pt x 662.475pt>
+File: Figures/DDO-OFDM_Experimento_Labtel_out2012_JMOe-eps-converted-to.pdf Gra
+phic file (type pdf)
+
+<use Figures/DDO-OFDM_Experimento_Labtel_out2012_JMOe-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/DDO-OFDM_Experimento_Labtel_out2012_JMOe-eps-c
+onverted-to.pdf used on input line 571.
+(pdftex.def)             Requested size: 455.0pt x 545.00201pt.
+Package epstopdf Info: Source file: <Figures/Spectrums_Constelations.eps>
+(epstopdf)                    date: 2014-06-27 00:34:23
+(epstopdf)                    size: 611683 bytes
+(epstopdf)             Output file: <Figures/Spectrums_Constelations-eps-conver
+ted-to.pdf>
+(epstopdf)                    date: 2014-06-27 00:34:30
+(epstopdf)                    size: 1279767 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figures/Spectrums_Constelat
+ions-eps-converted-to.pdf Figures/Spectrums_Constelations.eps>
+(epstopdf)             \includegraphics on input line 592.
+Package epstopdf Info: Output file is already uptodate.
+
+<Figures/Spectrums_Constelations-eps-converted-to.pdf, id=2149, 516.93124pt x 4
+60.72125pt>
+File: Figures/Spectrums_Constelations-eps-converted-to.pdf Graphic file (type p
+df)
+ <use Figures/Spectrums_Constelations-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/Spectrums_Constelations-eps-converted-to.pdf u
+sed on input line 592.
+(pdftex.def)             Requested size: 413.54555pt x 368.5775pt.
+ [87]
+[88 <C:/Users/Thiago/sourceText/MasterThesis/Figures/DDO-OFDM_Experimento_Labte
+l_out2012_JMOe-eps-converted-to.pdf>] [89 <C:/Users/Thiago/sourceText/MasterThe
+sis/Figures/Spectrums_Constelations-eps-converted-to.pdf>]
+
+LaTeX Warning: Command \' invalid in math mode on input line 644.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 645.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 647.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 647.
+
+[90]
+Package epstopdf Info: Source file: <Figures/Curvas_otim_conv_f.eps>
+(epstopdf)                    date: 2014-06-27 00:34:23
+(epstopdf)                    size: 21943 bytes
+(epstopdf)             Output file: <Figures/Curvas_otim_conv_f-eps-converted-t
+o.pdf>
+(epstopdf)                    date: 2014-06-27 00:38:25
+(epstopdf)                    size: 8169 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figures/Curvas_otim_conv_f-
+eps-converted-to.pdf Figures/Curvas_otim_conv_f.eps>
+(epstopdf)             \includegraphics on input line 708.
+Package epstopdf Info: Output file is already uptodate.
+
+<Figures/Curvas_otim_conv_f-eps-converted-to.pdf, id=2216, 463.7325pt x 443.657
+5pt>
+File: Figures/Curvas_otim_conv_f-eps-converted-to.pdf Graphic file (type pdf)
+ <use Figures/Curvas_otim_conv_f-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/Curvas_otim_conv_f-eps-converted-to.pdf used o
+n input line 708.
+(pdftex.def)             Requested size: 417.35538pt x 399.28804pt.
+ [91 <C:/Users/Thiago/sourceText/MasterThesis/Figures/Curvas_otim_conv_f-eps-co
+nverted-to.pdf>])
+[92] (C:\Users\Thiago\sourceText\MasterThesis\Chap6_Conclusion.tex [93
+
+
+
+])
+[94] (C:\Users\Thiago\sourceText\MasterThesis\main.bbl
+(C:\Users\Thiago\sourceText\MasterThesis\main.brf)
+\tf@brf=\write5
+
+bibitemlist
+[95
+
+
+] [96]) [97]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\uppercase' on input line 417.
+
+[98
+
+
+] (C:\Users\Thiago\sourceText\MasterThesis\Appendix_A.tex
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <24.88> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 1.
+
+<Figures/DFB-Laser-pkg1.jpg, id=2329, 2007.5pt x 963.6pt>
+File: Figures/DFB-Laser-pkg1.jpg Graphic file (type jpg)
+
+<use Figures/DFB-Laser-pkg1.jpg>
+Package pdftex.def Info: Figures/DFB-Laser-pkg1.jpg used on input line 9.
+(pdftex.def)             Requested size: 181.99722pt x 87.3525pt.
+
+
+pdfTeX warning: pdflatex.exe (file C:/Users/Thiago/sourceText/MasterThesis/Figu
+res/DFB-Laser-pinout.pdf): PDF inclusion: found PDF version <1.6>, but at most 
+version <1.5> allowed
+<Figures/DFB-Laser-pinout.pdf, id=2331, 794.97pt x 614.295pt>
+File: Figures/DFB-Laser-pinout.pdf Graphic file (type pdf)
+
+<use Figures/DFB-Laser-pinout.pdf>
+Package pdftex.def Info: Figures/DFB-Laser-pinout.pdf used on input line 24.
+(pdftex.def)             Requested size: 386.75278pt x 298.86067pt.
+ [99
+
+
+ <C:/Users/Thiago/sourceText/MasterThesis/Figures/DFB-Laser-pkg1.jpg> <C:/Users
+/Thiago/sourceText/MasterThesis/Figures/DFB-Laser-pinout.pdf, page is rotated 2
+70 degrees>]
+<Figures/DFB-Laser-BlockDiagram_pt-br.pdf, id=2343, 682.95152pt x 398.32814pt>
+File: Figures/DFB-Laser-BlockDiagram_pt-br.pdf Graphic file (type pdf)
+
+<use Figures/DFB-Laser-BlockDiagram_pt-br.pdf>
+Package pdftex.def Info: Figures/DFB-Laser-BlockDiagram_pt-br.pdf used on input
+ line 43.
+(pdftex.def)             Requested size: 386.75278pt x 225.57245pt.
+
+<Figures/LaserBack2.png, id=2345, 795.72281pt x 400.49625pt>
+File: Figures/LaserBack2.png Graphic file (type png)
+
+<use Figures/LaserBack2.png>
+Package pdftex.def Info: Figures/LaserBack2.png used on input line 54.
+(pdftex.def)             Requested size: 386.75278pt x 194.65599pt.
+
+Overfull \hbox (5.72124pt too wide) in paragraph at lines 59--64
+\T1/lmr/m/n/12 cen-tral emi-tido pelo la-ser é re-a-li-zado pelo ana-li-sa-dor 
+de es-pec-tro óp-tico do mo-delo MS9740A
+ []
+
+[100 <C:/Users/Thiago/sourceText/MasterThesis/Figures/DFB-Laser-BlockDiagram_pt
+-br.pdf> <C:/Users/Thiago/sourceText/MasterThesis/Figures/LaserBack2.png>]
+<Figures/DFB-Laser_spectrumAnalizer_inv.png, id=2364, 517.935pt x 347.79938pt>
+File: Figures/DFB-Laser_spectrumAnalizer_inv.png Graphic file (type png)
+
+<use Figures/DFB-Laser_spectrumAnalizer_inv.png>
+Package pdftex.def Info: Figures/DFB-Laser_spectrumAnalizer_inv.png used on inp
+ut line 67.
+(pdftex.def)             Requested size: 455.0pt x 305.5496pt.
+
+<Figures/Copy20131118_006.png, id=2365, 436.63126pt x 264.23718pt>
+File: Figures/Copy20131118_006.png Graphic file (type png)
+
+<use Figures/Copy20131118_006.png>
+Package pdftex.def Info: Figures/Copy20131118_006.png used on input line 97.
+(pdftex.def)             Requested size: 218.39806pt x 132.16664pt.
+
+<Figures/Copy20131118_009.png, id=2366, 436.63126pt x 264.99pt>
+File: Figures/Copy20131118_009.png Graphic file (type png)
+
+<use Figures/Copy20131118_009.png>
+Package pdftex.def Info: Figures/Copy20131118_009.png used on input line 102.
+(pdftex.def)             Requested size: 218.39806pt x 132.54318pt.
+
+<Figures/Copy20131118_012.png, id=2367, 436.63126pt x 264.99pt>
+File: Figures/Copy20131118_012.png Graphic file (type png)
+
+<use Figures/Copy20131118_012.png>
+Package pdftex.def Info: Figures/Copy20131118_012.png used on input line 107.
+(pdftex.def)             Requested size: 218.39806pt x 132.54318pt.
+
+<Figures/Copy20131118_015.png, id=2368, 437.38406pt x 263.48438pt>
+File: Figures/Copy20131118_015.png Graphic file (type png)
+
+<use Figures/Copy20131118_015.png>
+Package pdftex.def Info: Figures/Copy20131118_015.png used on input line 112.
+(pdftex.def)             Requested size: 218.39806pt x 131.56496pt.
+
+<Figures/Copy20131118_018.png, id=2369, 437.38406pt x 264.99pt>
+File: Figures/Copy20131118_018.png Graphic file (type png)
+
+<use Figures/Copy20131118_018.png>
+Package pdftex.def Info: Figures/Copy20131118_018.png used on input line 117.
+(pdftex.def)             Requested size: 218.39806pt x 132.31676pt.
+
+<Figures/Copy20131118_021.png, id=2370, 437.38406pt x 264.23718pt>
+File: Figures/Copy20131118_021.png Graphic file (type png)
+
+<use Figures/Copy20131118_021.png>
+Package pdftex.def Info: Figures/Copy20131118_021.png used on input line 122.
+(pdftex.def)             Requested size: 218.39806pt x 131.94086pt.
+
+<Figures/Copy20131118_024.png, id=2371, 437.38406pt x 264.23718pt>
+File: Figures/Copy20131118_024.png Graphic file (type png)
+
+<use Figures/Copy20131118_024.png>
+Package pdftex.def Info: Figures/Copy20131118_024.png used on input line 127.
+(pdftex.def)             Requested size: 218.39806pt x 131.94086pt.
+
+<Figures/Copy20131118_027.png, id=2372, 437.38406pt x 264.99pt>
+File: Figures/Copy20131118_027.png Graphic file (type png)
+
+<use Figures/Copy20131118_027.png>
+Package pdftex.def Info: Figures/Copy20131118_027.png used on input line 132.
+(pdftex.def)             Requested size: 218.39806pt x 132.31676pt.
+
+<Figures/Copy20131118_030.png, id=2373, 437.38406pt x 264.99pt>
+File: Figures/Copy20131118_030.png Graphic file (type png)
+
+<use Figures/Copy20131118_030.png>
+Package pdftex.def Info: Figures/Copy20131118_030.png used on input line 137.
+(pdftex.def)             Requested size: 218.39806pt x 132.31676pt.
+
+<Figures/Copy20131118_033.png, id=2374, 437.38406pt x 264.23718pt>
+File: Figures/Copy20131118_033.png Graphic file (type png)
+
+<use Figures/Copy20131118_033.png>
+Package pdftex.def Info: Figures/Copy20131118_033.png used on input line 142.
+(pdftex.def)             Requested size: 218.39806pt x 131.94086pt.
+
+
+LaTeX Warning: Float too large for page by 56.03659pt on input line 145.
+
+
+
+pdfTeX warning: pdflatex.exe (file C:/Users/Thiago/sourceText/MasterThesis/Figu
+res/Laser.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.
+5> allowed
+<Figures/Laser.pdf, id=2375, 845.0471pt x 597.50829pt>
+File: Figures/Laser.pdf Graphic file (type pdf)
+ <use Figures/Laser.pdf>
+Package pdftex.def Info: Figures/Laser.pdf used on input line 148.
+(pdftex.def)             Requested size: 845.04504pt x 597.50682pt.
+
+
+pdfTeX warning: pdflatex.exe (file C:/Users/Thiago/sourceText/MasterThesis/Figu
+res/Laser.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.
+5> allowed
+File: Figures/Laser.pdf Graphic file (type pdf)
+<use Figures/Laser.pdf>
+Package pdftex.def Info: Figures/Laser.pdf used on input line 148.
+(pdftex.def)             Requested size: 845.04504pt x 597.50682pt.
+
+
+pdfTeX warning: pdflatex.exe (file C:/Users/Thiago/sourceText/MasterThesis/Figu
+res/Laser.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.
+5> allowed
+[101 <C:/Users/Thiago/sourceText/MasterThesis/Figures/DFB-Laser_spectrumAnalize
+r_inv.png>] [102 <C:/Users/Thiago/sourceText/MasterThesis/Figures/Copy20131118_
+006.png> <C:/Users/Thiago/sourceText/MasterThesis/Figures/Copy20131118_009.png>
+ <C:/Users/Thiago/sourceText/MasterThesis/Figures/Copy20131118_012.png> <C:/Use
+rs/Thiago/sourceText/MasterThesis/Figures/Copy20131118_015.png> <C:/Users/Thiag
+o/sourceText/MasterThesis/Figures/Copy20131118_018.png> <C:/Users/Thiago/source
+Text/MasterThesis/Figures/Copy20131118_021.png> <C:/Users/Thiago/sourceText/Mas
+terThesis/Figures/Copy20131118_024.png> <C:/Users/Thiago/sourceText/MasterThesi
+s/Figures/Copy20131118_027.png> <C:/Users/Thiago/sourceText/MasterThesis/Figure
+s/Copy20131118_030.png> <C:/Users/Thiago/sourceText/MasterThesis/Figures/Copy20
+131118_033.png>]
+
+pdfTeX warning: pdflatex.exe (file C:/Users/Thiago/sourceText/MasterThesis/Figu
+res/Laser.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.
+5> allowed
+<Figures/Laser.pdf, id=2399, page=1, 845.0471pt x 597.50829pt>
+File: Figures/Laser.pdf Graphic file (type pdf)
+
+<use Figures/Laser.pdf, page 1>
+Package pdftex.def Info: Figures/Laser.pdf, page1 used on input line 148.
+(pdftex.def)             Requested size: 845.04504pt x 597.50682pt.
+File: Figures/Laser.pdf Graphic file (type pdf)
+ <use Figures/Laser.pdf, page 1>
+Package pdftex.def Info: Figures/Laser.pdf, page1 used on input line 148.
+(pdftex.def)             Requested size: 845.04504pt x 597.50682pt.
+File: Figures/Laser.pdf Graphic file (type pdf)
+
+<use Figures/Laser.pdf, page 1>
+Package pdftex.def Info: Figures/Laser.pdf, page1 used on input line 148.
+(pdftex.def)             Requested size: 845.04504pt x 597.50682pt.
+File: Figures/Laser.pdf Graphic file (type pdf)
+ <use Figures/Laser.pdf, page 1>
+Package pdftex.def Info: Figures/Laser.pdf, page1 used on input line 148.
+(pdftex.def)             Requested size: 845.04504pt x 597.50682pt.
+File: Figures/Laser.pdf Graphic file (type pdf)
+
+<use Figures/Laser.pdf, page 1>
+Package pdftex.def Info: Figures/Laser.pdf, page1 used on input line 148.
+(pdftex.def)             Requested size: 845.04504pt x 597.50682pt.
+ [103 <C:/Users/Thiago/sourceText/MasterThesis/Figures/Laser.pdf>]) (C:\Users\T
+hiago\sourceText\MasterThesis\main.ind)
+
+AED: lastpage setting LastPage
+\tf@lof=\write6
+\tf@lot=\write7
+\tf@toc=\write8
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 447.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 447.
+(C:\Users\Thiago\sourceText\MasterThesis\main.aux
+(C:\Users\Thiago\sourceText\MasterThesis\folhaAprovacao.aux)
+(C:\Users\Thiago\sourceText\MasterThesis\Dedication.aux)
+(C:\Users\Thiago\sourceText\MasterThesis\Acknowledgments.aux)
+(C:\Users\Thiago\sourceText\MasterThesis\Epigraph.aux)
+(C:\Users\Thiago\sourceText\MasterThesis\Resumo.aux)
+(C:\Users\Thiago\sourceText\MasterThesis\Abstract.aux)
+(C:\Users\Thiago\sourceText\MasterThesis\acronimos.aux)
+(C:\Users\Thiago\sourceText\MasterThesis\Chap1_Introduction.aux)
+(C:\Users\Thiago\sourceText\MasterThesis\Chap2_Multicarrier_Modulation.aux)
+(C:\Users\Thiago\sourceText\MasterThesis\Chap3_Optical_Communication.aux)
+(C:\Users\Thiago\sourceText\MasterThesis\Chap4_Experimental_Setup.aux)
+(C:\Users\Thiago\sourceText\MasterThesis\Chap5_Optimization.aux)
+(C:\Users\Thiago\sourceText\MasterThesis\Chap6_Conclusion.aux)
+(C:\Users\Thiago\sourceText\MasterThesis\Appendix_A.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 447.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 447.
+Package rerunfilecheck Info: File `main.brf' has not changed.
+(rerunfilecheck)             Checksum: 2D5B4321FCE9938B657631A4CFC1C4FE;4375.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 447.
+ ) 
 Here is how much of TeX's memory you used:
- 8949 strings out of 493921
- 128869 string characters out of 3147279
- 236780 words of memory out of 3000000
- 12213 multiletter control sequences out of 15000+200000
- 5002 words of font info for 17 fonts, out of 3000000 for 9000
+ 15298 strings out of 493921
+ 239369 string characters out of 3147279
+ 471669 words of memory out of 3000000
+ 17729 multiletter control sequences out of 15000+200000
+ 122348 words of font info for 88 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 39i,1n,30p,218b,62s stack positions out of 5000i,500n,10000p,200000b,50000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 47i,20n,52p,1372b,623s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/M
+iKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX 2.9/fonts/e
+nc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit
+.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathex.enc}<C:/Program 
+Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
+/euler/eufm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/lm/lmbxi10.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/lm/lmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/l
+m/lmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi12.pfb><C:/
+Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi6.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
+/public/lm/lmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr12.p
+fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr6.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/
+type1/public/lm/lmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr
+i10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Progr
+am Files/MiKTeX 2.9/fonts/type1/public/lm/lmri8.pfb><C:/Program Files/MiKTeX 2.
+9/fonts/type1/public/lm/lmss10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/lm/lmss12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmss17.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmssbo10.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/lm/lmsso10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/lm/lmsso12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsso17.pf
+b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/lm/lmsy6.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/lm/lmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/
+lmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam
+10.pfb>
+Output written on main.pdf (104 pages, 17568134 bytes).
+PDF statistics:
+ 2810 PDF objects out of 2984 (max. 8388607)
+ 366 named destinations out of 1000 (max. 500000)
+ 987 words of extra memory for PDF output out of 10000 (max. 10000000)
+

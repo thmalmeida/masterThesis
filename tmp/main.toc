@@ -54,7 +54,7 @@
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase {Otimiza\c c\~ao do Desempenho de Sistemas DDO-OFDM}}{78}{chapter.5}
 \contentsline {section}{\numberline {5.1}Introdu\c c\~ao}{78}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Declara\c c\~ao do Problema}{79}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.1}Escolha dos Par\^ametros Relevantes para a Otimiza\c c\~ao do Sistema DDO-OFDM}{79}{subsection.5.1.1}
 \contentsline {section}{\numberline {5.2}Otimiza\c c\~ao Mono-Objetivo via Algoritmo Gen\'etico}{81}{section.5.2}
 \contentsline {subsection}{\numberline {5.2.1}Algoritmos Gen\'eticos}{81}{subsection.5.2.1}
 \contentsline {subsubsection}{\numberline {5.2.1.1}Mecanismos de Sele\c c\~ao}{82}{subsubsection.5.2.1.1}
