@@ -29,6 +29,11 @@
 {BINH, L.~N. \emph{Digital Optical Communications}. [S.l.]: CRC Press, 2009.
 ISBN 978-1-4200-8205-0.}
 
+\bibitem[Binh 2010]{Binh_FiberBook}
+\abntrefinfo{Binh}{BINH}{2010}
+{BINH, L.~N. \emph{Optical Fiber Communications Systems : Theory and Practice
+  with MATLAB and Simulink Models}. [S.l.]: CRC Press, 2010.}
+
 \bibitem[Cioffi 2003]{Cioffi_notas_aula}
 \abntrefinfo{Cioffi}{CIOFFI}{2003}
 {CIOFFI, J.~M. Digital communications, chapter 4: Multichannel modulation.
@@ -219,10 +224,23 @@ ISBN 978-0-12-374879-9.}
 {SILVA, J.~L. et al. Técnica {OFDM} aplicada a power line communications.
 \emph{II Citenel.}, v.~2, p. 1071--1074, Novembro 2003.}
 
+\bibitem[Urick, Qiu e Bucholtz 2004]{art:EVM_wide-band}
+\abntrefinfo{Urick, Qiu e Bucholtz}{URICK; QIU; BUCHOLTZ}{2004}
+{URICK, V.~J.; QIU, J.~X.; BUCHOLTZ, F. Wide-band qam-over-fiber using phase
+  modulation and interferometric demodulation.
+\emph{IEEE Photonics Technology Letters, Vol. 16, No. 10, OCTOBER 2004}, p.
+  2374--2376, 2004.}
+
 \bibitem[Wei-Ren et al. 2009]{WilnnerJLT09_02}
 \abntrefinfo{Wei-Ren et al.}{WEI-REN et al.}{2009}
 {WEI-REN, P. et al. Theoretical and experimental investigations of
   direct-detected {RF}-tone-assisted optical {OFDM} systems.
 \emph{Journal of Lightwave Technology}, v.~27, n.~10, p. 1332--1339, 2009.}
+
+\bibitem[Zhao e Baxley 2006]{art:EVM_OFDM}
+\abntrefinfo{Zhao e Baxley}{ZHAO; BAXLEY}{2006}
+{ZHAO, C.; BAXLEY, R.~J. Error vector magnitude analysis for ofdm systems.
+\emph{Signals, Systems and Computers, 2006. ACSSC '06. Fortieth Asilomar
+  Conference}, p. 1830--1834, 2006.}
 
 \end{thebibliography}

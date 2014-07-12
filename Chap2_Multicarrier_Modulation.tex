@@ -666,79 +666,201 @@ freqüência do padrão IEEE 802.11a.}
 \section{Métricas de Avaliação de Desempenho de Sistemas OFDM}
 
 Os métodos mais comuns de análise de desempenho a nível de camada física são a
-taxa de erro de bits (\textit{Bit Error Rate} ou \textit{Bit Error Ratio} -
-BER), e pelo vetor de erro de magnitude (\textit{Error Vector Magnitude} - EVM).
-O mais comumente utilizado é o BER, porém, com o aumento das taxas de
-transmissão e baixas taxas de erro de bit essa métrica fica custosa
-computacionalmente. Entretanto, para taxas de erro muito baixas, torna
-inviável a avaliação por BER para pequenas modificações no sistema de
-transmissão. Portanto, a métrica EVM torna-se uma boa alternativa de análise de
-desempenho de sistemas multiportadora.
+taxa de erro de bit (\textit{Bit Error Rate} ou \textit{Bit Error Ratio} - BER)
+e o vetor de erro de magnitude (\textit{Error Vector Magnitude} - EVM). O mais
+comumente utilizado é o BER, porém, com o aumento das taxas de transmissão e
+baixas taxas de erro de bit essa métrica torna-se custosa computacionalmente.
+Entretanto, para taxas de erro muito baixas, torna inviável a avaliação por BER
+para pequenas modificações no sistema de transmissão. Portanto, a métrica EVM
+torna-se uma boa alternativa de análise de desempenho de sistemas
+multiportadora.
 
-Em função obter detalhes da métrica EVM, considere o quadrante da Figura
+\subsection{EVM \textit{Error Vector Magnitude}}
+Em função de obter melhores detalhes para futura utilização, é detalhada nesta
+subseção as definições da métrica EVM. Considere o quadrante da Figura
 \ref{constel}, onde são apresentados o vetor de referência $X_k$ relativo a um
-dos possíveis  símbolos transmitidos (sinal ideal) de coordenadas $X_I = 1$ e
-$X_Q = j$, para $j = sqrt{-1}$ assim como o vetor $Y_k$ medido com
-coordenadas $Y_I$ e $Y_Q$. O vetor de erro $D_k = Y_k - X_k$, o qual representa
-a distância Euclidiana entre tais sinais. Sendo cada ponto do plano I
-(\textit{In phase}) versus Q (\textit{Quadrature}) a especificação de um dos
-$2^m$ possíveis símbolos gerados pela combinação de $m$ bits, qualquer
-distorçãoqualqer desvio neste pon
-
-Para um melhor entendimento do proce
-
-
-% \subsubsection{\textit{Vetor de Erro de Magnitude} - (EVM)}
-A taxa de erro BER é medida mediante a contagem direta de erro entre os bits
-transmitidos e recebidos, uma vez que os bits transmitidos são armazenados
-durante a transmissão. Para um melhor entendimento do valor EVM utilizado para
-análise de desempenho do sistema, considere um quadrante do diagrama de
-constelação da Figura \ref{constel}, onde são apresentados o vetor de referência
-$X_k$ relativo a um dos possíveis símbolos transmitidos (sinal ideal) de
-coordenadas $X_I = 1$ e $X_Q = j$, para $j = \sqrt{-1}$, o vetor medido $Y_k$
-que ilustra a trajetória de um símbolo recebido (sinal medido) de coordenadas
-$(Y_I,Y_Q)$, e o vetor de erro $D_k = Y_k - X_k$, o qual representa a distancia
-Euclidiana entre tais sinais. Sendo cada ponto do plano I (\emph{In phase})
-versus Q (\emph{Quadrature}) a especificação de um dos $2^m$ possíveis símbolos
-gerados pela combinação de $m$ bits, qualquer desvio neste provocado por ruído
-ou distorção, linear ou não, inerentes aos sistemas de telecomunicações, cria
-uma distancia escalar entre os referidos fasores cuja magnitude de erro $E_k =
-|Y_k| - |X_k|$ e o erro de fase $\phi_k = \angle(Y_k) - \angle(X_k)$ são
-perfeitamente mensuráveis pela métrica EVM \cite{jair_SBRT09}.
+dos possíveis símbolos transmitidos (sinal ideal) de coordenadas $X_I = 1$ e
+$X_Q = j$, para $j = sqrt{-1}$ assim como o vetor $Y_k$ medido com coordenadas
+$Y_I$ e $Y_Q$. O vetor da distância euclidiana $D_k = Y_k - X_k$, o qual
+representa o erro entre tais sinais. Sendo cada ponto do plano I (\textit{In
+phase}) versus Q (\textit{Quadrature}) a especificação de um dos $2^m$ possíveis
+símbolos gerados pela combinação de $m$ bits, qualquer distorção inerente da
+transmissão, cria uma distância escalar entre os referidos fasores cuja
+magnitude de erro $E_k = |Y_k| - |X_k|$ e o erro de fase $\phi_k = \angle(Y_k) -
+\angle(X_k)$ são perfeitamente mensuráveis pela métrica EVM
+\cite{jair_SBRT09} \cite{art:EVM_OFDM}.
 
 \begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=0.5\textwidth]{Figures/constel.eps}
-\caption{Diagrama de constelacao ilustrativo.} \label{constel}
-\end{center}
+	\begin{center}
+		\includegraphics[width=0.4\textwidth]{Figures/constel.eps}
+		\caption{Diagrama de constelacao ilustrativo.} \label{constel}
+	\end{center}
 \end{figure}
 
 Portanto, como distância escalar - magnitude do vetor diferença - entre dois
 fasores, a EVM pode ser definida como o valor RMS (\emph{root-mean-square}) da
 diferença entre um conjunto de símbolos medidos e um conjunto de símbolos
 transmitidos, matematicamente expresso pela relação,
+
 \begin{equation}
 EVM = \left[\frac{\frac{1}{N}\sum_{k=0}^{N-1} |Y_k - X_k|^2}{\frac{1}{N}\sum_{i=0}^{N-1} |X_k|^2}\right]^{\frac{1}{2}}
  \label{eq_evm_1}
 \end{equation}
+
 onde $N$ representa a quantidade de símbolos transmitidos/recebidos, $X_k = X_I
 + jX_Q$ e $Y_k = Y_I + jY_Q$ os símbolos complexos ideais e medidos
 respectivamente \cite{art:EVM_BER_SNR}, \cite{art:EVM_Calc_Broadband}.
+Entretanto, é comum econtrar na literatura a definição matemática da EVM
+conforme
 
+\begin{equation}
+EVM = \sqrt{\frac{\frac{1}{N}\sum_{k=0}^{N-1}|D_k|^2}{X_{max}^2}}
+\end{equation}
+
+Para comparar os simbolos transmitidos e recebidos é necessário normalizá-los de
+tal forma que o valor médio quadrático da amplitude de todos os possíveis
+símbolos da constelação seja unitário. Para tal, divide-se a potência de cada
+símbolo medido $P_{Y_k}$ pela potência média do total destes, $P_{Y_{méd}}$,
+obtendo-se $P_{Y_{méd}} = \frac{P_{Y_k}}{P_{Y_{méd}}}$, sendo
+
+\begin{equation}
+P_{Y_{méd}} = \frac{\frac{1}{N}\sum_{k=0}^{N-1}\left [ (Y_I)^2 + (Y_Q)^2
+\right]}{N}
+\end{equation}
+
+para $Y_I$ e $Y_Q$ os componentes em fase e quadratura dos níveis de tensão dos
+$N$ símbolos recebidos. Da mesma maneira obtém-se $P_{X_{méd}} =
+\frac{P_{X_k}}{P_{X_{méd}}}$, onde
+
+\begin{equation}
+P_{X_{méd}} = \frac{\sum_{p=1}^{m}  \left[ \sum_{q=1}^{m}(2p-1-m)^2+(2q-1-m)^2
+\right]}{M}
+\end{equation}
+
+é a amplitude média quadrática normalizada dos $M = 2^m$ possíveis símbolos da
+constelação de $m$ níveis, $1<= p >= m$ e $1<= q >= m$. Com isso, o valor RMS da
+EVM torna-se igual a
+
+\begin{equation}
+EVM = \left [ \frac{\frac{1}{N} \sum_{k=0}^{N-1} |Y_{I_n} - X_{I_n}|^2 +
+|Y_{Q_n} - X_{Q_n}|^2}{P_{X_{med}}} \right ]^\frac{1}{2},
+\end{equation}
+
+onde, $Y_{I_n} = Y_I \cdot |A_{2}|$, $X_{I_n} = X_I \cdot |A_{1}$, $Y_{Q_n} =
+Y_Q \cdot |A_{2}$, $X_{Q_n} = X_Q \cdot |A_{1}|$, para $A_{1} =
+\sqrt{\frac{M}{P_{X_{med}}}}$ e $A_{2} = \sqrt{\frac{N}{P_{Y_{med}}}}$ os
+fatores de normalização dos símbolos únicos e dos símbolos medidos, respectivamente.
+
+\subsection{Relações Matemáticas entre SNR, EVM e BER}
 % Relação EVM/SNR/BER
-Para análise de desempenho nos termos de taxa de
-erro de bits BER, relação potência de sinal e potência de ruído SNR e da métrica
-EVM partindo-se te um canal com ruído gaussiano podemos relacioná-as
-matematicamente de forma que
+A medição direta da potência do sinal sobre a potência do ruído permite predizer
+a quantidade de bits errados ou não no processo de decisão do receptor
+\cite{art:EVM_BER_SNR}. Existem tabuladas na literatura inúmeras relações
+probabilísticas que numericamente descrevem o comportamento de sinais com
+modulação digital em canais com ruído gaussiano. Para tanto, considere a
+transmissão em canais AWGN de sinais uni/multiportadoras, com modulação M-QAM de
+sequência de bits codificados com código de Gray e com detecção coerente. A
+probabilidade de erro de bits, ou taxa de erro de bits é dada por
+
+\begin{equation}
+BER = \frac{2\cdot\left(1 - \frac{1}{\sqrt{M}} \right)}{log_2(M)} \cdot
+\textit{erfc}\left(\sqrt{\frac{3 \cdot SNR}{(2M-2) }}\right)
+\label{Eq:BER3SNR}
+\end{equation}
+
+onde $\textit{erfc}(x) = \frac{2}{\sqrt{\pi}} \cdot
+\int_{x}^{\infinity}\mathrm{e}^{-y^2}\,\mathrm{d}t$ é dado em função erro
+complementar, M é o tipo de modulação empregada (para 16-QAM, $M = 16$) e a SNR matematicamente descrita
+pela razão
+
+\begin{equation}
+SNR = \frac{1}{N} \sum_{k=1}^{N} \left[ (X_I)^2 + (X_Q)^2 \right ]
+\end{equation}
+
+para $X_I$ e $X_Q$ os componentes em fase e quadratura do sinal transmitido,
+$n_I$ e $n_Q$ as amplitudes em fase e quadratura do ruído gaussiano de densidade
+espectral de potência igual a $\frac{N_0}{2}$ \cite{art:EVM_BER_SNR}. Em
+sistemas amostrados à taxa de símbolos, a SNR pode ser definida por 
+
+\begin{equation}
+SNR = \frac{E_s}{N_0} = \frac{log_2(M) E_b}{N_0},
+\end{equation}
+
+onde $E_s = log_2(M) E_b$ é a energia de cada símbolo constelação e $E_b$ é a
+energia de cada bit. Em um canal com ruído gaussiano branco, a relação entre a
+SNR e a EVM é dada por
+
+\begin{equation}
+EVM
+\approx \left[\frac{1}{SNR}\right]^{\frac{1}{2}}
+\approx \left[\frac{N_0}{E_s}\right]^{\frac{1}{2}},
+\label{Eq:EVMapprox}
+\end{equation}
+
+que em dB torna-se $EVM \approx -20 \times log_{10} (SNR)$
+\cite{art:EVM_BER_SNR}. Assim, sabendo que $SNR \approx \frac{1}{(EVM^2)}$
+reescreve-se \ref{Eq:BER3SNR} como
 
 \begin{equation}
 BER = \frac{2\cdot\left(1 - \frac{1}{\sqrt{M}} \right)}{log_2(M)} \cdot
 \textit{erfc}\left(\sqrt{\frac{3}{EVM^2 \cdot (2M-2) }}\right)
+\label{Eq:BER3}
 \end{equation}
-e a EVM é dada pelo inverso da raiz quadrada da SNR dada por
+
+como relação matemática entre BER e a EVM medida diretamente de diagramas de
+constelações quadradas M-QAM.
+
+A Figura \ref{Fig:ber_snr_evm} mostra tais relações obtidas através da simulação
+de um sistema OFDM de $N_{OFDM} = 100$ sinais de $N=1024$ subportadoras
+moduladas em $16-QAM$ em um canal AWGN para variados valores de SNR.
+
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=0.65\textwidth]{Figures/ber_snr_evm.eps}
+		\caption{EVM e BER versus SNR de um sistema OFDM com mapeamento 16-QAM
+		em canal AWGN.}
+		\label{Fig:ber_snr_evm}
+	\end{center}
+\end{figure}
+
+A relação empírica entre a EVM e a SNR refere-se ao resultado da simulação, ou
+seja, à EVM obtida via simulação computacional aplicada à relação
+\ref{Eq:EVMapprox}. O traço referente ao EVM versus SNR teórico consiste em
+aplicar os valores de SNR dados como entrada na equação \ref{Eq:EVMapprox}. O
+comportamento empírico do gráfico de desempenho BER versus SNR provém da
+simulação do sistema OFDM parametrizado conforme descrito anteriormente. Os
+traços teórico e semi-empírico são provenientes do uso das equações
+\ref{Eq:BER3SNR} e \ref{Eq:BER3} respectivamente.
+
+No entanto, em sistemas em que não se conhece a estatística e a proveniência das
+intereferências dominantes, torna-se apropriada a definição da grandeza taxa de
+error de modulação MER (\textit{Modulation Error Rate}) conforme
+
 \begin{equation}
-EVM \approx \left[\frac{1}{SNR}\right]^{\frac{1}{2}}
-\approx \left[\frac{N_0}{E_s}\right]^{\frac{1}{2}},
+MER = EVM_{dB} = -20 log_{10}(EVM) + 10 log_{10} \left(
+\frac{\langle V^2 \rangle}{{V_{máx}}^2}\right),
+\label{Eq:EVM_MER}
 \end{equation}
-onde $N_0$ é a potência de ruído e $E_s$ é a energia do símbolo
+
+onde $\langle V^2 \rangle$ é o valor quadrático médio da tensão de todos os
+pontos da constelação e $V_{máx}$ a tensão do ponto da constelação de maior amplitude
+\cite{art:EVM_wide-band}. Em \ref{Eq:EVM_MER}, $EVM = \frac{r_e}{V_{max}}$, para
+$r_e$ a magnitude do raio do vetor dos dados recebidos determinada pelo valor
+médio quadrático do desvio entre os dados recebidos e os pontos da constelação.
+Torna-se, portanto, desnecessária a normalização do diagrama de constelação,
+desde que os tons pilotos; em casos em que estes são utilizados; sejam retirados
+antes da avaliação da métrica. Como valor médio da SNR de toda a constelação, a
+MER pode assim ser aplicada na equação \ref{Eq:BER3} para determinação
+aproximada de uma taxa de erro de bits referencial. A Figura
+\ref{Fig:ber_mer_evm1} mostra a avaliação de desempenho via simulação do
+referido sistema OFDM com a figura de mérito da equação \ref{Eq:EVM_MER}
 \cite{jair_SBRT09}.
+
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=0.5\textwidth]{Figures/ber_mer_evm1.eps}
+		\caption{EVM versus MER do sistema OFDM em questão.}
+		\label{Fig:ber_mer_evm1}
+	\end{center}
+\end{figure}
+
