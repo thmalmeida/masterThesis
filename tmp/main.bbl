@@ -5,6 +5,13 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.2 }
 
+\bibitem[Alves et al. 2011]{art:MZM_powerEq}
+\abntrefinfo{Alves et al.}{ALVES et al.}{2011}
+{ALVES, T. et al. Performance comparison of ofdm-uwb radio signals distribution
+  in long-reach pons using mach-zehnder and linearized modulators.
+\emph{IEEE Journal on Selected Areas in Communications, VOL. 29, NO. 6}, p.
+  1311--1320, 2011.}
+
 \bibitem[Barros e Kahn 2008]{BarrosJLT08}
 \abntrefinfo{Barros e Kahn}{BARROS; KAHN}{2008}
 {BARROS, D. J.~F.; KAHN, J.~M. Optimized dispersion compensation using

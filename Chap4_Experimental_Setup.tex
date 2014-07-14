@@ -160,16 +160,17 @@ divisor de 3 dB em dois braços conforme Figura \ref{Fig:mzmBeam}.
 		\label{Fig:mzmBeam}
 \end{figure}
 
-Neste trecho do feixe dividido, na presença de sinal na entrada de RF o índice
-de refração de um dos braços é alterado proporcionamente à amplitude do sinal
-RF. Mudando o índice de refração do meio, o sinal é propagado alterando então, a
-velocidade de propagação da onda em um dos ramos. Logo o sinal é recombinado em
-um combinador de 3 dB onde ocorre interferência destrutiva do sinal dado por
-diferença de fase da sua fontes de luz. Para que isso ocorra, é necessário que a
-onda de luz esteja polarizada com o campo elétrico E paralelo na entrada do MZM.
+Neste trecho do feixe dividido, com a presença de sinal na entrada de RF o
+índice de refração de um dos braços é alterado proporcionamente à amplitude do
+sinal RF inserido. Mudando o índice de refração do meio, o sinal é propagado
+alterando então, a velocidade de propagação da onda em um dos ramos. Logo o sinal é
+recombinado em um combinador de 3 dB onde ocorre interferência destrutiva do
+sinal dado por diferença de fase da sua fontes de luz. Para que isso ocorra, é
+necessário que a onda de luz esteja polarizada com o campo elétrico E paralelo
+na entrada do MZM.
 Os dois pontos de polarização do MZM mais utilizados são o de máxima linearidade
 ou ponto de quadratura e o de máxima transferência de potência elétrica para
-óptica que consiste no ponto de máxima não linearidade \cite{Binh_DigCommBook}.
+óptica, que consiste no ponto de máxima não linearidade \cite{Binh_DigCommBook}.
 
 A equação analítica que descreve matematicamente a curva de transferência de
 potência do MZM é dada por
@@ -185,7 +186,7 @@ saída do \textit{laser}, $V_{bias}$ é o ponto de polarização do modulador,
 $V_{\pi}$ é a tensão drenada resultando numa diferença de deslocamento de fase
 de $\pi$ entre os dois guias de onda do modulador, $V(t)$ é a tensão ou sinal RF
 aplicado no braço do modulador e $\Delta V_{1}$ é a tensão de \textit{offset}
-usada para ajustar a fase da curva.
+usada para ajustar a fase da curva \cite{art:MZM_powerEq}.
 
 Entretanto, cada MZM possui valores de parâmetros físicos diferentes que devem
 ser levantados para obter sucesso no processo de transmissão. A curva característica
@@ -194,15 +195,18 @@ do modulador é levantada utilizando o diagrama de blocos da Figura
 
 \begin{figure}[htbp]
 	\centering
-		\includegraphics[width=0.7\textwidth]{Figures/mzmPowerMeter.pdf}
+		\includegraphics[width=0.7\textwidth]{Figures/mzmSetup.pdf}
 		\caption{Aparato experimental para levantamento da curva
 		do MZM}
 		\label{Fig:mzmCharacterization}
 \end{figure}
 
-Com o sistema de caracterização implementado, a tensão de polarização $V_{Bias}$
-é variada e é observada a potência óptica média de saída através do medidor de
-potência óptica ou \textit{power meter}. Assim, é obtida a curva de forma
+Os passos para caracterização do MZM são seguidos da seguinte forma:
+primeiramente, a polarização óptica é ajustada, manualmente, de forma que o
+campo elétrico do feixe de luz fique alinhado à sensibilidade de entrada do MZM
+para haver maior transferência de potência óptica. Em seguida, a tensão de
+polarização $V_{Bias}$ é variada e é observada a potência óptica média de saída
+através do medidor de potência óptica. Assim, é obtida a curva de forma
 experimental. Com isso, pontos de máximo e mínimo são obtidos e encontradas a
 tensão $V_{\pi}$, responsável por um desvio de fase de $\pi$ radianos entre os
 braços do guia de onda MZM e a de tensão de polarização $V_{bias}$.
