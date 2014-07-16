@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.6.27)  16 JUL 2014 12:50
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.6.27)  16 JUL 2014 17:32
 entering extended mode
 **main.tex
 (C:\Users\Thiago\sourceText\MasterThesis\main.tex
@@ -2178,6 +2178,10 @@ LaTeX Font Info:    Try loading font information for U+euf on input line 69.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\ueuf.fd"
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
+
+LaTeX Warning: Reference `MZM_tf' on page 84 undefined on input line 96.
+
+[84]
 Package epstopdf Info: Source file: <Figuras_TESE/Funcao_tranf_MZM2.eps>
 (epstopdf)                    date: 2014-06-27 00:34:24
 (epstopdf)                    size: 389775 bytes
@@ -2187,40 +2191,39 @@ ed-to.pdf>
 (epstopdf)                    size: 16719 bytes
 (epstopdf)             Command: <epstopdf --outfile=Figuras_TESE/Funcao_tranf_M
 ZM2-eps-converted-to.pdf Figuras_TESE/Funcao_tranf_MZM2.eps>
-(epstopdf)             \includegraphics on input line 103.
+(epstopdf)             \includegraphics on input line 123.
 Package epstopdf Info: Output file is already uptodate.
 File: Figuras_TESE/Funcao_tranf_MZM2-eps-converted-to.pdf Graphic file (type pd
 f)
-
-<use Figuras_TESE/Funcao_tranf_MZM2-eps-converted-to.pdf>
+ <use Figuras_TESE/Funcao_tranf_MZM2-eps-converted-to.pdf>
 Package pdftex.def Info: Figuras_TESE/Funcao_tranf_MZM2-eps-converted-to.pdf us
-ed on input line 103.
+ed on input line 123.
 (pdftex.def)             Requested size: 419.96956pt x 220.0223pt.
- [84] [85] [86]
+ [85] [86]
 [87] [88]
 
-LaTeX Warning: Command \' invalid in math mode on input line 364.
+LaTeX Warning: Command \' invalid in math mode on input line 384.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 365.
+LaTeX Warning: Command \' invalid in math mode on input line 385.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 367.
+LaTeX Warning: Command \' invalid in math mode on input line 387.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 367.
+LaTeX Warning: Command \' invalid in math mode on input line 387.
 
-[89] <Figures/GA_Table_info.pdf, id=2175, 963.6pt x 483.72722pt>
+[89] <Figures/GA_Table_info.pdf, id=2174, 963.6pt x 483.72722pt>
 File: Figures/GA_Table_info.pdf Graphic file (type pdf)
 
 <use Figures/GA_Table_info.pdf>
-Package pdftex.def Info: Figures/GA_Table_info.pdf used on input line 404.
+Package pdftex.def Info: Figures/GA_Table_info.pdf used on input line 424.
 (pdftex.def)             Requested size: 455.0pt x 228.4073pt.
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5.5.
 7}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.418 \begin{equation}
+l.438 \begin{equation}
                        [90 <C:/Users/Thiago/sourceText/MasterThesis/Figures/GA_
 Table_info.pdf>] [91]
 Package epstopdf Info: Source file: <Figures/DDO-OFDM_Experimento_Labtel_out201
@@ -2234,17 +2237,17 @@ Package epstopdf Info: Source file: <Figures/DDO-OFDM_Experimento_Labtel_out201
 (epstopdf)             Command: <epstopdf --outfile=Figures/DDO-OFDM_Experiment
 o_Labtel_out2012_JMOe-eps-converted-to.pdf Figures/DDO-OFDM_Experimento_Labtel_
 out2012_JMOe.eps>
-(epstopdf)             \includegraphics on input line 565.
+(epstopdf)             \includegraphics on input line 587.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/DDO-OFDM_Experimento_Labtel_out2012_JMOe-eps-converted-to.pdf, id=2221
+<Figures/DDO-OFDM_Experimento_Labtel_out2012_JMOe-eps-converted-to.pdf, id=2219
 , 553.06625pt x 662.475pt>
 File: Figures/DDO-OFDM_Experimento_Labtel_out2012_JMOe-eps-converted-to.pdf Gra
 phic file (type pdf)
 
 <use Figures/DDO-OFDM_Experimento_Labtel_out2012_JMOe-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/DDO-OFDM_Experimento_Labtel_out2012_JMOe-eps-c
-onverted-to.pdf used on input line 565.
+onverted-to.pdf used on input line 587.
 (pdftex.def)             Requested size: 455.0pt x 545.00201pt.
 
 [92] [93 <C:/Users/Thiago/sourceText/MasterThesis/Figures/DDO-OFDM_Experimento_
@@ -2258,30 +2261,30 @@ ted-to.pdf>
 (epstopdf)                    size: 1279767 bytes
 (epstopdf)             Command: <epstopdf --outfile=Figures/Spectrums_Constelat
 ions-eps-converted-to.pdf Figures/Spectrums_Constelations.eps>
-(epstopdf)             \includegraphics on input line 586.
+(epstopdf)             \includegraphics on input line 608.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Spectrums_Constelations-eps-converted-to.pdf, id=2266, 516.93124pt x 4
+<Figures/Spectrums_Constelations-eps-converted-to.pdf, id=2264, 516.93124pt x 4
 60.72125pt>
 File: Figures/Spectrums_Constelations-eps-converted-to.pdf Graphic file (type p
 df)
  <use Figures/Spectrums_Constelations-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/Spectrums_Constelations-eps-converted-to.pdf u
-sed on input line 586.
+sed on input line 608.
 (pdftex.def)             Requested size: 413.54555pt x 368.5775pt.
  [94 <C:/Users/Thiago/sourceText/MasterThesis/Figures/Spectrums_Constelations-e
 ps-converted-to.pdf>]
 
-LaTeX Warning: Command \' invalid in math mode on input line 638.
+LaTeX Warning: Command \' invalid in math mode on input line 660.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 639.
+LaTeX Warning: Command \' invalid in math mode on input line 661.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 641.
+LaTeX Warning: Command \' invalid in math mode on input line 663.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 641.
+LaTeX Warning: Command \' invalid in math mode on input line 663.
 
 [95]
 Package epstopdf Info: Source file: <Figures/Curvas_otim_conv_f.eps>
@@ -2293,17 +2296,17 @@ o.pdf>
 (epstopdf)                    size: 8169 bytes
 (epstopdf)             Command: <epstopdf --outfile=Figures/Curvas_otim_conv_f-
 eps-converted-to.pdf Figures/Curvas_otim_conv_f.eps>
-(epstopdf)             \includegraphics on input line 702.
+(epstopdf)             \includegraphics on input line 724.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Curvas_otim_conv_f-eps-converted-to.pdf, id=2292, 463.7325pt x 443.657
+<Figures/Curvas_otim_conv_f-eps-converted-to.pdf, id=2290, 463.7325pt x 443.657
 5pt>
 File: Figures/Curvas_otim_conv_f-eps-converted-to.pdf Graphic file (type pdf)
  <use Figures/Curvas_otim_conv_f-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/Curvas_otim_conv_f-eps-converted-to.pdf used o
-n input line 702.
+n input line 724.
 (pdftex.def)             Requested size: 417.35538pt x 399.28804pt.
- [96]) [97 <C:/Users/Thiago/sourceText/MasterThesis/Figures/Curvas_otim_conv_f-
+) [96] [97 <C:/Users/Thiago/sourceText/MasterThesis/Figures/Curvas_otim_conv_f-
 eps-converted-to.pdf>] (C:\Users\Thiago\sourceText\MasterThesis\Chap6_Conclusio
 n.tex [98
 
@@ -2330,7 +2333,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <24.88> not available
 (Font)              Font shape `T1/lmss/m/sl' tried instead on input line 1.
 
-<Figures/DFB-Laser-pkg1.jpg, id=2413, 2007.5pt x 963.6pt>
+<Figures/DFB-Laser-pkg1.jpg, id=2411, 2007.5pt x 963.6pt>
 File: Figures/DFB-Laser-pkg1.jpg Graphic file (type jpg)
 
 <use Figures/DFB-Laser-pkg1.jpg>
@@ -2341,7 +2344,7 @@ Package pdftex.def Info: Figures/DFB-Laser-pkg1.jpg used on input line 9.
 pdfTeX warning: pdflatex.exe (file C:/Users/Thiago/sourceText/MasterThesis/Figu
 res/DFB-Laser-pinout.pdf): PDF inclusion: found PDF version <1.6>, but at most 
 version <1.5> allowed
-<Figures/DFB-Laser-pinout.pdf, id=2415, 794.97pt x 614.295pt>
+<Figures/DFB-Laser-pinout.pdf, id=2413, 794.97pt x 614.295pt>
 File: Figures/DFB-Laser-pinout.pdf Graphic file (type pdf)
 
 <use Figures/DFB-Laser-pinout.pdf>
@@ -2353,7 +2356,7 @@ Package pdftex.def Info: Figures/DFB-Laser-pinout.pdf used on input line 24.
  <C:/Users/Thiago/sourceText/MasterThesis/Figures/DFB-Laser-pkg1.jpg> <C:/Users
 /Thiago/sourceText/MasterThesis/Figures/DFB-Laser-pinout.pdf, page is rotated 2
 70 degrees>]
-<Figures/DFB-Laser-BlockDiagram_pt-br.pdf, id=2427, 682.95152pt x 398.32814pt>
+<Figures/DFB-Laser-BlockDiagram_pt-br.pdf, id=2425, 682.95152pt x 398.32814pt>
 File: Figures/DFB-Laser-BlockDiagram_pt-br.pdf Graphic file (type pdf)
 
 <use Figures/DFB-Laser-BlockDiagram_pt-br.pdf>
@@ -2361,7 +2364,7 @@ Package pdftex.def Info: Figures/DFB-Laser-BlockDiagram_pt-br.pdf used on input
  line 43.
 (pdftex.def)             Requested size: 386.75278pt x 225.57245pt.
 
-<Figures/LaserBack2.png, id=2429, 795.72281pt x 400.49625pt>
+<Figures/LaserBack2.png, id=2427, 795.72281pt x 400.49625pt>
 File: Figures/LaserBack2.png Graphic file (type png)
 
 <use Figures/LaserBack2.png>
@@ -2375,7 +2378,7 @@ de es-pec-tro óp-tico do mo-delo MS9740A
 
 [105 <C:/Users/Thiago/sourceText/MasterThesis/Figures/DFB-Laser-BlockDiagram_pt
 -br.pdf> <C:/Users/Thiago/sourceText/MasterThesis/Figures/LaserBack2.png>]
-<Figures/DFB-Laser_spectrumAnalizer_inv.png, id=2448, 517.935pt x 347.79938pt>
+<Figures/DFB-Laser_spectrumAnalizer_inv.png, id=2446, 517.935pt x 347.79938pt>
 File: Figures/DFB-Laser_spectrumAnalizer_inv.png Graphic file (type png)
 
 <use Figures/DFB-Laser_spectrumAnalizer_inv.png>
@@ -2383,70 +2386,70 @@ Package pdftex.def Info: Figures/DFB-Laser_spectrumAnalizer_inv.png used on inp
 ut line 67.
 (pdftex.def)             Requested size: 455.0pt x 305.5496pt.
 
-<Figures/Copy20131118_006.png, id=2449, 436.63126pt x 264.23718pt>
+<Figures/Copy20131118_006.png, id=2447, 436.63126pt x 264.23718pt>
 File: Figures/Copy20131118_006.png Graphic file (type png)
 
 <use Figures/Copy20131118_006.png>
 Package pdftex.def Info: Figures/Copy20131118_006.png used on input line 97.
 (pdftex.def)             Requested size: 218.39806pt x 132.16664pt.
 
-<Figures/Copy20131118_009.png, id=2450, 436.63126pt x 264.99pt>
+<Figures/Copy20131118_009.png, id=2448, 436.63126pt x 264.99pt>
 File: Figures/Copy20131118_009.png Graphic file (type png)
 
 <use Figures/Copy20131118_009.png>
 Package pdftex.def Info: Figures/Copy20131118_009.png used on input line 102.
 (pdftex.def)             Requested size: 218.39806pt x 132.54318pt.
 
-<Figures/Copy20131118_012.png, id=2451, 436.63126pt x 264.99pt>
+<Figures/Copy20131118_012.png, id=2449, 436.63126pt x 264.99pt>
 File: Figures/Copy20131118_012.png Graphic file (type png)
 
 <use Figures/Copy20131118_012.png>
 Package pdftex.def Info: Figures/Copy20131118_012.png used on input line 107.
 (pdftex.def)             Requested size: 218.39806pt x 132.54318pt.
 
-<Figures/Copy20131118_015.png, id=2452, 437.38406pt x 263.48438pt>
+<Figures/Copy20131118_015.png, id=2450, 437.38406pt x 263.48438pt>
 File: Figures/Copy20131118_015.png Graphic file (type png)
 
 <use Figures/Copy20131118_015.png>
 Package pdftex.def Info: Figures/Copy20131118_015.png used on input line 112.
 (pdftex.def)             Requested size: 218.39806pt x 131.56496pt.
 
-<Figures/Copy20131118_018.png, id=2453, 437.38406pt x 264.99pt>
+<Figures/Copy20131118_018.png, id=2451, 437.38406pt x 264.99pt>
 File: Figures/Copy20131118_018.png Graphic file (type png)
 
 <use Figures/Copy20131118_018.png>
 Package pdftex.def Info: Figures/Copy20131118_018.png used on input line 117.
 (pdftex.def)             Requested size: 218.39806pt x 132.31676pt.
 
-<Figures/Copy20131118_021.png, id=2454, 437.38406pt x 264.23718pt>
+<Figures/Copy20131118_021.png, id=2452, 437.38406pt x 264.23718pt>
 File: Figures/Copy20131118_021.png Graphic file (type png)
 
 <use Figures/Copy20131118_021.png>
 Package pdftex.def Info: Figures/Copy20131118_021.png used on input line 122.
 (pdftex.def)             Requested size: 218.39806pt x 131.94086pt.
 
-<Figures/Copy20131118_024.png, id=2455, 437.38406pt x 264.23718pt>
+<Figures/Copy20131118_024.png, id=2453, 437.38406pt x 264.23718pt>
 File: Figures/Copy20131118_024.png Graphic file (type png)
 
 <use Figures/Copy20131118_024.png>
 Package pdftex.def Info: Figures/Copy20131118_024.png used on input line 127.
 (pdftex.def)             Requested size: 218.39806pt x 131.94086pt.
 
-<Figures/Copy20131118_027.png, id=2456, 437.38406pt x 264.99pt>
+<Figures/Copy20131118_027.png, id=2454, 437.38406pt x 264.99pt>
 File: Figures/Copy20131118_027.png Graphic file (type png)
 
 <use Figures/Copy20131118_027.png>
 Package pdftex.def Info: Figures/Copy20131118_027.png used on input line 132.
 (pdftex.def)             Requested size: 218.39806pt x 132.31676pt.
 
-<Figures/Copy20131118_030.png, id=2457, 437.38406pt x 264.99pt>
+<Figures/Copy20131118_030.png, id=2455, 437.38406pt x 264.99pt>
 File: Figures/Copy20131118_030.png Graphic file (type png)
 
 <use Figures/Copy20131118_030.png>
 Package pdftex.def Info: Figures/Copy20131118_030.png used on input line 137.
 (pdftex.def)             Requested size: 218.39806pt x 132.31676pt.
 
-<Figures/Copy20131118_033.png, id=2458, 437.38406pt x 264.23718pt>
+<Figures/Copy20131118_033.png, id=2456, 437.38406pt x 264.23718pt>
 File: Figures/Copy20131118_033.png Graphic file (type png)
 
 <use Figures/Copy20131118_033.png>
@@ -2461,7 +2464,7 @@ LaTeX Warning: Float too large for page by 56.03659pt on input line 145.
 pdfTeX warning: pdflatex.exe (file C:/Users/Thiago/sourceText/MasterThesis/Figu
 res/Laser.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.
 5> allowed
-<Figures/Laser.pdf, id=2459, 845.0471pt x 597.50829pt>
+<Figures/Laser.pdf, id=2457, 845.0471pt x 597.50829pt>
 File: Figures/Laser.pdf Graphic file (type pdf)
  <use Figures/Laser.pdf>
 Package pdftex.def Info: Figures/Laser.pdf used on input line 148.
@@ -2495,7 +2498,7 @@ s/Copy20131118_030.png> <C:/Users/Thiago/sourceText/MasterThesis/Figures/Copy20
 pdfTeX warning: pdflatex.exe (file C:/Users/Thiago/sourceText/MasterThesis/Figu
 res/Laser.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.
 5> allowed
-<Figures/Laser.pdf, id=2482, page=1, 845.0471pt x 597.50829pt>
+<Figures/Laser.pdf, id=2480, page=1, 845.0471pt x 597.50829pt>
 File: Figures/Laser.pdf Graphic file (type pdf)
 
 <use Figures/Laser.pdf, page 1>
@@ -2545,8 +2548,16 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 447.
 (C:\Users\Thiago\sourceText\MasterThesis\Appendix_A.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 447.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 447.
-Package rerunfilecheck Info: File `main.brf' has not changed.
-(rerunfilecheck)             Checksum: DD31A0996F08A1B39B6C9563AA8C9EDD;4778.
+
+
+Package rerunfilecheck Warning: File `main.brf' has changed.
+(rerunfilecheck)                Rerun to get bibliographical references right.
+
+Package rerunfilecheck Info: Checksums for `main.brf':
+(rerunfilecheck)             Before: 37C3EBEF84EB8213BF7CD031273294AF;4778
+(rerunfilecheck)             After:  DD31A0996F08A1B39B6C9563AA8C9EDD;4778.
+
+LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -2554,10 +2565,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 447.
  ) 
 Here is how much of TeX's memory you used:
- 15370 strings out of 493921
- 240822 string characters out of 3147279
- 474678 words of memory out of 3000000
- 17778 multiletter control sequences out of 15000+200000
+ 15371 strings out of 493921
+ 240830 string characters out of 3147279
+ 474710 words of memory out of 3000000
+ 17779 multiletter control sequences out of 15000+200000
  122348 words of font info for 88 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  47i,20n,52p,1372b,623s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2594,9 +2605,9 @@ es/MiKTeX 2.9/fonts/type1/public/lm/lmsy6.pfb><C:/Program Files/MiKTeX 2.9/font
 s/type1/public/lm/lmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/
 lmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam
 10.pfb>
-Output written on main.pdf (109 pages, 17825652 bytes).
+Output written on main.pdf (109 pages, 17825848 bytes).
 PDF statistics:
- 2905 PDF objects out of 2984 (max. 8388607)
+ 2903 PDF objects out of 2984 (max. 8388607)
  387 named destinations out of 1000 (max. 500000)
  1013 words of extra memory for PDF output out of 10000 (max. 10000000)
 
