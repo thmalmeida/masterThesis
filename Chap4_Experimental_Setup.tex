@@ -28,7 +28,7 @@ implementada.
 
 \begin{figure}[htbp]
 	\centering
-		\includegraphics[width=\textwidth]{Figures/DDO-OFDM_blockDiagram_en.pdf}
+		\includegraphics[width=\textwidth]{Figures/DDO-OFDM_blockDiagram_pt-br.pdf}
 		\caption{Sistema DDO-OFDM implementado}
 		\label{Fig:DDO-OFDM}
 \end{figure}
@@ -36,8 +36,8 @@ implementada.
 Os sinais OFDM preparados pelo algoritmo de geração implementado no
 MATLAB\textsuperscript{\textregistered} são transmitidos por um protocolo de
 instrumentação que trabalha sobre o \textit{Ethernet} e que se comunica com o
-conversor digital para analógico (\textit{Ditigal-to-Analogue Converter} - DAC)
-do AWG7122C da Tektronix de 24 GS/s. O sinal de RF na saída do AWG é amplificada
+conversor digital para analógico (\textit{Digital-to-Analogue Converter} -
+DAC) do AWG7122C da Tektronix de 24 GS/s. O sinal de RF na saída do AWG é amplificada
 e filtrada por um filtro de 3 GHz até chegar ao modulador óptico MZM. Este, por
 sua vez, modula um sinal óptico CW proveniente de um laser centrado em
 $\lambda_c = 1545,3$ nm. Após propagação em enlaces de 20 e 40 km de fibra,
@@ -96,10 +96,10 @@ ajustável para variação de frequência, na saída do conversor D/A para
 transformar as amostras do sinal discreto em analógico, não é possível obter um
 sinal com uma curva suave existindo pontos de descontinuidade no sinal analógico
 convertido que inserem diversas componentes de frequência no sistema.
-No entanto, o ideal é sempre reamostrar o sinal transmitido à taxa de amostragen
+No entanto, o ideal é sempre reamostrar o sinal transmitido à taxa de amostragem
 máxima do AWG fazendo com que o sinal fique mais fiel possível possuindo sempre
 o máximo número de pontos por ciclo, evitando que as distorções harmônicas
-conhecidas como \textit{aliasing} fiquem o mais distânte possível do sinal
+conhecidas como \textit{aliasing} fiquem o mais distante possível do sinal
 transmitido em relação ao eixo das frequências.
 
 \subsection{Laser DFB (\textit{Distributed-Feedback Laser} - DFB)}
@@ -109,7 +109,7 @@ de pesquisa, o laser DFB semicondutor foi utilizado como fonte óptica operando
 no modo CW e centrado em $\lambda_c = 1545,3$. Lasers semicondutores são
 classificados principalmente por suas estruturas. A fim de conseguir a
 transmissão de elevada taxa de bits, é necessário limitar-se à largura espectral
-do laser e minimizar a constante do tempo de subida. %\ref{Binh_FiberBook}
+do laser e minimizar a constante do tempo de subida \cite{Binh_FiberBook}.
 
 O laser DFB é utilizado neste trabalho como fonte óptica contínua e modulado por
 um modulador óptico externo. O circuito de controle das variáveis físicas do
@@ -160,17 +160,17 @@ divisor de 3 dB em dois braços conforme Figura \ref{Fig:mzmBeam}.
 		\label{Fig:mzmBeam}
 \end{figure}
 
-Neste trecho do feixe dividido, com a presença de sinal na entrada de RF o
+Neste trecho do feixe dividido, com a presença de sinal na entrada de RF, o
 índice de refração de um dos braços é alterado proporcionamente à amplitude do
 sinal RF inserido. Mudando o índice de refração do meio, o sinal é propagado
-alterando então, a velocidade de propagação da onda em um dos ramos. Logo o sinal é
-recombinado em um combinador de 3 dB onde ocorre interferência destrutiva do
-sinal dado por diferença de fase da sua fontes de luz. Para que isso ocorra, é
-necessário que a onda de luz esteja polarizada com o campo elétrico E paralelo
-na entrada do MZM.
-Os dois pontos de polarização do MZM mais utilizados são o de máxima linearidade
-ou ponto de quadratura e o de máxima transferência de potência elétrica para
-óptica, que consiste no ponto de máxima não linearidade \cite{Binh_DigCommBook}.
+alterando então, a velocidade de propagação da onda em um dos ramos. Logo o
+sinal é recombinado em um combinador de 3 dB onde ocorre interferência
+destrutiva do sinal dado por diferença de fase da sua fontes de luz. Para que
+isso ocorra, é necessário que a onda de luz esteja polarizada com o campo
+elétrico E paralelo na entrada do MZM. Os dois pontos de polarização do MZM mais
+utilizados são o de máxima linearidade ou ponto de quadratura e o de máxima
+transferência de potência elétrica para óptica, que consiste no ponto de máxima
+não linearidade \cite{Binh_DigCommBook}.
 
 A equação analítica que descreve matematicamente a curva de transferência de
 potência do MZM é dada por
@@ -183,8 +183,8 @@ P_{out}=\sqrt{P_{0}}\cdot \cos^2 \left [ \frac{\pi}{2V_\pi} \left (-V_{bias}
 
 onde $P_0$ é a máxima potência óptica na saida do modulador, ou potência de
 saída do \textit{laser}, $V_{bias}$ é o ponto de polarização do modulador,
-$V_{\pi}$ é a tensão drenada resultando numa diferença de deslocamento de fase
-de $\pi$ entre os dois guias de onda do modulador, $V(t)$ é a tensão ou sinal RF
+$V_{\pi} = 4.7$ V é a tensão aplicada resultando numa diferença de deslocamento
+de fase de $\pi$ entre os dois guias de onda do modulador, $V(t)$ é a tensão ou sinal RF
 aplicado no braço do modulador e $\Delta V_{1}$ é a tensão de \textit{offset}
 usada para ajustar a fase da curva \cite{art:MZM_powerEq}.
 
@@ -321,34 +321,22 @@ recebido e sua curva característica de resposta em tensão de pico pela entrada
 
 Embora tenha sido mencionado três diferentes formas de transmissão de sinais
 OFDM em sistemas de detecção direta na seção \ref{sistemasDDO-OFDM}, somente as
-duas primeiras configurações são implementadas neste trabalho devido a
-inexistência de um o dipositivo MZM de dois ``braços'' no laboratório.
+duas primeiras configurações foram implementadas neste trabalho devido a
+inexistência do dipositivo MZM de dois ``braços'' no laboratório.
 Os sistemas de transmissão implementados podem ser separados em duas partes:
 uma parte física e uma parte de processamento de sinais desenvolvida por um
 algoritmo que trabalha \textit{offline}. Para as duas configurações, o sistema
-elétrico/óptico/elétrico não é alterado. A diferença nas implementações está
-nos algorítmos de geração dos sinais que são modificados. A Figura
+elétrico/óptico/elétrico não é alterado. As diferenças de implementações estão
+no algoritmo de geração do sinal e nos parâmetros utilizados. É importante notar
+que, os sistemas foram implementados não com o intuito de comparar seus
+desempenhos entre si, mas sim com a finalidade de observar a liberdade da
+variação dos parâmetros de projeto que alteram de forma significativa, a
+qualidade da transmissão dos sinais no sistema físico. A Figura
 \ref{Fig:physicalPart} representa o canal elétrico/óptico/elétrico de
 transmissão representado pelo filtro passa baixas (\textit{Low Pass Filter} -
 LPF), pelo modulador óptico MZM, pelo canal de fibra SSMF com 40 km de
-comprimento, pelo fotoreceptor e pelos equipamentos que realizam as
-conversões D/A e A/D.
-
-% Embora tenha sido mencionado três diferentes formas de transmissão de sinais
-% OFDM em sistemas de detecção direta na seção \ref{sistemasDDO-OFDM}, somente
-% as duas primeiras configurações são implementadas neste trabalho devido a
-% inexistência de um o dipositivo MZM de dois ``braços'' no laboratório.
-% Os sistemas de transmissão implementados podem ser separados em duas partes: na
-% parte física que possui pouca ou nenhuma flexibilidade na variação dos parâmetros físicos e a
-% parte de processamento de sinais que é desenvolvida a partir de algorítmos
-% podendo ser remodelada para se adaptar ao meio físico para obter um melhor
-% desempenho na propagação dos sinais. Para as duas configurações, o sistema
-% óptico/elétrico não é alterado. A diferença nas implementações são os algorítmos
-% de geração dos sinais que são modificados. A Figura \ref{Fig:physicalPart}
-% representa o canal óptico/elétrico de transmissãorepresentando o filtro passa
-% baixas (\textit{Low Pass Filter} - LPF), o modulador óptico MZM, o canal de fibra
-% SSMF com 40 km de comprimento, o fotoreceptor junto aos equipamentos que
-% realizam as conversões DAC e ADC que foram utilizados nos experimentos.
+comprimento, pelo fotoreceptor e pelos equipamentos que realizam as conversões
+D/A e A/D.
 
 \begin{figure}[htbp]
 	\centering
@@ -364,19 +352,19 @@ Esta primeira configuração implementa um sistema de transmissão de sinais OFDM
 utilizando simetria hermitiana para prover somente coeficientes reais na saída
 da IFFT. A Figura \ref{Fig:DDO-OFDM_I_Tx} descreve de forma genérica, por meio
 de blocos, o funcionamento do algoritmo que implementa a modulação OFDM no
-processo \textit{offline} do lado do transmissor. Os bits gerados aletóriamente
+processo \textit{offline} do lado do transmissor. Os bits gerados aleatóriamente
 são agrupados em grupos de $n = log_2 (M)$ \textit{bits} e mapeados em símbolos
 elétricos com nível de modulação $M$-QAM. Para garantir que não haja produtos de
 intermodulação IMD provindas do processo de fotodetecção, é adicionada uma banda
-de guarda (\textit{Guard Band} - $B_G$) com preenchimento com zeros ou
-\textit{zero padding} com espaçamento do mesmo tamanho da banda de informação
+de guarda (\textit{Guard Band} - $B_G$) com preenchimento com zeros (ou
+\textit{zero padding}) com espaçamento do mesmo tamanho da banda de informação
 $B_W$. O bloco de simetria hermitiana realiza a função de duplicar o vetor de
 símbolos de dados com uma sequência invertida dos símbolos com complexo
 conjugado. É importante notar para que neste caso, com uma IFFT de $N_{IFFT}$
 pontos, o número máximo de pontos possíveis de se utilizar para as subportadoras
 que transportam a informação é de $N_S = \frac{N_{IFFT}}{4}$ o que reduz a
 eficiência na taxa de transmissão. O fator $\frac{1}{4}$ leva em consideração
-tembém a inserção da banda de guarda.
+também a inserção da banda de guarda.
 
 \begin{figure}[htbp]
 	\centering
@@ -405,12 +393,12 @@ frequência.
 \end{figure}
 
 Ocorre que a estrutura de entrada dos dados nos blocos IFFT e FFT é de uma forma
-contrária o que ocorre na realidade devido às construções matemáticas ditadas
-pelo \textit{software} Matlab. Para visualizar corretamente o espectro de
-frequências é necessário realizar a operação de deslocamento como mostrado na
-Figura \ref{Fig:DDO-OFDM_I_Tx_IFFT_shift} onde as frequências negativas são
-projetadas para a esquerda e as positivas para a direita onde se encontram as
-subportadoras úteis de informações.
+contrária ao que ocorre na realidade devido às construções matemáticas ditadas
+pelo \textit{software} MATLAB\textsuperscript{\textregistered}. Para visualizar
+corretamente o espectro de frequências é necessário realizar a operação de
+deslocamento como mostrado na Figura \ref{Fig:DDO-OFDM_I_Tx_IFFT_shift} onde as
+frequências negativas são projetadas para a esquerda e as positivas para a
+direita onde se encontram as subportadoras úteis de informações.
 
 \begin{figure}[htbp]
 	\centering
@@ -438,7 +426,7 @@ T_g \geq D \cdot B_w \cdot \frac{c}{f_0^2}
 \end{equation}
 
 onde $D$ é a quantidade total de dispersão cromática, $c$ é a velocidade da luz
-e $f_0$ a frequência da portadora óptica que será melhor abordada no Capítulo
+e $f_0$ a frequência da portadora óptica, que será melhor abordada no Capítulo
 \ref{Chap5:Optimization}
 
 A Figura \ref{Fig:DDO-OFDM_I_Tx_IG_PS} mostra o processo de acúmulo dos símbolos
@@ -533,15 +521,14 @@ e nível de modulação (M) são os mesmos configurados no transmissor. O quadro
 OFDM recebido é filtrado digitalmente, reamostrado, sincronizado e após remoção
 do CP de cada símbolo realiza-se o processo inverso relativo à Figura
 \ref{Fig:DDO-OFDM_I_Tx_IG_PS}. Posteriormente, cada símbolo OFDM no domínio do
-tempo contendo exatamente $N_{FFT}$ pontos é processado pela FFT e assim
-obtido os símbolos elétricos no domínio da frequência com efeitos de fase e
-módulo distorcidos pelos efeitos inerentes do canal de transmissão. O
-\textit{zero padding} e a simetria hermitiana são então removidos e recupera-se
-as $N_S$ subportadoras de dados da faixa de pontos da FFT de $\frac{N_{FFT}}{4}+1$
-até $\frac{N_{FFT}}{2}$. O demapeamento dos símbolos é realizado após
-equalização no domínio da frequência por um equalizador de um atraso da
-sequência de treinamento composta pelos $n_t$ primeiros símbolos OFDM
-transmitidos.
+tempo contendo exatamente $N_{FFT}$ pontos é processado pela FFT e assim obtido
+os símbolos elétricos no domínio da frequência com fase e módulo distorcidos
+pelos efeitos inerentes do canal de transmissão. O \textit{zero padding} e a
+simetria hermitiana são então removidos e recupera-se as $N_S$ subportadoras de
+dados da faixa de pontos da FFT de $\frac{N_{FFT}}{4}+1$ até
+$\frac{N_{FFT}}{2}$. O demapeamento dos símbolos é realizado após equalização no
+domínio da frequência por um equalizador de um atraso da sequência de
+treinamento composta pelos $n_t$ primeiros símbolos OFDM transmitidos.
 
 \begin{figure}[htbp]
 	\centering
@@ -1047,48 +1034,56 @@ símbolos transmitidos e recuperados são mostrados na Figura
 
 \subsection{Considerações Finais}
 
-Apesar da técnica descrita na seção \ref{Sec:DDO-OFDM_II} ser mais eficiente no
-uso dos pontos dos blocos FFT/IFFT torna-se necessário a utilização da modulação
-adicional para misturar os sinais real e complexo junto a uma portadora digital.
-Entretanto, ao realizar a modulação adicional a taxa de amostragem do sistema
-aumenta significativamente sendo necessários dispositivos A/D e D/A mais
-aperfeiçoados, o que limita o sistema de transmissão. Ou seja, existe um
-compromisso aumentado entre número de pontos usados e a diminuição da banda
-efetiva de transmissão, enquanto que o uso da simetria hermitiana permite
-utilizar uma maior banda efetiva de transmissão para uma menor taxa de
-amostragem.
+Apesar das subseções anteriores não possuírem como objetivo comparar seus
+desempenhos entre si, é interessante notar que embora a técnica descrita na
+seção \ref{Sec:DDO-OFDM_II} ser mais eficiente no uso dos pontos dos blocos
+FFT/IFFT torna-se necessário a utilização da modulação adicional para misturar
+os sinais real e complexo junto a uma portadora digital. Entretanto, ao realizar
+a modulação adicional a taxa de amostragem do sistema aumenta significativamente
+sendo necessários dispositivos A/D e D/A mais aperfeiçoados, o que limita o
+sistema de transmissão. Ou seja, existe um compromisso aumentado entre número de
+pontos usados e a diminuição da banda efetiva de transmissão, enquanto que o uso
+da simetria hermitiana permite utilizar uma maior banda efetiva de transmissão
+para uma menor taxa de amostragem.
 
-É fato que quanto maior a taxa de amostragem de um dispositivo, maior é a
-capacidade de transmissão de informação em determinado intervalo de tempo.
-
-
-
-
-A taxa mínima de amostragem para a recuperação de uma portadora deve buscar no
+É fato que, quanto maior a taxa de amostragem de um dispositivo, maior é a
+capacidade de transmissão de informação em determinado intervalo de tempo. A
+taxa mínima de amostragem para a recuperação de uma portadora deve buscar no
 mínimo duas amostras por ciclo, ou seja, $F_S \geq 2 \cdot B_c$ segundo teorema
-de Nyquist. Isto implica em obter na recepção uma forma de onda triangular com a
-mesma frequência da portadora, porém, com adição de descontinuidades. Essas
-descontinuidades inserem diversas componentes harmônicas no sinal, acarretando
-em um espalhamento da potência no espectro de frequências fazendo com que a
-potência da portadora recuperada seja atenuada degradando a qualidade da
-transmissão. Portanto, apesar do AWG possuir uma taxa de amostragem de 24 GS/s,
-construir um sinal com frequência máxima de 12 GHz não é interessante visto que,
-teríamos duas amostras por ciclo e descontinuidades no sinal longe de ser uma
-componente senoidal de frequência única. Quanto mais pontos são inseridos no
-ciclo da onda mais fiel é o sinal, menor é a frequência máxima e menor a máxima
-da taxa de amostragem do equipamento. Isto melhora a qualidade do sinal a ser
-transmistido e consequentemente o desempenho do sistema com a desvantagem da
-diminuição da largura de banda e a redução da taxa de transmissão.
+de Nyquist. Para dois pontos por ciclo, implica em obter na recepção uma forma
+de onda quadrada ou triangular com a mesma frequência da portadora porém, com
+adição de descontinuidades. Essas descontinuidades inserem diversas componentes
+harmônicas no sinal, acarretando em um espalhamento da potência no espectro de
+frequências fazendo com que a potência da portadora recuperada seja atenuada
+degradando a qualidade da transmissão. Portanto, apesar do AWG possuir uma taxa
+de amostragem de 24 GS/s, construir um sinal com frequência máxima de 12 GHz não
+é interessante visto que, teríamos duas amostras por ciclo e descontinuidades no
+sinal, longe de ser uma componente senoidal de frequência única. Quanto mais
+pontos são inseridos no ciclo da onda mais fiel é o sinal, menor é a frequência
+máxima para a mesma taxa de amostragem máxima que o DAC comporta. Isto melhora a
+qualidade do sinal a ser transmistido e, consequentemente o desempenho do
+sistema, com a desvantagem da diminuição da largura de banda e a redução da taxa
+de transmissão.
+
+Entretanto, ocorre que, para um sinal multiportadora, as componentes de menores
+frequências possuem mais fidelidade senoidal por possuírem mais pontos por
+ciclo, e as componentes de maiores frequências possuem menos pontos por ciclo
+possuindo descontinuidades consideráveis. Neste capítulo, foi observado que é
+interessante sempre trabalhar com o DAC na sua capacidade máxima de taxa de
+amostragem de forma a trabalhar com uma frequência máxima do sinal bem abaixo da
+frequência máxima possível de criação do sinal pelo DAC. Isso, faz com que a
+nova componente de frequência máxima de um sinal multiportadora $B_c$ tenha mais
+pontos por ciclo diminuindo ruídos e atenuações causadas por descontinuidades.
 
 Por fim, observou-se durante os experimentos descritos neste capítulo que
 encontrar o melhor valor para cada parâmetro envolvido no desempenho de ambos os
 sistemas é extremamente difícil devido à relação não linear entre os mesmos.
 Além disso, a grande quantidade de parâmetros de tais sistemas dificulta a
-otimização dos mesmos no quesito, eficiência espectral. Assim, a aplicação de
-algoritmos de otimização se faz presente na elaboração de um projeto de sistema
-que designa um melhor valor de intervalo de guarda, quantidade de subportadoras,
-potência de sinal OFDM óptico, banda de guarda, ponto de polarização do MZM,
-entre outros.
+otimização dos mesmos para o objetivo de obter maior eficiência espectral.
+Assim, a aplicação de algoritmos de otimização se faz presente na elaboração de
+um projeto de sistema que designa um melhor valor de intervalo de guarda,
+quantidade de subportadoras, potência de sinal OFDM óptico, banda de guarda,
+ponto de polarização do MZM, entre outros.
 % --------------------------------------------------------------------------- %
 % --------------------------------------------------------------------------- %%
 % --------------------------------------------------------------------------- %
