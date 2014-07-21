@@ -157,6 +157,12 @@ ISBN 978-0-12-374172-1.}
   parameter optimization problems.
 \emph{Evolutionary Computation}, p. 1--32, 1996.}
 
+\bibitem[Mitra 2001]{Book:DSP_Mitra}
+\abntrefinfo{Mitra}{MITRA}{2001}
+{MITRA, S.~K. \emph{Digital Signal Processing: A Computer-Based Approach}.
+  Second edition. [S.l.]: McGraw-Hill Science Engineering Math, 2001.
+ISBN 072513780, 9780072513783.}
+
 \bibitem[Peng et al. 2009]{WilnnerJLT09_01}
 \abntrefinfo{Peng et al.}{PENG et al.}{2009a}
 {PENG, W. et al. Theoretical and experimental investigations of direct-detected

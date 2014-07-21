@@ -61,9 +61,7 @@ experimentais apresentados em \cite{Rosenkranz09}, \cite{WilnnerJLT09_02} e
 transmitido, sensibilidade de recepção, robustez contra CD e eficiência
 espectral global do sistema. Excluindo o prefíxo cíclico em uma configuração
 óptica B2B, um único símbolo OFDM de um sinal DDO-OFDM real pode ser escrita
-como
-% [7]-[12].
-
+como% [7]-[12].
 \begin{equation}
 s(t) = \sqrt{\frac{\sigma_s^2}{N_{FFT}}} \cdot \sum_{k=1}^{N_{FFT}} 
 \left \{ \mathfrak{R_e} [X_k] \cdot cos(2 \pi k \, \Delta f \, t) +
@@ -71,12 +69,11 @@ s(t) = \sqrt{\frac{\sigma_s^2}{N_{FFT}}} \cdot \sum_{k=1}^{N_{FFT}}
 \label{Eq:ofdm_signal}
 \end{equation}
 onde ${\sigma_s}^2$ é a potência média e $X_k$ representa os símbolos complexos
-de dados transmitidos pelas $N_{FFT}$ subportadoras espaçadas na de frequência
-de $\Delta f$. De acordo com \cite{Rosenkranz09}, o campo óptico na saída de um
-MZM caracterizado pela sua tensão de chaveamento $V_\pi$ e polarizado por
-$V_{bias}$ é um sinal de banda passante centralizado na frequência $f_0$ e dado
+de dados transmitidos pelas $N_{FFT}$ subportadoras espaçadas com frequência de
+$\Delta f$. De acordo com \cite{Rosenkranz09}, o campo óptico na saída de um MZM
+caracterizado pela sua tensão de chaveamento $V_\pi$ e polarizado por $V_{bias}$
+é um sinal de banda passante centralizado na frequência $f_0$ e pode ser dado
 por
-
 \begin{equation}
 E_{MZM} = cos \left [ \frac{\pi}{2} \frac{(s(t) + V_{bias})}{V_\pi} \right ]
 \cdot \sqrt{2P} \cdot cos(2\pi f_0 t),
@@ -85,44 +82,39 @@ E_{MZM} = cos \left [ \frac{\pi}{2} \frac{(s(t) + V_{bias})}{V_\pi} \right ]
 sendo $P$ a potência do \textit{laser} de sinal CW conectado na entrada
 óptica do MZM.
 
-
-
 Nota-se a partir das equações (\ref{Eq:ofdm_signal}) e (\ref{Eq:mzm2}) que a
-potência média do sinal OFDM e o ponto de polarização do MZM $V_{bias}$ aliam
+potência média do sinal OFDM e o ponto de polarização do MZM, $V_{bias}$, aliam
 uma importante regra no desempenho do sistema DDO-OFDM. Essa relação denota a
 transferência de potência óptica dada pelo índice de modulação óptico
 interligado à amplitude do sinal elétrico gerado, ou melhor, ao seu desvio
 padrão $\sigma_s$ dado por $OMI = (V_{in})_{RMS}/V_\pi$. Um olhar mais atento na
-Figura \ref{MZM_tf} revela que a polarização do MZM no seu ponto de quadratura
-mostra que o modulador óptico opera na região de máxima linearidade. Embora isso
-resulte em um aumento na amplitude do sinal elétrico na entrada do MZM, metade
-da potência óptica é desperdiçada pela portadora óptica. Polarizar o MZM acima
-do ponto de quadratura proporciona maior potência óptica da portadora na saída
-do modulador. Em contrapartida, entra-se numa região de não linearidade caso
-ocorra picos do sinal transmitido ao entrar na zona de máxima potência da curva
-característica. Já polarizando o modulador logo acima da tensão nula reduz a
-perda de potência da portadora e ao mesmo tempo que introduz termos de alta
-ordem provindos da função transferência do MZM.
+Figura \ref{MZM_transferFunction} revela que a polarização do MZM no seu ponto
+de quadratura mostra que o modulador óptico opera na região de máxima
+linearidade. Embora isso resulte em um aumento na amplitude do sinal elétrico na
+entrada do MZM, metade da potência óptica é desperdiçada pela portadora óptica.
+Polarizar o MZM acima do ponto de quadratura proporciona maior potência óptica
+da portadora na saída do modulador. Em contrapartida, entra-se numa região de
+não linearidade caso ocorra picos do sinal transmitido ao entrar na zona de
+máxima potência da curva característica. Já polarizando o modulador abaixo do
+ponto de quadratura e logo acima da tensão nula, reduz a perda de potência pela
+portadora óptica. Porém, ao mesmo tempo são introduzidos termos de alta ordem
+provindos da região não linear dada pela curva da função transferência do MZM.
 
-% Já polarizando o modulador logo acima da tensão nula (por
-% exemplo $V_{bias} = 0.8 \cdot V_\pi$) reduz a perda de potência da portadora e
-% ao mesmo tempo que introduz termos de alta ordem provindos da função
-% transferência do MZM.
-
-% Um olhar mais atento na Figura \ref{Funcao_tranf_MZM} revela que a polarização
-% do MZM no seu ponto de quadratura significa que o modulador óptico opera na
-% região de máxima linearidade. Embora isso resulte em um aumento na amplitude do
-% sinal elétrico na entrada do MZM, metade da potência óptica é desperdiçada pela
-% portadora óptica.
-
-
-% [7]-[9].
+% Já polarizando o modulador logo acima da tensão nula (por exemplo $V_{bias} =
+% 0.8 \cdot V_\pi$) reduz a perda de potência da portadora e ao mesmo tempo que
+% introduz termos de alta ordem provindos da função transferência do MZM. Um
+% olhar mais atento na Figura \ref{Funcao_tranf_MZM} revela que a polarização do
+% MZM no seu ponto de quadratura significa que o modulador óptico opera na
+% região de máxima linearidade. Embora isso resulte em um aumento na amplitude
+% do sinal elétrico na entrada do MZM, metade da potência óptica é desperdiçada
+% pela portadora óptica [7]-[9].
 
 \begin{figure}[htbp]
 	\begin{center}
-		\includegraphics[scale=0.8]{Figuras_TESE/Funcao_tranf_MZM2.eps}
-		\caption{Função característica do modulador óptico Mach-Zehnder.}
-		\label{Funcao_tranf_MZM}
+		\includegraphics[scale=0.49]{Figures/MZM_Curve_cap5.pdf}
+		\caption{Função característica do modulador óptico Mach-Zehnder e pontos de
+		polarização}
+		\label{MZM_transferFunction}
 	\end{center}
 \end{figure}
 
@@ -130,18 +122,16 @@ ordem provindos da função transferência do MZM.
 % transmitindo à uma taxa de 10 Gbps para avaliar o desempenho levando em
 % consideração diferentes pontos de polarização do MZM e índice óptico de
 % modulação $OMI = (V_{in})_{RMS}/V_\pi$. Os resultados das simulações descritos
-% na Figura 3 confirmam as abordagens referenciadas. Fica claro na Figura 3, que 
+% na Figura 3 confirmam as abordagens referenciadas. Fica claro na Figura 3, que
 % a polarização do MZM com $V_{bias}=0.9 \cdot V_{\pi}$ aprimora o desempenho do
-% sistema no qual é fortemente dependente da raiz média quadrática da amplitude (
-% e conseguentemente da potência média ${\sigma_s}^2$) do sinal OFDM. Em dição, a
-% análise da dispersão inserida e da taxa de erro de bit (BER) versus a relação
-% sinal ruido óptica (OSNR) mostra na Figura 3b para o melhor valor de OMI para
-% cada ponto de polarização descrito na figura 3a, também são pontos
+% sistema no qual é fortemente dependente da raiz média quadrática da amplitude
+% ( e conseguentemente da potência média ${\sigma_s}^2$) do sinal OFDM. Em
+% adição, a análise da dispersão inserida e da taxa de erro de bit (BER) versus
+% a relação sinal ruido óptica (OSNR) mostra na Figura 3b para o melhor valor de
+% OMI para cada ponto de polarização descrito na figura 3a, também são pontos
 % consideráveis.
 
-Alternativamente, o sinal óptico dado por (\ref{Eq:mzm2}) pode ser expresso
-como
-
+Alternativamente, o sinal óptico dado por (\ref{Eq:mzm2}) pode ser expresso como
 \begin{equation}
 E_{MZM}(t) = A + e^{j2\pi(f_0+B_G)t} \cdot \sum_{k=1}^{N_{FFT}} X_k
 e^{j2\pi(k\Delta f)t},
@@ -154,13 +144,11 @@ e^{j2\pi(k\Delta f)t},
 onde $A$ é uma constante representando a portadora óptica e $B_G$ a banda de
 guarda entre a portadora óptica e o sinal OFDM. Em B2B, a fotocorrente na saída
 do fotodiodo é computada pelo quadrado de $|E_{MZM}(t)|^2$ resultando em
-
 % \begin{eqnarray*}
 %  \lefteqn{w+x+y+z = }\\
 %    && a+b+c+d+e+\\
 %    && {}+f+g+h+i
 % \end{eqnarray*}
-
 \begin{eqnarray}
 \label{Eq:IMD}
 i_{pin}(t) \propto |E_{MZM}(t)|^2 &=& 
@@ -179,26 +167,82 @@ SSBI ou \textit{signal-to-signal mixing interferences} - SSMI) podem ser
 minimizadas se uma banda de guarda $B_G$ for alocada. Aqui, uma abordagem entre
 degradação não linear do sinal e eficiência espectral do sistema são levadas em
 conta. Vale notar que, em sistemas DDO-OFDM convencionais uma banda $B_G = B_W$
-é recomendada.
-
+é recomendada, mostrada na Figura \ref{Fig:BGa}. Durante os procedimentos
+experimentais do capítulo \ref{Cap:4}, notou-se que a banda de guarda $B_G$ não
+necessária mente deveria seguir esta igualdade, o que justificou adicionar este
+parâmetro aos algoritmos de otimização obtendo valores que não causassem
+interferências com o sinal transmitido. A Figura \ref{Fig:BGb} ilustra
+o espéctro elétrico original com os produtos de intermodulação em uma
+banda menor que $B_W$ e a evolução para o espéctro elétrico do sinal
+deslocado para $f'_c$ agora com uma menor frequência máxima do sinal ${B'}_c$.
+\begin{figure}[htbp]
+        \centering
+        \begin{subfigure}[b]{0.9\textwidth}
+                \includegraphics[width=\textwidth]{Figures/Graph_BG_Chap5.pdf}
+                \caption{Inserção da Banda de Guarda no Sistema DDO-OFDM;}
+                \label{Fig:BGa}
+        \end{subfigure}
+        ~	%add desired spacing between images, e. g. ~, \quad, \qquad etc.
+			%(or a blank line to force the subfigure onto a new line)
+        \begin{subfigure}[b]{0.9\textwidth}
+                \includegraphics[width=\textwidth]{Figures/Graph_BG_Chap5-b.pdf}
+                \caption{Espectro elétrico esperado com parâmetros
+                otimizados.}
+                \label{Fig:BGb}
+        \end{subfigure}
+        \caption{Variação proposta da banda de guarda do sistema DDO-OFDM.}
+        \label{Fig:BG}
+\end{figure}
 Outra abordagem que existe em sistemas ópticos OFDM está relacionados à inserção
 do prefíxo cíclico no início de cada sinal transmitido. Uma redundância dada por
 $\epsilon_g = T_g/(T_s-T_g)$ para $T_g$ o intervalo de guarda e $T_s$ o tempo
 total do símbolo OFDM é, introduzida no ínicio de cada sinal OFDM. Aqui, um
-curto prefíxo cíclico escolhido deve minizar ou até mesmo eliminar todos os
-efeitos causados pela interferência inter simbólica (ISI) no sistema que, por
+curto prefíxo cíclico escolhido deve minimizar ou até mesmo eliminar todos os
+efeitos causados pela interferência intersimbólica (ISI) no sistema que, por
 outro lado compensa o deslocamento na sincronização do símbolo. Uma boa
 estimativa para a eficácia deste intervalo de guarda é
-
 \begin{equation}
-T_g \geq D \cdot B_w \cdot \frac{c}{f_0^2}
+T_g \geq D \cdot B_w \cdot \frac{c}{f_0^2},
 \label{Eq:dispersao}
 \end{equation}
 % onde $D$ é a quantidade total de dispersão cromática, $c$ é a velocidade da luz
 % e $f_0$ a frequência da portadora óptica [11], [12].
 onde $D$ é a quantidade total de dispersão cromática, $c$ é a velocidade da luz
-e $f_0$ a frequência da portadora óptica.  
+e $f_0$ a frequência da portadora óptica.
 
+Entretanto, como trata-se de enlaces de curto alcance, efeitos causados pela
+dispersão cromática são mínimos podendo diminuir o $I_G$ porém, não
+eliminando-o, em virtude de possuir um sinal cíclico viabilizando o uso da
+convolução circular \cite{Book:DSP_Mitra}. A Figura \ref{Fig:Graph_Ig}
+
+\begin{figure}[htbp]
+        \centering
+        \begin{subfigure}[c]{0.69\textwidth}
+                \includegraphics[width=\textwidth]{Figures/Graph_Ig_Cap5-a.png}
+                \caption{Relação de valores Tempo de símbolo versus Tempo de
+                guarda para uma mesma distância;}
+                \label{Fig:Graph_Ig-a}
+        \end{subfigure}
+        %~	%add desired spacing between images, e. g. ~, \quad, \qquad etc.
+			%(or a blank line to force the subfigure onto a new line)
+        \begin{subfigure}[c]{0.30\textwidth}
+                \includegraphics[width=\textwidth]{Figures/Graph_Ig_Cap5-b.png}
+                \caption{Constelações com dois valores de tempo de guarda.}
+                \label{Fig:Graph_Ig-b}
+        \end{subfigure}
+        \caption{Influência do $I_G$ no projeto de sistemas DDO-OFDM.}
+        \label{Fig:Graph_Ig}
+\end{figure} 
+
+Por fim, a última variável escolhida para o processo de otimização é um
+número multiplicador da taxa de amostragem do sinal, dada por $n_{samp}$. A
+taxa de amostragem é um parâmetro que se relaciona diretamente com a frequência
+máxima do sinal. As portadoras de maiores frequências possuem menos pontos por
+ciclo criando distorções na recuperação do sinal. O aumento da taxa de
+amostragem do sinal pode melhorar a qualidade do sinal transmitido porém, exigir
+maior capacidade de processamento no lado do transmissor. Um valor aceitável
+para $n_{samp}$ é buscado no algoritmo de otimização para obter melhores
+resultados na tranmissão.
 % Obtida de
 % \ref{Eq:dispersao}, o mapa de contornos mostrado na Figuraontornado mo
 % FALTA ENFATIZAR AS COMPONENTES DE INTERMODULAÇÃO PROVENIENTES DO BATIMENTO DO
@@ -356,7 +400,7 @@ probabilidade de buscar qualquer ponto no espaço de busca nunca possa ser zero. 
 posições de cada cromossomo na população sofre uma alteração aleatória de acordo
 com a probabilidade definida pela probabilidade de mutação, $p_m$.
 
-\section{Formulação do Problema}
+\section{Formulação do Problema e OSNR como Parâmetro Quantificador}
 Para otimizar o desempenho do sistema DDO-OFDM simulado, a formulação do
 problema implica em minimizar a relação sinal ruído óptica (\textit{Optical
 Signal-to-Noise ratio} - OSNR) a uma taxa de erro de bit de $BER = 10^{-3}$,
@@ -364,12 +408,12 @@ sujeito a um conjunto de restrições de parâmetros elétricos e ópticos. Portanto,
 esta formulação pode ser expressa como mostrado na Tabela
 \ref{Tab:1_problemFormulation}, onde $\sigma_s$ é o desvio padrão do sinal OFDM
 gerado, $V_{\textit{bias}}$ é o ponto de polarização do modulador MZM, $B_G$ é a
-banda de guarda óptica, $I_G$ é proporcional ao $CP$, $n_{samp}$ é um fator de
-super amostragem, $V$ é a tensão de chaveamento do MZM, $B_W$ a largura de banda
-do sinal de banda lateral (excluindo $B_G$) e $X$ é um número inteiro de tal
-modo que $X_{min} \leq X \leq X{max}$.
+banda de guarda óptica, $GI$ ou $I_G$ é proporcional ao $CP$, $n_{samp}$ é um
+fator de super amostragem, $V_\pi$ é a tensão de chaveamento do MZM, $B_W$ a
+largura de banda do sinal de banda lateral (excluindo $B_G$) e $X$ é um número inteiro de tal
+modo que $X_{min} \leq X \leq X_{max}$.
 
-\begin{center}
+\begin{center}[htbp]
 \begin{table}
 \centering
 \caption{Formulação do problema}
@@ -392,7 +436,7 @@ modo que $X_{min} \leq X \leq X{max}$.
 \end{center}
 
 \section{O Algoritmo Genético Aplicado ao Problema}
-Neste trabalho é utilizado o algotitmo genético com codificação de número real
+Neste trabalho é utilizado o algoritmo genético com codificação de número real
 com um processo que inicia com uma população $P_F$ gerada de uma ordem aleatória
 por $N = 30$ soluções possíveis para $\sigma_s$, $V_{bias}$, $B_G$, $I_G$, e
 $n_{samp}$ como mostrado na Figura \ref{Fig:GA_blockDiagram}.

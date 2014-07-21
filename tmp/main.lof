@@ -49,13 +49,15 @@
 \contentsline {figure}{\numberline {48}{\ignorespaces Sinais OFDM recebidos.\relax }}{79}{figure.caption.59}
 \contentsline {figure}{\numberline {49}{\ignorespaces Arquitetura do receptor de sinais OFDM com modula\c c\~ao adicional.\relax }}{79}{figure.caption.60}
 \contentsline {figure}{\numberline {50}{\ignorespaces Constela\c c\~ao mostrando os simbolos transmitidos e recebidos com $EVM = -17.18$ dB e BER = 0.\relax }}{80}{figure.caption.62}
-\contentsline {figure}{\numberline {51}{\ignorespaces Fun\c c\~ao caracter\IeC {\'\i }stica do modulador \'optico Mach-Zehnder.\relax }}{85}{figure.caption.63}
-\contentsline {figure}{\numberline {52}{\ignorespaces Diagrama de blocos da evolu\c c\~ao do processo do algoritmo gen\'etico implementado.\relax }}{90}{figure.caption.66}
-\contentsline {figure}{\numberline {53}{\ignorespaces Configura\c c\~ao experimental do sistema DDO-OFDM II \`a taxa de $R_b = 1.83$ Gbps.\relax }}{93}{figure.caption.70}
-\contentsline {figure}{\numberline {54}{\ignorespaces Densidade espectral de pot\^encia e constela\c c\~ao dos resultados experimentais do sistema DDO-OFDM II otimizado.\relax }}{94}{figure.caption.71}
-\contentsline {figure}{\numberline {55}{\ignorespaces OSNR @ BER = $10^-3$ versus banda de guarda para sistemas DDO-OFDM convencionais e otimizados em transmiss\~oes B2B, 20 km e 40 km com 4, 8 e 16-QAM.\relax }}{97}{figure.caption.74}
-\contentsline {figure}{\numberline {56}{\ignorespaces Imagem do \textit {laser}-DFB utilizado.\relax }}{104}{figure.caption.78}
-\contentsline {figure}{\numberline {57}{\ignorespaces Configura\c c\~ao dos pinos do encapsulamento do \textit {laser}.\relax }}{104}{figure.caption.79}
-\contentsline {figure}{\numberline {58}{\ignorespaces Diagrama de blocos das partes funcionais do Laser DFB.\relax }}{105}{figure.caption.80}
-\contentsline {figure}{\numberline {59}{\ignorespaces Placa de circuito impressa do controlador do Laser DFB.\relax }}{105}{figure.caption.81}
-\contentsline {figure}{\numberline {60}{\ignorespaces Levantamento do feixe de luz do laser no analisador de esp\'ectro \'optico.\relax }}{106}{figure.caption.82}
+\contentsline {figure}{\numberline {51}{\ignorespaces Fun\c c\~ao caracter\IeC {\'\i }stica do modulador \'optico Mach-Zehnder e pontos de polariza\c c\~ao\relax }}{85}{figure.caption.63}
+\contentsline {figure}{\numberline {52}{\ignorespaces Varia\c c\~ao proposta da banda de guarda do sistema DDO-OFDM.\relax }}{86}{figure.caption.64}
+\contentsline {figure}{\numberline {53}{\ignorespaces Influ\^encia do $I_G$ no projeto de sistemas DDO-OFDM.\relax }}{87}{figure.caption.65}
+\contentsline {figure}{\numberline {54}{\ignorespaces Diagrama de blocos da evolu\c c\~ao do processo do algoritmo gen\'etico implementado.\relax }}{91}{figure.caption.68}
+\contentsline {figure}{\numberline {55}{\ignorespaces Configura\c c\~ao experimental do sistema DDO-OFDM II \`a taxa de $R_b = 1.83$ Gbps.\relax }}{95}{figure.caption.72}
+\contentsline {figure}{\numberline {56}{\ignorespaces Densidade espectral de pot\^encia e constela\c c\~ao dos resultados experimentais do sistema DDO-OFDM II otimizado.\relax }}{96}{figure.caption.73}
+\contentsline {figure}{\numberline {57}{\ignorespaces OSNR @ BER = $10^-3$ versus banda de guarda para sistemas DDO-OFDM convencionais e otimizados em transmiss\~oes B2B, 20 km e 40 km com 4, 8 e 16-QAM.\relax }}{98}{figure.caption.76}
+\contentsline {figure}{\numberline {58}{\ignorespaces Imagem do \textit {laser}-DFB utilizado.\relax }}{106}{figure.caption.80}
+\contentsline {figure}{\numberline {59}{\ignorespaces Configura\c c\~ao dos pinos do encapsulamento do \textit {laser}.\relax }}{106}{figure.caption.81}
+\contentsline {figure}{\numberline {60}{\ignorespaces Diagrama de blocos das partes funcionais do Laser DFB.\relax }}{107}{figure.caption.82}
+\contentsline {figure}{\numberline {61}{\ignorespaces Placa de circuito impressa do controlador do Laser DFB.\relax }}{107}{figure.caption.83}
+\contentsline {figure}{\numberline {62}{\ignorespaces Levantamento do feixe de luz do laser no analisador de esp\'ectro \'optico.\relax }}{108}{figure.caption.84}
