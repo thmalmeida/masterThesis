@@ -1,13 +1,6 @@
 % resumo em português
 \setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
 \begin{resumo}
-
-% \hl{Este é um simples exemplo!}
-% 
-% \hlc[green]{Nova linha implementada.}
-% 
-% \hlc[red]{Outra nova linha!}
-% 
 % \hlc[blue]{Thiago Machado de Almeida}
 
 A técnica de multiplexação por divisão de frequências ortogonais
@@ -22,20 +15,28 @@ detecção direta requer a utilização de uma banda de guarda $B_G$ para evitar
 interferências por batimentos da fonte de luz no receptor óptico e ajustes de
 diversos parâmetros ópticos e elétricos para obter sucesso na transmissão.
 
-Este trabalho consiste no desenvolvimento de um sistema óptico experimental de
-modulação por intensidade e detecção direta com aplicação de sinais OFDM em
-modelos de transmissões DDO-OFDM com duas diferentes configurações. Como também,
-são realizadas caracterizações de todos dispositivos ópticos e elétricos
-inseridos no sistema de comunicação proposto adionando o domínio sobre
-equipamentos que realizam conversões A/D e D/A de altos desempenhos em função de
-obter melhores resultados durante as etapas de testes. Além disso, devido a
-inúmera quantidade de parâmetros de projeto envolvido na construção dos sinais
-que estão interligados de forma não linear faz com que esta dissertação entre
-com uma proposta final desenvolvendo um algoritmo genético mono-objetivo para
-melhorar a qualidade da transmissão no que se diz em eficiência espectral e taxa
-de transmissão trabalhando na redução da banda de guarda $B_G$ e no intervalo de
-guarda $I_G$.
+Este trabalho consiste na busca pela eficiência espectral dos sinais
+transmitidos visando minimizar a banda de guarda $B_G$ necessária a partir uma
+heurística de otimização Mono-Objetivo. Através do algoritmo genético, uma busca
+por valores otimizados das variáveis mais sensíveis do projeto é realizada. Para
+validação, uma plataforma experimental é implementada utilizando equipamentos de
+alto desempenho que realizam conversões A/D e D/A assim como a caracterização
+dos dispositivos inseridos no enlace de transmissão de curto alcance.
 
-\textbf{Palavras-chaves}: IM/DD, DDO-OFDM, OFDM Óptico, Experimental, Algoritmo
-Genético, Mono-objetivo, Labtel, UFES
+% Este trabalho consiste no desenvolvimento de um sistema óptico experimental de
+% modulação por intensidade e detecção direta com aplicação de sinais OFDM em
+% modelos de transmissões DDO-OFDM com duas diferentes configurações. Como também,
+% são realizadas caracterizações de todos dispositivos ópticos e elétricos
+% inseridos no sistema de comunicação proposto adionando o domínio sobre
+% equipamentos que realizam conversões A/D e D/A de altos desempenhos em função de
+% obter melhores resultados durante as etapas de testes. Além disso, devido a
+% inúmera quantidade de parâmetros de projeto envolvido na construção dos sinais
+% que estão interligados de forma não linear faz com que esta dissertação entre
+% com uma proposta final desenvolvendo um algoritmo genético mono-objetivo para
+% melhorar a qualidade da transmissão no que se diz em eficiência espectral e taxa
+% de transmissão trabalhando na redução da banda de guarda $B_G$ e no intervalo de
+% guarda $I_G$.
+
+\textbf{Palavras-chaves}: OFDM Óptico, Detecção Direta, Eficiência
+Espectral, Experimental, Algoritmo Genético, Mono-objetivo, Labtel, UFES
 \end{resumo}

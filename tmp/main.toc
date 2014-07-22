@@ -11,7 +11,7 @@
 \contentsline {section}{\numberline {1.2}Objetivos Espec\IeC {\'\i }ficos}{22}{section.1.2}
 \contentsline {section}{\numberline {1.3}Metodologia}{23}{section.1.3}
 \contentsline {section}{\numberline {1.4}Principais Contribui\c c\~oes}{24}{section.1.4}
-\contentsline {section}{\numberline {1.5}Organiza\c c\~ao do Texto}{25}{section.1.5}
+\contentsline {section}{\numberline {1.5}Organiza\c c\~ao do Texto}{24}{section.1.5}
 \contentsline {section}{\numberline {1.6}Lista de Publica\c c\~oes}{25}{section.1.6}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase {Modula\c c\~ao Multiportadora OFDM}}{26}{chapter.2}
