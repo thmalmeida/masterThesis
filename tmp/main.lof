@@ -54,12 +54,13 @@
 \contentsline {figure}{\numberline {53}{\ignorespaces Varia\c c\~ao proposta da banda de guarda do sistema DDO-OFDM.\relax }}{86}{figure.caption.65}
 \contentsline {figure}{\numberline {54}{\ignorespaces Influ\^encia do $I_G$ no projeto de sistemas DDO-OFDM.\relax }}{87}{figure.caption.66}
 \contentsline {figure}{\numberline {55}{\ignorespaces Meio f\IeC {\'\i }sico de propaga\c c\~ao dos sinais propostos.\relax }}{91}{figure.caption.69}
-\contentsline {figure}{\numberline {56}{\ignorespaces Diagrama de blocos da evolu\c c\~ao do processo do algoritmo gen\'etico implementado.\relax }}{92}{figure.caption.70}
-\contentsline {figure}{\numberline {57}{\ignorespaces Configura\c c\~ao experimental do sistema DDO-OFDM II \`a taxa de $R_b = 1.83$ Gbps.\relax }}{96}{figure.caption.74}
-\contentsline {figure}{\numberline {58}{\ignorespaces Densidade espectral de pot\^encia e constela\c c\~ao dos resultados experimentais do sistema DDO-OFDM II otimizado.\relax }}{97}{figure.caption.75}
-\contentsline {figure}{\numberline {59}{\ignorespaces OSNR @ BER = $10^-3$ versus banda de guarda para sistemas DDO-OFDM convencionais e otimizados em transmiss\~oes B2B, 20 km e 40 km com 4, 8 e 16-QAM.\relax }}{99}{figure.caption.78}
-\contentsline {figure}{\numberline {60}{\ignorespaces Imagem do \textit {laser}-DFB utilizado.\relax }}{107}{figure.caption.82}
-\contentsline {figure}{\numberline {61}{\ignorespaces Configura\c c\~ao dos pinos do encapsulamento do \textit {laser}.\relax }}{107}{figure.caption.83}
-\contentsline {figure}{\numberline {62}{\ignorespaces Diagrama de blocos das partes funcionais do Laser DFB.\relax }}{108}{figure.caption.84}
-\contentsline {figure}{\numberline {63}{\ignorespaces Placa de circuito impressa do controlador do Laser DFB.\relax }}{108}{figure.caption.85}
-\contentsline {figure}{\numberline {64}{\ignorespaces Levantamento do feixe de luz do laser no analisador de esp\'ectro \'optico.\relax }}{109}{figure.caption.86}
+\contentsline {figure}{\numberline {56}{\ignorespaces Densidade espectral de pot\^encia \'optica com ru\IeC {\'\i }do adicionado.\relax }}{91}{figure.caption.70}
+\contentsline {figure}{\numberline {57}{\ignorespaces Diagrama de blocos da evolu\c c\~ao do processo do algoritmo gen\'etico implementado.\relax }}{93}{figure.caption.71}
+\contentsline {figure}{\numberline {58}{\ignorespaces Configura\c c\~ao experimental do sistema DDO-OFDM II \`a taxa de $R_b = 1.83$ Gbps.\relax }}{96}{figure.caption.75}
+\contentsline {figure}{\numberline {59}{\ignorespaces Densidade espectral de pot\^encia e constela\c c\~ao dos resultados experimentais do sistema DDO-OFDM II otimizado.\relax }}{97}{figure.caption.76}
+\contentsline {figure}{\numberline {60}{\ignorespaces OSNR @ BER = $10^-3$ versus banda de guarda para sistemas DDO-OFDM convencionais e otimizados em transmiss\~oes B2B, 20 km e 40 km com 4, 8 e 16-QAM.\relax }}{99}{figure.caption.79}
+\contentsline {figure}{\numberline {61}{\ignorespaces Imagem do \textit {laser}-DFB utilizado.\relax }}{108}{figure.caption.83}
+\contentsline {figure}{\numberline {62}{\ignorespaces Configura\c c\~ao dos pinos do encapsulamento do \textit {laser}.\relax }}{108}{figure.caption.84}
+\contentsline {figure}{\numberline {63}{\ignorespaces Diagrama de blocos das partes funcionais do Laser DFB.\relax }}{109}{figure.caption.85}
+\contentsline {figure}{\numberline {64}{\ignorespaces Placa de circuito impressa do controlador do Laser DFB.\relax }}{109}{figure.caption.86}
+\contentsline {figure}{\numberline {65}{\ignorespaces Levantamento do feixe de luz do laser no analisador de esp\'ectro \'optico.\relax }}{110}{figure.caption.87}
