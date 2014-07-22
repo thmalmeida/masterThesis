@@ -218,6 +218,13 @@ ISBN 0072957166, 9780072957167.}
   coset coding for the spectrally shaped channel.
 \emph{IEEE Trans. Commun.}, v.~40, n.~6, p. 1012--1029, Junho 1992.}
 
+\bibitem[Saunders 2010]{lightwave:2010:Online}
+\abntrefinfo{Saunders}{SAUNDERS}{2010}
+{SAUNDERS, R. \emph{When does coherent vs direct detection make sense for
+  40G/100G network deployments?} 2010.
+Dispon{\'\i}vel em:
+  \url{http://www.lightwaveonline.com/blogs/lightwave-guest-blog/2010/09/when-does-coherent-vs-direct-detection-make-sense-for-40g100g-network-deployments.html}.}
+
 \bibitem[Schmidt, Lowery e Armstrong 2008]{LoweryJLT08}
 \abntrefinfo{Schmidt, Lowery e Armstrong}{SCHMIDT; LOWERY; ARMSTRONG}{2008}
 {SCHMIDT, B. J.~C.; LOWERY, A.~J.; ARMSTRONG, J. Experimental demonstrations of
@@ -249,6 +256,13 @@ ISBN 978-0-13-032681-2.}
 {SHIEH, W.; DJORDJEVIC, I. \emph{Orthogonal Frequency Division Multiplexing for
   Optical Communications}. [S.l.]: Elsevier, 2010.
 ISBN 978-0-12-374879-9.}
+
+\bibitem[Silva 2011]{tese:Jair}
+\abntrefinfo{Silva}{SILVA}{2011}
+{SILVA, J. A.~L.
+\emph{Transmissão de Sinais OFDM com Envelope Constante em Sistemas Ópticos
+  IMDD}.
+Tese (Doutorado) --- Universidade Federal do Espírito Santo, 2011.}
 
 \bibitem[Silva, Valentim e Segatto 2009]{jair_SBRT09}
 \abntrefinfo{Silva, Valentim e Segatto}{SILVA; VALENTIM; SEGATTO}{2009}

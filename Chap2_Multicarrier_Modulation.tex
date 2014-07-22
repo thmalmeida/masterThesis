@@ -257,7 +257,7 @@ Fourier Transform/ Direct Discrete Fourier Transform}) \cite{Cioffi_notas_aula}.
 Para isso e para combater distorções relacionados à ISI e à ICI, o OFDM usa como
 filtros de transmissão e recepção nas Figuras
 \ref{fig:Transmissor_Multiportadora} e \ref{fig:Receptor_Multiportadora}
-respectivamente, o pulso retangular
+respectivamente, o filtro retangular
 \begin{equation}
 g_{Tx}(t)=g_{Rx}(t)=rect\left(\frac{t}{T_N}\right) \label{eq_4_2},
 \end{equation}
@@ -500,10 +500,13 @@ Observe-se também que a inserção do CP aumenta o tempo do símbolo para $T = T_N
 subportadora do transmissor multiportadora para $g_{Tx} = rect (\frac{t}{T_N +
 T_g})$. O último efeito tem como consequência perda na SNR pelo descasamento dos
 filtros de transmissão e recepção, enquanto que o primeiro reduz a eficiência
-espectral para \[ \mu = \frac{T_N}{T_N + Tg} = \frac{T_N}{T_N + Tg} \cdot
-log_2(M) \quad bit/s/Hz, \label{eq_4_10} \] uma vez que o conteúdo do CP é uma
-repetição do final do símbolo para o início do mesmo, por isso não contém
-informação útil e é removido na recepção.
+espectral para
+\begin{equation}
+\mu = \frac{T_N}{T_N + Tg} = \frac{T_N}{T_N + Tg} \cdot log_2(M) \quad bps/Hz,
+\label{eq_4_10}
+\end{equation}
+uma vez que o conteúdo do CP é uma repetição do final do símbolo para o início
+do mesmo, por isso não contém informação útil e é removido na recepção.
 
 Convém ressaltar que a inserção do intervalo de guarda transforma a convolução
 linear do sinal de saída do transmissor $s[n]$ com a resposta impulsiva do canal
@@ -584,7 +587,7 @@ cancelamento de picos do sinal e codificação de canal são algumas da várias
 técnicas pesquisadas \cite{Single_Multicarrier_QAM}.
 
 \subsection {Desvio de Freqüência}
-Erros de sincronismo e o Descasamento entre os osciladores (filtros) de
+Erros de sincronismo e o descasamento entre os osciladores (filtros) de
 transmissão e recepção são algumas das causas de perda de ortogonalidade das
 subportadoras, o que na prática significa que a separação em freqüência de tais
 portadoras não é precisamente $\Delta_f = \frac{1}{T_N}$. Um deslocamento de
