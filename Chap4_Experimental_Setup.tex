@@ -27,7 +27,7 @@ definidos por algoritmos implementados e configurados \textit{offline} via
 Figura \ref{Fig:DDO-OFDM} ilustra a divisão das partes mostrando a configuração
 implementada.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 	\centering
 		\includegraphics[width=\textwidth]{Figures/DDO-OFDM_blockDiagram_pt-br.pdf}
 		\caption{Sistema DDO-OFDM implementado}
@@ -84,7 +84,7 @@ amostras por ciclo no limite em $B = 12$  GHz. A Figura \ref{Fig:equipments}
 ilustra os equipamentos utilizados nas configurações para realização das
 conversões A/D e D/A.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 	\centering
 		\includegraphics[width=\textwidth]{Figures/DDO-OFDM_DAC_ADC_Equipments.pdf}
 		\caption{Equipamentos AWG e DPO utilizados respectivamente, para conversões
@@ -102,6 +102,35 @@ máxima do AWG fazendo com que o sinal fique mais fiel possível possuindo sempre
 o máximo número de pontos por ciclo, evitando que as distorções harmônicas
 conhecidas como \textit{aliasing} fiquem o mais distante possível do sinal
 transmitido em relação ao eixo das frequências.
+
+\subsection{Amplificador e Filtro Passa-Baixas (\textit{Low-Pass Filter} - LPF)}
+Com objetivos de amplificar o sinal proveniente do conversor D/A e de eliminar
+as repetições por \textit{aliasing} proporcionais à taxa de amostragem, usou-se
+um amplificador LPF. Dentre suas características, as que se destacam são sua
+largura de banda de operação variando de $50$ a $3000$ MHz. Uma baixa figura de
+ruído de $1.1$ dB e saída máxima de potência de $17.5$ dBm. As Figuras
+\ref{Fig:LPF_image} e \ref{Fig:LPF_curve}, respectivamente, ilustra o
+dispositivo e mostra a curva de ganho da resposta em frequência do dispositivo
+para alimentações com $3$ e $5$ Volts.
+
+\begin{figure}[htb]
+        \centering
+        \begin{subfigure}{0.27\textwidth}
+        		\includegraphics[width=\textwidth]{Figures/LPF_image.png}
+				\caption{Imagem ilustrativa do amplificador LPF;}
+				\label{Fig:LPF_image}
+        \end{subfigure}
+% 		~
+        \begin{subfigure}{0.6\textwidth}
+                \includegraphics[width=\textwidth]{Figures/LPF_curve.png}
+                \caption{Curva de Ganho de Resposta em Frequência.}
+                \label{Fig:LPF_curve}
+        \end{subfigure}
+        \caption{Amplificador Filtro Passa-Baixas.}
+        \label{Fig:LPF}
+\end{figure}
+
+
 
 \subsection{Laser DFB (\textit{Distributed-Feedback Laser} - DFB)}
 
@@ -126,9 +155,9 @@ relação a corrente dada uma temperatura constante controlada. Os detalhes dos
 circuitos de controle do \textit{laser} DFB encontram-se no apêndice
 \ref{AppendixA}.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 	\centering
-		\includegraphics[width=0.7\textwidth]{Figures/laserPowerResponse.eps}
+		\includegraphics[width=0.6\textwidth]{Figures/laserPowerResponse.eps}
 		\caption{Resposta em potência do laser por corrente em uma temperatura
 		constante.}
 		\label{Fig:powerLaser}
@@ -153,7 +182,7 @@ ao aumento tempo.} característico da modulação direta.
 Internamente, o MZM divide o feixe coerente de luz provinda do laser em um
 divisor de 3 dB em dois braços conforme Figura \ref{Fig:mzmBeam}.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 	\centering
 		\includegraphics[width=\textwidth]{Figures/mzmBeam.pdf}
 		\caption{Estrutura física do modulador óptico MZM e propagação do
@@ -194,7 +223,7 @@ ser levantados para obter sucesso no processo de transmissão. A curva caracterís
 do modulador é levantada utilizando o diagrama de blocos da Figura
 \ref{Fig:mzmCharacterization} que mostra a configuração experimental do procedimento.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 	\centering
 		\includegraphics[width=0.7\textwidth]{Figures/mzmSetup.pdf}
 		\caption{Aparato experimental para levantamento da curva
@@ -309,7 +338,7 @@ recebido e sua curva característica de resposta em tensão de pico pela entrada
 óptica de um sinal NRZ (\textit{Non-Return-to-Zero}) é mostrado na Figura
 \ref{Fig:pdCurve}.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 	\centering
 		\includegraphics[width=0.85\textwidth]{Figures/receiverResponse.pdf}
 		\caption{Curva característica de resposta do fotoreceptor.}
@@ -339,7 +368,7 @@ LPF), pelo modulador óptico MZM, pelo canal de fibra SSMF com 40 km de
 comprimento, pelo fotoreceptor e pelos equipamentos que realizam as conversões
 D/A e A/D.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 	\centering
 		\includegraphics[width=\textwidth]{Figures/DDO-OFDM_physicalPart.pdf}
 		\caption{Estrutura elétrica/óptica/elétrica utilizada nas transmissões dos
@@ -367,7 +396,7 @@ que transportam a informação é de $N_S = \frac{N_{IFFT}}{4}$ o que reduz a
 eficiência na taxa de transmissão. O fator $\frac{1}{4}$ leva em consideração
 também a inserção da banda de guarda.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 	\centering
 		\includegraphics[width=\textwidth]{Figures/DDO-OFDM_I_Tx_pt-br.pdf}
 		\caption{Arquitetura do transmissor de sinais OFDM com simetria hermitiana.}
@@ -386,7 +415,7 @@ pontos da IFFT e assim, obtém-se na saída um vetor de pontos no domínio do tempo
 com apenas coeficientes reais com um total de $N_{IFFT}$ pontos igual ao vetor
 frequência.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 	\centering
 		\includegraphics[width=0.6\textwidth]{Figures/DDO-OFDM_I_Tx_IFFT_pt-br.pdf}
 		\caption{Estrutura de dados de entrada na IFFT com simetria hermitiana.}
@@ -401,7 +430,7 @@ deslocamento como mostrado na Figura \ref{Fig:DDO-OFDM_I_Tx_IFFT_shift} onde as
 frequências negativas são projetadas para a esquerda e as positivas para a
 direita onde se encontram as subportadoras úteis de informações.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 	\centering
 		\includegraphics[width=\textwidth]{Figures/DDO-OFDM_I_Tx_IFFT_shift.pdf}
 		\caption{Operação de deslocamento de espectro pela FFT/IFFT.}
@@ -437,7 +466,7 @@ concatenação de todos símbolos OFDM no domínio do tempo cria um quadro OFDM
 contendo $n_s = 10$ símbolos agrupados para o experimento com simetria
 hermitiana.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 	\centering
 		\includegraphics[width=0.9\textwidth]{Figures/DDO-OFDM_I_Tx_Ig.pdf}
 		\caption{Processo de adição do intervalo de guarda e conversão
@@ -471,7 +500,7 @@ vezes a uma taxa de amostragem de $F_{Sa} = 12$ GS/s o que torna possível a
 visualização das componentes de distoção harmônica que se repetem periodicamente
 no espectro de frequências.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 	\centering
 		\includegraphics[width=\textwidth]{Figures/DDO-OFDM_I_Tx_Aliasing.pdf}
 		\caption{Distorções harmônicas causadas por \textit{aliasing} e filtro
@@ -531,7 +560,7 @@ $\frac{N_{FFT}}{2}$. O demapeamento dos símbolos é realizado após equalização no
 domínio da frequência por um equalizador de um atraso da sequência de
 treinamento composta pelos $n_t$ primeiros símbolos OFDM transmitidos.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 	\centering
 		\includegraphics[width=\textwidth]{Figures/DDO-OFDM_I_Rx.pdf}
 		\caption{Arquitetura do receptor de sinais OFDM com simetria hermitiana.}
@@ -674,7 +703,7 @@ Figura \ref{Fig:ofdm_I_tx_time_rec_trat} e na Figura
 % |Y_k| - |X_k|$ e o erro de fase $\phi_k = \angle(Y_k) - \angle(X_k)$ são
 % perfeitamente mensuráveis pela métrica EVM \cite{jair_SBRT09}.
 % 
-% \begin{figure}[htbp]
+% \begin{figure}[htb]
 % \begin{center}
 % \includegraphics[width=0.5\textwidth]{Figures/constel.eps}
 % \caption{Diagrama de constelacao ilustrativo.} \label{constel}
@@ -790,7 +819,7 @@ DDO-OFDM I são descritos na Tabela \ref{Tab:DDO-OFDM_I_Params}.
 A Figura \ref{Fig:DDO-OFDM_I_constelacao} representa a constelação dos
 símbolos enviados e recebidos.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 	\centering
 		\includegraphics[width=0.6\textwidth]{Figures/DDO-OFDM_I_constelacao.eps}
 		\caption{Constelação mostrando os símbolos transmitidos e recebidos.}
@@ -863,7 +892,7 @@ frequência máxima $B_{ca}$. O posterior deslocamento em frequência é realizado
 com o auxílio de uma ``portadora digital'' (\textit{Direct Digital Synthesis} -
 DDS) conforme ilustra a Figura \ref{Fig:freqShiftMethod_II}.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 	\centering
 		\includegraphics[width=\textwidth]{Figures/DDO-OFDM_II_Tx.pdf}
 		\caption{Arquitetura do transmissor de sinais OFDM com modulação adicional.}
@@ -880,7 +909,7 @@ distorções harmônicas de \textit{aliasing}.
 Assim é realizado a transformada inversa e após a aplicação da modulação
 adicional o espectro elétrico é deslocado.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 	\centering
 		\includegraphics[width=\textwidth]{Figures/DDO-OFDM_II_Tx_IFFT_Shift_pt-br.pdf}
 		\caption{Estrutura dos dados junto à IFFT.}
@@ -973,7 +1002,7 @@ reorganizar os dados. É realizada a equalização do sinal a partir do símbolos de
 treinamento, seguida pelo demapeamento e a recuperação do \textit{bits} de
 informação.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 	\centering
 		\includegraphics[width=\textwidth]{Figures/DDO-OFDM_II_Rx.pdf}
 		\caption{Arquitetura do receptor de sinais OFDM com modulação
@@ -1021,7 +1050,7 @@ Para o nível de modulação utilizado nesse experimento de 4-QAM a taxa de erro de
 símbolos transmitidos e recuperados são mostrados na Figura
 \ref{Fig:DDO-OFDM_II_constelação}.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 	\centering
 		\includegraphics[width=0.6\textwidth]{Figures/DDO-OFDM_II_constelacao.eps}
 		\caption{Constelação mostrando os simbolos transmitidos e recebidos com $EVM =

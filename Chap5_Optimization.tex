@@ -109,7 +109,7 @@ provindos da região não linear dada pela curva da função transferência do MZM.
 % do sinal elétrico na entrada do MZM, metade da potência óptica é desperdiçada
 % pela portadora óptica [7]-[9].
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 	\begin{center}
 		\includegraphics[scale=0.49]{Figures/MZM_Curve_cap5.pdf}
 		\caption{Função característica do modulador óptico Mach-Zehnder e pontos de
@@ -175,7 +175,7 @@ interferências com o sinal transmitido. A Figura \ref{Fig:BGb} ilustra
 o espéctro elétrico original com os produtos de intermodulação em uma
 banda menor que $B_W$ e a evolução para o espéctro elétrico do sinal
 deslocado para $f'_c$ agora com uma menor frequência máxima do sinal ${B'}_c$.
-\begin{figure}[htbp]
+\begin{figure}[htb]
         \centering
         \begin{subfigure}[b]{0.9\textwidth}
                 \includegraphics[width=\textwidth]{Figures/Graph_BG_Chap5.pdf}
@@ -215,7 +215,7 @@ dispersão cromática são mínimos podendo diminuir o $I_G$ porém, não
 eliminando-o, em virtude de possuir um sinal cíclico viabilizando o uso da
 convolução circular \cite{Book:DSP_Mitra}. A Figura \ref{Fig:Graph_Ig}
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
         \centering
         \begin{subfigure}[c]{0.69\textwidth}
                 \includegraphics[width=\textwidth]{Figures/Graph_Ig_Cap5-a.png}
@@ -410,11 +410,10 @@ esta formulação pode ser expressa como mostrado na Tabela
 gerado, $V_{\textit{bias}}$ é o ponto de polarização do modulador MZM, $B_G$ é a
 banda de guarda óptica, $GI$ ou $I_G$ é proporcional ao $CP$, $n_{samp}$ é um
 fator de super amostragem, $V_\pi$ é a tensão de chaveamento do MZM, $B_W$ a
-largura de banda do sinal de banda lateral (excluindo $B_G$) e $X$ é um número inteiro de tal
-modo que $X_{min} \leq X \leq X_{max}$.
-
-\begin{center}[htbp]
-\begin{table}
+largura de banda do sinal de banda lateral (excluindo $B_G$) e $X$ é um número
+inteiro de tal modo que $X_{min} \leq X \leq X_{max}$.
+\begin{center}
+\begin{table}[h]
 \centering
 \caption{Formulação do problema}
 	\begin{tabular}{c}
@@ -425,7 +424,7 @@ modo que $X_{min} \leq X \leq X_{max}$.
 		$0.01 \times V_\pi \leq \sigma_S \leq 0.25 \times V_\pi$ \\
 		$0.5 \times V_\pi \leq V_{bias} \leq V_{\pi} $ \\
 		$0.1 \times B_W \leq B_G \leq B_W $ \\
-		$ \left(2^{X_{máx}}\right)^{-1} \leq GI = \left(2^X\right)^{-1} \leq
+		$ \left(2^{X_{máx}}\right)^{-1} \leq GI = \left(2^X \right)^{-1} \leq
 		\left(2^{X_{mín}}\right)^{-1}$ \\
 		$ 1 \leq n_{samp} \leq 6 $ \\
 		$ V_{\pi} = 5 V, X_{máx} = 10, X_{mín} = 2 $ \\
@@ -434,6 +433,58 @@ modo que $X_{min} \leq X \leq X_{max}$.
 	\end{tabular}
 	\end{table}
 \end{center}
+
+A Figura \ref{Fig:StructureSimulated} demonstra a estrutura do sistema simulado.
+Diferentemente do sistema experimental, no sistema proposto para a otimização
+foi incluído um amplificador óptico (AO) e filtro óptico (FO) antes do
+fotodetector. Embora a densidade espectral de potência do ruído da emissão
+espontânea amplificada (\textit{Amplified Spontaneous Emission} - ASE) tem uma
+dependência com a frequência que varia em toda banda C (na qual possui largura
+de 4400 GHz) \cite{Book:Erbium}, a largura de banda dos sinais utilizados nesta
+dissertação são pequenas, menores que 50 GHz, o que pode-se considerar que a
+densidade espectral de potência é constante com a largura de banda do sinal.
+Como resultado, o ruído usado nas simulações são modelados como um ruído aditivo
+Gaussiano branco (\textit{Additive White Gaussian Noise} - AWGN)
+\cite{MT:Filipe}.
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[width=\textwidth]{Figures/DDO-OFDM_II_Simulated_blockDiagram_pt-br.pdf}
+		\caption{Meio físico de propagação dos sinais propostos.}
+		\label{Fig:StructureSimulated}
+	\end{center}
+\end{figure}
+
+Para especificar a tolerância de um formato de modulação para uma determinada
+ASE, uma OSNR é introduzida. Isto, especifica a OSNR mínima necessária para
+alcançar uma determinada BER \cite{Kaminow_Book}. A relação sinal ruído óptica
+(\textit{Optical Signal-Noise-Ratio} - OSNR) é definida como
+\begin{equation}
+OSNR = \frac{P}{2B_{Ref}N_{ASE}},
+\label{Eq:OSNR1}
+\end{equation}
+onde $P$ é a potência média do sinal, total mesmo se houver o caso de
+polarização multiplexada, $B_{Ref}$ é uma referência da largura de banda óptica,
+normalmente escolhida como $0.1$ nm, ou $12.5$ GHz em $1550$ nm e $N_{ASE}$ é a
+densidade de potência espectral da ASE em cada eixo de polarização óptica. Outra
+quantidade comumente utilizada em comunicações digitais e a SNR por bit
+\cite{Book:DigiComm_Proak}. Esta, é definida como a razão $\frac{E_b}{N_0}$,
+onde $E_b$ é a energia por bit e $N_0$ é a densidade espectral de potência de
+ruído. A relação entre SNR e OSNR é dada por
+\begin{equation}
+OSNR = \frac{pR_S}{2B_{Ref}} \cdot SNR,
+\label{Eq:OSNRxSNR}
+\end{equation}
+onde $p=1$ para um sinal com polarização simples, neste caso trabalhado, e $p =
+2$ para um sinal de polarização multiplexada e $R_S$ é a taxa de símbolo. É
+possível notar que, a relação entre OSNR e SNR depende somente da informação da
+taxa de símbolo e independe se o sinal possui polarização multiplexada ou não.
+\cite{art:capacity_fiber}.
+
+% Portanto, conhecendo-se a SNR e a largura de banda de referência, assim como a
+% taxa de símbolos por segundo, é possível estimar a OSNR.
+
+
 
 \section{O Algoritmo Genético Aplicado ao Problema}
 Neste trabalho é utilizado o algoritmo genético com codificação de número real
@@ -463,7 +514,7 @@ escolhem com um número aleatório a quantidade de 4 cromossomos e selecionam
 aquele que possui a melhor carga genética qualificada pelo parâmetro
 \textit{fitness} \cite{book:metaheurisca}.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 	\centering
 		\includegraphics[width=\textwidth]{Figures/GA_Table_info.pdf}
 		\caption{Diagrama de blocos da evolução do processo do algoritmo
@@ -626,7 +677,7 @@ algoritmo de otimização proposto.
 % passa-baixas o sinal é enviado para o modulador MZM que modula o laser CW com
 % comprimento de onda centralizado em $\lambda = 1550 nm$. O B2B, \ldots\ldots\ldots
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 	\centering
 		\includegraphics[width=\textwidth]{Figures/DDO-OFDM_Experimento_Labtel_out2012_JMOe.eps}
 		\caption{Configuração experimental do sistema DDO-OFDM II à taxa de $R_b =
@@ -647,7 +698,7 @@ otimização, como projetado pelos parâmetros otimizados representados na Tabela
 \ref{Tab:4} para modulação de subportadora com 4-QAM utilizados em todos
 experimentos de otimização conduzidos.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 	\centering
 		\includegraphics[scale=0.8]{Figures/Spectrums_Constelations.eps}
 		\caption{Densidade espectral de potência e constelação dos resultados
@@ -763,7 +814,7 @@ km de fibra. Em B2B, o pior caso ocorre no enlace de fibra de comprimento
 igual a 40 km onde o desempenho e a eficiência espectral do sistema são exatamente os
 mesmos.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 	\centering
 		\includegraphics[scale=0.9]{Figures/Curvas_otim_conv_f.eps}
 		\caption{OSNR @ BER = $10^-3$ versus banda de guarda para sistemas DDO-OFDM
