@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.6.27)  22 JUL 2014 21:17
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.6.27)  23 JUL 2014 00:37
 entering extended mode
 **main.tex
 (C:\Users\Thiago\sourceText\MasterThesis\main.tex
@@ -1072,7 +1072,7 @@ Overfull \hbox (1.5877pt too wide) detected at line 74
 
 
 Overfull \hbox (1.5877pt too wide) detected at line 76
- \T1/lmss/bx/n/12 105
+ \T1/lmss/bx/n/12 104
  []
 
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -1081,7 +1081,7 @@ LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <12> not available
 (Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 85.
 
 Overfull \hbox (1.5877pt too wide) detected at line 85
- \T1/lmss/bx/n/12 110
+ \T1/lmss/bx/n/12 109
  []
 
 ) [19] (C:\Users\Thiago\sourceText\MasterThesis\Chap1_Introduction.tex [20
@@ -2408,28 +2408,28 @@ onverted-to.pdf>])
 
 
 
-]
-[103]) [104] (C:\Users\Thiago\sourceText\MasterThesis\main.bbl
+])
+[103] (C:\Users\Thiago\sourceText\MasterThesis\main.bbl
 (C:\Users\Thiago\sourceText\MasterThesis\main.brf)
 \tf@brf=\write5
 
 bibitemlist
-[105
+[104
 
 
-] [106] [107]) [108]
+] [105] [106]) [107]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\uppercase' on input line 417.
 
-[109
+[108
 
 
 ] (C:\Users\Thiago\sourceText\MasterThesis\Appendix_A.tex
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <24.88> not available
 (Font)              Font shape `T1/lmss/m/sl' tried instead on input line 1.
 
-<Figures/DFB-Laser-pkg1.jpg, id=2639, 2007.5pt x 963.6pt>
+<Figures/DFB-Laser-pkg1.jpg, id=2635, 2007.5pt x 963.6pt>
 File: Figures/DFB-Laser-pkg1.jpg Graphic file (type jpg)
 
 <use Figures/DFB-Laser-pkg1.jpg>
@@ -2440,19 +2440,19 @@ Package pdftex.def Info: Figures/DFB-Laser-pkg1.jpg used on input line 9.
 pdfTeX warning: pdflatex.exe (file C:/Users/Thiago/sourceText/MasterThesis/Figu
 res/DFB-Laser-pinout.pdf): PDF inclusion: found PDF version <1.6>, but at most 
 version <1.5> allowed
-<Figures/DFB-Laser-pinout.pdf, id=2641, 794.97pt x 614.295pt>
+<Figures/DFB-Laser-pinout.pdf, id=2637, 794.97pt x 614.295pt>
 File: Figures/DFB-Laser-pinout.pdf Graphic file (type pdf)
 
 <use Figures/DFB-Laser-pinout.pdf>
 Package pdftex.def Info: Figures/DFB-Laser-pinout.pdf used on input line 24.
 (pdftex.def)             Requested size: 386.75278pt x 298.86067pt.
- [110
+ [109
 
 
  <C:/Users/Thiago/sourceText/MasterThesis/Figures/DFB-Laser-pkg1.jpg> <C:/Users
 /Thiago/sourceText/MasterThesis/Figures/DFB-Laser-pinout.pdf, page is rotated 2
 70 degrees>]
-<Figures/DFB-Laser-BlockDiagram_pt-br.pdf, id=2653, 682.95152pt x 398.32814pt>
+<Figures/DFB-Laser-BlockDiagram_pt-br.pdf, id=2649, 682.95152pt x 398.32814pt>
 File: Figures/DFB-Laser-BlockDiagram_pt-br.pdf Graphic file (type pdf)
 
 <use Figures/DFB-Laser-BlockDiagram_pt-br.pdf>
@@ -2460,7 +2460,7 @@ Package pdftex.def Info: Figures/DFB-Laser-BlockDiagram_pt-br.pdf used on input
  line 43.
 (pdftex.def)             Requested size: 386.75278pt x 225.57245pt.
 
-<Figures/LaserBack2.png, id=2655, 795.72281pt x 400.49625pt>
+<Figures/LaserBack2.png, id=2651, 795.72281pt x 400.49625pt>
 File: Figures/LaserBack2.png Graphic file (type png)
 
 <use Figures/LaserBack2.png>
@@ -2472,9 +2472,9 @@ Overfull \hbox (5.72124pt too wide) in paragraph at lines 59--64
 de es-pec-tro óp-tico do mo-delo MS9740A
  []
 
-[111 <C:/Users/Thiago/sourceText/MasterThesis/Figures/DFB-Laser-BlockDiagram_pt
+[110 <C:/Users/Thiago/sourceText/MasterThesis/Figures/DFB-Laser-BlockDiagram_pt
 -br.pdf> <C:/Users/Thiago/sourceText/MasterThesis/Figures/LaserBack2.png>]
-<Figures/DFB-Laser_spectrumAnalizer_inv.png, id=2674, 517.935pt x 347.79938pt>
+<Figures/DFB-Laser_spectrumAnalizer_inv.png, id=2670, 517.935pt x 347.79938pt>
 File: Figures/DFB-Laser_spectrumAnalizer_inv.png Graphic file (type png)
 
 <use Figures/DFB-Laser_spectrumAnalizer_inv.png>
@@ -2482,70 +2482,70 @@ Package pdftex.def Info: Figures/DFB-Laser_spectrumAnalizer_inv.png used on inp
 ut line 67.
 (pdftex.def)             Requested size: 455.0pt x 305.5496pt.
 
-<Figures/Copy20131118_006.png, id=2675, 436.63126pt x 264.23718pt>
+<Figures/Copy20131118_006.png, id=2671, 436.63126pt x 264.23718pt>
 File: Figures/Copy20131118_006.png Graphic file (type png)
 
 <use Figures/Copy20131118_006.png>
 Package pdftex.def Info: Figures/Copy20131118_006.png used on input line 97.
 (pdftex.def)             Requested size: 218.39806pt x 132.16664pt.
 
-<Figures/Copy20131118_009.png, id=2676, 436.63126pt x 264.99pt>
+<Figures/Copy20131118_009.png, id=2672, 436.63126pt x 264.99pt>
 File: Figures/Copy20131118_009.png Graphic file (type png)
 
 <use Figures/Copy20131118_009.png>
 Package pdftex.def Info: Figures/Copy20131118_009.png used on input line 102.
 (pdftex.def)             Requested size: 218.39806pt x 132.54318pt.
 
-<Figures/Copy20131118_012.png, id=2677, 436.63126pt x 264.99pt>
+<Figures/Copy20131118_012.png, id=2673, 436.63126pt x 264.99pt>
 File: Figures/Copy20131118_012.png Graphic file (type png)
 
 <use Figures/Copy20131118_012.png>
 Package pdftex.def Info: Figures/Copy20131118_012.png used on input line 107.
 (pdftex.def)             Requested size: 218.39806pt x 132.54318pt.
 
-<Figures/Copy20131118_015.png, id=2678, 437.38406pt x 263.48438pt>
+<Figures/Copy20131118_015.png, id=2674, 437.38406pt x 263.48438pt>
 File: Figures/Copy20131118_015.png Graphic file (type png)
 
 <use Figures/Copy20131118_015.png>
 Package pdftex.def Info: Figures/Copy20131118_015.png used on input line 112.
 (pdftex.def)             Requested size: 218.39806pt x 131.56496pt.
 
-<Figures/Copy20131118_018.png, id=2679, 437.38406pt x 264.99pt>
+<Figures/Copy20131118_018.png, id=2675, 437.38406pt x 264.99pt>
 File: Figures/Copy20131118_018.png Graphic file (type png)
 
 <use Figures/Copy20131118_018.png>
 Package pdftex.def Info: Figures/Copy20131118_018.png used on input line 117.
 (pdftex.def)             Requested size: 218.39806pt x 132.31676pt.
 
-<Figures/Copy20131118_021.png, id=2680, 437.38406pt x 264.23718pt>
+<Figures/Copy20131118_021.png, id=2676, 437.38406pt x 264.23718pt>
 File: Figures/Copy20131118_021.png Graphic file (type png)
 
 <use Figures/Copy20131118_021.png>
 Package pdftex.def Info: Figures/Copy20131118_021.png used on input line 122.
 (pdftex.def)             Requested size: 218.39806pt x 131.94086pt.
 
-<Figures/Copy20131118_024.png, id=2681, 437.38406pt x 264.23718pt>
+<Figures/Copy20131118_024.png, id=2677, 437.38406pt x 264.23718pt>
 File: Figures/Copy20131118_024.png Graphic file (type png)
 
 <use Figures/Copy20131118_024.png>
 Package pdftex.def Info: Figures/Copy20131118_024.png used on input line 127.
 (pdftex.def)             Requested size: 218.39806pt x 131.94086pt.
 
-<Figures/Copy20131118_027.png, id=2682, 437.38406pt x 264.99pt>
+<Figures/Copy20131118_027.png, id=2678, 437.38406pt x 264.99pt>
 File: Figures/Copy20131118_027.png Graphic file (type png)
 
 <use Figures/Copy20131118_027.png>
 Package pdftex.def Info: Figures/Copy20131118_027.png used on input line 132.
 (pdftex.def)             Requested size: 218.39806pt x 132.31676pt.
 
-<Figures/Copy20131118_030.png, id=2683, 437.38406pt x 264.99pt>
+<Figures/Copy20131118_030.png, id=2679, 437.38406pt x 264.99pt>
 File: Figures/Copy20131118_030.png Graphic file (type png)
 
 <use Figures/Copy20131118_030.png>
 Package pdftex.def Info: Figures/Copy20131118_030.png used on input line 137.
 (pdftex.def)             Requested size: 218.39806pt x 132.31676pt.
 
-<Figures/Copy20131118_033.png, id=2684, 437.38406pt x 264.23718pt>
+<Figures/Copy20131118_033.png, id=2680, 437.38406pt x 264.23718pt>
 File: Figures/Copy20131118_033.png Graphic file (type png)
 
 <use Figures/Copy20131118_033.png>
@@ -2560,7 +2560,7 @@ LaTeX Warning: Float too large for page by 56.03659pt on input line 145.
 pdfTeX warning: pdflatex.exe (file C:/Users/Thiago/sourceText/MasterThesis/Figu
 res/Laser.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.
 5> allowed
-<Figures/Laser.pdf, id=2685, 845.0471pt x 597.50829pt>
+<Figures/Laser.pdf, id=2681, 845.0471pt x 597.50829pt>
 File: Figures/Laser.pdf Graphic file (type pdf)
  <use Figures/Laser.pdf>
 Package pdftex.def Info: Figures/Laser.pdf used on input line 148.
@@ -2579,8 +2579,8 @@ Package pdftex.def Info: Figures/Laser.pdf used on input line 148.
 pdfTeX warning: pdflatex.exe (file C:/Users/Thiago/sourceText/MasterThesis/Figu
 res/Laser.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.
 5> allowed
-[112 <C:/Users/Thiago/sourceText/MasterThesis/Figures/DFB-Laser_spectrumAnalize
-r_inv.png>] [113 <C:/Users/Thiago/sourceText/MasterThesis/Figures/Copy20131118_
+[111 <C:/Users/Thiago/sourceText/MasterThesis/Figures/DFB-Laser_spectrumAnalize
+r_inv.png>] [112 <C:/Users/Thiago/sourceText/MasterThesis/Figures/Copy20131118_
 006.png> <C:/Users/Thiago/sourceText/MasterThesis/Figures/Copy20131118_009.png>
  <C:/Users/Thiago/sourceText/MasterThesis/Figures/Copy20131118_012.png> <C:/Use
 rs/Thiago/sourceText/MasterThesis/Figures/Copy20131118_015.png> <C:/Users/Thiag
@@ -2594,7 +2594,7 @@ s/Copy20131118_030.png> <C:/Users/Thiago/sourceText/MasterThesis/Figures/Copy20
 pdfTeX warning: pdflatex.exe (file C:/Users/Thiago/sourceText/MasterThesis/Figu
 res/Laser.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.
 5> allowed
-<Figures/Laser.pdf, id=2708, page=1, 845.0471pt x 597.50829pt>
+<Figures/Laser.pdf, id=2704, page=1, 845.0471pt x 597.50829pt>
 File: Figures/Laser.pdf Graphic file (type pdf)
 
 <use Figures/Laser.pdf, page 1>
@@ -2618,7 +2618,7 @@ File: Figures/Laser.pdf Graphic file (type pdf)
 <use Figures/Laser.pdf, page 1>
 Package pdftex.def Info: Figures/Laser.pdf, page1 used on input line 148.
 (pdftex.def)             Requested size: 845.04504pt x 597.50682pt.
- [114 <C:/Users/Thiago/sourceText/MasterThesis/Figures/Laser.pdf>]) (C:\Users\T
+ [113 <C:/Users/Thiago/sourceText/MasterThesis/Figures/Laser.pdf>]) (C:\Users\T
 hiago\sourceText\MasterThesis\main.ind)
 
 AED: lastpage setting LastPage
@@ -2653,10 +2653,10 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 447.
  ) 
 Here is how much of TeX's memory you used:
- 15539 strings out of 493921
- 244461 string characters out of 3147279
+ 15537 strings out of 493921
+ 244438 string characters out of 3147279
  479273 words of memory out of 3000000
- 17913 multiletter control sequences out of 15000+200000
+ 17912 multiletter control sequences out of 15000+200000
  122348 words of font info for 88 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  47i,20n,52p,1372b,623s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2693,9 +2693,9 @@ es/MiKTeX 2.9/fonts/type1/public/lm/lmsy6.pfb><C:/Program Files/MiKTeX 2.9/font
 s/type1/public/lm/lmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/
 lmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam
 10.pfb>
-Output written on main.pdf (115 pages, 19050369 bytes).
+Output written on main.pdf (114 pages, 19046815 bytes).
 PDF statistics:
- 3139 PDF objects out of 3580 (max. 8388607)
- 411 named destinations out of 1000 (max. 500000)
+ 3134 PDF objects out of 3580 (max. 8388607)
+ 410 named destinations out of 1000 (max. 500000)
  1071 words of extra memory for PDF output out of 10000 (max. 10000000)
 
