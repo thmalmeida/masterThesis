@@ -357,12 +357,15 @@ Os sistemas de transmissão implementados podem ser separados em duas partes:
 uma parte física e uma parte de processamento de sinais desenvolvida por um
 algoritmo que trabalha \textit{offline}. Para as duas configurações, o sistema
 elétrico/óptico/elétrico não é alterado. As diferenças de implementações estão
-no algoritmo de geração do sinal e nos parâmetros utilizados. É importante notar
-que, os sistemas foram implementados não com o intuito de comparar seus
-desempenhos entre si, mas sim com a finalidade de observar a liberdade da
-variação dos parâmetros de projeto que alteram de forma significativa, a
-qualidade da transmissão dos sinais no sistema físico. A Figura
-\ref{Fig:physicalPart} representa o canal elétrico/óptico/elétrico de
+no algoritmo de geração do sinal e nos parâmetros utilizados. É importante
+ressaltar que, os sistemas foram implementados não com o intuito de comparar
+seus desempenhos, mas sim com a finalidade de observar a liberdade da variação
+dos parâmetros de projeto que alteram de forma significativa a qualidade da
+transmissão dos sinais no sistema físico. A importância está em disponibilizar
+dois sistemas DDO-OFDM direfentes, para futuramente serem explorados em
+implementações oportunas.
+
+A Figura \ref{Fig:physicalPart} representa o canal elétrico/óptico/elétrico de
 transmissão representado pelo filtro passa baixas (\textit{Low Pass Filter} -
 LPF), pelo modulador óptico MZM, pelo canal de fibra SSMF com 40 km de
 comprimento, pelo fotoreceptor e pelos equipamentos que realizam as conversões
@@ -449,7 +452,6 @@ dispersão cromática em transmissões ópticas, definido pela equação
 % de um tamanho muito curto de no máximo 40 km o intervalo de guarda pode ser bem
 % pequeno por não surgir efeitos de dispersão cromática significativos durante a
 % transmissão.
-
 \begin{equation}
 T_g \geq D \cdot B_w \cdot \frac{c}{f_0^2}
 \label{Eq:dispersao01}
@@ -1010,11 +1012,12 @@ informação.
 		\label{Fig:DDO-OFDM_II_Rx}
 \end{figure}
 
-
 \subsubsection{Resultados de Transmissão pelo Sitema DDO-OFDM II}
-A Tabela \ref{Tab:DDO-OFDM_II_Params} mostra os parâmetros de projeto
-utilizados para o experimento DDO-OFDM II.
-
+A Tabela \ref{Tab:DDO-OFDM_II_Params} mostra os parâmetros de projeto utilizados
+para o experimento DDO-OFDM II. Para o nível de modulação utilizado nesse
+experimento de 4-QAM a constelação recebida foi livre de erros e a $EVM =
+-17.18$ dB. A constelação dos símbolos transmitidos e recuperados são mostrados
+na Figura \ref{Fig:DDO-OFDM_II_constelação}.
 \begin{center}
 \begin{table}
 \centering
@@ -1045,16 +1048,11 @@ utilizados para o experimento DDO-OFDM II.
 	\end{table}
 \end{center}
 
-Para o nível de modulação utilizado nesse experimento de 4-QAM a taxa de erro de
-\textit{bit} (BER) foi a zero com uma $EVM = -17.18$ dB. A constelação dos
-símbolos transmitidos e recuperados são mostrados na Figura
-\ref{Fig:DDO-OFDM_II_constelação}.
-
 \begin{figure}[htb]
 	\centering
 		\includegraphics[width=0.6\textwidth]{Figures/DDO-OFDM_II_constelacao.eps}
 		\caption{Constelação mostrando os simbolos transmitidos e recebidos com $EVM =
-		-17.18$ dB e BER = 0.}
+		-17.18$ dB e constelação livre de erros.}
 		\label{Fig:DDO-OFDM_II_constelação}
 \end{figure}
 
@@ -1064,49 +1062,47 @@ símbolos transmitidos e recuperados são mostrados na Figura
 % \section{Ruído de Quantização}
 
 
-
-
 \section{Considerações Finais}
-Apesar das subseções anteriores não possuírem como objetivo comparar seus
-desempenhos entre si, é interessante notar que embora a técnica descrita na
+Apesar do objetivo não ser o de comparar os desempenhos dos sistemas descritos
+na subseções anteriores, é importante ressaltar que embora a técnica descrita na
 seção \ref{Sec:DDO-OFDM_II} ser mais eficiente no uso dos pontos dos blocos
 FFT/IFFT torna-se necessário a utilização da modulação adicional para misturar
 os sinais real e complexo junto a uma portadora digital. Entretanto, ao realizar
 a modulação adicional a taxa de amostragem do sistema aumenta significativamente
-sendo necessários dispositivos A/D e D/A mais aperfeiçoados, o que limita o
-sistema de transmissão. Ou seja, existe um compromisso aumentado entre número de
-pontos usados e a diminuição da banda efetiva de transmissão, enquanto que o uso
-da simetria hermitiana permite utilizar uma maior banda efetiva de transmissão
-para uma menor taxa de amostragem.
+sendo necessários dispositivos A/D e D/A mais aperfeiçoados. Ou seja, existe um
+compromisso maior entre o número de pontos usados e a diminuição da banda
+efetiva de transmissão. Já o sistema que utiliza a simetria hermitiana permite
+empregar uma maior banda efetiva na transmissão, para uma menor taxa de
+amostragem.
 
 É fato que, quanto maior a taxa de amostragem de um dispositivo, maior é a
 capacidade de transmissão de informação em determinado intervalo de tempo. A
-taxa mínima de amostragem para a recuperação de uma portadora deve buscar no
-mínimo duas amostras por ciclo, ou seja, $F_S \geq 2 \cdot B_c$ segundo teorema
-de Nyquist. Para dois pontos por ciclo, implica em obter na recepção uma forma
-de onda quadrada ou triangular com a mesma frequência da portadora porém, com
-adição de descontinuidades. Essas descontinuidades inserem diversas componentes
-harmônicas no sinal, acarretando em um espalhamento da potência no espectro de
-frequências fazendo com que a potência da portadora recuperada seja atenuada
-degradando a qualidade da transmissão. Portanto, apesar do AWG possuir uma taxa
-de amostragem de 24 GS/s, construir um sinal com frequência máxima de 12 GHz não
-é interessante visto que, teríamos duas amostras por ciclo e descontinuidades no
-sinal, longe de ser uma componente senoidal de frequência única. Quanto mais
-pontos são inseridos no ciclo da onda mais fiel é o sinal, menor é a frequência
-máxima para a mesma taxa de amostragem máxima que o DAC comporta. Isto melhora a
-qualidade do sinal a ser transmistido e, consequentemente o desempenho do
-sistema, com a desvantagem da diminuição da largura de banda e a redução da taxa
-de transmissão.
+taxa mínima para a recuperação de uma portadora deve buscar no mínimo duas
+amostras por ciclo, ou seja, $F_S \geq 2 \cdot B_c$ segundo o teorema de
+Nyquist. Dois pontos por ciclo implica em obter na recepção uma forma de onda
+quadrada ou triangular com a mesma frequência da portadora, porém com adição de
+descontinuidades. Essas descontinuidades inserem diversas componentes harmônicas
+no sinal, acarretando em um espalhamento da potência no espectro de frequências
+fazendo com que a potência da portadora recuperada seja atenuada degradando a
+qualidade da transmissão. Portanto, apesar do AWG possuir uma taxa de amostragem
+de 24 GS/s, construir um sinal com frequência máxima de 12 GHz não é
+interessante visto que, teríamos duas amostras por ciclo e descontinuidades no
+sinal, o que não representa uma componente senoidal de frequência única.
+Quanto mais pontos são inseridos no ciclo da onda mais fiel é o sinal e menor é
+a frequência máxima para a mesma taxa de amostragem máxima que o DAC comporta.
+Isto melhora a qualidade do sinal a ser transmistido e, consequentemente o
+desempenho do sistema, com a desvantagem da diminuição da largura de banda e a
+redução da taxa de transmissão.
 
 Entretanto, ocorre que, para um sinal multiportadora, as componentes de menores
-frequências possuem mais fidelidade senoidal por possuírem mais pontos por
-ciclo, e as componentes de maiores frequências possuem menos pontos por ciclo
-possuindo descontinuidades consideráveis. Neste capítulo, foi observado que é
-interessante sempre trabalhar com o DAC na sua capacidade máxima de taxa de
-amostragem de forma a trabalhar com uma frequência máxima do sinal bem abaixo da
-frequência máxima possível de criação do sinal pelo DAC. Isso, faz com que a
-nova componente de frequência máxima de um sinal multiportadora $B_c$ tenha mais
-pontos por ciclo diminuindo ruídos e atenuações causadas por descontinuidades.
+frequências são mais fiéis à senoide que as representa, por possuírem mais
+pontos por ciclo. Já as componentes de maiores frequências possuem menos pontos
+por ciclo possuindo descontinuidades consideráveis. Portanto, observou-se que é
+importante trabalhar sempre com o DAC na sua capacidade máxima de taxa de
+amostragem e sinais com máxima frequência bem menores que a taxa de Nyquist.
+Isso, faz com que a nova componente de frequência máxima de um sinal
+multiportadora tenha mais pontos por ciclo, diminuindo assim distorções causadas
+por descontinuidades.
 
 Por fim, observou-se durante os experimentos descritos neste capítulo que
 encontrar o melhor valor para cada parâmetro envolvido no desempenho de ambos os
@@ -1115,8 +1111,8 @@ Além disso, a grande quantidade de parâmetros de tais sistemas dificulta a
 otimização dos mesmos para o objetivo de obter maior eficiência espectral.
 Assim, a aplicação de algoritmos de otimização se faz presente na elaboração de
 um projeto de sistema que designa um melhor valor de intervalo de guarda,
-quantidade de subportadoras, potência de sinal OFDM óptico, banda de guarda,
-ponto de polarização do MZM, entre outros.
+quantidade de subportadoras, potência de sinal óptico, banda de guarda, ponto de
+polarização do MZM, entre outros.
 % --------------------------------------------------------------------------- %
 % --------------------------------------------------------------------------- %%
 % --------------------------------------------------------------------------- %
