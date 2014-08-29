@@ -1,1 +1,61 @@
-\chapter{Comunicação com os Equipamentos}
+\chapter{Código para Inserção do Ruído Óptico Através do Método de
+Imposição}
+\label{AppendixB}
+
+% This LaTeX was auto-generated from MATLAB code.
+% To make changes, update the MATLAB code and republish this document.
+
+% \documentclass{article}
+% \usepackage{graphicx}
+% \usepackage{color}
+
+\sloppy
+\definecolor{lightgray}{gray}{0.5}
+\setlength{\parindent}{0pt}
+
+% \begin{document}
+
+    
+\begin{verbatim}
+%
+function sinal_ruidoso = imposicao_ruido(sinal,Bref,Bo,OSNR_dB);
+%==========================================================================
+% imposicao_ruido - Função para inserir ruído óptico conforme método de
+%                   imposição a partir da OSNR fornecida.
+%
+%          Chama as funções do Matlab:
+%               mean
+%               abs
+%               randn
+%               sqrt
+%
+%  by Thiago Machado
+%  em $29/04/2013$
+% =========================================================================
+
+% ---- Insere o ruído confome um valor de OSNR fornecido ------------------
+Ps   = mean(mean(abs(sinal).^2));  % Potencia do sinal óptico)
+osnr = 10^(OSNR_dB/10);            % OSNR na escala linear
+No   = Ps/(Bo*osnr);               % Determina a PSD do ruído
+
+% Gera o Ruído Normalizado
+ruido_norm = sqrt(1/2)*(randn(size(sinal))+ j*randn(size(sinal)));
+
+% Potencializa o Ruído Gerado
+Pn    = sqrt(No*Bref);    % Potencia do ruído
+ruido = Pn*ruido_norm;    % Potencializa o ruído
+
+% Adiciona o Ruído
+sinal_ruidoso = sinal_ruidoso + ruido;
+
+% -------------------------- Fim -----------------------------------------
+\end{verbatim}
+
+%         \color{lightgray} \begin{verbatim}Error using OSNR (line 18)
+% Not enough input arguments.
+% \end{verbatim} \color{black}
+    
+
+
+% \end{document}
+    

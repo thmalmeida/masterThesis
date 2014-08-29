@@ -25,12 +25,6 @@
   fiber systems.
 \emph{IEEE Journal of Lightwave Technology}, v.~28, n.~12, 2010.}
 
-\bibitem[Becker e Olsson 1999]{Book:Erbium}
-\abntrefinfo{Becker e Olsson}{BECKER; OLSSON}{1999}
-{BECKER, P.; OLSSON, N. \emph{Erbium-Doped Fiber Amplifiers: Fundamentals and
-  Technology}. [S.l.]: Academic Press, 1999.
-ISBN 0-12-084590-3.}
-
 \bibitem[Bingham 1990]{John_Bingham_1990}
 \abntrefinfo{Bingham}{BINGHAM}{1990}
 {BINGHAM, J. A.~C. Multicarrier modulation for data transmission: an idea whose
@@ -85,12 +79,6 @@ ISBN 8536304189.}
 {DREO, J.; PETROWSKI, A.; TAILLARD, E. \emph{Metaheuristics for Hard
   Optimization: methods and Case Studies}. [S.l.]: Springer, 2003.
 ISBN 13 978-3-540-23022-9.}
-
-\bibitem[Essiambre et al. 2010]{art:capacity_fiber}
-\abntrefinfo{Essiambre et al.}{ESSIAMBRE et al.}{2010}
-{ESSIAMBRE, R.-J. et al. Capacity limits of optical fiber networks.
-\emph{Journal of Lightwave Technology, Vol 28, No 4}, p. 662--701, February 15
-  2010.}
 
 \bibitem[Hanzo, Webb e Keller 2000]{Single_Multicarrier_QAM}
 \abntrefinfo{Hanzo, Webb e Keller}{HANZO; WEBB; KELLER}{2000}
@@ -205,12 +193,6 @@ ISBN 072513780, 9780072513783.}
 {PROAKIS, J.~G. \emph{Digital Communication}. Singapore: McGraw-Hill, Inc.,
   1995.
 ISBN 0070517266.}
-
-\bibitem[Proakis 2007]{Book:DigiComm_Proak}
-\abntrefinfo{Proakis}{PROAKIS}{2007}
-{PROAKIS, M.~S. J. \emph{Digital Communications}. 5th edition. ed. [S.l.]:
-  McGraw-Hill Science Engineering Math, 2007.
-ISBN 0072957166, 9780072957167.}
 
 \bibitem[Ruiz, Cioffi e Kasturia 1992]{Cioffi_artigo}
 \abntrefinfo{Ruiz, Cioffi e Kasturia}{RUIZ; CIOFFI; KASTURIA}{1992}

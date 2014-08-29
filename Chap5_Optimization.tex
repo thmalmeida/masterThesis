@@ -1,4 +1,6 @@
-\chapter{Otimização do Desempenho de Sistemas DDO-OFDM}
+% \chapter{Otimização do Desempenho de Sistemas DDO-OFDM}
+\chapter{Otimização da Eficiência Espectral de Sistemas DDO-OFDM}
+
 \label{Chap5:Optimization}
 
 O estudo apresentado neste capítulo é dedicado ao emprego de um algoritmo
@@ -392,7 +394,6 @@ particular para cada representação trabalhada.
 % very dependent on the particular representation chosen.
 
 \subsubsection{Operador de Mutação}
-
 O operador mutação arbitrariamente altera um o mais componentes, ou genes, de um
 cromossomo selecionado a fim de aumentar a variabilidade estrutural da
 população. O papel da mutação nos GAs é recuperar material genético perdidos ou
@@ -402,7 +403,7 @@ probabilidade de buscar qualquer ponto no espaço de busca nunca possa ser zero. 
 posições de cada cromossomo na população sofre uma alteração aleatória de acordo
 com a probabilidade definida pela probabilidade de mutação, $p_m$.
 
-\section{Formulação do Problema e OSNR como Parâmetro Quantificador}
+\section{Formulação do Problema}
 Para otimizar o desempenho do sistema DDO-OFDM simulado, a formulação do
 problema implica em minimizar a relação sinal ruído óptica (\textit{Optical
 Signal-to-Noise ratio} - OSNR) a uma taxa de erro de bit de $BER = 10^{-3}$,
@@ -436,18 +437,21 @@ inteiro de tal modo que $X_{min} \leq X \leq X_{max}$.
 	\end{table}
 \end{center}
 
+\section{Técnica de Imposição da OSNR}
 A Figura \ref{Fig:StructureSimulated} demonstra a estrutura do sistema simulado.
-Diferentemente do sistema experimental, no sistema proposto para a otimização
-foi incluído um amplificador óptico (AO) e filtro óptico (FO) antes do
-fotodetector. Embora a densidade espectral de potência do ruído da emissão
-espontânea amplificada (\textit{Amplified Spontaneous Emission} - ASE) tem uma
-dependência com a frequência que varia em toda banda C (na qual possui largura
-de 4400 GHz) \cite{Book:Erbium}, a largura de banda dos sinais utilizados nesta
-dissertação são pequenas, menores que 50 GHz, o que pode-se considerar que a
-densidade espectral de potência é constante com a largura de banda do sinal.
-Como resultado, o ruído usado nas simulações são modelados como um ruído aditivo
-Gaussiano branco (\textit{Additive White Gaussian Noise} - AWGN)
-\cite{MT:Filipe}.
+Diferentemente do sistema experimental, efeitos de ruído de emissão espontânea
+de amplificadores (\textit{Amplified Spontaneous Emission} - ASE) como fonte de
+ruído óptico predominante foram simulados por um gerador de ruído aleatório.
+Assim sendo, o ruído inserido ao sinal ótico, após a propagação na fibra é
+ponderado conforme uma relação sinal-ruído óptica imposta.
+% ASE nao sistema proposto para a otimização foi incluído um amplificador óptico
+% ideal (AO) com a inserção de ruído gaussiano antes do fotodetector. Embora a
+% densidade espectral de potência do ruído da emissão espontânea amplificada tem
+% uma dependência com a frequência que varia em toda banda C (na qual possui
+% largura de 4400 GHz) \cite{Book:Erbium}, a largura de banda dos sinais
+% utilizados nesta dissertação são pequenas, menores que 50 GHz, o que pode-se
+% considerar que a densidade espectral de potência é constante com a largura de
+% banda do sinal.
 
 \begin{figure}[h]
 	\begin{center}
@@ -457,17 +461,17 @@ Gaussiano branco (\textit{Additive White Gaussian Noise} - AWGN)
 	\end{center}
 \end{figure}
 
-Para especificar a tolerância de um formato de modulação para uma determinada
-ASE, uma OSNR é introduzida. Isto, especifica a OSNR mínima necessária para
-alcançar uma determinada BER \cite{Kaminow_Book}. A Figura \ref{Fig:Graph_OSNR}
-ilustra a potência de sinal $P_S$ e a potência de ruído gerada $P_N$. Portanto,
-a OSNR sendo a razão das potências ópticas do sinal com o ruído pode ser dada
-por
+O ruído usado nas simulações é modelado como um ruído Gaussiano branco
+aditivo(\textit{Additive White Gaussian Noise} - AWGN) \cite{MT:Filipe}. A
+Figura \ref{Fig:Graph_OSNR} ilustra a metodologia de inserção de ruído aos
+sinais ópticos, para $P_S$ a potência de sinal, $P_N$ a potência de ruído
+gerada, $B_W$ a banda do sinal, $B_{Sim}$ a banda de simulação e $B_{Ref}$ uma
+banda de referência. Portanto, a OSNR sendo a razão das potências ópticas do
+sinal com o ruído pode ser dada por
 \begin{equation}
-OSNR = \frac{P_S}{P_N},
+OSNR = \frac{P_S}{P_N}.
 \label{Eq:OSNR_fato}
 \end{equation}
-onde o ruído óptico é dado numa banda de referência $B_{Ref}$.
 
 \begin{figure}[h]
 	\begin{center}
@@ -483,23 +487,26 @@ Signal-Noise-Ratio} - OSNR) é definida como
 OSNR = \frac{P}{2B_{Ref}N_{ASE}},
 \label{Eq:OSNR1}
 \end{equation}
-onde $P$ é a potência média do sinal, total mesmo se houver o caso de
-polarização multiplexada, $B_{Ref}$ é uma referência da largura de banda óptica,
-normalmente escolhida como $0.1$ nm, ou $12.5$ GHz em $1550$ nm e $N_{ASE}$ é a
-densidade de potência espectral da ASE em cada eixo de polarização óptica. Outra
-quantidade comumente utilizada em comunicações digitais e a SNR por bit
-\cite{Book:DigiComm_Proak}. Esta, é definida como a razão $\frac{E_b}{N_0}$,
-onde $E_b$ é a energia por bit e $N_0$ é a densidade espectral de potência de
-ruído. A relação entre SNR e OSNR é dada por
-\begin{equation}
-OSNR = \frac{pR_S}{2B_{Ref}} \cdot SNR,
-\label{Eq:OSNRxSNR}
-\end{equation}
-onde $p=1$ para um sinal com polarização simples, neste caso trabalhado, e $p =
-2$ para um sinal de polarização multiplexada e $R_S$ é a taxa de símbolo. É
-possível notar que, a relação entre OSNR e SNR depende somente da informação da
-taxa de símbolo e independe se o sinal possui polarização multiplexada ou não.
-\cite{art:capacity_fiber}.
+onde $P$ é a potência média do sinal total, a banda de referência normalmente
+escolhida como $0.1$ nm, ou $12.5$ GHz em $1550$ nm e $N_{ASE}$ é a densidade de
+potência espectral da ASE em cada eixo de polarização óptica. O código que
+implementa esta técnica de imposição da OSNR na simulação está descrito no Anexo
+\ref{AppendixB}.
+
+% Outra quantidade comumente utilizada em comunicações digitais e a SNR por bit
+% \cite{Book:DigiComm_Proak}. Esta, é definida como a razão $\frac{E_b}{N_0}$,
+% onde $E_b$ é a energia por bit e $N_0$ é a densidade espectral de potência de
+% ruído. A relação entre SNR e OSNR é dada por
+% \begin{equation}
+% OSNR = \frac{pR_S}{2B_{Ref}} \cdot SNR,
+% \label{Eq:OSNRxSNR}
+% \end{equation}
+% onde $p=1$ para um sinal com polarização simples, neste caso trabalhado, e $p =
+% 2$ para um sinal de polarização multiplexada e $R_S$ é a taxa de símbolo. É
+% possível notar que, a relação entre OSNR e SNR depende somente da informação da
+% taxa de símbolo e independe se o sinal possui polarização multiplexada ou não
+% \cite{art:capacity_fiber}.
+
 % Portanto, conhecendo-se a SNR e a largura de banda de referência, assim como a
 % taxa de símbolos por segundo, é possível estimar a OSNR.
 
@@ -519,7 +526,6 @@ onde a quantidade 100 é relacionada com a maximização do \textit{fitness} do
 algoritmo genético proposto e a quantidade 1000 é uma restrição projetada quando
 as simulações MC\footnote{ampla classe de algoritmos computacionais que dependem da iteração repetida para
 obter resultados numéricos de uma distribuição probabilística.} não convergem.
-
 Então, uma nova população $P_S$ de cromossomos com melhores propriedades
 genéticas são produzidas utilizando operadores genéticos como seleção,
 cruzamento e mutação. Baseados num procedimento de competição, um processo
@@ -528,7 +534,6 @@ melhores \textit{fitness} para comporem a nova população. Em cada seleção, estes
 escolhem com um número aleatório a quantidade de 4 cromossomos e selecionam
 aquele que possui a melhor carga genética qualificada pelo parâmetro
 \textit{fitness} \cite{book:metaheurisca}.
-
 \begin{figure}[h]
 	\centering
 		\includegraphics[width=\textwidth]{Figures/GA_Table_info.pdf}
@@ -536,7 +541,6 @@ aquele que possui a melhor carga genética qualificada pelo parâmetro
 		genético implementado.}
 		\label{Fig:GA_blockDiagram}
 \end{figure}
-
 Operadores de cruzamento são aplicados de uma forma aleatória no qual, um
 número aleatório é escolhido. Um cruzamento entre um par de cromossomos ocorre
 se o número aleatório é menor do que uma taxa de cruzamento eleito igual a 0.95.
