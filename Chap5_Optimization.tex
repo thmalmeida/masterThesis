@@ -9,44 +9,47 @@ curto alcance para reduzir a banda de guarda do sistema e consequentemente
 aumentar sua eficiência espectral.
 
 \section{Introdução}
-Após o desenvolvimento da plataforma de transmissão e realizado uma etapa de
-testes do sistema óptico experimental com detecção direta, foi observado que a
-variação de alguns parâmetros do extenso número que compõem as características
-de formação do sinal OFDM, assim como das propriedades de transmissão, afetam
-significativamente a qualidade da transmissão. Eles são responsáveis pela
-quantidade de potência do sinal na entrada da fibra, pela sensibilidade do
-receptor, pela robustez contra dispersão cromática da fibra e pela eficiência
-espectral do sistema. Uma sensibilidade aceitável no receptor depende da potência
-média do sinal elétrico e do ponto de polarização $V_{bias}$ do modulador
-externo MZM \cite{Rosenkranz09}, \cite{WilnnerJLT09_02}.
+Após o desenvolvimento da plataforma de transmissão e a realização de testes do
+sistema óptico experimental com detecção direta, foi observado que a variação de
+alguns parâmetros do extenso número que compõem as características de formação e
+transmissão do sinal OFDM, em sistemas DDO-OFDM, afeta significativamente a
+qualidade da transmissão. Tais parâmetros, são responsáveis pela quantidade de
+potência do sinal na entrada da fibra, pela sensibilidade do receptor, pela
+robustez contra dispersão cromática da fibra e pela eficiência espectral do
+sistema.
 
-Além disso, um índice de modulação óptica (\textit{Optical Modulation Index} -
-OMI) aceitável é necessário para superar a potência óptica do sinal (em especial
-a potência da portadora óptica desperdiçada) e distorções não lineares
-\cite{WilnnerJLT09_02}. Sabe-se que a eficiência global do sistema DDO-OFDM é
-afetada pela banda de guarda $B_G$ necessária para evitar a interferência de
-batimendo do sinal (\textit{signal-to-signal beat interference} - SSBI ou
-\textit{subcarries-to-subcarries mixing interference} - SSMI) presente na
-recepção óptica. A literatura diz que, para uma banda efetiva de transmissão
-$B_{W}$ é necessária uma banda de guarda $B_G = B_{W}$ para garantir que não
-haja interferência \cite{Rosenkranz09}. Entretanto, foi observado que as
-interferências por batimento se concentravam próximos às baixas frequências
-motivando uma tentativa de diminuição desta banda a fim de maximizar o uso do
-espectro, junto ao equilíbrio entre o intervalo de guarda total, com o objetivo
-de tolerar a dispersão cromática da fibra.
+Sabe-se que a sensibilidade no receptor depende da potência média do sinal
+elétrico e do ponto de polarização $V_{bias}$ do modulador externo MZM
+\cite{Rosenkranz09}, \cite{WilnnerJLT09_02}. Além disso, um índice de modulação
+óptica (\textit{Optical Modulation Index} - OMI) aceitável é necessário para
+superar a potência óptica do sinal (em especial a potência da portadora óptica
+desperdiçada) e distorções não lineares produzidas pelo próprio MZM
+\cite{WilnnerJLT09_02}. Sabe-se também que a eficiência global do sistema
+DDO-OFDM é afetada pela banda de guarda $B_G$ necessária para evitar a
+interferência de batimendo do sinal (\textit{signal-to-signal beat interference}
+- SSBI ou \textit{subcarries-to-subcarries mixing interference} - SSMI) presente
+na recepção óptica. Neste quesito em especial, a literatura diz que, para uma
+banda efetiva de transmissão $B_{W}$ é necessária uma banda de guarda $B_G =
+B_{W}$ para garantir que não haja interferência \cite{Rosenkranz09}. A redução
+desta banda de guarda torna-se tarefa essencial dos sistemas aqui apresentados
+de forma a aumentar a eficiência espectral dos mesmos.
+
+% Entretanto, foi observado que as interferências por batimento se concentravam
+% próximos às baixas frequências motivando uma tentativa de diminuição desta banda a fim de
+% maximizar o uso do espectro, junto ao equilíbrio entre o intervalo de guarda
+% total, com o objetivo de tolerar a dispersão cromática da fibra.
 
 Sabendo que muitas vezes os parâmetros de projeto estão interligados de forma
-não linear, tornou-se interessante o estudo e utilização de um algoritmo de
-otimização na tentativa de encontrar valores razoáveis que melhoram o desempenho
-do sistema dentro de uma vasta gama de parâmetros de configuração e suas faixas
-de variações que compõem o sistema de transmissão.
+não linear, tornou-se interessante neste estudo a utilização de um algoritmo de
+otimização na tentativa de encontrar valores que aumentam as eficiências
+espectrais dos sistemas.
 
-Este capítulo enfatiza o desempenho aprimorado de sistemas DDO-OFDM em enlaces
-de curto alcance com parâmetros otimizados por um algoritmo genético
-(\textit{Genetic algorithm} - GA) mono-objetivo. Também será mostrado a
-transmissão experimental otimizada com um sinal OFDM de dupla faixa lateral com
-$R_b =$ 1.83 Gb/s por 40 km de fibra sem compensação óptica da dispersão
-cromática.
+Este capítulo enfatiza o aumento da eficiência espectral de sistemas DDO-OFDM em
+enlaces de curto alcance com parâmetros otimizados por um algoritmo genético
+(\textit{Genetic algorithm} - GA) mono-objetivo. A eficiência da otimização é
+mostrada com a transmissão experimental de um sistema DDO-OFDM de dupla faixa
+lateral com $R_b =$ 1.83 Gb/s e 40 km de fibra sem compensação óptica da
+dispersão cromática.
 
 % \subsection{Declaração do Problema}
 \section{Escolha dos Parâmetros Relevantes para a Otimização do Sistema
@@ -59,10 +62,10 @@ detecção direta estudado depende de um extenso número de parâmetros que envolvem
 as características dos sinais OFDM tais como, ponto de polarização do modulador
 óptico, deficiências na fotodetecção direta, etc. Estudos teóricos e
 experimentais apresentados em \cite{Rosenkranz09}, \cite{WilnnerJLT09_02} e
-\cite{art:peng} revelam pontos relevantes do projeto entre potência do sinal
+\cite{art:peng} revelam pontos relevantes de projeto entre potência do sinal
 transmitido, sensibilidade de recepção, robustez contra CD e eficiência
 espectral global do sistema. Excluindo o prefíxo cíclico em uma configuração
-óptica B2B, um único símbolo OFDM de um sinal DDO-OFDM real pode ser escrita
+óptica B2B, um único símbolo OFDM pode ser escrito
 como% [7]-[12].
 \begin{equation}
 s(t) = \sqrt{\frac{\sigma_s^2}{N_{FFT}}} \cdot \sum_{k=1}^{N_{FFT}} 
@@ -89,18 +92,21 @@ potência média do sinal OFDM e o ponto de polarização do MZM, $V_{bias}$, aliam
 uma importante regra no desempenho do sistema DDO-OFDM. Essa relação denota a
 transferência de potência óptica dada pelo índice de modulação óptico
 interligado à amplitude do sinal elétrico gerado, ou melhor, ao seu desvio
-padrão $\sigma_s$ dado por $OMI = (V_{in})_{RMS}/V_\pi$. Um olhar mais atento na
-Figura \ref{MZM_transferFunction} revela que a polarização do MZM no seu ponto
-de quadratura mostra que o modulador óptico opera na região de máxima
-linearidade. Embora isso resulte em um aumento na amplitude do sinal elétrico na
-entrada do MZM, metade da potência óptica é desperdiçada pela portadora óptica.
+padrão $\sigma_s$ dado através do índice de modulação $OMI =
+(V_{in})_{RMS}/V_\pi$.
+Um olhar mais atento na Figura \ref{MZM_transferFunction} revela que a
+polarização do MZM no seu ponto de quadratura mostra que o modulador óptico
+opera na região de máxima linearidade. Embora isso resulte em um aumento na
+amplitude do sinal elétrico na entrada do MZM, metade da potência óptica é
+desperdiçada pela portadora óptica.
 Polarizar o MZM acima do ponto de quadratura proporciona maior potência óptica
 da portadora na saída do modulador. Em contrapartida, entra-se numa região de
-não linearidade caso ocorra picos do sinal transmitido ao entrar na zona de
-máxima potência da curva característica. Já polarizando o modulador abaixo do
-ponto de quadratura e logo acima da tensão nula, reduz a perda de potência pela
-portadora óptica. Porém, ao mesmo tempo são introduzidos termos de alta ordem
-provindos da região não linear dada pela curva da função transferência do MZM.
+não linearidade caso ocorram picos do sinal transmitido, ao polarizarmos o MZM
+na zona de máxima transferência de potência da curva característica. Já
+polarizando o modulador abaixo do ponto de quadratura e logo acima da tensão
+nula, reduz a perda de potência pela portadora óptica, ao mesmo tempo em que são
+introduzidos termos de alta ordem provindos de não linearidades dado também pela
+curva da função transferência do MZM.
 
 % Já polarizando o modulador logo acima da tensão nula (por exemplo $V_{bias} =
 % 0.8 \cdot V_\pi$) reduz a perda de potência da portadora e ao mesmo tempo que
@@ -144,8 +150,9 @@ e^{j2\pi(k\Delta f)t},
 % fotocorrente na saída do fotodiodo é computada pelo quadrado de
 % $|E_{MZM}(t)|^2$ resultando em
 onde $A$ é uma constante representando a portadora óptica e $B_G$ a banda de
-guarda entre a portadora óptica e o sinal OFDM. Em B2B, a fotocorrente na saída
-do fotodiodo é computada pelo quadrado de $|E_{MZM}(t)|^2$ resultando em
+guarda entre a portadora óptica e o sinal OFDM. Em uma configuração do tipo
+\textit{back-to-back} (B2B), a fotocorrente na saída do fotodiodo é computada
+pelo quadrado de $|E_{MZM}(t)|^2$ resultando em
 % \begin{eqnarray*}
 %  \lefteqn{w+x+y+z = }\\
 %    && a+b+c+d+e+\\
@@ -160,7 +167,8 @@ i_{pin}(t) \propto |E_{MZM}(t)|^2 &=&
 && + \underbrace{\sum_{k=1}^{N_{FFT}}\sum_{k=1}^{N_{FFT}} X_k
 X_l^\ast e^{j2\pi[(k-1)\Delta f t]}}_{SSBI \: or \: SSMI},
 \end{eqnarray}
-onde $\ast$ demonstra a operação complexo conjugado do termo. Resultado do
+
+onde $\ast$ denota a operação complexo conjugado do termo. Resultado do
 batimento entre as subportadoras OFDM, o termo de distorção de intermodulação
 por baixa frequência IMD que aparece em (\ref{Eq:IMD}) degrada o sinal. As
 penalidades dessas deficiências são denominadas na literatura por interferência
@@ -169,14 +177,16 @@ SSBI ou \textit{signal-to-signal mixing interferences} - SSMI) podem ser
 minimizadas se uma banda de guarda $B_G$ for alocada. Aqui, uma abordagem entre
 degradação não linear do sinal e eficiência espectral do sistema são levadas em
 conta. Vale notar que, em sistemas DDO-OFDM convencionais uma banda $B_G = B_W$
-é recomendada, mostrada na Figura \ref{Fig:BGa}. Durante os procedimentos
-experimentais do capítulo \ref{Cap:4}, notou-se que a banda de guarda $B_G$ não
-necessária mente deveria seguir esta igualdade, o que justificou adicionar este
-parâmetro aos algoritmos de otimização obtendo valores que não causassem
-interferências com o sinal transmitido. A Figura \ref{Fig:BGb} ilustra
-o espéctro elétrico original com os produtos de intermodulação em uma
-banda menor que $B_W$ e a evolução para o espéctro elétrico do sinal
-deslocado para $f'_c$ agora com uma menor frequência máxima do sinal ${B'}_c$.
+é recomendada, conforme ilustra a Figura \ref{Fig:BGa}. Durante os procedimentos
+experimentais descritos no capítulo \ref{Cap:4}, notou-se que a banda de guarda
+$B_G$ não necessáriamente deveria seguir esta igualdade.
+% o que justificou adicionar este parâmetro aos algoritmos de otimização obtendo
+% valores que não causassem interferências com o sinal transmitido.
+
+% Sendo assim, qual valor de banda de guarda deve ser atribuía em aplicação que
+% para OFDM são 
+
+
 \begin{figure}[h]
         \centering
         \begin{subfigure}[b]{0.9\textwidth}
@@ -195,14 +205,17 @@ deslocado para $f'_c$ agora com uma menor frequência máxima do sinal ${B'}_c$.
         \caption{Variação proposta da banda de guarda do sistema DDO-OFDM.}
         \label{Fig:BG}
 \end{figure}
-Outra abordagem que existe em sistemas ópticos OFDM está relacionados à inserção
-do prefíxo cíclico no início de cada sinal transmitido. Uma redundância dada por
-$\epsilon_g = T_g/(T_s-T_g)$ para $T_g$ o intervalo de guarda e $T_s$ o tempo
-total do símbolo OFDM é, introduzida no ínicio de cada sinal OFDM. Aqui, um
-curto prefíxo cíclico escolhido deve minimizar ou até mesmo eliminar todos os
-efeitos causados pela interferência intersimbólica (ISI) no sistema que, por
-outro lado compensa o deslocamento na sincronização do símbolo. Uma boa
-estimativa para a eficácia deste intervalo de guarda é
+A Figura \ref{Fig:BGb} ilustra o espéctro elétrico original com os produtos de
+intermodulação em uma banda menor que $B_W$ e a evolução para o espéctro
+elétrico do sinal deslocado para $f'_c$ agora com uma menor frequência máxima do
+sinal ${B'}_c$. Outra abordagem que existe em sistemas ópticos OFDM está
+relacionados à inserção do prefíxo cíclico no início de cada sinal transmitido.
+Uma redundância dada por $\epsilon_g = T_g/(T_s-T_g)$ para $T_g$ o intervalo de
+guarda e $T_s$ o tempo total do símbolo OFDM é, introduzida no ínicio de cada
+sinal OFDM. Um curto prefíxo cíclico escolhido deve minimizar ou até mesmo
+eliminar todos os efeitos causados pela interferência intersimbólica (ISI) no
+sistema que, por outro lado compensa o deslocamento na sincronização do símbolo.
+Uma boa estimativa para a eficácia deste intervalo de guarda é
 \begin{equation}
 T_g \geq D \cdot B_w \cdot \frac{c}{f_0^2},
 \label{Eq:dispersao}
@@ -217,7 +230,7 @@ dispersão cromática são mínimos podendo diminuir o $I_G$ porém, não
 eliminando-o, em virtude de possuir um sinal cíclico viabilizando o uso da
 convolução circular \cite{Book:DSP_Mitra}. A Figura \ref{Fig:Graph_Ig-a} mostra
 curvas para uma dada distância, valores de tempo de símbolo versus tempo de
-guarda. Já a Figura \ref{Fig:Graph_Ig-b} demonstra a influência do intervalo de
+guarda. A Figura \ref{Fig:Graph_Ig-b} demonstra a influência do intervalo de
 guarda na qualidade da recepção do sinal OFDM.
 
 \begin{figure}[h]
@@ -235,23 +248,23 @@ guarda na qualidade da recepção do sinal OFDM.
                 \caption{Constelações com dois valores de tempo de guarda.}
                 \label{Fig:Graph_Ig-b}
         \end{subfigure}
-        \caption{Influência do $I_G$ no projeto de sistemas DDO-OFDM.}
+        \caption{Influência do intervalo de guarda no projeto de sistemas
+        DDO-OFDM.}
         \label{Fig:Graph_Ig}
 \end{figure} 
 
-Por fim, a última variável escolhida para o processo de otimização é um
-número multiplicador da taxa de amostragem do sinal, dada por $n_{samp}$. A
-taxa de amostragem é um parâmetro que se relaciona diretamente com a frequência
-máxima do sinal. As portadoras de maiores frequências possuem menos pontos por
-ciclo criando distorções na recuperação do sinal. O aumento da taxa de
-amostragem do sinal pode melhorar a qualidade do sinal transmitido porém, exigir
-maior capacidade de processamento no lado do transmissor. Um valor aceitável
-para $n_{samp}$ é buscado no algoritmo de otimização para obter melhores
-resultados na tranmissão.
-% Obtida de
-% \ref{Eq:dispersao}, o mapa de contornos mostrado na Figuraontornado mo
-% FALTA ENFATIZAR AS COMPONENTES DE INTERMODULAÇÃO PROVENIENTES DO BATIMENTO DO
-% LASER NA INTRODUÇÃO.
+Por fim, a última variável escolhida para o processo de otimização provê um
+multiplicador da taxa de amostragem do sinal, dada por $n_{samp}$. A taxa de
+amostragem é um parâmetro que se relaciona diretamente com a frequência máxima
+do sinal. As portadoras de maiores frequências possuem menos pontos por ciclo
+criando distorções na recuperação do sinal. O aumento da taxa de amostragem do
+sinal pode melhorar a qualidade do sinal transmitido porém, exige maior
+capacidade de processamento no lado do transmissor. Um valor aceitável para
+$n_{samp}$ é buscado no algoritmo de otimização para obter melhores resultados
+na tranmissão.
+% Obtida de \ref{Eq:dispersao}, o mapa de contornos mostrado na Figuraontornado
+% mo FALTA ENFATIZAR AS COMPONENTES DE INTERMODULAÇÃO PROVENIENTES DO BATIMENTO
+% DO LASER NA INTRODUÇÃO.
 % FALAR UMA BREVE INTRODUÇÃO SOBRE ALGORITMO GENÉTICO COM CODIFICAÇÃO REAL.
 
 \section{Otimização Mono-Objetivo via Algoritmo Genético}
@@ -351,6 +364,7 @@ probabilidade $p_s(C_i)$, $i = 1,\ldots, N$ é calculada como
 \begin{equation}
 p_s(C_i) = \frac{f(C_i)}{\sum_{j=1}^{N} f(C_i)}.
 \end{equation}
+
 
 Dessa maneira, cromossomos com aptidão acima da média possuem maiores tendências
 de repassar suas cópias do que os com baixa aptidão.

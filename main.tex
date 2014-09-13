@@ -123,11 +123,11 @@ Otimização via Algoritmo Genético}
 
 \autor{Thiago Machado de Almeida}
 \local{Vitória}
-\data{Abril 2014}
+\data{2014}
 \instituicao{
-	\textbf{Dissertação de Mestrado}
-\par UNIVERSIDADE FEDERAL DO ESPÍRITO SANTO \par DEPARTAMENTO DE ENGENHARIA
-ELÉTRICA \par PROGRAMA DE PÓS GRADUAÇÃO EM ENGENHARIA ELÉTRICA}
+% \textbf{Dissertação de Mestrado}
+\par UNIVERSIDADE FEDERAL DO ESPÍRITO SANTO \par CENTRO TECNOLÓGICO \par
+PROGRAMA DE PÓS GRADUAÇÃO EM ENGENHARIA ELÉTRICA}
 \orientador{Prof. Dr. Jair Adriano Lima Silva}
 \coorientador{Prof. Dr. Marcelo Eduardo Vieira Segatto}
 % \tipotrabalho{Dissertação de Mestrado} O preambulo deve conter o tipo do
@@ -200,14 +200,21 @@ requisito parcial para obtenção do Grau de Mestre em Engenharia Elétrica.}
 % ---
 % Capa
 % ---
-\imprimircapa
+% \imprimircapa
+\include{frontTexts/Cover}
+% \afterpage{\null\newpage}
+
 % ---
 
 % ---
 % Folha de rosto
 % (o * indica que haverá a ficha bibliográfica)
 % ---
-\imprimirfolhaderosto*
+
+\include{frontTexts/backCover}
+% \afterpage{\null\newpage}
+\imprimirfolhaderosto
+
 % ---
 
 % ---
@@ -226,22 +233,24 @@ requisito parcial para obtenção do Grau de Mestre em Engenharia Elétrica.}
 % \end{fichacatalografica}
 
 % Ficha catalográfica
-\include{fichacatalografica}
+% \include{fichacatalografica}
+% \includepdf[pages=-,angle=90]{Figures/Laser.pdf}
+\includepdf{frontTexts/fichacatalog.pdf}
 
 % Folha de Aprovação
-\include{folhaAprovacao}
+\include{frontTexts/folhaAprovacao}
 
 % Dedicatória
-\include{Dedication}
+\include{frontTexts/Dedication}
 
 % Agradecimentos
-\include{Acknowledgments}
+\include{frontTexts/Acknowledgments}
 
 % Epígrafe
-\include{Epigraph}
+\include{frontTexts/Epigraph}
 
 % Resumo
-\include{Resumo}
+\include{_Resumo}
 
 % Resumo em inglês
 \include{Abstract}
@@ -313,10 +322,8 @@ requisito parcial para obtenção do Grau de Mestre em Engenharia Elétrica.}
 % Chapter 4 - Demonstração Experimental do Sistema DDO-OFDM
 \include{Chap4_Experimental_Setup}
 
-% Chapter 5 - Guard Band Optimization through Genetic Algorithm
 % Chapter 5 - Otimização da Banda de Guarda de Sistemas DDO-OFDM
 \include{Chap5_Optimization}
-
 
 % Chapter 6 - Conclusion
 \include{Chap6_Conclusion}

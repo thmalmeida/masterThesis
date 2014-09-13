@@ -50,11 +50,11 @@ forte candidato para enlaces de curto alcance, tais como, redes de acesso PON e
 \textit{data centers} devido a sua simplicidade na arquitetura do receptor,
 quando comparado com o modelo de detecção coerente (\textit{Coherent Optical
 OFDM} - CO-OFDM). Entretanto, as desvantagens provenientes da inserção de uma
-banda de guarda igual a banda de sinal, que ocasiona uma ineficiência espectral
-e da transmissão da portadora óptica que restringem a ampla aplicação dos
+banda de guarda igual a banda de sinal, que ocasiona uma ineficiência espectral,
+e da transmissão da portadora óptica, restringem a ampla aplicação dos
 sistemas DDO-OFDM em enlaces de médio e longo alcances \cite{art:jmo_OFDMA_6}.
 Portanto, pesquisas que visam reduzir essa largura de banda de guarda bem como
-as que retratam aspectos que retratam a redução da potência da portadora óptica
+as que retratam aspectos relativos à redução da potência da portadora óptica
 são de extrema valia no que tange a adoção do sistema DDO-OFDM nos diversos
 tipos de enlaces ópticos.
 % na qual requer metade da potência transmitida para a portadora óptica.
@@ -63,18 +63,17 @@ A Figura \ref{Fig:main_Comp} ilustra um modelo básico de sistemas de comunicação
 em fibra óptica explorado ao longo desta dissertação. Neste, sinais de luz com
 intensidade contínua (\textit{Continuous Wave} - CW) são codificados/modulados
 por sinais elétricos multiportadoras OFDM através de um modulador óptico
-Mach-Zehnder (Mach-Zehnder \textit{Modulator} - MZM) a partir de sinais RF
-codificados de uma fonte de informação. Em seguida, o sinal óptico na saída do
-modulador é propagado em um enlace de fibra. Ao final do enlace, um fotodetector
-converte os sinais ópticos capturados para sinais elétricos. Esses sinais
-elétricos são amplificados e demodulados conforme regras de um receptor
+Mach-Zehnder (Mach-Zehnder \textit{Modulator} - MZM). Em seguida, o sinal óptico
+na saída do modulador é propagado em um enlace de fibra. Ao final do enlace, um
+fotodetector converte os sinais ópticos capturados para sinais elétricos. Esses
+sinais elétricos são amplificados e demodulados conforme regras de um receptor
 multiportadora convencional.
 \cite{Senior_Book}.
 
 \begin{figure}[hb]
 	\centering
 		\includegraphics[width=1.0\textwidth]{Figures/genericBlockDiagramCommunications.pdf}
-		\caption{Componentes principais de um sistema óptico de comunicação}
+		\caption{Componentes principais de um sistema óptico de comunicação.}
 		\label{Fig:main_Comp}
 \end{figure}
 
@@ -86,23 +85,22 @@ que os efeitos de distorções ópticas tais como, dispesão cromática
 (\textit{Polarization Mode Dispersion} - PMD), possam ser compensados
 eletronicamente. Esta estrutura, ainda requer equalizadores adaptativos que
 consistem em um processador digital de sinais (\textit{Digital Signal
-Processing} - DSP) onde, na indústria pode ser implementado em tecnologias CMOS
-\textit{Complementary metal-oxide-semiconductor} ASIC \textit{Application
-Specific Integrated Circuit} que prevê baixo custo quando produzidos em larga
+Processing} - DSP) que na indústria pode ser implementado em tecnologias CMOS
+(\textit{Complementary metal-oxide-semiconductor}) e ASIC (\textit{Application
+Specific Integrated Circuit}) que prevê baixo custo quando produzidos em larga
 escala. Embora essas características possuam vantagens significativas quando
 comparado com sistema de detecção direta, é necessário ter em mente que,
 fundamentalmente, um sistema coerente requer muito mais complexidades
-eletro-ópticas do que em sistemas de detecção direta. Sistemas coerentes de
-40G/100G. Em algumas aplicações, usar detecção coerente é justificável, mesmo
-que os transponders possuam custos elevados. Casos onde valores de PMD podem ser
-facilmente compensados assim como, ocorre ganho de 2-3 dB em OSNR possibilitando
-maiores distâncias em enlaces transoceânicos e longos enlaces terrestres.
+eletro-ópticas do que em sistemas de detecção direta. Em algumas aplicações,
+usar detecção coerente é justificável, mesmo que os transponders possuam custos
+elevados. Casos onde valores de PMD podem ser facilmente compensados assim como,
+ganhos de 2-3 dB em OSNR são exemplos que possibilitam maiores distâncias como
+em enlaces transoceânicos e longos enlaces terrestres.
 As vantagens do sistema coerente surgem de fato após taxas de 100G. E mesmo que
 o sistema coerente torne estável e integrado no padrão OIF (\textit{Optical
-Internetworking Forum}), sistemas de detecção direta de 40G podem sobreviver e
-ser uma tecnologia dominante em redes metro/regionais e redes nacionais pequenas
-onde 100G de coerente não poderão ser tão eficiente globalmente quando se insere
-também custos e complexidade \cite{lightwave:2010:Online}.
+Internetworking Forum}), sistemas de detecção direta de 40G podem ser as
+tecnologia dominante em redes metro/regionais e redes nacionais pequenas onde
+100G \cite{lightwave:2010:Online}.
 
 % In some network applications, using coherent detection will still make sense,
 % even though the transponder cost is higher. For example, the PMD tolerance of
@@ -117,8 +115,8 @@ Pretende-se com esta dissertação analisar o comportamento de um aparato
 experimental de curto alcance com detecção direta no qual, propagam sinais
 multiportadoras através de transmissores e receptores desenvolvidos por
 software. O objetivo principal é variar parâmetros de projeto atráves de um
-algoritmo de busca visando aumentar o desempenho do sistema como ponto chave a
-eficiência espectral do sinal transmitido.
+algoritmo de busca visando principalmente aumentar a eficiência espectral de
+sistemas DDO-OFDM.
 
 % Pretende-se com esta dissertação analisar o comportamento de um aparato
 % experimental de transmissão de sinais OFDM em sistemas ópticos de modulação de
@@ -127,9 +125,9 @@ eficiência espectral do sinal transmitido.
 
 % Falar do trabalho. Trecho candidato ao resumo/abstract
 \section{Objetivo Geral}
-Este trabalho tem como principal finalidade tomar conta do aumento da eficiência
-espectral de sinais multiportadora transmitidos em sistemas ópticos com detecção
-direta e modulação por intensidade de curto alcance. Com isso, algoritmos de
+Este trabalho tem como principal finalidade aumentar a eficiência espectral de
+sinais multiportadora transmitidos em sistemas ópticos com detecção direta e
+modulação por intensidade de curto alcance. Com isso, algoritmos genéticos de
 busca de soluções de parâmetros otimizados através de simulações são validados
 no sistema experimental proposto.
 
@@ -150,22 +148,22 @@ no sistema experimental proposto.
 % OFDM experimentalmente em um sistema de comunicação de detecção
 
 \section{Objetivos Específicos}
-De forma mais específica, os estudo apresentado neste texto consiste na
+De forma mais específica, o estudo apresentado neste texto consiste na
 construção de transponders multiportadora OFDM definidos por \textit{software}
 que interagem tanto com um sistema óptico simulado quanto com uma plataforma
 experimental equivalente de modulação por intensidade e detecção direta.
 Isto, objetiva em buscar valores adequados para os parâmetros que definem o
 projeto a partir de algoritmos de otimização Mono-Objetivo introduzidos pelo
-algoritmo genético a fim de obter maior eficiência espectral nos sinais
-transmitidos. Como ideia de validar o sistema proposto, o sistema introduzido é
-integrado à uma plataforma experimental com equipamentos conversores A/D
-(\textit{Analog-to-Digital Converter}) e D/A (\textit{Digital-to-Analog
-Converter}) de altas taxas de conversão.
+algoritmo genético a fim de obter maior eficiência espectral nos sistemas
+DDO-OFDM convencionais. Com a ideia de validar o sistema proposto, o sistema
+introduzido é integrado à uma plataforma experimental com equipamentos
+conversores A/D (\textit{Analog-to-Digital Converter}) e D/A
+(\textit{Digital-to-Analog Converter}) de altas taxas de conversão.
 
 Além disso, alguns parâmetros mais sensíveis às respostas do sistema, tais como:
 desvio padrão do sinal $\sigma_s$, ponto de polarização do modulador $V_{bias}$,
 banda de guarda $B_G$, intervalo de guarda $I_G$ um fator de escala da taxa de
-amostragem $n_{samp}$ são exemplificados e variados em função de obter uma
+amostragem $n_{samp}$ são exemplificados e variados para obter-se uma
 transmissão com melhor eficiência espectral.
 
 Entretanto, por se tratar de um trabalho com forte apelo experimental, são
@@ -175,9 +173,9 @@ utilizados equipamentos de alto desempenho quais sejam, um gerador de forma de
 onda arbitrário (\textit{Arbitrary Waveform Generator} - AWG) modelo AWG7122C e
 um osciloscópio digital (\textit{Digital Phosfor Oscilloscope- DPO}) modelo
 DPO71604C cujo correto funcionamento acarretou no desenvolvimento de códigos de
-interação com/entre os mesmos. Códigos nos quais, realizam a interação do
-sistema projetado com a simulação podendo ser facilmente multiplexado para se
-conectar com os equipamentos reais.
+interação com/entre os mesmos.
+% Códigos nos quais, realizam a interação do sistema projetado com a simulação
+% podendo ser facilmente multiplexado para se conectar com os equipamentos reais.
 
 % De forma mais específica, o estudo apresentado neste texto consiste na
 % construção de sinais OFDM por meio de algoritmos de processamento de sinais e de
@@ -209,26 +207,24 @@ conectar com os equipamentos reais.
 
 \section{Metodologia}
 Este trabalho possui como proposta obter melhores desempenhos em sistemas
-DDO-OFDM com foco na eficiência espectral dos sinais transmitidos.
+DDO-OFDM com foco na eficiência espectral.
 
 A partir de códigos herdados de \cite{tese:Jair} que descrevem modelos de um
 sistema eletro/óptico, transponders OFDM foram implementados por
-\textit{software} e integrado à uma rotina chamada ``arquivo principal'' onde,
-seu funcionamento é ilustrado na Figura \ref{Fig:main_file}. Este aquivo
-principal, descreve um modelo de execução que acopla os modelos computacionais e
-a chamada da execução experimental em uma só execução. Para isso, foram
-caracterizados todos dispositivos inseridos na configuração experimental e
-implementados códigos de interação com os equipamentos de alto desempenho, via
+\textit{software} e integrado à uma rotina principal cujo funcionamento é
+ilustrado na Figura \ref{Fig:main_file}. Este aquivo principal, descreve um
+modelo de execução que acopla os modelos computacionais e a chamada da execução
+experimental em uma só iteração. Para isso, foram caracterizados todos
+dispositivos inseridos na configuração experimental e implementados códigos de
+interação com os equipamentos de alto desempenho, via protocolo
 \textit{ethernet}. Os equipamentos utilizados foram um gerador de forma de onda
 arbitrário do modelo AWG7122C e um osciloscópio modelo DPO71604C, com
 capacidades de conversões D/A e A/D respecitivamente, 24 GS/s e 100 GS/s. Esses
-equipamentos, interagem em tempo real via MATLAB por meio de códigos de acesso
-desenvolvidos neste trabalho e que são integrados com um código com modelo
-padrão para chamada de funções e parâmetros.
-Com isso, foi implementada uma heurisca de busca de parâmetros otimizados com
-objetivo de aumentar a eficiência do enlace de detecção direta. Com os
-parâmetros obtidos, foram então, validados no sistema proposto.
-
+equipamentos, interagem em tempo real via MATLAB por meio de códigos integrados
+de acesso desenvolvidos neste trabalho. Com isso, foi implementada uma heurisca
+de busca de parâmetros otimizados com objetivo de aumentar a eficiência
+espectral de sistemas DDO-OFDM convencionais. Os parâmetros obtidos, foram
+então, validados no sistema proposto.
 % Este trabalho possui como proposta desenvolver uma plataforma para realizar
 % experimentos elétrico/ópticos com equipamentos de alto desempenho tais como um
 % gerador de forma de onda arbitrário do modelo AWG7122C e um osciloscópio modelo
@@ -236,7 +232,6 @@ parâmetros obtidos, foram então, validados no sistema proposto.
 % 100 GS/s. Esses equipamentos, interagem em tempo real via MATLAB por meio de
 % códigos de acesso desenvolvidos neste trabalho e que são integrados com um
 % código com modelo padrão para chamada de funções e parâmetros.
-
 \begin{figure}[ht]
 	\centering
 		\includegraphics[width=\textwidth]{Figures/fluxogramaExecucao.pdf}
@@ -261,21 +256,21 @@ parâmetros obtidos, foram então, validados no sistema proposto.
 
 \section{Principais Contribuições}
 As contribuições deste trabalho são dadas pelo aumento da eficiência espectral
-no sinal transmitido dado pela diminuição da banda de guarda $B_G$ a partir de
-uma heurística de otimização.
+de sistemas DDO-OFDM e a diminuição da banda de guarda a partir de uma
+heurística de otimização, baseada em algoritmos genéticos.
 
 Além disso, uma plataforma experimental foi implementada para validação dos
-resultados dos parâmetros de projeto utilizados no sistema desenvolvido. O que
+resultados dos parâmetros de projeto utilizados no sistema desenvolvido. Isto
 gerou um modelo de execução ilustrado pela Figura \ref{Fig:main_file}. Este
-modelo integra o sistema simulado com equipamentos reais através de
-códigos de interação implementados durante a implementação do sistema.
+modelo integra o sistema simulado com equipamentos reais a partir de
+códigos implementados. 
 
 Em adição, todos os componentes do sistema implementado foram caracterizados
 proporcionando conhecimento, facilidade de calibração e alinhamento com modelos
 computacionais que fazem parte da simulação.
 
-Por fim, a construção do \textit{driver} de controle do laser DFB utilizado e
-suas descrições de funcionamento detalhadas apêndice \ref{AppendixA}.
+Por fim, o driver de controle desenvolvido para a o laser DFB tem suas
+características funcionais detalhadas no apêndice \ref{AppendixA}.
 
 % As contribuições deste trabalho são dadas pela plataforma de testes implementada
 % para realizar experimentos elétrico/óptico com grande facilidade através da
