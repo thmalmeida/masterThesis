@@ -11,28 +11,29 @@ aumentar sua eficiência espectral.
 \section{Introdução}
 Após o desenvolvimento da plataforma de transmissão e a realização de testes do
 sistema óptico experimental com detecção direta, foi observado que a variação de
-alguns parâmetros do extenso número que compõem as características de formação e
-transmissão do sinal OFDM, em sistemas DDO-OFDM, afeta significativamente a
-qualidade da transmissão. Tais parâmetros, são responsáveis pela quantidade de
-potência do sinal na entrada da fibra, pela sensibilidade do receptor, pela
-robustez contra dispersão cromática da fibra e pela eficiência espectral do
-sistema.
+alguns do extenso número de parâmetros que compõem as características de
+formação de sinais em sistemas DDO-OFDM, afeta significativamente a qualidade da
+transmissão. Tais parâmetros são responsáveis pela potência do sinal na entrada
+da fibra, pela sensibilidade do receptor, pela robustez contra dispersão
+cromática da fibra e pela eficiência espectral do sistema.
 
 Sabe-se que a sensibilidade no receptor depende da potência média do sinal
 elétrico e do ponto de polarização $V_{bias}$ do modulador externo MZM
 \cite{Rosenkranz09}, \cite{WilnnerJLT09_02}. Além disso, um índice de modulação
-óptica (\textit{Optical Modulation Index} - OMI) aceitável é necessário para
-superar a potência óptica do sinal (em especial a potência da portadora óptica
-desperdiçada) e distorções não lineares produzidas pelo próprio MZM
-\cite{WilnnerJLT09_02}. Sabe-se também que a eficiência global do sistema
-DDO-OFDM é afetada pela banda de guarda $B_G$ necessária para evitar a
-interferência de batimendo do sinal (\textit{signal-to-signal beat interference}
-- SSBI ou \textit{subcarries-to-subcarries mixing interference} - SSMI) presente
-na recepção óptica. Neste quesito em especial, a literatura diz que, para uma
-banda efetiva de transmissão $B_{W}$ é necessária uma banda de guarda $B_G =
-B_{W}$ para garantir que não haja interferência \cite{Rosenkranz09}. A redução
-desta banda de guarda torna-se tarefa essencial dos sistemas aqui apresentados
-de forma a aumentar a eficiência espectral dos mesmos.
+óptica (\textit{Optical Modulation Index} - OMI) deste modulador deve ser
+otimizado de forma a equilibrar o compromisso entre a potência óptica do sinal
+(em especial a potência da portadora óptica desperdiçada) e as distorções não
+lineares introduzidas pelo próprio MZM \cite{WilnnerJLT09_02}. Sabe-se também
+que a eficiência global do sistema DDO-OFDM é afetada pela banda de guarda $B_G$
+necessária para evitar a interferência de batimendo do sinal
+(\textit{signal-to-signal beat interference} - SSBI ou
+\textit{subcarries-to-subcarries mixing interference} - SSMI) presente na
+recepção óptica. Neste quesito em especial, a literatura diz que, para uma banda
+efetiva de transmissão $B_{W}$ é necessária uma banda de guarda $B_G = B_{W}$
+para acomodar as interferências SSBI, concentradas próximas à portadora óptica
+\cite{Rosenkranz09}.
+A redução desta banda de guarda torna-se tarefa essencial dos sistemas aqui
+retratados de forma a aumentar a eficiência espectral dos mesmos.
 
 % Entretanto, foi observado que as interferências por batimento se concentravam
 % próximos às baixas frequências motivando uma tentativa de diminuição desta banda a fim de
@@ -41,32 +42,28 @@ de forma a aumentar a eficiência espectral dos mesmos.
 
 Sabendo que muitas vezes os parâmetros de projeto estão interligados de forma
 não linear, tornou-se interessante neste estudo a utilização de um algoritmo de
-otimização na tentativa de encontrar valores que aumentam as eficiências
-espectrais dos sistemas.
+otimização na tentativa de encontrar valores que aumentam a eficiência
+espectral dos sistemas.
 
 Este capítulo enfatiza o aumento da eficiência espectral de sistemas DDO-OFDM em
-enlaces de curto alcance com parâmetros otimizados por um algoritmo genético
+enlaces de curto alcance com parâmetros otimizados por um algoritmo Genético
 (\textit{Genetic algorithm} - GA) mono-objetivo. A eficiência da otimização é
-mostrada com a transmissão experimental de um sistema DDO-OFDM de dupla faixa
-lateral com $R_b =$ 1.83 Gb/s e 40 km de fibra sem compensação óptica da
+mostrada perante a transmissão experimental de um sistema DDO-OFDM otimizado,
+a uma taxa de $R_b =$ 1.83 Gb/s e 40 km de fibra SSMF sem compensação óptica da
 dispersão cromática.
 
 % \subsection{Declaração do Problema}
 \section{Escolha dos Parâmetros Relevantes para a Otimização do Sistema
 DDO-OFDM}
 
-% Escolha dos Parametros a serem Otimizados}
-
 Sabe-se que o desempenho do sistema óptico de modulação de intensidade e
-detecção direta estudado depende de um extenso número de parâmetros que envolvem
-as características dos sinais OFDM tais como, ponto de polarização do modulador
-óptico, deficiências na fotodetecção direta, etc. Estudos teóricos e
-experimentais apresentados em \cite{Rosenkranz09}, \cite{WilnnerJLT09_02} e
-\cite{art:peng} revelam pontos relevantes de projeto entre potência do sinal
-transmitido, sensibilidade de recepção, robustez contra CD e eficiência
-espectral global do sistema. Excluindo o prefíxo cíclico em uma configuração
-óptica B2B, um único símbolo OFDM pode ser escrito
-como% [7]-[12].
+detecção direta estudado depende de um extenso número de parâmetros que estão
+diretamente relacionados com a polarização do modulador óptico, com deficiências
+na fotodetecção, entre outros. Estudos teóricos e experimentais apresentados em
+\cite{Rosenkranz09}, \cite{WilnnerJLT09_02} e \cite{art:peng} revelam pontos
+relevantes de projeto entre potência do sinal transmitido, sensibilidade de
+recepção, robustez contra CD e eficiência espectral global do sistema. Excluindo
+o prefíxo cíclico, um único símbolo OFDM pode ser escrito como% [7]-[12].
 \begin{equation}
 s(t) = \sqrt{\frac{\sigma_s^2}{N_{FFT}}} \cdot \sum_{k=1}^{N_{FFT}} 
 \left \{ \mathfrak{R_e} [X_k] \cdot cos(2 \pi k \, \Delta f \, t) +
@@ -171,21 +168,18 @@ X_l^\ast e^{j2\pi[(k-1)\Delta f t]}}_{SSBI \: or \: SSMI},
 onde $\ast$ denota a operação complexo conjugado do termo. Resultado do
 batimento entre as subportadoras OFDM, o termo de distorção de intermodulação
 por baixa frequência IMD que aparece em (\ref{Eq:IMD}) degrada o sinal. As
-penalidades dessas deficiências são denominadas na literatura por interferência
-por batimento sinal-sinal (\textit{signal-to-signal beating interferences} -
-SSBI ou \textit{signal-to-signal mixing interferences} - SSMI) podem ser
-minimizadas se uma banda de guarda $B_G$ for alocada. Aqui, uma abordagem entre
-degradação não linear do sinal e eficiência espectral do sistema são levadas em
-conta. Vale notar que, em sistemas DDO-OFDM convencionais uma banda $B_G = B_W$
-é recomendada, conforme ilustra a Figura \ref{Fig:BGa}. Durante os procedimentos
+penalidades inseridas pelas interferências SSBI podem ser minimizadas se uma
+banda de guarda $B_G$ for alocada. Aqui, uma abordagem entre degradação não
+linear do sinal e eficiência espectral do sistema são levadas em conta. Vale
+notar que, em sistemas DDO-OFDM convencionais uma banda $B_G = B_W$ é
+recomendada, conforme ilustra a Figura \ref{Fig:BGa}. Durante os procedimentos
 experimentais descritos no capítulo \ref{Cap:4}, notou-se que a banda de guarda
-$B_G$ não necessáriamente deveria seguir esta igualdade.
-% o que justificou adicionar este parâmetro aos algoritmos de otimização obtendo
-% valores que não causassem interferências com o sinal transmitido.
-
-% Sendo assim, qual valor de banda de guarda deve ser atribuía em aplicação que
-% para OFDM são 
-
+$B_G$ não necessariamente deveria seguir esta igualdade. Sendo assim, qual o
+valor de banda de guarda deve ser atribuída em aplicações em que sinais OFDM são
+transmitidos em enlaces de curto alcance em sistemas ópticos IMDD? Ressalta-se
+que esta banda de guarda deve considerar o compromisso entre a eficiência
+espectral e a inserção de produtos de intermodulação, mantendo-se o desempenho
+ou minimizando as possíveis penalidades oriundas da redução da banda de guarda.
 
 \begin{figure}[h]
         \centering

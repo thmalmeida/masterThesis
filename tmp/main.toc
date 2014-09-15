@@ -59,14 +59,14 @@
 \contentsline {section}{\numberline {5.1}Introdu\c c\~ao}{86}{section.5.1}
 \contentsline {section}{\numberline {5.2}Escolha dos Par\^ametros Relevantes para a Otimiza\c c\~ao do Sistema DDO-OFDM}{87}{section.5.2}
 \contentsline {section}{\numberline {5.3}Otimiza\c c\~ao Mono-Objetivo via Algoritmo Gen\'etico}{90}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Algoritmos Gen\'eticos}{90}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.1}Algoritmos Gen\'eticos}{91}{subsection.5.3.1}
 \contentsline {subsubsection}{\numberline {5.3.1.1}Mecanismos de Sele\c c\~ao}{92}{subsubsection.5.3.1.1}
 \contentsline {subsubsection}{\numberline {5.3.1.2}Operador de Cruzamento}{92}{subsubsection.5.3.1.2}
 \contentsline {subsubsection}{\numberline {5.3.1.3}Operador de Muta\c c\~ao}{93}{subsubsection.5.3.1.3}
 \contentsline {section}{\numberline {5.4}Formula\c c\~ao do Problema}{93}{section.5.4}
-\contentsline {section}{\numberline {5.5}T\'ecnica de Imposi\c c\~ao da OSNR}{93}{section.5.5}
+\contentsline {section}{\numberline {5.5}T\'ecnica de Imposi\c c\~ao da OSNR}{94}{section.5.5}
 \contentsline {section}{\numberline {5.6}O Algoritmo Gen\'etico Aplicado ao Problema}{95}{section.5.6}
-\contentsline {section}{\numberline {5.7}Resultados e Discuss\~oes}{97}{section.5.7}
+\contentsline {section}{\numberline {5.7}Resultados e Discuss\~oes}{96}{section.5.7}
 \contentsline {subsection}{\numberline {5.7.1}Resultados de Simula\c c\~oes}{97}{subsection.5.7.1}
 \contentsline {subsection}{\numberline {5.7.2}Resultados de Experimentos}{98}{subsection.5.7.2}
 \contentsline {subsection}{\numberline {5.7.3}Adicionando a Efici\^encia Espectral na Formula\c c\~ao do Problema}{98}{subsection.5.7.3}

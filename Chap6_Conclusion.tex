@@ -16,27 +16,27 @@ demandam o uso de uma banda de guarda $B_G$ igual a banda de sinal $B_w$.
 
 Além disso, a grande quantidade de parâmetros envolvida nas transmissões acima
 referidas, fez com que fosse necessário um processo de otimização de parâmetros
-que envolvesse algum tipo de algoritmo de otimização, devido a relação não 
-linear que existe entre alguns destes parâmetros. Aliás, durante a execução de
-alguns experimentos preliminares, foi possível notar que ao variar alguns
-parâmetros, o desempenho do sistema alterava-se consideravelmente. Percebeu-se
-também que parâmetros tais como o intervalo de guarda e a polarização do MZM,
-ofereceram graus de liberdade neste quesito. Isto incentivou uma busca por
-parâmetros otimizados de forma a melhorar a eficiência espectral e/ou a taxa de
-transmissão dos referidos sistemas ópticos.
+através de alguma heurística, devido a relação não linear que existe entre
+alguns destes parâmetros. Aliás, durante a execução de alguns experimentos
+preliminares, foi possível notar que ao variar alguns parâmetros, o desempenho
+do sistema alterava-se consideravelmente. Percebeu-se também que parâmetros tais
+como o intervalo de guarda e a polarização do MZM, ofereceram graus de liberdade
+neste quesito. Isto incentivou uma busca por parâmetros otimizados de forma a
+melhorar a eficiência espectral e/ou o desempenho dos referidos sistemas
+ópticos.
 
-Para tal, modelos de \emph{transponders} práticos, adaptados ao sistema óptico
+Para tal, modelos de \emph{transponders} práticos adaptados ao sistema óptico
 de detecção direta, foram criados e testados em um modelo de transmissão
 DDO-OFDM em fibras monomodo padrão, que foi utilizado em simulações
 computacionais executadas na otimização mono-objetiva por uma heurística
-especialmente preparada para tal.
+especialmente preparada.
 
 Os resultados de simulação computacional da otimização proposta ilustraram uma
 redução da $B_G$ para $70\%$ do valor da banda de informação $B_w$, aumentando
-em $15\%$ a espectral de um sistema DDO-OFDM transmitindo a $1.83$ Gb/s em 4-QAM
-em $40$ km de fibra SSMF. A largura de banda total que, conforme literatura
-deveria ser igual a $1.25$ GHz, passou a ser aproximadamente $1$ GHz,
-mantendo-se ou, em alguns casos, melhorando o desempenho do sistema com um todo.
+em $15\%$ a espectral de um sistema DDO-OFDM transmitindo a $1.83$ Gb/s em $40$
+km de fibra SSMF. A largura de banda total que, conforme literatura deveria ser
+igual a $1.25$ GHz, passou a ser aproximadamente $1$ GHz, mantendo-se ou, em
+alguns casos, melhorando o desempenho do sistema como um todo.
 
 Para a validação dos resultados de simulação, um arranjo experimental típico de
 sistemas DDO-OFDM foi preparado mediante processamento \emph{offline} via
@@ -49,19 +49,19 @@ aumento da eficiência espectral deu-se mediante a transmissão pelo arranjo e
 avaliação \emph{offline} de $90$ símbolos OFDM mapeados em 4-QAM, operando na
 frequência máxima na saída do conversor D/A igual a $1.91$ GHz, em uma largura
 de banda de $1.0$ GHz. O desempenho do sistema DDO-OFDM de $1.83$ Gbps, medido
-através da métrica EVM=$-17.18$, ou seja constelação livre de erros (BER$=0$)
-convalidou a heurística de otimização baseado em algoritmos genético proposto no
-presente trabalho.
+através da métrica EVM$=-17.18$, ou seja, com constelação livre de erros
+(BER$=0$), convalidou a heurística de otimização baseada em algoritmos
+genéticos, proposta no presente trabalho.
 
 Além da proposta, ressalta-se que a plataforma de testes desenvolvida e a
 estrutura de códigos para interação com equipamentos e processamento
 \textit{offline} apresenta-se como um importante ferramental para futuras provas
 de conceitos a serem realizadas no laboratório no que tange à comunicação de
-modernos sistemas de comunicação via fibras ópticas.
+modernos sistemas de transmissão via fibras ópticas.
 
-Como trabalho futuro, sugere-se aqui experimentos para validação de otimização
-multi-objetiva que considera também a potência do laser CW de forma averiguar o
-seu efeito no estímulo de não linearidades da fibra e na possível redução dos
+Como trabalho futuro, sugere-se experimentos para validação de otimização
+multi-objetiva que considera também a potência do laser CW de forma a averiguar
+o seu efeito no estímulo de não linearidades da fibra e na possível redução dos
 efeitos dos produtos de intermodulação característicos dos sistemas aqui
 analisados. Convém informar que este trabalho inicia um estudo que visa a
 construção de um otimizador de baixo custo que em um futuro próximo auxiliará no

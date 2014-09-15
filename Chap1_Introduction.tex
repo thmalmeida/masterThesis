@@ -98,9 +98,8 @@ ganhos de 2-3 dB em OSNR são exemplos que possibilitam maiores distâncias como
 em enlaces transoceânicos e longos enlaces terrestres.
 As vantagens do sistema coerente surgem de fato após taxas de 100G. E mesmo que
 o sistema coerente torne estável e integrado no padrão OIF (\textit{Optical
-Internetworking Forum}), sistemas de detecção direta de 40G podem ser as
-tecnologia dominante em redes metro/regionais e redes nacionais pequenas onde
-100G \cite{lightwave:2010:Online}.
+Internetworking Forum}), sistemas de detecção direta de 40G podem fazer parte
+da tecnologia dominante em redes metro/regionais \cite{lightwave:2010:Online}.
 
 % In some network applications, using coherent detection will still make sense,
 % even though the transponder cost is higher. For example, the PMD tolerance of
@@ -127,7 +126,7 @@ sistemas DDO-OFDM.
 \section{Objetivo Geral}
 Este trabalho tem como principal finalidade aumentar a eficiência espectral de
 sinais multiportadora transmitidos em sistemas ópticos com detecção direta e
-modulação por intensidade de curto alcance. Com isso, algoritmos genéticos de
+modulação por intensidade de curto alcance. Com isso, algoritmos Genéticos de
 busca de soluções de parâmetros otimizados através de simulações são validados
 no sistema experimental proposto.
 
@@ -223,18 +222,17 @@ capacidades de conversões D/A e A/D respecitivamente, 24 GS/s e 100 GS/s. Esses
 equipamentos, interagem em tempo real via MATLAB por meio de códigos integrados
 de acesso desenvolvidos neste trabalho. Com isso, foi implementada uma heurisca
 de busca de parâmetros otimizados com objetivo de aumentar a eficiência
-espectral de sistemas DDO-OFDM convencionais. Os parâmetros obtidos, foram
-então, validados no sistema proposto.
+espectral de sistemas DDO-OFDM convencionais. Os parâmetros obtidos foram
+validados em um arranjo experimental preparado para tal.
 % Este trabalho possui como proposta desenvolver uma plataforma para realizar
 % experimentos elétrico/ópticos com equipamentos de alto desempenho tais como um
-% gerador de forma de onda arbitrário do modelo AWG7122C e um osciloscópio modelo
-% DPO71604C, com capacidades de conversões D/A e A/D respecitivamente, 24 GS/s e
-% 100 GS/s. Esses equipamentos, interagem em tempo real via MATLAB por meio de
-% códigos de acesso desenvolvidos neste trabalho e que são integrados com um
-% código com modelo padrão para chamada de funções e parâmetros.
-\begin{figure}[ht]
-	\centering
-		\includegraphics[width=\textwidth]{Figures/fluxogramaExecucao.pdf}
+% gerador de forma de onda arbitrário do modelo AWG7122C e um osciloscópio
+% modelo DPO71604C, com capacidades de conversões D/A e A/D respecitivamente, 24
+% GS/s e 100 GS/s. Esses equipamentos, interagem em tempo real via MATLAB por
+% meio de códigos de acesso desenvolvidos neste trabalho e que são integrados
+% com um código com modelo padrão para chamada de funções e parâmetros.
+\begin{figure}[ht] \centering
+\includegraphics[width=\textwidth]{Figures/fluxogramaExecucao.pdf}
 		\caption{Fluxograma de ilustração da sequência do arquivo principal.}
 		\label{Fig:main_file}
 \end{figure}
@@ -256,8 +254,8 @@ então, validados no sistema proposto.
 
 \section{Principais Contribuições}
 As contribuições deste trabalho são dadas pelo aumento da eficiência espectral
-de sistemas DDO-OFDM e a diminuição da banda de guarda a partir de uma
-heurística de otimização, baseada em algoritmos genéticos.
+de sistemas DDO-OFDM, através da diminuição da banda de guarda a partir de uma
+heurística de otimização, baseada em algoritmos Genéticos.
 
 Além disso, uma plataforma experimental foi implementada para validação dos
 resultados dos parâmetros de projeto utilizados no sistema desenvolvido. Isto
@@ -269,8 +267,10 @@ Em adição, todos os componentes do sistema implementado foram caracterizados
 proporcionando conhecimento, facilidade de calibração e alinhamento com modelos
 computacionais que fazem parte da simulação.
 
-Por fim, o driver de controle desenvolvido para a o laser DFB tem suas
-características funcionais detalhadas no apêndice \ref{AppendixA}.
+Por fim, um driver de controle para o laser DFB foi desenvolvido, e cujo o
+funcionamento é descrito no Apêndice \ref{AppendixA}.
+% Por fim, o driver de controle desenvolvido para a o laser DFB tem suas
+% características funcionais detalhadas no apêndice \ref{AppendixA}.
 
 % As contribuições deste trabalho são dadas pela plataforma de testes implementada
 % para realizar experimentos elétrico/óptico com grande facilidade através da
