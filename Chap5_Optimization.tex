@@ -3,7 +3,7 @@
 
 \label{Chap5:Optimization}
 
-O estudo apresentado neste capítulo é dedicado ao emprego de um algoritmo
+O estudo apresentado neste Capítulo é dedicado ao emprego de um algoritmo
 genético para a otimização dos parâmetros do sistema DDO-OFDM II em enlaces de
 curto alcance para reduzir a banda de guarda do sistema e consequentemente
 aumentar sua eficiência espectral.
@@ -45,11 +45,11 @@ não linear, tornou-se interessante neste estudo a utilização de um algoritmo de
 otimização na tentativa de encontrar valores que aumentam a eficiência
 espectral dos sistemas.
 
-Este capítulo enfatiza o aumento da eficiência espectral de sistemas DDO-OFDM em
+Este Capítulo enfatiza o aumento da eficiência espectral de sistemas DDO-OFDM em
 enlaces de curto alcance com parâmetros otimizados por um algoritmo Genético
 (\textit{Genetic algorithm} - GA) mono-objetivo. A eficiência da otimização é
 mostrada perante a transmissão experimental de um sistema DDO-OFDM otimizado,
-a uma taxa de $R_b =$ 1.83 Gb/s e 40 km de fibra SSMF sem compensação óptica da
+a uma taxa de 1.83 Gb/s e 40 km de fibra SSMF sem compensação óptica da
 dispersão cromática.
 
 % \subsection{Declaração do Problema}
@@ -164,7 +164,6 @@ i_{pin}(t) \propto |E_{MZM}(t)|^2 &=&
 && + \underbrace{\sum_{k=1}^{N_{FFT}}\sum_{k=1}^{N_{FFT}} X_k
 X_l^\ast e^{j2\pi[(k-1)\Delta f t]}}_{SSBI \: or \: SSMI},
 \end{eqnarray}
-
 onde $\ast$ denota a operação complexo conjugado do termo. Resultado do
 batimento entre as subportadoras OFDM, o termo de distorção de intermodulação
 por baixa frequência IMD que aparece em (\ref{Eq:IMD}) degrada o sinal. As
@@ -173,9 +172,9 @@ banda de guarda $B_G$ for alocada. Aqui, uma abordagem entre degradação não
 linear do sinal e eficiência espectral do sistema são levadas em conta. Vale
 notar que, em sistemas DDO-OFDM convencionais uma banda $B_G = B_W$ é
 recomendada, conforme ilustra a Figura \ref{Fig:BGa}. Durante os procedimentos
-experimentais descritos no capítulo \ref{Cap:4}, notou-se que a banda de guarda
-$B_G$ não necessariamente deveria seguir esta igualdade. Sendo assim, qual o
-valor de banda de guarda deve ser atribuída em aplicações em que sinais OFDM são
+experimentais descritos no Capítulo \ref{Cap:4}, notou-se que a banda de guarda
+$B_G$ não necessariamente deveria seguir esta igualdade. Sendo assim, qual valor
+de banda de guarda deve ser atribuída em aplicações em que sinais OFDM são
 transmitidos em enlaces de curto alcance em sistemas ópticos IMDD? Ressalta-se
 que esta banda de guarda deve considerar o compromisso entre a eficiência
 espectral e a inserção de produtos de intermodulação, mantendo-se o desempenho
@@ -205,8 +204,8 @@ elétrico do sinal deslocado para $f'_c$ que resulta em uma menor frequência
 máxima do sinal ${B'}_c$. Um parâmetro que afeta bastante o desempenho citado
 está relacionado à inserção do prefíxo cíclico no início de cada sinal
 transmitido.
-Uma redundância dada por $\epsilon_g = T_g/(T_s-T_g)$ para $T_g$ o intervalo de
-guarda e $T_s$ o tempo total do símbolo OFDM é, introduzida no ínicio de cada
+Uma redundância dada por $\epsilon_g = T_g/(T_s-T_g)$, para $T_g$ o intervalo de
+guarda e $T_s$ o tempo total do símbolo OFDM, é introduzida no ínicio de cada
 sinal OFDM. Um curto prefíxo cíclico escolhido deve minimizar ou até mesmo
 eliminar todos os efeitos causados pela interferência intersimbólica (ISI) no
 sistema que, por outro lado compensa o deslocamento na sincronização do símbolo.
@@ -247,7 +246,7 @@ da recepção do sinal OFDM.
         \caption{Influência do intervalo de guarda no projeto de sistemas
         DDO-OFDM.}
         \label{Fig:Graph_Ig}
-\end{figure} 
+\end{figure}
 
 Por fim, a última variável escolhida para o processo de otimização provê um
 multiplicador da taxa de amostragem do sinal, dada por $n_{samp}$. A taxa de
@@ -524,6 +523,14 @@ Utilizou-se neste trabalho o algoritmo genético com codificação de número real
 com um processo que inicia com uma população $P_F$ gerada de uma ordem aleatória
 por $N = 30$ soluções possíveis para $\sigma_s$, $V_{bias}$, $B_G$, $I_G$, e
 $n_{samp}$ como mostrado na Figura \ref{Fig:GA_blockDiagram}.
+\begin{figure}[h]
+	\centering
+		\includegraphics[width=\textwidth]{Figures/GA_Table_info.pdf}
+		\caption{Diagrama de blocos da evolução do processo do algoritmo
+		genético implementado.}
+		\label{Fig:GA_blockDiagram}
+\end{figure}
+
 Cada cromossomo tem um \textit{fitness} que avalia a qualidade de cada solução
 da população e pode ser expressa como
 \begin{equation}
@@ -543,13 +550,7 @@ melhores \textit{fitness} para comporem a nova população. Em cada seleção, estes
 escolhem com um número aleatório a quantidade de 4 cromossomos e selecionam
 aquele que possui a melhor carga genética qualificada pelo parâmetro
 \textit{fitness} \cite{book:metaheurisca}.
-\begin{figure}[h]
-	\centering
-		\includegraphics[width=\textwidth]{Figures/GA_Table_info.pdf}
-		\caption{Diagrama de blocos da evolução do processo do algoritmo
-		genético implementado.}
-		\label{Fig:GA_blockDiagram}
-\end{figure}
+
 Operadores de cruzamento são aplicados de uma forma aleatória no qual, um
 número aleatório é escolhido. Um cruzamento entre um par de cromossomos ocorre
 se o número aleatório é menor do que uma taxa de cruzamento eleito igual a 0.95.
@@ -585,6 +586,18 @@ $P_F+1$ é composta pelas primeiras $N = 30$ melhores soluções de R. A Tabela
 \ref{Tab:pseudoCodigo} ilustra o pseudo-código do algoritmo genético
 implementado.
 
+
+\section{Resultados e Discussões}
+Examina-se nesta seção o desempenho da heurística desenvolvida para aumentar a
+eficiência espectral de sistemas DDO-OFDM em enlaces de curto alcance com
+parâmetros otimizados conforme proposto pelo algoritmo genético mono-objetivo.
+Os resultados de simulações e a devida comprovação experimental através da
+transmissão de um sistema DDO-OFDM otimizado, a taxa de $R_b = 1.83$ Gb/s em
+condições de B2B, 20 e 40 km de fibra SSMF sem compensação óptica de dispersão
+são discutidos. Além disso, realiza-se aui uma discussão acerca da formulação do
+problema que considera a maximização da eficiência espectral do sistema como um
+todo.
+
 \begin{center}
 \begin{table}[h]
 \centering
@@ -593,7 +606,6 @@ implementado.
 		\hline
 		\multicolumn{2}{ c }{\textbf{Algoritmo Genético para Sistemas DDO-OFDM}} \\
 		\hline
-		
 		1:	& inicia \textit{iter}, N; \\
 		2:	& Geração Aleatória de $P_F(\textit{iter})$; \\
 		3:	& Calcula a aptidão de todos cromossomos $\in P_F(\textit{iter})$; \\
@@ -613,17 +625,6 @@ implementado.
 	\end{tabular}
 	\end{table}
 \end{center}
-
-\section{Resultados e Discussões}
-Examina-se nesta seção o desempenho da heurística desenvolvida para aumentar a
-eficiência espectral de sistemas DDO-OFDM em enlaces de curto alcance com
-parâmetros otimizados conforme proposto pelo algoritmo genético mono-objetivo.
-Os resultados de simulações e a devida comprovação experimental através da
-transmissão de um sistema DDO-OFDM otimizado, a taxa de $R_b = 1.83$ Gb/s em
-condições de B2B, 20 e 40 km de fibra SSMF sem compensação óptica de dispersão
-são discutidos. Além disso, realiza-se aui uma discussão acerca da formulação do
-problema que considera a maximização da eficiência espectral do sistema como um
-todo.
 
 \subsection{Resultados de Simulações}
 A fim de otimizar parâmetros críticos foram conduzidos simulações de Monte Carlo
@@ -692,7 +693,7 @@ eficiência espectral, dado pela redução da banda de guarda ocorreu em todos os
 casos simulados. Além disso, o desempenho do sistema DDO-OFDM simulado melhorou
 quando os parâmetros críticos foram otimizados. Por exemplo, o valor de $11.3$
 dB de OSNR com $BER = 10^{-3}$ foi alcançado para transmissões em 20 km com a
-redução de 20\% $(B_G = 0.8 B_W)$ na banda de guarda.
+redução de 20\% $(B_G = 0.8 \times B_W)$ na banda de guarda.
 
 % Percebe-se pelos resultados da Tabela \ref{Tab:4}, que $V_{bias}$ em
 % torno de $0.9 \cdot V_{\pi}$ parece ser uma boa escolha para o ponto de
@@ -704,21 +705,13 @@ por realizar a comprovação experimental dos resultados obtidos ao final das simu
 A Figura \ref{Fig:6} ilustra o arranjo experimental preparado para a transmissão no sistema DDO-OFDM II
 otimizado conforme parâmetros definidos na Tabela \ref{Tab:4}.
 
-\begin{figure}[h]
-	\centering
-		\includegraphics[width=\textwidth]{Figures/DDO-OFDM_Experimento_Labtel_out2012_JMOe.eps}
-		\caption{Configuração experimental do sistema DDO-OFDM II à taxa de $R_b =
-		1.83$ Gbps.}
-		\label{Fig:6}
-\end{figure}
-
 Os sinais OFDM elétricos parametrizados conforme mostrado na Tabela \ref{Tab:3}
 foram transmitidos e processados \emph{offline} no software de computação
 MATLAB\textsuperscript{\textregistered}. Para tanto, os sinais são enviados ao
 gerador de onda arbitrária AWG7122C que realiza a conversão D/A. Depois do
 filtro passa baixas LPF, estes são utlizados pelo modulador óptico MZM para
 modular externamente o sinal óptico CW do laser de sinal centrado no comprimento
-de onda $\lambda = 1550 nm$. Após propagação em fibras monomodo padrão, os
+de onda $\lambda = 1550$ nm. Após propagação em fibras monomodo padrão, os
 sinais ópticos são detectados por apenas um fotodetector para caracterizar a
 detecção direta.
 
@@ -730,13 +723,12 @@ A Figura \ref{Fig:7} mostra o desempenho para transmissões DDO-OFDM através de
 Figura \ref{Fig:7} que os valores de EVM iguais a -15.5 e -17.2 dB, para 20 e 40
 km respectivamente, foram obtidos com as reduções da banda de guarda mostradas
 na Tabela \ref{Tab:4}.
-
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
-		\includegraphics[scale=0.8]{Figures/Spectrums_Constelations.eps}
-		\caption{Densidade espectral de potência e constelação dos resultados
-		experimentais do sistema DDO-OFDM II otimizado.}
-		\label{Fig:7}
+		\includegraphics[scale=0.75]{Figures/DDO-OFDM_Experimento_Labtel_out2012_JMOe.eps}
+		\caption{Configuração experimental do sistema DDO-OFDM II à taxa de $R_b =
+		1.83$ Gbps.}
+		\label{Fig:6}
 \end{figure}
 
 Um questionamento que naturalmente surge olhando-se atentamente as constelações
@@ -748,6 +740,14 @@ os parâmetros utilizados para propagação em 20 km não são otimizados a partir da
 otimização realizada em B2B. A heurística inicializa a otimização em cada
 configuração em separado, considerando inclusive o comprimento do enlace a
 retratar.
+
+\begin{figure}[h]
+	\centering
+		\includegraphics[scale=0.8]{Figures/Spectrums_Constelations.eps}
+		\caption{Densidade espectral de potência e constelação dos resultados
+		experimentais do sistema DDO-OFDM II otimizado.}
+		\label{Fig:7}
+\end{figure}
 
 \subsection{Adicionando a Eficiência Espectral na Formulação do Problema}
 É fácil perceber a partir da Figura \ref{Fig:7} que a redução da banda de guarda
@@ -879,7 +879,7 @@ otimização.
 
 \section{Considerações Finais}
 A otimização de sistemas DDO-OFDM via o algoritmo genético descrito neste
-capítulo, mostrou-se necessária devido à grande quantidade de parâmetros
+Capítulo, mostrou-se necessária devido à grande quantidade de parâmetros
 envolvidos no desempenho de tais sistemas. Ganhos na relação OSNR para taxas de
 um $BER = 1 \times 10^{-3}$ foram encontrados mesmo com redução na largura de
 banda de guarda (aumento da eficiência espectral) que alcançaram 50\%.
