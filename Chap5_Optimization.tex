@@ -201,9 +201,10 @@ ou minimizando as possíveis penalidades oriundas da redução da banda de guarda.
 \end{figure}
 A Figura \ref{Fig:BGb} ilustra o espéctro elétrico original com os produtos de
 intermodulação em uma banda menor que $B_W$ e a evolução para o espéctro
-elétrico do sinal deslocado para $f'_c$ agora com uma menor frequência máxima do
-sinal ${B'}_c$. Outra abordagem que existe em sistemas ópticos OFDM está
-relacionados à inserção do prefíxo cíclico no início de cada sinal transmitido.
+elétrico do sinal deslocado para $f'_c$ que resulta em uma menor frequência
+máxima do sinal ${B'}_c$. Um parâmetro que afeta bastante o desempenho citado
+está relacionado à inserção do prefíxo cíclico no início de cada sinal
+transmitido.
 Uma redundância dada por $\epsilon_g = T_g/(T_s-T_g)$ para $T_g$ o intervalo de
 guarda e $T_s$ o tempo total do símbolo OFDM é, introduzida no ínicio de cada
 sinal OFDM. Um curto prefíxo cíclico escolhido deve minimizar ou até mesmo
@@ -221,12 +222,13 @@ e $f_0$ a frequência da portadora óptica.
 
 Entretanto, como trata-se de enlaces de curto alcance, efeitos causados pela
 dispersão cromática são mínimos podendo diminuir o $I_G$ porém, não
-eliminando-o, em virtude de possuir um sinal cíclico viabilizando o uso da
-convolução circular \cite{Book:DSP_Mitra}. A Figura \ref{Fig:Graph_Ig-a} mostra
-curvas para uma dada distância, valores de tempo de símbolo versus tempo de
-guarda. A Figura \ref{Fig:Graph_Ig-b} demonstra a influência do intervalo de
-guarda na qualidade da recepção do sinal OFDM.
-
+eliminando-o, em virtude de possuir um sinal cíclico que viabilize uma abordagem
+que usa a convolução circular para melhorar o entendimento da eficiência da
+equalização de um atraso (\textit{one tap equalizer} nesses sistemas
+\cite{Book:DSP_Mitra}. A Figura \ref{Fig:Graph_Ig-a} mostra curvas para uma dada
+distância, valores de tempo de símbolo versus tempo de guarda. A Figura
+\ref{Fig:Graph_Ig-b} demonstra a influência do intervalo de guarda na qualidade
+da recepção do sinal OFDM.
 \begin{figure}[h]
         \centering
         \begin{subfigure}[c]{0.69\textwidth}
@@ -272,9 +274,8 @@ na tranmissão.
 % população de cromossomos, usando seleção, cruzamento e mutação como operadores
 % genéticos [13]-[15]. Nesta seção, uma formulação inicial e o algoritmo genético
 % utilizado para otimizar os parâmetros do sistema DDO-OFDM são apresentados.
-Otimização mono-objetiva significa otimizar um problema bem definido sujeito ao
-detrimento de outros pontos e restrições conhecidas a partir de uma única função
-objetiva.
+Otimização mono-objetiva significa otimizar um problema bem definido sujeito a um conjunto 
+de restrições, a partir de uma única função objetiva.
 
 %  Nesta seção, uma formulação inicial e o algoritmo genético
 % utilizado para otimizar os parâmetros do sistema DDO-OFDM são apresentados.
@@ -446,10 +447,10 @@ inteiro de tal modo que $X_{min} \leq X \leq X_{max}$.
 \end{center}
 
 \section{Técnica de Imposição da OSNR}
-A Figura \ref{Fig:StructureSimulated} demonstra a estrutura do sistema simulado.
-Diferentemente do sistema experimental, efeitos de ruído de emissão espontânea
+De maneira diferente do arranjo experimental, efeitos de ruído de emissão espontânea
 de amplificadores (\textit{Amplified Spontaneous Emission} - ASE) como fonte de
-ruído óptico predominante foram simulados por um gerador de ruído aleatório.
+ruído óptico predominante foram simulados por um gerador de ruído aleatório, conforme 
+ilustra a Figura \ref{Fig:StructureSimulated}. 
 Assim sendo, o ruído inserido ao sinal ótico, após a propagação na fibra é
 ponderado conforme uma relação sinal-ruído óptica imposta.
 % ASE nao sistema proposto para a otimização foi incluído um amplificador óptico
@@ -519,7 +520,7 @@ implementa esta técnica de imposição da OSNR na simulação está descrito no Anexo
 % taxa de símbolos por segundo, é possível estimar a OSNR.
 
 \section{O Algoritmo Genético Aplicado ao Problema}
-Neste trabalho é utilizado o algoritmo genético com codificação de número real
+Utilizou-se neste trabalho o algoritmo genético com codificação de número real
 com um processo que inicia com uma população $P_F$ gerada de uma ordem aleatória
 por $N = 30$ soluções possíveis para $\sigma_s$, $V_{bias}$, $B_G$, $I_G$, e
 $n_{samp}$ como mostrado na Figura \ref{Fig:GA_blockDiagram}.
@@ -614,36 +615,40 @@ implementado.
 \end{center}
 
 \section{Resultados e Discussões}
-Esta seção examina o desempenho aprimorado do sistema DDO-OFDM com enlaces de
-pequeno alcance com parâmetros otimizados como proposto pelo algoritmo genético
-mono-objetivo. Os resultados de simulações e transmissão experimental de um
-sistema de communicação óptico otimizado a taxa de $R_b = 1.83$ Gb/s em
+Examina-se nesta seção o desempenho da heurística desenvolvida para aumentar a
+eficiência espectral de sistemas DDO-OFDM em enlaces de curto alcance com
+parâmetros otimizados conforme proposto pelo algoritmo genético mono-objetivo.
+Os resultados de simulações e a devida comprovação experimental através da
+transmissão de um sistema DDO-OFDM otimizado, a taxa de $R_b = 1.83$ Gb/s em
 condições de B2B, 20 e 40 km de fibra SSMF sem compensação óptica de dispersão
-são discutidos. Além disso, a formulação do problema que considera a maximização
-da eficiência espectral do sinal transmitido também é levado em consideração.
+são discutidos. Além disso, realiza-se aui uma discussão acerca da formulação do
+problema que considera a maximização da eficiência espectral do sistema como um
+todo.
 
 \subsection{Resultados de Simulações}
-A fim de otimizar parâmetros críticos foram conduzidos simulações de Monte
-Carlo do sistema de transmissão DDO-OFDM na configuração B2B óptico e através de 20 e 40
-km de fibra SSMF. Os parâmetros OFDM utilizados em todas simulações conduzidas
-são resumidos na Tabela \ref{Tab:3}. A Tabela \ref{Tab:4} descreve os parâmetros
-otimizados pelo algoritmo genético proposto.
+A fim de otimizar parâmetros críticos foram conduzidos simulações de Monte Carlo
+do sistema de transmissão DDO-OFDM II na configuração B2B óptico e através de 20
+e 40 km de fibra SSMF, conforme a lógica definida na Tabela
+\ref{Tab:pseudoCodigo}.
+Os prinicpais parâmetros OFDM utilizados em todas simulações conduzidas estão
+resumidos na Tabela \ref{Tab:3}.
 
 \begin{center}
 \begin{table}[h]
 	\centering
-	\caption{Parâmetros OFDM como restrições.}
+	\caption{Parâmetros OFDM.}
 	\begin{tabular}{c c}
 		\hline
 %		\multicolumn{2}{|c|}{Parâmetros OFDM} \\
 %		\hline
 		\textbf{Parâmetro} & \textbf{Valor} \\
 		\hline
-		Taxa de Bit (Gb/s) & 3.56 \\
-		$B_W (GHz)$ & 1.0 \\
-		Tamanho da FFT & 1024 \\
-		Subportadoras & 512 \\
-		Sub espaçamento (MHz) & 1.95 \\
+		Taxa de Transmissão (Gb/s)            & 1.83          \\
+		Largura de Banda Útil (GHz)           & 1.0           \\
+		Tamanho da IFFT/FFT                   & 1024          \\
+		Subportadoras de Informação           & 512           \\
+		Espaçamento entre Subportadoras (MHz) & 1.95          \\
+        Mapeamento nas Subportadoras          & 4, 8 e 16-QAM \\
 		\hline
 %		\caption{AA}
 	\end{tabular}
@@ -651,9 +656,15 @@ otimizados pelo algoritmo genético proposto.
 \end{table}
 \end{center}
 
+Os resultados da otimização de parâmetros pelo GA proposto, para os mapeamentos
+4, 8 e 16-QAM nas subportadoras de informação, estão ilustrados na Tabela
+\ref{Tab:4}. O menor valor de OSNR para a taxa de erro de bits BER=$10^{-3}$, em
+cada um dos mapeamentos em B2B, 20 e 40 km de SSMF, também são mostrados na
+Tabela \ref{Tab:4}.
+
 \begin{center}
 \begin{table}[h]
-	\caption{Resultados da Simulação do sistema DDO-OFDM otimizado}
+	\caption{Resultados da Simulação do sistema DDO-OFDM otimizado.}
 	\begin{tabular}{c| c c c | c c c | c c c}
 %		\hline
 %		\multicolumn{10}{|c|}{Resultados da Simulação do sistema DDO-OFDM otimizado}
@@ -676,30 +687,22 @@ otimizados pelo algoritmo genético proposto.
 \end{table}
 \end{center}
 
-Os resultados descritos na Tabela \ref{Tab:4} mostram que o desempenho do
-sistema DDO-OFDM aumenta quando os parâmetros críticos são otimizados. O valor
-de $11.3$ dB de OSNR com $BER = 10^{-3}$ foi alcançado para transmissões em 20
-km com a redução de 20\% $(B_G = 0.8 B_W)$ na banda de guarda. Como esperado, a
-potência média do sinal OFDM reduziu quando o nível de modulação da subportadora
-aumentou.
+Perceba-se pelos resultados mostrados na Tabela \ref{Tab:4} que, o aumento da
+eficiência espectral, dado pela redução da banda de guarda ocorreu em todos os
+casos simulados. Além disso, o desempenho do sistema DDO-OFDM simulado melhorou
+quando os parâmetros críticos foram otimizados. Por exemplo, o valor de $11.3$
+dB de OSNR com $BER = 10^{-3}$ foi alcançado para transmissões em 20 km com a
+redução de 20\% $(B_G = 0.8 B_W)$ na banda de guarda.
 
 % Percebe-se pelos resultados da Tabela \ref{Tab:4}, que $V_{bias}$ em
 % torno de $0.9 \cdot V_{\pi}$ parece ser uma boa escolha para o ponto de
 % polarização do MZM.
 
-\subsection{Resultados de Experimentos}
-A Figura \ref{Fig:6} mostra a configuração experimental do sistema DDO-OFDM II
-utilizada como prova de conceito que serve para comprovar a adequação do
-algoritmo de otimização proposto.
-
-% \ldots\ldots\ldots
-% Os sinais OFDM elétricos parametrizados como mostrado na Tabela 3 foram
-% transmitidos ``offline'' usando MATLAB\textsuperscript{\textregistered}. Os
-% sinais são gerados por um gerador de onda arbitrária (\textit{arbitrary waveform
-% generator - AWG}) da Textronix\textsuperscript{\textregistered} AWG7122C
-% realizando um aconversão digital para analógica. Depois de passar pelo filtro
-% passa-baixas o sinal é enviado para o modulador MZM que modula o laser CW com
-% comprimento de onda centralizado em $\lambda = 1550 nm$. O B2B, \ldots\ldots\ldots
+\subsection{Resultados Experimentais}
+Para a averiguação da eficiência da codificação empregada na otimização proposta, optou-se
+por realizar a comprovação experimental dos resultados obtidos ao final das simulações. 
+A Figura \ref{Fig:6} ilustra o arranjo experimental preparado para a transmissão no sistema DDO-OFDM II
+otimizado conforme parâmetros definidos na Tabela \ref{Tab:4}.
 
 \begin{figure}[h]
 	\centering
@@ -709,18 +712,24 @@ algoritmo de otimização proposto.
 		\label{Fig:6}
 \end{figure}
 
-A densidade espectral de potência e a constelação recebida para o B2B com a $EVM
-\approx -14.9$ dB, mostrada na Figura \ref{Fig:6}, confirmam a adequação da
-otimização dos parâmetros através do algoritmo genético projetado. A Figura
-\ref{Fig:7} mostra que os valores de EVM alcançados para transmissões DDO-OFDM
-através de 20 e 40 km de SSMF sem compensação foram de aproximadamente -15.5 e
--17.2 dB respectivamente.
+Os sinais OFDM elétricos parametrizados conforme mostrado na Tabela \ref{Tab:3}
+foram transmitidos e processados \emph{offline} no software de computação
+MATLAB\textsuperscript{\textregistered}. Para tanto, os sinais são enviados ao
+gerador de onda arbitrária AWG7122C que realiza a conversão D/A. Depois do
+filtro passa baixas LPF, estes são utlizados pelo modulador óptico MZM para
+modular externamente o sinal óptico CW do laser de sinal centrado no comprimento
+de onda $\lambda = 1550 nm$. Após propagação em fibras monomodo padrão, os
+sinais ópticos são detectados por apenas um fotodetector para caracterizar a
+detecção direta.
 
-Vale notar que a diferença na banda de guarda óptica do espéctro OFDM recebido
-mostrado na Figura \ref{Fig:7}, é uma consequência natural do processo de
-otimização, como projetado pelos parâmetros otimizados representados na Tabela
-\ref{Tab:4} para modulação de subportadora com 4-QAM utilizados em todos
-experimentos de otimização conduzidos.
+A densidade espectral de potência e a constelação recebida na configuração B2B
+com a $EVM \approx -14.9$ dB, mostradas na Figura \ref{Fig:6}, confirmam a
+adequação da otimização dos parâmetros através do algoritmo genético projetado.
+A Figura \ref{Fig:7} mostra o desempenho para transmissões DDO-OFDM através de
+20 e 40 km de SSMF sem compensação óptica da dispersão. Ressalta-se, a partir da
+Figura \ref{Fig:7} que os valores de EVM iguais a -15.5 e -17.2 dB, para 20 e 40
+km respectivamente, foram obtidos com as reduções da banda de guarda mostradas
+na Tabela \ref{Tab:4}.
 
 \begin{figure}[h]
 	\centering
@@ -730,44 +739,39 @@ experimentos de otimização conduzidos.
 		\label{Fig:7}
 \end{figure}
 
+Um questionamento que naturalmente surge olhando-se atentamente as constelações
+das Figuras \ref{Fig:6} e \ref{Fig:7} está relacionado ao fato do desempenho da
+propagação mediante 40 km de SSMF ser melhor que na transmissão em 20 km que,
+por sua vez é melhor que na configuração B2B. A resposta para isto está no fato
+de que para cada transmissão, os parâmetros otimizados são diferentes. Ou seja,
+os parâmetros utilizados para propagação em 20 km não são otimizados a partir da
+otimização realizada em B2B. A heurística inicializa a otimização em cada
+configuração em separado, considerando inclusive o comprimento do enlace a
+retratar.
 
 \subsection{Adicionando a Eficiência Espectral na Formulação do Problema}
-
-Resultados obtidos por \cite{art:peng} demonstram a otenção de uma banda de
-guarda dada por $B_G \approx 0.35 B_W$ utilizando um sinal OFDM com banda
-lateral virtual (\textit{Virtual Single Side Band - OFDM} VSSB-OFDM) em um
-sistema óptico de comunicação com frequência ajustável. Projetado para enlaces
-de fibra de longas distâncias, sua eficiência espectral está associada a um
-aumento da complexidade necessária no receptor para reduzir o SSBI no sinal
-desejado.
-
 É fácil perceber a partir da Figura \ref{Fig:7} que a redução da banda de guarda
 obtida da otimização do sistema através do algoritmo genético aplicado à
-primeira formulação é no máximo igual a 20\%. Uma nova formulação do problema
-que considera a eficiência espectral é abordada nesta seção a fim de aumentar
-eficiência espectral de todo o sistema. Portanto, um termo $\frac{B_G}{B_W}$ é
-adicionado em uma nova função objetivo que facilita o processo de seleção quando
-soluções fechadas são obtidas. Isto significa que, no caso de duas soluções
-fechadas geradas (semelhante OSNR a um $BER = 10^{-3}$), o algoritmo genético
-escolherá o cromossomo com o menor valor de $\frac{B_G}{B_W}$. A nova
-formulação, assim como ele está associado com o \textit{fitness} está detalhada
-na Tabela \ref{Tab:5}.
+primeira formulação é no máximo igual a 20\%. Porém, resultados obtidos por
+\cite{art:peng} demonstram a obtenção de uma banda de guarda dada por $B_G
+\approx 0.35 \times B_W$ utilizando um sinal OFDM com banda lateral virtual
+(\textit{Virtual Single Side Band - OFDM} VSSB-OFDM) em um sistema óptico de
+comunicação com frequência ajustável. Projetado para enlaces de fibra de longas
+distâncias, sua eficiência espectral está associada a um aumento da complexidade
+necessária no receptor para reduzir o SSBI no sinal desejado.
 
-Os resultados descritos na Tabela \ref{Tab:6} mostram que este novo método
-garante um máximo aumento adicional em torno de 18\% na eficiência espectral
-geral, a qual ocorre nas transmissões DDO-OFDM em condições de B2B para um
-mapeamento das subportadoras em 4-QAM. É possível notar que, em quase todas
-simulações realizadas com essa nova formulação, a relação alcançada com OSNR
-para um $BER = 10^{-3}$ foi a mesma registrada nos resultados das simulações da
-formulação inicial. Aqui também, como esperado, a potência média do sinal OFDM
-decresce quando o nível de modulação das subportadoras aumenta e
-$V_{\textit{bias}}$ por volta de $0.9 \cdot V_\pi$ é um bom ponto de polarização
-para o MZM.
+Assim, uma nova formulação do problema que considera a eficiência espectral é
+abordada nesta seção a fim de aumentar eficiência espectral de todo o sistema.
+Portanto, um termo $\frac{B_G}{B_W}$ é adicionado em uma nova função objetivo.
+Isto significa que, no caso de duas soluções fechadas geradas (semelhante OSNR a
+uma $BER = 10^{-3}$), o algoritmo genético escolherá o cromossomo com o menor
+valor de $\frac{B_G}{B_W}$. Esta nova formulação e o \textit{fitness} a ela
+associada estão detalhados na Tabela \ref{Tab:5}.
 
 \begin{center}
 \begin{table}[h]
 \centering
-\caption{Parâmetros OFDM - DDO-OFDM I}
+\caption{Nova Formulação e \textit{Fitness} Associado.}
 	\begin{tabular}{c}
 		\hline
 		\multicolumn{1}{c}{\textbf{Min.} OSNR $@ BER = 10^{-3} + \left(\frac{B_G}{B_W}\right)$ \textbf{Sujeito a}} \\
@@ -793,9 +797,10 @@ para o MZM.
 	\end{table}
 \end{center}
 
-Também é possível notar que o parâmetro $I_G$ dado pelo prefíxo cíclico não é
-descrito nas Tabelas \ref{Tab:4} e \ref{Tab:6} devido a sua insignificância
-obtida na otimização.
+Os resultados descritos na Tabela \ref{Tab:6} mostram que este novo método
+garante um aumento máximo na eficiência espectral do sistema como um todo
+(considerando-se a banda útil na banda total) em torno de 18\%, o qual ocorre
+nas transmissões em configuração B2B, para mapeamento 4-QAM nas subportadoras.
 
 \begin{center}
 \begin{table}[h]
@@ -820,23 +825,19 @@ obtida na otimização.
 \end{table}
 \end{center}
 
-Uma comparação entre o sistema OFDM óptico de modulação por intensidade
-anterior (convencionalmente denominado DDO-OFDM, para $OMI = \sigma_s^2 = 0.1$,
-$V_{bias} = 0.9 \cdot V_{\pi}$ e $n_{samp} = 4$) e um sistema DDO-OFDM com
+É possível notar que, em quase todas simulações realizadas com essa nova
+formulação, os valores de OSNR encontrados para $BER = 10^{-3}$ foram
+praticamente os mesmos encontrados na formulação inicial. Observa-se também
+pelos resultados da Tabela \ref{Tab:6} que, $V_{\textit{bias}}$ por volta de
+$0.9 \cdot V_\pi$ traduz-se em um ponto escolhido para a polarização para o MZM.
+
+Convém ressaltar que o parâmetro $I_G$ dado pelo prefíxo cíclico não é descrito
+nas Tabelas \ref{Tab:4} e \ref{Tab:6}, devido a sua insignificância na
+otimização do sistema.
+
+Uma comparação entre um sistema DDO-OFDM convencional e um sistema DDO-OFDM com
 parâmetros fundamentais otimizados pelo algoritmo genético proposto na última
-formulação do problema é mostrada na Figura \ref{Fig:8}. Como esperado, a banda
-de guarda de frequência pode ser reduzida no máximo 50\% ($B_G = 0.5 \times
-B_W$) da largura de banda efetiva do sinal em sistemas OFDM ópticos
-convencionais com mapeamento das subportadoras de 4-QAM e configuração B2B, com
-um valor de OSNR aceitável de aproximadamente 2 dB quando comparado com 20\% de
-redução na mesma conjuntura do sistema. A simulação de MC não converge para $B_G
-> 0.5 \cdot B_W$. Uma redução adicional de 20\% é fornecida pela otimização
-proposta ocorre com o mesmo desempenho do sistema ($OSNR = 5.2$ dB com $BER =
-10^{-3}$). Esse ganho adicional na eficiência espectral também ocorre em
-transmissões de sinais OFDM compostos por subportadoras mapeadas em 4-QAM em 20
-km de fibra. Em B2B, o pior caso ocorre no enlace de fibra de comprimento
-igual a 40 km onde o desempenho e a eficiência espectral do sistema são exatamente os
-mesmos.
+formulação do problema é mostrada na Figura \ref{Fig:8}.
 
 \begin{figure}[h]
 	\centering
@@ -846,21 +847,643 @@ mesmos.
 		16-QAM.}
 		\label{Fig:8}
 \end{figure}
+ 
+Observa-se pelas curvas da Figura \ref{Fig:8} que a banda de guarda pode ser
+reduzida para no máximo 50\% ($B_G = 0.5 \times B_W$) da largura de banda
+efetiva do sinal em sistemas OFDM ópticos convencionais com mapeamento das
+subportadoras de 4-QAM e configuração B2B, com uma penalidade na OSNR aceitável
+de aproximadamente 2 dB quando comparado com 20\% de redução no sistema
+convencional na mesma conjuntura. Ressalta-se que, conforme ilustrado na Figura
+\ref{Fig:8}, a simulação de Monte Carlo não converge para $B_G > 0.5 \cdot B_W$.
+Além disso, uma redução adicional de 20\% é fornecida pela otimização proposta
+para o mesmo desempenho do sistema ($OSNR = 5.2$ dB com $BER = 10^{-3}$). Esse
+ganho adicional na eficiência espectral também ocorre em transmissões de sinais
+OFDM compostos por subportadoras mapeadas em 4-QAM para propagação em 20 km de
+fibra SSMF. Em B2B, o pior caso ocorre no enlace de fibra de comprimento igual a
+40 km onde o desempenho e a eficiência espectral do sistema são exatamente os
+mesmos.
 
-Como mostrado na Figura \ref{Fig:8}, a convergencia da simulação MC permite um
-máximo de redução na banda de guarda de 20\% para ambos mapeamentos 8 e 16-QAM,
-para B2B, 20 e 40 km de fibra SSMF. Nesses casos o máximo ganho adicional no
-espectro é fornecido pela otimização alcançada em 8\% em um ganho de 0.5 dB no
-desempenho do sistema ($OSNR = 11.1 dB$ em um $BER = 10^{-3}$ para uma
-mapeamento de 16-QAM com B2B). Aqui, o pior caso da otimização occore para um
-mapeamento das portadoras em 8-QAM e transmissão através de 20 km no qual a
-eficiência espectral é exatamente a mesma registrada no sistemas convencionais,
-além de um ganho na otimização de 0.3 dB na relação OSNR.
+Conforme mostrado na Figura \ref{Fig:8}, a convergência da simulação MC permite
+um máximo de redução na banda de guarda de 20\% para ambos os mapeamentos 8 e
+16-QAM, tanto na configuração B2B, quanto na propagação em 20 e 40 km de fibra
+SSMF.
+Nesses casos, os ganhos na eficiência espectral fornecidos pela otimização
+alcançam 8\% em um ganho de 0.5 dB no desempenho do sistema ($OSNR = 11.1 dB$ em
+um $BER = 10^{-3}$ para uma mapeamento de 16-QAM com B2B).
+
+O pior caso da otimização ocorre para um mapeamento nas portadoras em 8-QAM e
+transmissão através de 20 km no qual a eficiência espectral é exatamente a mesma
+registrada nos sistemas convencionais. O resultado da otimização neste caso pode
+ser melhorado, aumentando-se a quantidade de iterações no processo de
+otimização.
 
 \section{Considerações Finais}
+A otimização de sistemas DDO-OFDM via o algoritmo genético descrito neste
+capítulo, mostrou-se necessária devido à grande quantidade de parâmetros
+envolvidos no desempenho de tais sistemas. Ganhos na relação OSNR para taxas de
+um $BER = 1 \times 10^{-3}$ foram encontrados mesmo com redução na largura de
+banda de guarda (aumento da eficiência espectral) que alcançaram 50\%.
 
-A otimização de sistemas DDO-OFDM via o algoritmo genético proposto mostrou-se
-necessária devido à grande quantidade de parâmetros envolvidos no desempenho de
-tais sistemas. Ganhos na relação OSNR para taxas de um $BER = 1 \times 10^{-3}$
-foram encontrados mesmo com redução na largura de banda de guarda (aumento da
-eficiência espectral) que chegam aos 50\%.
+
+% \section{Otimização Mono-Objetivo via Algoritmo Genético}
+% % Otimização mono-objetiva significa otimizar um problema bem definido sujeito ao
+% % detrimento de outros pontos e restrições conhecidas a partir de uma única função
+% % objetiva. Proposto por John Holland em 1975, algorítmos genéticos
+% % (\textit{Genetic Algorithms} - (GA)) são algorítmos de busca de propósito geral
+% % utilizados para otimizar soluções de problemas formulados [13]. A ideia básica é
+% % manter soluções candidatas de um problema específico gerado sob qualquer
+% % critério sólido provindo de uma solução espacial buscada, normalmente chamada de
+% % população de cromossomos, usando seleção, cruzamento e mutação como operadores
+% % genéticos [13]-[15]. Nesta seção, uma formulação inicial e o algoritmo genético
+% % utilizado para otimizar os parâmetros do sistema DDO-OFDM são apresentados.
+% Otimização mono-objetiva significa otimizar um problema bem definido sujeito ao
+% detrimento de outros pontos e restrições conhecidas a partir de uma única função
+% objetiva.
+% 
+% %  Nesta seção, uma formulação inicial e o algoritmo genético
+% % utilizado para otimizar os parâmetros do sistema DDO-OFDM são apresentados.
+% \subsection{Algoritmos Genéticos}
+% Proposto por John Holland em 1975, algoritmos genéticos (\textit{Genetic
+% Algorithms} - GA) são algorítmos de busca de propósito geral utilizados para
+% otimizar soluções de problemas formulados que usam princípios inspirados pela
+% população genética natural. A ideia básica é manter soluções candidatas de um
+% problema específico gerado sob qualquer critério sólido provindo de uma solução
+% espacial buscada, normalmente chamada de população de cromossomos, usando
+% seleção, cruzamento e mutação como operadores genéticos.
+% 
+% Um GA começa com uma população de cromossomos gerados aleatoriamente, e avança
+% em direção a cromossomos com melhores características através da aplicação de
+% operadores genéticos, modelados sobre os processos genéticos que ocorrem na
+% natureza. A população sofre evolução de uma forma de seleção natural. Durante
+% iterações sucessivas, denominadas gerações, cromossomos na população são
+% classificados para a sua adaptação, como soluções, e na base destas avaliações,
+% uma nova população de cromossomos é formado por meio de um mecanismo de selecção
+% e operadores genéticos específicos, tais como cruzamento e mutação. Uma
+% avaliação ou função \textit{fitness}, denominado aptidão da solução, deve ser
+% elaborado para cada problema a ser resolvido. Dado um cromossomo particular, uma
+% solução, a função de \textit{fitness} retorna uma única aptidão numérica, que é
+% suposta ser proporcional à utilidade ou adaptação da solução que esse cromossomo
+% representa. A Tabela \ref{Tab:estruturaGA} a seguir mostra a estrutura de uma
+% sequência de um GA generalizado.
+% 
+% \begin{center}
+% \begin{table}[h]
+% \centering
+% \caption{Estrutura Padrão do Algoritmo Genético}
+% 	\begin{tabular}{l l}
+% 		\hline
+% 		\multicolumn{2}{ c }{\textbf{Procedimento de um Algoritmo Genético}} \\
+% 		\hline
+% 		
+% 1: & \textbf{inicia}(1); \\
+% 2: &  t = 0; \\
+% 3: &  inicializa $P(t)$; \\
+% 4: & avalia $P(t)$; \\
+% 5: &  \textbf{Enquanto}(não atinge a condição)\\
+% 6: &  \:\:\:\:\textbf{inicia}(2) \\
+% 7: &  \:\:\:\:\:\:\:\:$t = t + 1$; \\
+% 8: & \:\:\:\:\:\:\:\:seleciona $P(t)$ de $P(t-1)$; \\
+% 9: & \:\:\:\:\:\:\:\:recombina $P(t)$; \\
+% 10: & \:\:\:\:\:\:\:\:avalia $P(t)$; \\
+% 11: & \:\:\:\:\textbf{Fim}(2); \\
+% 12: & \textbf{Fim} (1); \\
+% \hline
+% 		\label{Tab:estruturaGA}
+% 	\end{tabular}
+% 	\end{table}
+% \end{center}
+% Neste procedimento, $P(t)$ descreve uma população na iteração $t$. Embora
+% existam diversas possibilidades de se estruturar um algoritmo genético, a
+% Tabela \ref{Tab:estruturaGA} denota as três principais operações:
+% 
+% \begin{enumerate}[label=\Roman*]
+% \item. avaliação da aptidão de cada população individualmente;
+% \item. formação de um conjunto de indivíduos por meio de um tipo de
+% seleção;
+% \item. recombinação através de operadores de cruzamento e mutação.
+% \end{enumerate}
+% 
+% % \subsubsection{Formas de Representações}
+% \subsubsection{Mecanismos de Seleção}
+% 
+% Considere uma população $P$ com cromossomos $C_1,\ldots,C_N$. O mecanismo de
+% seleção produz uma população intermediária, $P'$, com cópias dos cromossomos em
+% $P$. O número de cópias recebidas de cada cromossomo depende da sua aptidão;
+% cromossomos com melhores características normalmente têm melhores chances de
+% contribuirem com suas cópias para $P'$. O mecanismo de seleção consiste em duas
+% etapas, a seleção por cálculo de probabilidade e o algoritmo de amostragem.
+% A seleção por cálculo de probabilidade é dita da forma que para cada cromossomo
+% $C_i$ de uma população $P$, a probabilidade, $p_s(C_i)$, de incluir a cópia de
+% cada cromossomo em $P'$ é calculada. O mecanismo de seleção mais conhecido é o
+% de seleção proporcional (Holland, 1975; Goldberg, 1989a) onde a
+% probabilidade $p_s(C_i)$, $i = 1,\ldots, N$ é calculada como
+% 
+% \begin{equation}
+% p_s(C_i) = \frac{f(C_i)}{\sum_{j=1}^{N} f(C_i)}.
+% \end{equation}
+% 
+% 
+% Dessa maneira, cromossomos com aptidão acima da média possuem maiores tendências
+% de repassar suas cópias do que os com baixa aptidão.
+% 
+% Uma abordagem diferente e utilizada neste trabalho é a seleção por torneio onde
+% os cromossomos são escolhidos em uma combinação dois a dois e o que tiver maior
+% aptidão da dupla é selecionado. Após a seleção, é feito a recombinação dos
+% indivíduos com melhores características através da aplicação dos operadores de
+% cruzamento e mutação a fim de obter descendentes melhorados, podendo também com
+% menor probabilidade, obter indivíduos gerados com qualidade de aptidão menor que
+% dos pais.
+% 
+% \subsubsection{Operador de Cruzamento}
+% O operador de cruzamento é o método para compartilhar informações entre
+% cromossomos. Ele combina as características de dois cromossomos pais para
+% formarem dois descendentes, com a possibilidade desses cromossomos
+% selecionados para realizar a operação de gerarem filhos com melhores
+% características. O operador cruzamento não é geralmente aplicado em todos os
+% pares de cromossomos na população intermediária.
+% 
+% % Uma escolha aleatória é realizada, onde a probabilidade do cruzamento ser
+% % aplicado depende da probabilidade definida pela taxa de cruzamento.
+% 
+% O operador cruzamento realiza uma função central no algoritmo genético. De fato,
+% pode ser considerado um dos operadores que definem as características, do
+% algoritmo e esse é um dos componentes principais que levam em conta a melhoraria
+% da evolução do comportamento de um GA (Liepins et al., 1992). Definições para
+% esse operador e para o operador de mutação são escolhidos de forma bem
+% particular para cada representação trabalhada.
+% 
+% % The crossover operator is a method for sharing information between
+% % chromosomes; it combines the features of two parent chromosomes to form two
+% % offspring, with the possibility that good chromosomes may generate better ones.
+% % The crossover operator is not usually applied to all pairs of chromosomes in the
+% % intermediate population. A random choice is made, where the likelihood of
+% % crossover being applied depends on probability defined by a crossover rate, the
+% % crossover probability,pc. The crossover operator plays a central role in GAs, in
+% % fact it may be considered to be one of the algorithm's defining characteristics,
+% % and it is one of the components to be borne in mind to improve the GA behaviour
+% % (Liepins et al., 1992). Definitions for this operator (and the next one) are
+% % very dependent on the particular representation chosen.
+% 
+% \subsubsection{Operador de Mutação}
+% O operador mutação arbitrariamente altera um o mais componentes, ou genes, de um
+% cromossomo selecionado a fim de aumentar a variabilidade estrutural da
+% população. O papel da mutação nos GAs é recuperar material genético perdidos ou
+% inexplorado na população e previnir uma convergência prematura do GA em soluções
+% que poderiam possuir melhores características. Isto assegura que a
+% probabilidade de buscar qualquer ponto no espaço de busca nunca possa ser zero. Cada uma das
+% posições de cada cromossomo na população sofre uma alteração aleatória de acordo
+% com a probabilidade definida pela probabilidade de mutação, $p_m$.
+% 
+% \section{Formulação do Problema}
+% Para otimizar o desempenho do sistema DDO-OFDM simulado, a formulação do
+% problema implica em minimizar a relação sinal ruído óptica (\textit{Optical
+% Signal-to-Noise ratio} - OSNR) a uma taxa de erro de bit de $BER = 10^{-3}$,
+% sujeito a um conjunto de restrições de parâmetros elétricos e ópticos. Portanto,
+% esta formulação pode ser expressa como mostrado na Tabela
+% \ref{Tab:1_problemFormulation}, onde $\sigma_s$ é o desvio padrão do sinal OFDM
+% gerado, $V_{\textit{bias}}$ é o ponto de polarização do modulador MZM, $B_G$ é a
+% banda de guarda óptica, $GI$ ou $I_G$ é proporcional ao $CP$, $n_{samp}$ é um
+% fator de super amostragem, $V_\pi$ é a tensão de chaveamento do MZM, $B_W$ a
+% largura de banda do sinal de banda lateral (excluindo $B_G$) e $X$ é um número
+% inteiro de tal modo que $X_{min} \leq X \leq X_{max}$.
+% \begin{center}
+% \begin{table}[h]
+% \centering
+% \caption{Formulação do problema}
+% 	\begin{tabular}{c}
+% 		\hline
+% 		\multicolumn{1}{c}{\textbf{Mín.} OSNR $@ BER = 10^{-3}$ \textbf{Sujeito a}}
+% 		\\
+% 		\hline
+% 		$0.01 \times V_\pi \leq \sigma_S \leq 0.25 \times V_\pi$ \\
+% 		$0.5 \times V_\pi \leq V_{bias} \leq V_{\pi} $ \\
+% 		$0.1 \times B_W \leq B_G \leq B_W $ \\
+% 		$ \left(2^{X_{máx}}\right)^{-1} \leq GI = \left(2^X \right)^{-1} \leq
+% 		\left(2^{X_{mín}}\right)^{-1}$ \\
+% 		$ 1 \leq n_{samp} \leq 6 $ \\
+% 		$ V_{\pi} = 5 V, X_{máx} = 10, X_{mín} = 2 $ \\
+% 		\hline
+% 		\label{Tab:1_problemFormulation}
+% 	\end{tabular}
+% 	\end{table}
+% \end{center}
+% 
+% \section{Técnica de Imposição da OSNR}
+% A Figura \ref{Fig:StructureSimulated} demonstra a estrutura do sistema simulado.
+% Diferentemente do sistema experimental, efeitos de ruído de emissão espontânea
+% de amplificadores (\textit{Amplified Spontaneous Emission} - ASE) como fonte de
+% ruído óptico predominante foram simulados por um gerador de ruído aleatório.
+% Assim sendo, o ruído inserido ao sinal ótico, após a propagação na fibra é
+% ponderado conforme uma relação sinal-ruído óptica imposta.
+% % ASE nao sistema proposto para a otimização foi incluído um amplificador óptico
+% % ideal (AO) com a inserção de ruído gaussiano antes do fotodetector. Embora a
+% % densidade espectral de potência do ruído da emissão espontânea amplificada tem
+% % uma dependência com a frequência que varia em toda banda C (na qual possui
+% % largura de 4400 GHz) \cite{Book:Erbium}, a largura de banda dos sinais
+% % utilizados nesta dissertação são pequenas, menores que 50 GHz, o que pode-se
+% % considerar que a densidade espectral de potência é constante com a largura de
+% % banda do sinal.
+% 
+% \begin{figure}[h]
+% 	\begin{center}
+% 		\includegraphics[width=\textwidth]{Figures/DDO-OFDM_II_Simulated_blockDiagram_pt-br.pdf}
+% 		\caption{Meio físico de propagação dos sinais propostos.}
+% 		\label{Fig:StructureSimulated}
+% 	\end{center}
+% \end{figure}
+% 
+% O ruído usado nas simulações é modelado como um ruído Gaussiano branco
+% aditivo(\textit{Additive White Gaussian Noise} - AWGN) \cite{MT:Filipe}. A
+% Figura \ref{Fig:Graph_OSNR} ilustra a metodologia de inserção de ruído aos
+% sinais ópticos, para $P_S$ a potência de sinal, $P_N$ a potência de ruído
+% gerada, $B_W$ a banda do sinal, $B_{Sim}$ a banda de simulação e $B_{Ref}$ uma
+% banda de referência. Portanto, a OSNR sendo a razão das potências ópticas do
+% sinal com o ruído pode ser dada por
+% \begin{equation}
+% OSNR = \frac{P_S}{P_N}.
+% \label{Eq:OSNR_fato}
+% \end{equation}
+% 
+% \begin{figure}[h]
+% 	\begin{center}
+% 		\includegraphics[width=0.8\textwidth]{Figures/Graph_OSNR.pdf}
+% 		\caption{Densidade espectral de potência óptica com ruído adicionado.}
+% 		\label{Fig:Graph_OSNR}
+% 	\end{center}
+% \end{figure}
+% 
+% Mais precisamente, a relação sinal ruído óptica (\textit{Optical
+% Signal-Noise-Ratio} - OSNR) é definida como
+% \begin{equation}
+% OSNR = \frac{P}{2B_{Ref}N_{ASE}},
+% \label{Eq:OSNR1}
+% \end{equation}
+% onde $P$ é a potência média do sinal total, a banda de referência normalmente
+% escolhida como $0.1$ nm, ou $12.5$ GHz em $1550$ nm e $N_{ASE}$ é a densidade de
+% potência espectral da ASE em cada eixo de polarização óptica. O código que
+% implementa esta técnica de imposição da OSNR na simulação está descrito no Anexo
+% \ref{AppendixB}.
+% 
+% % Outra quantidade comumente utilizada em comunicações digitais e a SNR por bit
+% % \cite{Book:DigiComm_Proak}. Esta, é definida como a razão $\frac{E_b}{N_0}$,
+% % onde $E_b$ é a energia por bit e $N_0$ é a densidade espectral de potência de
+% % ruído. A relação entre SNR e OSNR é dada por
+% % \begin{equation}
+% % OSNR = \frac{pR_S}{2B_{Ref}} \cdot SNR,
+% % \label{Eq:OSNRxSNR}
+% % \end{equation}
+% % onde $p=1$ para um sinal com polarização simples, neste caso trabalhado, e $p =
+% % 2$ para um sinal de polarização multiplexada e $R_S$ é a taxa de símbolo. É
+% % possível notar que, a relação entre OSNR e SNR depende somente da informação da
+% % taxa de símbolo e independe se o sinal possui polarização multiplexada ou não
+% % \cite{art:capacity_fiber}.
+% 
+% % Portanto, conhecendo-se a SNR e a largura de banda de referência, assim como a
+% % taxa de símbolos por segundo, é possível estimar a OSNR.
+% 
+% \section{O Algoritmo Genético Aplicado ao Problema}
+% Neste trabalho é utilizado o algoritmo genético com codificação de número real
+% com um processo que inicia com uma população $P_F$ gerada de uma ordem aleatória
+% por $N = 30$ soluções possíveis para $\sigma_s$, $V_{bias}$, $B_G$, $I_G$, e
+% $n_{samp}$ como mostrado na Figura \ref{Fig:GA_blockDiagram}.
+% Cada cromossomo tem um \textit{fitness} que avalia a qualidade de cada solução
+% da população e pode ser expressa como
+% \begin{equation}
+% Fit^{(i)} = \frac{100}{\left [ \left( OSNR \:\: se \:\: BER \leq 10^{-3} \right)
+% \bigcup \left ( 1000 \:\: se \:\: BER > 10^{-3} \right) \right]} \nonumber
+% \label{Eq:fitnessequation}
+% \end{equation}
+% onde a quantidade 100 é relacionada com a maximização do \textit{fitness} do
+% algoritmo genético proposto e a quantidade 1000 é uma restrição projetada quando
+% as simulações MC\footnote{ampla classe de algoritmos computacionais que dependem da iteração repetida para
+% obter resultados numéricos de uma distribuição probabilística.} não convergem.
+% Então, uma nova população $P_S$ de cromossomos com melhores propriedades
+% genéticas são produzidas utilizando operadores genéticos como seleção,
+% cruzamento e mutação. Baseados num procedimento de competição, um processo
+% determinístico de seleção por meio de um torneio seleciona cromossomos com
+% melhores \textit{fitness} para comporem a nova população. Em cada seleção, estes
+% escolhem com um número aleatório a quantidade de 4 cromossomos e selecionam
+% aquele que possui a melhor carga genética qualificada pelo parâmetro
+% \textit{fitness} \cite{book:metaheurisca}.
+% \begin{figure}[h]
+% 	\centering
+% 		\includegraphics[width=\textwidth]{Figures/GA_Table_info.pdf}
+% 		\caption{Diagrama de blocos da evolução do processo do algoritmo
+% 		genético implementado.}
+% 		\label{Fig:GA_blockDiagram}
+% \end{figure}
+% Operadores de cruzamento são aplicados de uma forma aleatória no qual, um
+% número aleatório é escolhido. Um cruzamento entre um par de cromossomos ocorre
+% se o número aleatório é menor do que uma taxa de cruzamento eleito igual a 0.95.
+% O operador de cruzamento é um método compartilhado que combina características
+% de dois cromossomos pais para formar dois filhos que podem ter melhores
+% propriedades genéticas. O método (\textit{Blend Crossover}-$\alpha$) é
+% usado para criar o componente cromossomo filho $z_i$ expresso por
+% \begin{equation}
+% z_i = x_i - \alpha   \left (y_i - x_i \right ) + \left(1+2\alpha
+% \right) \cdot \left( y_i - x_i \right) \cdot u(0,1),
+% \label{Eq:blend}
+% \end{equation}
+% onde $x_i$ e $y_i$ representam os $i$ths componentes dos pais dos cromossomos x
+% e y respectivamente, $\alpha = 0.4$ é o coeficiente do limite dos filhos e
+% $u(0,1)$ é o coeficiente que define os limites dos filhos e $u(0,1)$ indica uma
+% parte aleatória distribuida uniformemente no intervalo $(0,1)$
+% \cite{JansenJLT09}. O operador de mutação consiste na adição de um ruído
+% aleatório com média zero $N(0,1)$ em cada componente $p_i$ de um cromossomo de
+% acordo com
+% \begin{equation}
+% p_i = p_i + \sigma_i \cdot N(0,1),
+% \label{Eq:mutation}
+% \end{equation}
+% onde $\sigma_i$ é a variância do $i$-ésimo componente de um cromossomo. Uma
+% mutação de um componente ocorre se um número aleatório gerado é menor que uma
+% taxa de mutação igual a 0.05 \cite{art:zbigniew_15}.
+% 
+% Como representado na Figura \ref{Fig:GA_blockDiagram}, um procedimento especial
+% é utilizado a fim de preservar a melhor solução encontrada. Uma matriz $R = P_F
+% \bigcup P_S$ classificada de acordo com a ordem decrescente de \textit{fitness}
+% é gerada depois da avaliação do \textit{fitness} da população $P_S$. A população
+% $P_F+1$ é composta pelas primeiras $N = 30$ melhores soluções de R. A Tabela
+% \ref{Tab:pseudoCodigo} ilustra o pseudo-código do algoritmo genético
+% implementado.
+% 
+% \begin{center}
+% \begin{table}[h]
+% \centering
+% \caption{Algoritmo Genético para Sistemas DDO-OFDM}
+% 	\begin{tabular}{l l}
+% 		\hline
+% 		\multicolumn{2}{ c }{\textbf{Algoritmo Genético para Sistemas DDO-OFDM}} \\
+% 		\hline
+% 		
+% 		1:	& inicia \textit{iter}, N; \\
+% 		2:	& Geração Aleatória de $P_F(\textit{iter})$; \\
+% 		3:	& Calcula a aptidão de todos cromossomos $\in P_F(\textit{iter})$; \\
+% 		4:	& \textbf{while} iter $<$ 50 \textbf{do} \\
+% 		5:	& \:\:\:\: seleção por torneio de $P_S$ a partir de $P_F$; \\
+% 		6:	& \:\:\:\: aplicar cruzamento $BLX-\alpha$ em $P_S$; \\
+% 		7:	& \:\:\:\: aplicar a mutação Gaussiana em $P_S$; \\
+% 		8:	& \:\:\:\: Verificar os limites dos genes de $P_S$; \\
+% 		9:	& \:\:\:\: Calcular a aptidão de todos cromossomos $\in P_S(\textit{iter})$;\\
+% 		10:	& \:\:\:\: gerar R(\textit{iter}) = $P_F \bigcup P_S$; \\
+% 		11:	& \:\:\:\: classifição descendente de R(\textit{iter}); \\
+% 		12:	& \:\:\:\: $P_F(\textit{iter+1})$ = primeiras \textit{N} soluções de R(\textit{iter}); \\
+% 		13:	& \textbf{end while} \\
+% 		14: & melhor solução = primeira solução de $P_F(\textit{iter+1})$; \\
+% 		\hline
+% 		\label{Tab:pseudoCodigo}
+% 	\end{tabular}
+% 	\end{table}
+% \end{center}
+% 
+% \section{Resultados e Discussões}
+% Esta seção examina o desempenho aprimorado do sistema DDO-OFDM com enlaces de
+% pequeno alcance com parâmetros otimizados como proposto pelo algoritmo genético
+% mono-objetivo. Os resultados de simulações e transmissão experimental de um
+% sistema de communicação óptico otimizado a taxa de $R_b = 1.83$ Gb/s em
+% condições de B2B, 20 e 40 km de fibra SSMF sem compensação óptica de dispersão
+% são discutidos. Além disso, a formulação do problema que considera a maximização
+% da eficiência espectral do sinal transmitido também é levado em consideração.
+% 
+% \subsection{Resultados de Simulações}
+% A fim de otimizar parâmetros críticos foram conduzidos simulações de Monte
+% Carlo do sistema de transmissão DDO-OFDM na configuração B2B óptico e através de 20 e 40
+% km de fibra SSMF. Os parâmetros OFDM utilizados em todas simulações conduzidas
+% são resumidos na Tabela \ref{Tab:3}. A Tabela \ref{Tab:4} descreve os parâmetros
+% otimizados pelo algoritmo genético proposto.
+% 
+% \begin{center}
+% \begin{table}[h]
+% 	\centering
+% 	\caption{Parâmetros OFDM como restrições.}
+% 	\begin{tabular}{c c}
+% 		\hline
+% %		\multicolumn{2}{|c|}{Parâmetros OFDM} \\
+% %		\hline
+% 		\textbf{Parâmetro} & \textbf{Valor} \\
+% 		\hline
+% 		Taxa de Bit (Gb/s) & 3.56 \\
+% 		$B_W (GHz)$ & 1.0 \\
+% 		Tamanho da FFT & 1024 \\
+% 		Subportadoras & 512 \\
+% 		Sub espaçamento (MHz) & 1.95 \\
+% 		\hline
+% %		\caption{AA}
+% 	\end{tabular}
+% 	\label{Tab:3}
+% \end{table}
+% \end{center}
+% 
+% \begin{center}
+% \begin{table}[h]
+% 	\caption{Resultados da Simulação do sistema DDO-OFDM otimizado}
+% 	\begin{tabular}{c| c c c | c c c | c c c}
+% %		\hline
+% %		\multicolumn{10}{|c|}{Resultados da Simulação do sistema DDO-OFDM otimizado}
+% %		\\
+% 		\hline
+% 		\multicolumn{1}{c|}{\multirow{2}{*}{Parâmetro}} & \multicolumn{3}{|c|}{4-QAM}
+% 		& \multicolumn{3}{c|}{8-QAM} & \multicolumn{3}{c}{16-QAM} \\
+% 		\cline{2-10}
+% 		
+% 		& B2B & 20 km & 40 km & B2B & 20 km & 40 km & B2B & 20 km & 40 km \\
+% 		\hline
+% 		$\sigma_s$	& 0.13 & 0.14 & 0.11 & 0.09 & 0.08 & 0.06 & 0.08 & 0.08 & 0.08 \\
+% 		$V_{bias}$	& 4.30 & 4.30 & 4.50 & 4.56 & 4.57 & 4.72 & 4.60 & 4.60 & 4.58 \\
+% 		$B_G$ 		& 0.79 & 0.87 & 0.91 & 0.82 & 0.85 & 0.81 & 0.85 & 0.80 & 0.87 \\
+% 		$n_{samp}$	& 3.30 & 3.10 & 3.60 & 3.80 & 3.16 & 3.21 & 3.13 & 3.24 & 3.09 \\
+% 		OSNR (dB)	& 5.10 & 5.20 & 5.10 & 9.50 & 9.40 & 9.20 & 11.1 & 11.3 & 11.2 \\
+% 		\hline
+% 	\end{tabular}
+% 	\label{Tab:4}
+% \end{table}
+% \end{center}
+% 
+% Os resultados descritos na Tabela \ref{Tab:4} mostram que o desempenho do
+% sistema DDO-OFDM aumenta quando os parâmetros críticos são otimizados. O valor
+% de $11.3$ dB de OSNR com $BER = 10^{-3}$ foi alcançado para transmissões em 20
+% km com a redução de 20\% $(B_G = 0.8 B_W)$ na banda de guarda. Como esperado, a
+% potência média do sinal OFDM reduziu quando o nível de modulação da subportadora
+% aumentou.
+% 
+% % Percebe-se pelos resultados da Tabela \ref{Tab:4}, que $V_{bias}$ em
+% % torno de $0.9 \cdot V_{\pi}$ parece ser uma boa escolha para o ponto de
+% % polarização do MZM.
+% 
+% \subsection{Resultados de Experimentos}
+% A Figura \ref{Fig:6} mostra a configuração experimental do sistema DDO-OFDM II
+% utilizada como prova de conceito que serve para comprovar a adequação do
+% algoritmo de otimização proposto.
+% 
+% % \ldots\ldots\ldots
+% % Os sinais OFDM elétricos parametrizados como mostrado na Tabela 3 foram
+% % transmitidos ``offline'' usando MATLAB\textsuperscript{\textregistered}. Os
+% % sinais são gerados por um gerador de onda arbitrária (\textit{arbitrary waveform
+% % generator - AWG}) da Textronix\textsuperscript{\textregistered} AWG7122C
+% % realizando um aconversão digital para analógica. Depois de passar pelo filtro
+% % passa-baixas o sinal é enviado para o modulador MZM que modula o laser CW com
+% % comprimento de onda centralizado em $\lambda = 1550 nm$. O B2B, \ldots\ldots\ldots
+% 
+% \begin{figure}[h]
+% 	\centering
+% 		\includegraphics[width=\textwidth]{Figures/DDO-OFDM_Experimento_Labtel_out2012_JMOe.eps}
+% 		\caption{Configuração experimental do sistema DDO-OFDM II à taxa de $R_b =
+% 		1.83$ Gbps.}
+% 		\label{Fig:6}
+% \end{figure}
+% 
+% A densidade espectral de potência e a constelação recebida para o B2B com a $EVM
+% \approx -14.9$ dB, mostrada na Figura \ref{Fig:6}, confirmam a adequação da
+% otimização dos parâmetros através do algoritmo genético projetado. A Figura
+% \ref{Fig:7} mostra que os valores de EVM alcançados para transmissões DDO-OFDM
+% através de 20 e 40 km de SSMF sem compensação foram de aproximadamente -15.5 e
+% -17.2 dB respectivamente.
+% 
+% Vale notar que a diferença na banda de guarda óptica do espéctro OFDM recebido
+% mostrado na Figura \ref{Fig:7}, é uma consequência natural do processo de
+% otimização, como projetado pelos parâmetros otimizados representados na Tabela
+% \ref{Tab:4} para modulação de subportadora com 4-QAM utilizados em todos
+% experimentos de otimização conduzidos.
+% 
+% \begin{figure}[h]
+% 	\centering
+% 		\includegraphics[scale=0.8]{Figures/Spectrums_Constelations.eps}
+% 		\caption{Densidade espectral de potência e constelação dos resultados
+% 		experimentais do sistema DDO-OFDM II otimizado.}
+% 		\label{Fig:7}
+% \end{figure}
+% 
+% 
+% \subsection{Adicionando a Eficiência Espectral na Formulação do Problema}
+% 
+% Resultados obtidos por \cite{art:peng} demonstram a otenção de uma banda de
+% guarda dada por $B_G \approx 0.35 B_W$ utilizando um sinal OFDM com banda
+% lateral virtual (\textit{Virtual Single Side Band - OFDM} VSSB-OFDM) em um
+% sistema óptico de comunicação com frequência ajustável. Projetado para enlaces
+% de fibra de longas distâncias, sua eficiência espectral está associada a um
+% aumento da complexidade necessária no receptor para reduzir o SSBI no sinal
+% desejado.
+% 
+% É fácil perceber a partir da Figura \ref{Fig:7} que a redução da banda de guarda
+% obtida da otimização do sistema através do algoritmo genético aplicado à
+% primeira formulação é no máximo igual a 20\%. Uma nova formulação do problema
+% que considera a eficiência espectral é abordada nesta seção a fim de aumentar
+% eficiência espectral de todo o sistema. Portanto, um termo $\frac{B_G}{B_W}$ é
+% adicionado em uma nova função objetivo que facilita o processo de seleção quando
+% soluções fechadas são obtidas. Isto significa que, no caso de duas soluções
+% fechadas geradas (semelhante OSNR a um $BER = 10^{-3}$), o algoritmo genético
+% escolherá o cromossomo com o menor valor de $\frac{B_G}{B_W}$. A nova
+% formulação, assim como ele está associado com o \textit{fitness} está detalhada
+% na Tabela \ref{Tab:5}.
+% 
+% Os resultados descritos na Tabela \ref{Tab:6} mostram que este novo método
+% garante um máximo aumento adicional em torno de 18\% na eficiência espectral
+% geral, a qual ocorre nas transmissões DDO-OFDM em condições de B2B para um
+% mapeamento das subportadoras em 4-QAM. É possível notar que, em quase todas
+% simulações realizadas com essa nova formulação, a relação alcançada com OSNR
+% para um $BER = 10^{-3}$ foi a mesma registrada nos resultados das simulações da
+% formulação inicial. Aqui também, como esperado, a potência média do sinal OFDM
+% decresce quando o nível de modulação das subportadoras aumenta e
+% $V_{\textit{bias}}$ por volta de $0.9 \cdot V_\pi$ é um bom ponto de polarização
+% para o MZM.
+% 
+% \begin{center}
+% \begin{table}[h]
+% \centering
+% \caption{Parâmetros OFDM - DDO-OFDM I}
+% 	\begin{tabular}{c}
+% 		\hline
+% 		\multicolumn{1}{c}{\textbf{Min.} OSNR $@ BER = 10^{-3} + \left(\frac{B_G}{B_W}\right)$ \textbf{Sujeito a}} \\
+% 		\hline
+% 
+% 		$0.01 \times V_\pi \leq \sigma_S \leq 0.25 \times V_\pi$ \\
+% 		$0.5 \times V_\pi \leq V_{bias} \leq V_{\pi} $ \\
+% 		$0.1 \times B_W \leq B_G \leq B_W $ \\
+% 		$ \left(2^{X_{máx}}\right)^{-1} \leq GI = \left(2^X\right)^{-1} \leq
+% 		\left(2^{X_{mín}}\right)^{-1}$ \\
+% 		$ 1 \leq n_{samp} \leq 6 $ \\
+% 		$ V_{\pi} = 5 V, X_{máx} = 10, X_{mín} = 2 $ \\
+% 		\hline
+% 		\textbf{\textit{Fitness} associado} \\
+% 		\hline
+% 		$Fit^{(i)} = \frac{100}{\left [ \left( OSNR + \left(\frac{B_G}{B_W}\right
+% 		)\:\: se \:\: BER \leq 10^{-3} \right) \bigcup \left ( 1000 \:\: se \:\: BER
+% 		\leq 10^{-3} \right) \right]}$
+% 		\\
+% 		\hline
+% 		\label{Tab:5}
+% 	\end{tabular}
+% 	\end{table}
+% \end{center}
+% 
+% Também é possível notar que o parâmetro $I_G$ dado pelo prefíxo cíclico não é
+% descrito nas Tabelas \ref{Tab:4} e \ref{Tab:6} devido a sua insignificância
+% obtida na otimização.
+% 
+% \begin{center}
+% \begin{table}[h]
+% 	\caption{Resultados da Simulação do sistema DDO-OFDM otimizado para a
+% 	formulação do problema.}
+% 	\begin{tabular}{ c| c c c | c c c | c c c }
+% 		\hline
+% 		\multicolumn{1}{c|}{\multirow{2}{*}{Parâmetro}} & \multicolumn{3}{|c|}{4-QAM}
+% 		& \multicolumn{3}{c|}{8-QAM} & \multicolumn{3}{c}{16-QAM} \\
+% 		\cline{2-10}
+% 
+% 		& B2B & 20 km & 40 km & B2B & 20 km & 40 km & B2B & 20 km & 40 km \\
+% 		\hline
+% 		$\sigma_s$	& 0.13 & 0.12 & 0.13 & 0.06 & 0.07 & 0.07 & 0.09 & 0.10 & 0.07 \\
+% 		$V_{bias}$	& 4.30 & 4.34 & 4.25 & 4.72 & 4.61 & 4.63 & 4.60 & 4.53 & 4.60 \\
+% 		$B_G$ 		& 0.66 & 0.69 & 0.80 & 0.75 & 0.80 & 0.78 & 0.74 & 0.74 & 0.77 \\
+% 		$n_{samp}$	& 3.55 & 3.48 & 3.25 & 3.34 & 3.28 & 3.93 & 3.35 & 3.36 & 3.31 \\
+% 		OSNR (dB)	& 5.20 & 5.10 & 5.10 & 9.30 & 9.40 & 9.50 & 11.1 & 11.4 & 11.2 \\
+% 		\hline
+% 	\end{tabular}
+% 	\label{Tab:6}
+% \end{table}
+% \end{center}
+% 
+% Uma comparação entre o sistema OFDM óptico de modulação por intensidade
+% anterior (convencionalmente denominado DDO-OFDM, para $OMI = \sigma_s^2 = 0.1$,
+% $V_{bias} = 0.9 \cdot V_{\pi}$ e $n_{samp} = 4$) e um sistema DDO-OFDM com
+% parâmetros fundamentais otimizados pelo algoritmo genético proposto na última
+% formulação do problema é mostrada na Figura \ref{Fig:8}. Como esperado, a banda
+% de guarda de frequência pode ser reduzida no máximo 50\% ($B_G = 0.5 \times
+% B_W$) da largura de banda efetiva do sinal em sistemas OFDM ópticos
+% convencionais com mapeamento das subportadoras de 4-QAM e configuração B2B, com
+% um valor de OSNR aceitável de aproximadamente 2 dB quando comparado com 20\% de
+% redução na mesma conjuntura do sistema. A simulação de MC não converge para $B_G
+% > 0.5 \cdot B_W$. Uma redução adicional de 20\% é fornecida pela otimização
+% proposta ocorre com o mesmo desempenho do sistema ($OSNR = 5.2$ dB com $BER =
+% 10^{-3}$). Esse ganho adicional na eficiência espectral também ocorre em
+% transmissões de sinais OFDM compostos por subportadoras mapeadas em 4-QAM em 20
+% km de fibra. Em B2B, o pior caso ocorre no enlace de fibra de comprimento
+% igual a 40 km onde o desempenho e a eficiência espectral do sistema são exatamente os
+% mesmos.
+% 
+% \begin{figure}[h]
+% 	\centering
+% 		\includegraphics[scale=0.9]{Figures/Curvas_otim_conv_f.eps}
+% 		\caption{OSNR @ BER = $10^-3$ versus banda de guarda para sistemas DDO-OFDM
+% 		convencionais e otimizados em transmissões B2B, 20 km e 40 km com 4,  8 e
+% 		16-QAM.}
+% 		\label{Fig:8}
+% \end{figure}
+% 
+% Como mostrado na Figura \ref{Fig:8}, a convergencia da simulação MC permite um
+% máximo de redução na banda de guarda de 20\% para ambos mapeamentos 8 e 16-QAM,
+% para B2B, 20 e 40 km de fibra SSMF. Nesses casos o máximo ganho adicional no
+% espectro é fornecido pela otimização alcançada em 8\% em um ganho de 0.5 dB no
+% desempenho do sistema ($OSNR = 11.1 dB$ em um $BER = 10^{-3}$ para uma
+% mapeamento de 16-QAM com B2B). Aqui, o pior caso da otimização occore para um
+% mapeamento das portadoras em 8-QAM e transmissão através de 20 km no qual a
+% eficiência espectral é exatamente a mesma registrada no sistemas convencionais,
+% além de um ganho na otimização de 0.3 dB na relação OSNR.
+% 
+% \section{Considerações Finais}
+% 
+% A otimização de sistemas DDO-OFDM via o algoritmo genético proposto mostrou-se
+% necessária devido à grande quantidade de parâmetros envolvidos no desempenho de
+% tais sistemas. Ganhos na relação OSNR para taxas de um $BER = 1 \times 10^{-3}$
+% foram encontrados mesmo com redução na largura de banda de guarda (aumento da
+% eficiência espectral) que chegam aos 50\%.

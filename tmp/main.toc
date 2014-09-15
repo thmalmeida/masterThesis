@@ -68,23 +68,23 @@
 \contentsline {section}{\numberline {5.6}O Algoritmo Gen\'etico Aplicado ao Problema}{95}{section.5.6}
 \contentsline {section}{\numberline {5.7}Resultados e Discuss\~oes}{96}{section.5.7}
 \contentsline {subsection}{\numberline {5.7.1}Resultados de Simula\c c\~oes}{97}{subsection.5.7.1}
-\contentsline {subsection}{\numberline {5.7.2}Resultados de Experimentos}{98}{subsection.5.7.2}
-\contentsline {subsection}{\numberline {5.7.3}Adicionando a Efici\^encia Espectral na Formula\c c\~ao do Problema}{98}{subsection.5.7.3}
-\contentsline {section}{\numberline {5.8}Considera\c c\~oes Finais}{102}{section.5.8}
+\contentsline {subsection}{\numberline {5.7.2}Resultados Experimentais}{98}{subsection.5.7.2}
+\contentsline {subsection}{\numberline {5.7.3}Adicionando a Efici\^encia Espectral na Formula\c c\~ao do Problema}{100}{subsection.5.7.3}
+\contentsline {section}{\numberline {5.8}Considera\c c\~oes Finais}{103}{section.5.8}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase {Conclus\~oes e Trabalhos Futuros}}{103}{chapter.6}
+\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase {Conclus\~oes e Trabalhos Futuros}}{104}{chapter.6}
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{Refer\^encias}{105}{section*.81}
+\contentsline {chapter}{Refer\^encias}{106}{section*.81}
 \cftinsert {AAA}
 \renewcommand *{\cftappendixname }{ANEXO \space }
 \setlength {\cftpartindent }{\cftlastnumwidth } \setlength {\cftpartnumwidth }{2em}
 \cftinsert {A}
-\contentsline {part}{\uppercase {Anexos}}{109}{section*.82}
+\contentsline {part}{\uppercase {Anexos}}{110}{section*.82}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase {\textit {Distributed Feedback Laser}}}{110}{appendix.anexochapback.1}
+\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase {\textit {Distributed Feedback Laser}}}{111}{appendix.anexochapback.1}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {B}\MakeTextUppercase {C\'odigo para Inser\c c\~ao do Ru\IeC {\'\i }do \'Optico Atrav\'es do M\'etodo de Imposi\c c\~ao}}{115}{appendix.anexochapback.2}
+\contentsline {appendix}{\chapternumberline {B}\MakeTextUppercase {C\'odigo para Inser\c c\~ao do Ru\IeC {\'\i }do \'Optico Atrav\'es do M\'etodo de Imposi\c c\~ao}}{116}{appendix.anexochapback.2}
