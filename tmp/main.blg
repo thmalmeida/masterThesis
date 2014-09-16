@@ -1,10 +1,11 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
-A level-1 auxiliary file: fichacatalografica.aux
-A level-1 auxiliary file: folhaAprovacao.aux
-A level-1 auxiliary file: Dedication.aux
-A level-1 auxiliary file: Acknowledgments.aux
-A level-1 auxiliary file: Epigraph.aux
-A level-1 auxiliary file: Resumo.aux
+A level-1 auxiliary file: frontTexts/Cover.aux
+A level-1 auxiliary file: frontTexts/backCover.aux
+A level-1 auxiliary file: frontTexts/folhaAprovacao.aux
+A level-1 auxiliary file: frontTexts/Dedication.aux
+A level-1 auxiliary file: frontTexts/Acknowledgments.aux
+A level-1 auxiliary file: frontTexts/Epigraph.aux
+A level-1 auxiliary file: _Resumo.aux
 A level-1 auxiliary file: Abstract.aux
 A level-1 auxiliary file: acronimos.aux
 A level-1 auxiliary file: Chap1_Introduction.aux

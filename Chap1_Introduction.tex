@@ -1,8 +1,4 @@
-% \chapter*[Introdução]{Introdução}
-\chapter{Introdução}
-% \addcontentsline{toc}{chapter}{Introdução}
-
-% Introdução filosófica.
+\chapter{Introdução} % Introdução filosófica.
 Ao longo do eixo de frequências do espectro eletromagnético existem apenas dois
 intervalos que têm sido amplamente utilizados para a transmissão em banda larga
 pelos modernos sistemas de comunicação. O primeiro se estende de 100 kHz a 300
@@ -22,8 +18,6 @@ denominadas \textit{Fiber-to-the-home}, \textit{Fiber-to-the-curb} ou
 \textit{Fiber-to-the cabinet} através das técnicas de multiplexação em redes
 ópticas passivas (\textit{Pasive Optical Network} - PON) \cite{art:jmo_OFDMA_6}.
 
-% Propagação de frequências em canais específicos e introdução a um dos
-% problemas
 Cada sinal utilizado para transmitir informação se propaga em um meio
 característico cujas propriedades intrínsecas causam distorções e atenuações no
 formato da onda eletromagnética transmitida. Além disso, para cada meio físico,
@@ -38,7 +32,7 @@ meio, ocasionando distorções no sinal recebido devido as diferenças de fase
 desses sinais quando somados no receptor. Na fibra, este tipo de distorção é
 conhecido como dispersão cromática (\textit{Chromatic Dispersion} - CD)
 provocada pela variação do índice de refração para cada componente de
-frequência, dadas as diferentes velocidades de propagação das mesmas. 
+frequência, dadas as diferentes velocidades de propagação das mesmas.
 
 % Introdução da modulação OFDM
 A modulação/multiplexação por divisão de frequências ortogonais
@@ -51,13 +45,12 @@ forte candidato para enlaces de curto alcance, tais como, redes de acesso PON e
 quando comparado com o modelo de detecção coerente (\textit{Coherent Optical
 OFDM} - CO-OFDM). Entretanto, as desvantagens provenientes da inserção de uma
 banda de guarda igual a banda de sinal, que ocasiona uma ineficiência espectral,
-e da transmissão da portadora óptica, restringem a ampla aplicação dos
-sistemas DDO-OFDM em enlaces de médio e longo alcances \cite{art:jmo_OFDMA_6}.
-Portanto, pesquisas que visam reduzir essa largura de banda de guarda bem como
-as que retratam aspectos relativos à redução da potência da portadora óptica
-são de extrema valia no que tange a adoção do sistema DDO-OFDM nos diversos
-tipos de enlaces ópticos.
-% na qual requer metade da potência transmitida para a portadora óptica.
+e da transmissão da portadora óptica, restringem a ampla aplicação dos sistemas
+DDO-OFDM em enlaces de médio e longo alcances \cite{art:jmo_OFDMA_6}. Portanto,
+pesquisas que visam reduzir essa largura de banda de guarda bem como as que
+retratam aspectos relativos à redução da potência da portadora óptica são de
+extrema valia no que tange a adoção do sistema DDO-OFDM nos diversos tipos de
+enlaces ópticos.
 
 A Figura \ref{Fig:main_Comp} ilustra um modelo básico de sistemas de comunicação
 em fibra óptica explorado ao longo desta dissertação. Neste, sinais de luz com
@@ -72,7 +65,7 @@ multiportadora convencional.
 
 \begin{figure}[hb]
 	\centering
-		\includegraphics[width=1.0\textwidth]{Figures/genericBlockDiagramCommunications.pdf}
+		\includegraphics[width=\textwidth]{Figures/genericBlockDiagramCommunications.pdf}
 		\caption{Componentes principais de um sistema óptico de comunicação.}
 		\label{Fig:main_Comp}
 \end{figure}
@@ -101,15 +94,6 @@ o sistema coerente torne estável e integrado no padrão OIF (\textit{Optical
 Internetworking Forum}), sistemas de detecção direta de 40G podem fazer parte
 da tecnologia dominante em redes metro/regionais \cite{lightwave:2010:Online}.
 
-% In some network applications, using coherent detection will still make sense,
-% even though the transponder cost is higher. For example, the PMD tolerance of
-% direct-detection schemes using 40G DPSK is around 3 ps mean, or around 8 ps if
-% used with a PMD compensator or for a RZ-DQPSK modulation format. PMD beyond
-% these levels can easily be satisfied using coherent detection. In addition,
-% assuming a clean design with low implementation penalty, coherent detection
-% should offer a 2- to 3-dB OSNR improvement, enabling greater distance for
-% trans-oceanic submarine or terrestrial ultra long haul (ULH) applications.
-
 Pretende-se com esta dissertação analisar o comportamento de um aparato
 experimental de curto alcance com detecção direta no qual, propagam sinais
 multiportadoras através de transmissores e receptores desenvolvidos por
@@ -117,34 +101,12 @@ software. O objetivo principal é variar parâmetros de projeto atráves de um
 algoritmo de busca visando principalmente aumentar a eficiência espectral de
 sistemas DDO-OFDM.
 
-% Pretende-se com esta dissertação analisar o comportamento de um aparato
-% experimental de transmissão de sinais OFDM em sistemas ópticos de modulação de
-% intensidade e detecção direta (\textit{Intensity Modulation Direct Detection} -
-% IMDD) em enlaces de curto alcance.
-
-% Falar do trabalho. Trecho candidato ao resumo/abstract
 \section{Objetivo Geral}
 Este trabalho tem como principal finalidade aumentar a eficiência espectral de
 sinais multiportadora transmitidos em sistemas ópticos com detecção direta e
 modulação por intensidade de curto alcance. Com isso, algoritmos Genéticos de
 busca de soluções de parâmetros otimizados através de simulações são validados
 no sistema experimental proposto.
-
-% Este trabalho tem como principal finalidade desenvolver uma plataforma de testes
-% que consiste na transmissão de sinais OFDM em sistemas ópticos IMDD de curto
-% alcance. Além disso, analisa-se a aplicabilidade de algoritmos de otimização dos
-% diversos parâmetros envolvidos no desempenho de sistemas DDO-OFDM visando
-% aumentar a sua eficiência espectral.
-
-% A otimização via algoritmo genético de parâmetros para obter um melhor
-% desempenho na qualidade da transmissão é também objeto de estudo.
-
-%   (\textit{Orthogonal Frequency Division Multiplexing} -
-% OFDM) na qual foi adotada como técnica de modulação digital de tecnologicas com
-% e sem fio devido à sua capacidade em transmitir dados a altas taxas de
-% transferência em canais \textit{fading} multipercurso severo.
-% O objetivo geral desta Dissertação consiste em realizar a transmissão de sinais
-% OFDM experimentalmente em um sistema de comunicação de detecção
 
 \section{Objetivos Específicos}
 De forma mais específica, o estudo apresentado neste texto consiste na
@@ -173,36 +135,6 @@ onda arbitrário (\textit{Arbitrary Waveform Generator} - AWG) modelo AWG7122C e
 um osciloscópio digital (\textit{Digital Phosfor Oscilloscope- DPO}) modelo
 DPO71604C cujo correto funcionamento acarretou no desenvolvimento de códigos de
 interação com/entre os mesmos.
-% Códigos nos quais, realizam a interação do sistema projetado com a simulação
-% podendo ser facilmente multiplexado para se conectar com os equipamentos reais.
-
-% De forma mais específica, o estudo apresentado neste texto consiste na
-% construção de sinais OFDM por meio de algoritmos de processamento de sinais e de
-% conversores A/D (\textit{Analog-to-Digital Converter}) e D/A
-% (\textit{Digital-to-Analog Converter}) para altas taxas de transmissão em um
-% meio óptico com modulação por intensidade e detecção direta (IMDD). Além disso,
-% alguns parâmetros mais relevantes tais como a banda de guarda $B_G$, intervalo
-% de guarda $I_G$, amplitude do sinal OFDM na entrada do modulador óptico MZM
-% assim como o seu ponto de operação, são variados segundo uma heurística modelada
-% por um algoritmo de otimização a fim de obter uma transmissão com melhor
-% eficiência espectral.
-
-% Entretanto, por se tratar de um trabalho com forte apelo experimental, são
-% caracterizados todos os dispositivos contidos nos experimentos, sendo levantados
-% seus limites e curvas de operação. Além disso, para realizar os experimentos são
-% utilizados equipamentos de alto desempenho quais sejam, um gerador de forma de
-% onda arbitrário (\textit{Arbitrary Waveform Generator} - AWG) modelo AWG7122C e
-% um osciloscópio digital (\textit{Digital Phosfor Oscilloscope- DPO}) modelo
-% DPO71604C cujo correto funcionamento acarretou no desenvolvimento de códigos de
-% interação com/entre os mesmos.
-
-% Com isso, entram
-% como objetivos específicos levantar limites dos equipamentos, funcionalidades e
-% códigos de comunicação para configuração, transmissão e recepção de dados com os
-% dispositivos para viabilizar os testes experimentais propostos.
-
-% A estrutura de chamada dos códigos de interface com equipamentos AWG e DPO junto
-% à uma estrutura genérica de códigos com característica modular.
 
 \section{Metodologia}
 Este trabalho possui como proposta obter melhores desempenhos em sistemas
@@ -224,63 +156,30 @@ de acesso desenvolvidos neste trabalho. Com isso, foi implementada uma heurisca
 de busca de parâmetros otimizados com objetivo de aumentar a eficiência
 espectral de sistemas DDO-OFDM convencionais. Os parâmetros obtidos foram
 validados em um arranjo experimental preparado para tal.
-% Este trabalho possui como proposta desenvolver uma plataforma para realizar
-% experimentos elétrico/ópticos com equipamentos de alto desempenho tais como um
-% gerador de forma de onda arbitrário do modelo AWG7122C e um osciloscópio
-% modelo DPO71604C, com capacidades de conversões D/A e A/D respecitivamente, 24
-% GS/s e 100 GS/s. Esses equipamentos, interagem em tempo real via MATLAB por
-% meio de códigos de acesso desenvolvidos neste trabalho e que são integrados
-% com um código com modelo padrão para chamada de funções e parâmetros.
-\begin{figure}[ht] \centering
-\includegraphics[width=\textwidth]{Figures/fluxogramaExecucao.pdf}
-		\caption{Fluxograma de ilustração da sequência do arquivo principal.}
-		\label{Fig:main_file}
-\end{figure}
-
-% Este arquivo principal permite a integração de rotinas que modelam
-% matemáticamente modelos de transmissores, canais ópticos e elétricos, receptores
-% e dispositivos ópticos que foram herdados de trabalhos anteriores desenvolvidos
-% no Labtel e são facilmente chamados de forma a propiciar a interação entre a
-% simulação e os experimentos. Entretanto, devido à facilidade de manipular os
-% parâmetros que modelam os sinais transmitidos percebeu-se a necessidade de
-% encontrar um conjunto de valores dentro da faixa aceitável de cada parâmetro que
-% pudesse melhorar a qualidade da transmissão do sistema. Como diversos parâmetros
-% relacionam-se de forma não linear é proposto um método de busca de valores
-% otimizados por meio de uma heurística utilizando algoritmo genético
-% mono-objetivo que levou a avaliar a OSNR para taxa de erro de bit $BER = 1\times
-% 10^{-3}$.
-
-% \section{Resultados Esperados}
 
 \section{Principais Contribuições}
 As contribuições deste trabalho são dadas pelo aumento da eficiência espectral
 de sistemas DDO-OFDM, através da diminuição da banda de guarda a partir de uma
 heurística de otimização, baseada em algoritmos Genéticos.
 
+\begin{figure}[htp]
+	\centering
+		\includegraphics[width=\textwidth]{Figures/fluxogramaExecucao.pdf}
+		\caption{Fluxograma de ilustração da sequência do arquivo principal.}
+		\label{Fig:main_file}
+\end{figure}
 Além disso, uma plataforma experimental foi implementada para validação dos
 resultados dos parâmetros de projeto utilizados no sistema desenvolvido. Isto
 gerou um modelo de execução ilustrado pela Figura \ref{Fig:main_file}. Este
-modelo integra o sistema simulado com equipamentos reais a partir de
-códigos implementados. 
+modelo integra o sistema simulado com equipamentos reais a partir de códigos
+implementados.
 
 Em adição, todos os componentes do sistema implementado foram caracterizados
 proporcionando conhecimento, facilidade de calibração e alinhamento com modelos
 computacionais que fazem parte da simulação.
 
-Por fim, um driver de controle para o laser DFB foi desenvolvido, e cujo o
+Por fim, um driver de controle para o \textit{laser} DFB foi desenvolvido, e cujo o
 funcionamento é descrito no Apêndice \ref{AppendixA}.
-% Por fim, o driver de controle desenvolvido para a o laser DFB tem suas
-% características funcionais detalhadas no apêndice \ref{AppendixA}.
-
-% As contribuições deste trabalho são dadas pela plataforma de testes implementada
-% para realizar experimentos elétrico/óptico com grande facilidade através da
-% plataforma MATLAB\textsuperscript{\textregistered} e códigos que interagem
-% diretamente, via rede \textit{ethernet}, com os equipamentos AWG (conversor D/A)
-% e DPO (Osciloscópio conversor A/D) e a caracterização dos dispositivos ópticos
-% elétricos disponíveis no labtel 2 que abre um leque para pesquisa com diversas
-% configurações experimentais. Além disso, é produzida uma heuristica de
-% otimização de parâmetros para sistemas DDO-OFDM por algoritmo genético
-% mono-objetivo.
 
 \section{Organização do Texto}
 O restante desta dissertação está  organizado da seguinte maneira: os conceitos
@@ -298,7 +197,6 @@ trabalhos futuros são expostos no capítulo 6.
 \section{Lista de Publicações}
 
 \begin{itemize}
-
 	\item Helder R. de O. Rocha, Thiago M. de Almeida, Marcelo E. V. Segatto and
 	Jair A. L. Silva, ``\textbf{Mono-Objective Optimization for Direct Detection
 	Optical OFDM Transmissions in Short-Range Links}'', \textit{Journal of
@@ -315,19 +213,10 @@ trabalhos futuros são expostos no capítulo 6.
 	Optimization of DDO-OFDM Transmissions in Short-Haul Links Through Genetic
 	Algorithms''}, \textit{Workinnova 2012, Denmark-South America Workshop on
 	Photonics Technologies}.
-
 \end{itemize}
 
-% \section{NÃO FAZ PARTE!}
-% 
-%  de chamada de funções que possibilita a inserção de diferentes Códigos
-% gerados interagem com equipamentos realizando experimentos \textit{offline}
-% utilizando os conversores As principais contribuições deste trabalho são: 
-% estudos  plataforma de testes.
-% \subsection{Organização da Dissertação}
-% \subsection{Lista de Publicações}
-% The continuously grooming of the demand for traffic\ldots 
-% 
+
+ 
 % \begin{incisos}
 % 	\item Contextualização do Problema/Trabalho 
 % 	\item Motivação do Trabalho
@@ -341,10 +230,3 @@ trabalhos futuros são expostos no capítulo 6.
 % 	de busca de novos conhecimentos não presentes na matriz curricular do curso)
 % 	\item Organização do texto (Estrutura da Monografia)
 % \end{incisos}
-% 
-% \section{Justificativas}
-% 
-% \subsection{Vantagens} The main
-% advantage of OFDM is that it can cope with virtually unlimited amount of inter
-% symbol interference (ISI), caused for instance by chromatic dipersion and PMD.
-%  \subsection{Desvantagens}
