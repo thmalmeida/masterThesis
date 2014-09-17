@@ -40,7 +40,7 @@
 \contentsline {section}{\numberline {4.1}Sistema Modula\c c\~ao por Intensidade/Detec\c c\~ao Direta (IM/DD)}{61}{section.4.1}
 \contentsline {section}{\numberline {4.2}Caracteriza\c c\~ao dos Dispositivos}{62}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Equipamentos Conversores A/D e D/A}{62}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Amplificador e Filtro Passa-Baixas (\textit {Low-Pass Filter} - LPF)}{63}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.2}Dispositivo Amplificador e Filtro Passa-Baixas}{63}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}\textit {Laser} DFB (\textit {Distributed-Feedback Laser} - DFB)}{64}{subsection.4.2.3}
 \contentsline {subsection}{\numberline {4.2.4}Modulador \'Optico \textit {Mach-Zehnder} (MZM)}{64}{subsection.4.2.4}
 \contentsline {subsection}{\numberline {4.2.5}Fibra \'Optica}{66}{subsection.4.2.5}
